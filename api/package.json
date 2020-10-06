@@ -1,0 +1,36 @@
+{
+  "name": "@high-oleic/api",
+  "version": "0.0.0",
+  "description": "The high oleic API server.",
+  "author": "Jacob Bare <jacob@parameter1.com>",
+  "homepage": "https://github.com/parameter1/high-oleic/tree/master/api#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parameter1/high-oleic.git",
+    "directory": "api"
+  },
+  "private": true,
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "gulp",
+    "lint": "eslint --ext .js ./",
+    "test": "yarn lint"
+  },
+  "dependencies": {
+    "@parameter1/terminus": "^1.1.4",
+    "apollo-server-express": "^2.18.2",
+    "envalid": "^6.0.2",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "helmet": "^4.1.1",
+    "lodash.merge": "^4.6.2",
+    "newrelic": "^6.13.1"
+  },
+  "devDependencies": {
+    "@parameter1/gulp": "^1.1.4",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
