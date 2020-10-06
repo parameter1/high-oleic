@@ -1,0 +1,18 @@
+{
+  "name": "high-oleic",
+  "author": "Jacob Bare <jacob@parameter1.com>",
+  "private": true,
+  "repository": "https://github.com/parameter1/high-oleic.git",
+  "license": "MIT",
+  "scripts": {
+    "test": "lerna run test",
+    "lint": "lerna run lint"
+  },
+  "workspaces": [
+    "api",
+    "app"
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
