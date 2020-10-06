@@ -22,9 +22,9 @@ x-node-defaults: &node
     <<: *env
 
 services:
-  api:
+  server:
     <<: *node
-    working_dir: /oleic/api
+    working_dir: /oleic/server
     entrypoint: ["../node_modules/.bin/gulp"]
     environment:
       <<: *env
@@ -32,7 +32,7 @@ services:
       EXTERNAL_PORT: 43190
     ports:
       - "43190:80"
-    hostname: api
+    hostname: server
 
 volumes:
   yarn-cache: {}

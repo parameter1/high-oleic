@@ -8,6 +8,6 @@ service.set('trust proxy', ['loopback', 'linklocal', 'uniquelocal']);
 
 service.use(helmet({ contentSecurityPolicy: false }));
 
-graphql({ app: service, path: '/' });
+graphql({ app: service, path: '/graphql' });
 
 module.exports = http.createServer(service);
