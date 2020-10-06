@@ -8,11 +8,21 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
+    'plugin:vue/recommended',
+    '@vue/airbnb'
   ],
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
-}
+  rules: {},
+  // settings: {
+  //   'import/resolver': {
+  //     alias: {
+  //       map: [
+  //         ['@', '.'],
+  //       ],
+  //       extensions: ['.vue', '.js'],
+  //     },
+  //   },
+  // },
+};
