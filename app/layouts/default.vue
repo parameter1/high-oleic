@@ -44,7 +44,7 @@ export default {
   components: { LeftMenu, OpenMenuButton },
 
   data: () => ({
-    menuOpen: true,
+    menuOpen: false,
   }),
 };
 </script>
