@@ -11,5 +11,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  head: {
+    title: 'Partner Links',
+  },
+};
 </script>
