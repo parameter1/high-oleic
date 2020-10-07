@@ -1,4 +1,4 @@
-# app
+# High Oleic App
 
 ## Build Setup
 
