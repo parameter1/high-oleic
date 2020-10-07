@@ -34,7 +34,7 @@ export default {
   data: () => ({
     navItems,
     classDefs: {
-      common: ['px-2', 'space-y-1'],
+      common: ['px-6', 'space-y-1'],
       desktop: ['flex-1'],
       mobile: [],
     },

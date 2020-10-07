@@ -1,5 +1,5 @@
 <template>
-  <div class="md:hidden">
+  <div class="lg:hidden">
     <div
       v-show="showWrapper"
       class="fixed inset-0 flex z-40"
@@ -43,7 +43,7 @@
               @click.stop="emit"
             />
           </div>
-          <div class="flex-shrink-0 flex items-center px-4">
+          <div class="flex-shrink-0 flex items-center px-8">
             <nuxt-link
               to="/"
               title="Homepage"

@@ -23,7 +23,6 @@ export default {
       'focus:outline-none',
       'focus:bg-gray-100',
       'focus:text-gray-600',
-      'md:hidden',
     ],
   }),
 };

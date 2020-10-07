@@ -3,7 +3,7 @@
     <left-menu v-model="menuOpen" />
 
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
-      <div class="md:hidden relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+      <div class="lg:hidden relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
         <!-- open menu button (on mobile) -->
         <open-menu-button @click.stop="menuOpen = !menuOpen" />
         <div class="flex-1 px-4 flex justify-between">

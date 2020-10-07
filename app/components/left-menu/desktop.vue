@@ -1,9 +1,8 @@
 <template>
-  <div class="hidden md:flex md:flex-shrink-0">
-    <div class="flex flex-col w-64">
-      <!-- Sidebar component, swap this element with another sidebar if you like -->
+  <div class="hidden lg:flex lg:flex-shrink-0">
+    <div class="flex flex-col w-250px xl:w-300px ">
       <div :class="sidebarClasses">
-        <div class="flex items-center flex-shrink-0 px-4">
+        <div class="flex items-center flex-shrink-0 px-8 my-4">
           <nuxt-link
             to="/"
             title="Homepage"
