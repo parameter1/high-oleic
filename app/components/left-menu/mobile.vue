@@ -35,7 +35,7 @@
         <div
           v-show="value"
           v-closeable="emit"
-          class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-800"
+          class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white"
         >
           <div class="absolute top-0 right-0 -mr-14 p-1">
             <close-button
