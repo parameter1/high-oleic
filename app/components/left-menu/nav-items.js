@@ -10,7 +10,7 @@ export default [
   },
   {
     label: 'Find Your Elevator',
-    to: '/find-you-elevator',
+    to: '/find-your-elevator',
   },
   {
     label: 'Find Your Seed',
