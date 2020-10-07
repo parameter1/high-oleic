@@ -3,12 +3,17 @@
     <left-menu v-model="menuOpen" />
 
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
-      <div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+      <div class="md:hidden relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
         <!-- open menu button (on mobile) -->
         <open-menu-button @click.stop="menuOpen = !menuOpen" />
         <div class="flex-1 px-4 flex justify-between">
-          <div class="flex-1 flex">
-            <!-- this originally housed a search bar -->
+          <div class="flex-1 flex items-center">
+            <nuxt-link
+              to="/"
+              title="Homepage"
+            >
+              <logo class="h-12" />
+            </nuxt-link>
           </div>
           <div class="ml-4 flex items-center md:ml-6">
             <!-- could add nav icons here -->
@@ -38,10 +43,11 @@
 
 <script>
 import LeftMenu from '../components/left-menu.vue';
+import Logo from '../components/logo.vue';
 import OpenMenuButton from '../components/open-menu-button.vue';
 
 export default {
-  components: { LeftMenu, OpenMenuButton },
+  components: { LeftMenu, Logo, OpenMenuButton },
 
   data: () => ({
     menuOpen: false,
