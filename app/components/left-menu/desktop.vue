@@ -8,7 +8,7 @@
             to="/"
             title="Homepage"
           >
-            <logo />
+            <logo class="w-auto h-auto" />
           </nuxt-link>
         </div>
         <div class="mt-5 flex-grow flex flex-col">
@@ -21,7 +21,7 @@
 
 <script>
 import MenuNav from './nav.vue';
-import Logo from './logo.vue';
+import Logo from '../logo.vue';
 
 export default {
   components: { Logo, MenuNav },

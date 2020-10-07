@@ -44,7 +44,12 @@
             />
           </div>
           <div class="flex-shrink-0 flex items-center px-4">
-            <logo />
+            <nuxt-link
+              to="/"
+              title="Homepage"
+            >
+              <logo class="w-auto h-auto" />
+            </nuxt-link>
           </div>
           <div class="mt-5 flex-1 h-0 overflow-y-auto">
             <menu-nav
@@ -63,7 +68,7 @@
 
 <script>
 import MenuNav from './nav.vue';
-import Logo from './logo.vue';
+import Logo from '../logo.vue';
 import CloseButton from './close-button.vue';
 
 export default {
