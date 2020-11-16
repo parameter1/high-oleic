@@ -18,19 +18,19 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "@parameter1/terminus": "^1.1.4",
-    "apollo-server-express": "^2.18.2",
+    "@parameter1/terminus": "^1.2.1",
+    "apollo-server-express": "^2.19.0",
     "envalid": "^6.0.2",
     "express": "^4.17.1",
-    "graphql": "^15.3.0",
-    "helmet": "^4.1.1",
+    "graphql": "^15.4.0",
+    "helmet": "^4.2.0",
     "lodash.merge": "^4.6.2",
-    "newrelic": "^6.13.1"
+    "newrelic": "^7.0.0"
   },
   "devDependencies": {
-    "@parameter1/gulp": "^1.1.4",
-    "eslint": "^7.10.0",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "@parameter1/gulp": "^1.1.6",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"
   }
 }

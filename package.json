@@ -5,12 +5,13 @@
   "repository": "https://github.com/parameter1/high-oleic.git",
   "license": "MIT",
   "scripts": {
+    "lerna": "lerna",
     "test": "lerna run test",
     "lint": "lerna run lint"
   },
   "workspaces": [
-    "api",
-    "app"
+    "app",
+    "server"
   ],
   "devDependencies": {
     "lerna": "^3.22.1"

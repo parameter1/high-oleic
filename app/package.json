@@ -11,13 +11,13 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@tailwindcss/ui": "^0.6.2",
-    "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "@tailwindcss/ui": "^0.7.2",
+    "core-js": "^3.7.0",
+    "nuxt": "^2.14.7"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^3.1.0",
-    "@vue/cli-service": "^4.5.6",
+    "@nuxtjs/tailwindcss": "^3.2.0",
+    "@vue/cli-service": "^4.5.8",
     "@vue/eslint-config-airbnb": "^5.1.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
