@@ -80,7 +80,7 @@ export default {
   },
 
   head: {
-    title: 'Login',
+    title: 'Login / Register',
   },
 };
 </script>
