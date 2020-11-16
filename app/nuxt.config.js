@@ -32,9 +32,18 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/apollo',
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://server.highsoy.com:53190/graphql',
+      },
+    },
   },
 };
