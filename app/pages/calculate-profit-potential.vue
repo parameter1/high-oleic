@@ -1,39 +1,39 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
-      <!-- Replace with your content -->
-      <div class="py-4">
-        <h1 class="text-2xl">
-          {{ ping }}
+      <div class="p-4">
+        <h1 class="text-2xl mb-4">
+          Calculate Profit Potential
         </h1>
-        <div class="border-4 border-dashed border-gray-200 rounded-lg h-96" />
+        <p v-if="!hasToken">
+          You must be
+          <nuxt-link
+            class="text-blue-500"
+            :to="{ path: '/login', query: { r: '/calculate-profit-potential' } }"
+          >
+            logged in
+          </nuxt-link>
+          to run profit scenerios.
+        </p>
       </div>
-      <!-- /End replace -->
     </div>
   </div>
 </template>
 
 <script>
-import gql from 'graphql-tag';
-
 export default {
-  apollo: {
-    ping: {
-      prefetch: true,
-      query: gql`
-        query {
-          ping
-        }
-      `,
+  // asyncData({ app }) {
+  //   this.hasToken = !!app.$apolloHelpers.getToken();
+  // },
+
+  computed: {
+    hasToken() {
+      return this.$apolloHelpers.getToken();
     },
   },
 
   head: {
     title: 'Caclulate Profit Potential',
   },
-
-  data: () => ({
-    ping: null,
-  }),
 };
 </script>
