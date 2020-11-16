@@ -44,6 +44,7 @@ export default {
       default: {
         httpEndpoint: 'http://server.highsoy.com:53190/graphql',
       },
+      identityX: '@/plugins/apollo/identity-x.js',
     },
   },
 };
