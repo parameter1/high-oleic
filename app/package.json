@@ -1,6 +1,14 @@
 {
-  "name": "app",
+  "name": "@high-oleic/app",
   "version": "0.0.0",
+  "description": "The high oleic app.",
+  "author": "Jacob Bare <jacob@parameter1.com>",
+  "homepage": "https://github.com/parameter1/high-oleic/tree/master/app#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parameter1/high-oleic.git",
+    "directory": "app"
+  },
   "private": true,
   "scripts": {
     "dev": "nuxt dev --port 53191 --hostname app.highsoy.com",
