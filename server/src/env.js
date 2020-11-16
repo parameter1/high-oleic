@@ -6,8 +6,10 @@ const {
 } = require('envalid');
 
 module.exports = cleanEnv(process.env, {
-  EXTERNAL_PORT: port({ desc: 'The external port that the service is exposed on.', default: 80 }),
-  INTERNAL_PORT: port({ desc: 'The internal port that the service will run on.', default: 80 }),
+  HOST: str({ desc: 'The host that the service will run on.', default: '0.0.0.0' }),
+  MONGO_DB_NAME: str({ desc: 'The MongoDB database name to use.', default: 'usb-profit-calculator' }),
+  MONGO_URI: str({ desc: 'The MongoDB instance to connect to.' }),
   NEW_RELIC_ENABLED: bool({ desc: 'Whether New Relic is enabled.', default: true, devDefault: false }),
   NEW_RELIC_LICENSE_KEY: str({ desc: 'The license key for New Relic.', devDefault: '(unset)' }),
+  PORT: port({ desc: 'The port that the service will run on.', default: 80 }),
 });

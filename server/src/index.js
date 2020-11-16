@@ -1,9 +1,12 @@
 require('./newrelic');
 const bootService = require('@parameter1/terminus/boot-service');
+const { log } = require('@parameter1/terminus/utils');
 const newrelic = require('./newrelic');
+const mongodb = require('./mongodb');
+const buildIndexes = require('./mongodb/build-indexes');
 const server = require('./server');
 const pkg = require('../package.json');
-const { INTERNAL_PORT, EXTERNAL_PORT } = require('./env');
+const { HOST, PORT, isDevelopment } = require('./env');
 
 process.on('unhandledRejection', (e) => {
   newrelic.noticeError(e);
@@ -14,9 +17,19 @@ bootService({
   name: pkg.name,
   version: pkg.version,
   server,
-  port: INTERNAL_PORT,
-  exposedPort: EXTERNAL_PORT,
+  host: HOST,
+  port: PORT,
   onError: newrelic.noticeError.bind(newrelic),
+  onStart: async () => {
+    await mongodb.connect().then((client) => log(`MongoDB connected ${JSON.stringify(client.s.options.servers)}`));
+    if (isDevelopment) {
+      log('Creating MongoDB indexes...');
+      await buildIndexes();
+      log('Indexes created.');
+    }
+  },
+  onSignal: () => mongodb.close(),
+  onHealthCheck: () => mongodb.ping({ id: pkg.name }).then(() => 'db okay'),
 }).catch((e) => setImmediate(() => {
   newrelic.noticeError(e);
   throw e;

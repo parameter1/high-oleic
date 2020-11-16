@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt dev --port 53191 --hostname app.highsoy.com",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -13,7 +13,8 @@
   "dependencies": {
     "@tailwindcss/ui": "^0.7.2",
     "core-js": "^3.7.0",
-    "nuxt": "^2.14.7"
+    "nuxt": "^2.14.7",
+    "tailwindcss": "^1.8.10"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.2.0",
