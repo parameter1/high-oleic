@@ -12,6 +12,11 @@ export default {
     ],
   },
 
+  publicRuntimeConfig: {
+    idxUri: process.env.IDENTITY_X_URI || 'https://identity-x.parameter1.com/graphql',
+    idxAppId: process.env.IDENTITY_X_APP_ID || '5fb2d401b8a845090ecc01d1',
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
