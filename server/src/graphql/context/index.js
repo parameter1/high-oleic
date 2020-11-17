@@ -12,5 +12,10 @@ module.exports = async ({ req }) => {
   });
   const auth = new AuthContext({ header: req.get('authorization'), idx });
   const loaders = await dataloaders({ repos });
-  return { auth, repos, loaders };
+  return {
+    auth,
+    idx,
+    loaders,
+    repos,
+  };
 };

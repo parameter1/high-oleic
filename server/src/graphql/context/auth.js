@@ -1,14 +1,5 @@
-const { ApolloError, gql } = require('apollo-server-express');
+const { ApolloError } = require('apollo-server-express');
 const UserContext = require('./user');
-
-const LOAD_USER = gql`
-  query LoadUser {
-    activeAppUser {
-      id
-      email
-    }
-  }
-`;
 
 class AuthContext {
   constructor({ header, idx } = {}) {
@@ -21,12 +12,8 @@ class AuthContext {
     const load = async () => {
       const { value: token } = this.parseHeader();
       if (!token) throw new Error('No authentication token was provided with the request.');
-      const { data } = await this.idx.query({
-        query: LOAD_USER,
-        context: { headers: { authorization: `AppUser ${token}` } },
-      });
-      const { activeAppUser } = data;
-      this.user.set(activeAppUser);
+      const user = await this.idx.getCurrentUser({ token });
+      this.user.set(user);
     };
     if (!this.promise) this.promise = load();
     try {
