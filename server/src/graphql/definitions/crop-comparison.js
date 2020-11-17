@@ -14,6 +14,15 @@ type CropComparison implements ChangedDateInterface & UserAttributionInterface @
   farmName: String! @project
   "The number of acres to compare."
   acres: Float! @project
+  "The high oleic field."
+  oleic: CropComparisonField @project
+  "The field being compared to."
+  comparedTo: CropComparisonField! @project
+}
+
+type CropComparisonField implements FarmFieldDataInterface @interfaceFields {
+  "The internal, unique field comparison identifier."
+  id: ObjectID! @project(field: "_id")
 }
 
 input CreateCropComparisonMutationInput {

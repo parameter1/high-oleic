@@ -37,13 +37,11 @@ interface FarmFieldIncomeValuesInterface {
   perBushel: Float!
 }
 
-type FarmField {
-  "The internal, unique farm field identifier."
-  id: ObjectID! @project(field: "_id")
-  "The (optional) name of the field."
-  name: String @project
+interface FarmFieldDataInterface {
   "The crop type grown in the field."
   cropType: CropTypeEnum! @project
+  "The crop."
+  crop: Crop! @project(field: "cropType")
   "The number of acres."
   acres: Float! @project
   "The crop yield per acre, in bushels"
@@ -65,6 +63,11 @@ type FarmField {
   income: FarmFieldIncome! @project(field: "expenses", needs: ["cropType", "acres", "totalBushels", "revenuePerBushel", "income"])
   "The farm field profit."
   profit: FarmFieldProfit! @project(field: "expenses", needs: ["cropType", "acres", "totalBushels", "revenuePerBushel", "income"])
+}
+
+type FarmField implements FarmFieldDataInterface @interfaceFields {
+  "The internal, unique farm field identifier."
+  id: ObjectID! @project(field: "_id")
   "The report that this farm field belongs to."
   report: Report! @project
 }

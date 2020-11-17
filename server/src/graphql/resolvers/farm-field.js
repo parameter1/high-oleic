@@ -1,47 +1,81 @@
 const { typeProjection } = require('@parameter1/graphql-directive-project/utils');
 const calculator = require('../../profit-calculator');
 const round = require('../../utils/round');
+const { getCropTypes } = require('../../schema/crop-type');
 
 module.exports = {
   /**
    *
    */
-  FarmField: {
+  FarmFieldDataInterface: {
     /**
      *
      */
-    expenses(field) {
-      return calculator(field).expenses;
+    crop({ cropType }) {
+      return getCropTypes().find(({ type }) => cropType === type);
     },
 
     /**
      *
      */
-    income(field) {
-      return calculator(field).income;
+    expenses(data) {
+      return calculator(data).expenses;
+    },
+
+    /**
+     *
+     */
+    income(data) {
+      return calculator(data).income;
+    },
+
+    /**
+     *
+     */
+    profit(data) {
+      return calculator(data).profit;
     },
 
     /**
      *
      */
     premiumPerBushel({ premiumPerBushel }) {
-      return round(premiumPerBushel, 2);
+      return round(premiumPerBushel || 0, 2);
     },
 
     /**
      *
      */
     pricePerBushel({ pricePerBushel }) {
-      return round(pricePerBushel, 2);
+      return round(pricePerBushel || 0, 2);
     },
 
     /**
      *
      */
-    profit(field) {
-      return calculator(field).profit;
+    revenuePerBushel({ revenuePerBushel }) {
+      return round(revenuePerBushel || 0, 2);
     },
 
+    /**
+     *
+     */
+    totalBushels({ totalBushels }) {
+      return round(totalBushels || 0, 2);
+    },
+
+    /**
+     *
+     */
+    yieldPerAcre({ yieldPerAcre }) {
+      return round(yieldPerAcre || 0, 2);
+    },
+  },
+
+  /**
+   *
+   */
+  FarmField: {
     /**
      *
      */
@@ -51,27 +85,6 @@ module.exports = {
       const needsQuery = Object.keys(projection).some((field) => !localFields.includes(field));
       if (!needsQuery) return report;
       return loaders.report.load({ id: report._id, projection });
-    },
-
-    /**
-     *
-     */
-    revenuePerBushel({ revenuePerBushel }) {
-      return round(revenuePerBushel, 2);
-    },
-
-    /**
-     *
-     */
-    totalBushels({ totalBushels }) {
-      return round(totalBushels, 2);
-    },
-
-    /**
-     *
-     */
-    yieldPerAcre({ yieldPerAcre }) {
-      return round(yieldPerAcre, 2);
     },
   },
 

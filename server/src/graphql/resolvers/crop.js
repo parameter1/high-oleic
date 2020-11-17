@@ -4,7 +4,7 @@ module.exports = {
   /**
    *
    */
-  CropType: {
+  Crop: {
     id({ type }) {
       return type;
     },
@@ -36,7 +36,7 @@ module.exports = {
     /**
      *
      */
-    cropTypes(_, { input }) {
+    crops(_, { input }) {
       const { exclude } = input;
       const types = getCropTypes();
       if (!exclude.length) return types;

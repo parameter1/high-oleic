@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-express');
 module.exports = gql`
 
 extend type Query {
-  cropTypes(input: CropTypesQueryInput = {}): [CropType!]!
+  crops(input: CropsQueryInput = {}): [Crop!]!
 }
 
 enum CropTypeEnum {
@@ -26,14 +26,14 @@ enum ComparisonCropTypeEnum {
   WHEAT
 }
 
-type CropType {
+type Crop {
   "The crop type ID/type."
   id: CropTypeEnum!
   "The crop label"
   label: String!
 }
 
-input CropTypesQueryInput {
+input CropsQueryInput {
   "Crop types to exclude."
   exclude: [CropTypeEnum!] = []
 }

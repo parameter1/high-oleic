@@ -2,6 +2,25 @@ module.exports = {
   /**
    *
    */
+  CropComparison: {
+    /**
+     *
+     */
+    oleic({ oleic, acres }) {
+      return { ...oleic, acres };
+    },
+
+    /**
+     *
+     */
+    comparedTo({ comparedTo, acres }) {
+      return { ...comparedTo, acres };
+    },
+  },
+
+  /**
+   *
+   */
   Mutation: {
     /**
      *
