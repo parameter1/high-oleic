@@ -10,6 +10,7 @@ const farm = require('./farm');
 const farmField = require('./farm-field');
 const income = require('./income');
 const report = require('./report');
+const user = require('./user');
 
 const genericResolveType = (_, __, info) => info.returnType.ofType.name;
 
@@ -22,6 +23,7 @@ module.exports = merge(
   farmField,
   income,
   report,
+  user,
   {
     Date: GraphQLDate,
     ObjectID: GraphQLObjectID(ObjectId),

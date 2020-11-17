@@ -10,6 +10,7 @@ const farm = require('./farm');
 const farmField = require('./farm-field');
 const income = require('./income');
 const report = require('./report');
+const user = require('./user');
 
 module.exports = gql`
 
@@ -60,5 +61,6 @@ ${farm}
 ${farmField}
 ${income}
 ${report}
+${user}
 
 `;
