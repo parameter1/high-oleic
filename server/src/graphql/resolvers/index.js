@@ -64,8 +64,7 @@ module.exports = merge(
       /**
        *
        */
-      async ping(_, __, { auth }) {
-        await auth.check();
+      async ping() {
         return 'pong';
       },
     },
