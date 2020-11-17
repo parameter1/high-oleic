@@ -3,17 +3,13 @@ const { STATUS_CODES } = require('http');
 const { get, set } = require('@parameter1/utils');
 const depthLimit = require('graphql-depth-limit');
 const schema = require('./schema');
-const dataloaders = require('./dataloaders');
-const repos = require('../repo');
+const context = require('./context');
 const { isProduction } = require('../env');
 
 module.exports = ({ app, path }) => {
   const server = new ApolloServer({
-    context: async () => {
-      const loaders = await dataloaders({ repos });
-      return { repos, loaders };
-    },
     schema,
+    context,
     tracing: false,
     cacheControl: false,
     introspection: true,
