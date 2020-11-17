@@ -29,14 +29,14 @@ module.exports = (params = {}) => {
   };
 
   const miscIncome = (inputs.income.govtPayment || 0) + (inputs.income.other || 0);
-  const avgSellingPrice = (
+  const avgSellingPrice = divZero((
     ((revenuePerBushel || 0) * totalBushels) + miscIncome
-  ) / totalBushels;
+  ), totalBushels, 0);
   const totalIncome = avgSellingPrice * totalBushels;
   const income = {
     total: totalIncome,
-    perAcre: totalIncome / acres,
-    perBushel: totalIncome / totalBushels,
+    perAcre: divZero(totalIncome, acres, 0),
+    perBushel: divZero(totalIncome, totalBushels, 0),
     avgSellingPrice,
     categories: incomeCategories.map((category) => {
       const total = inputs.income[category.type] || 0;
@@ -44,8 +44,8 @@ module.exports = (params = {}) => {
         ...category,
         income: {
           total,
-          perAcre: total / acres,
-          perBushel: total / totalBushels,
+          perAcre: divZero(total, acres, 0),
+          perBushel: divZero(total, totalBushels, 0),
         },
       };
     }),
@@ -64,10 +64,10 @@ module.exports = (params = {}) => {
       const costs = {
         total,
         perAcre,
-        perBushel: total / totalBushels,
+        perBushel: divZero(total, totalBushels, 0),
         fixed: lineItem.fixed ? total : 0,
         variable: lineItem.fixed ? 0 : total,
-        BU: perAcre / revenuePerBushel,
+        BU: divZero(perAcre, revenuePerBushel, 0),
       };
       return {
         ...lineItem,
@@ -81,7 +81,7 @@ module.exports = (params = {}) => {
       return {
         total: o.total + lineItem.costs.total,
         perAcre: o.perAcre + lineItem.costs.perAcre,
-        perBushel: o.perBushel + (lineItem.costs.total / totalBushels),
+        perBushel: o.perBushel + (divZero(lineItem.costs.total, totalBushels, 0)),
         fixed: lineItem.fixed ? fixed + lineItem.costs.total : fixed,
         variable: !lineItem.fixed ? variable + lineItem.costs.total : variable,
       };
@@ -98,7 +98,7 @@ module.exports = (params = {}) => {
       lineItems,
       costs: {
         ...costs,
-        BU: costs.perAcre / revenuePerBushel,
+        BU: divZero(costs.perAcre, revenuePerBushel, 0),
       },
     };
   });
@@ -108,7 +108,7 @@ module.exports = (params = {}) => {
     return {
       total: o.total + costs.total,
       perAcre: o.perAcre + costs.perAcre,
-      perBushel: o.perBushel + (costs.total / totalBushels),
+      perBushel: o.perBushel + (divZero(costs.total, totalBushels, 0)),
       fixed: o.fixed + costs.fixed,
       variable: o.variable + costs.variable,
     };
@@ -123,8 +123,8 @@ module.exports = (params = {}) => {
   const totalProfit = income.total - expenses.total;
   const profit = {
     total: totalProfit,
-    perAcre: totalProfit / acres,
-    perBushel: totalProfit / totalBushels,
+    perAcre: divZero(totalProfit, acres, 0),
+    perBushel: divZero(totalProfit, totalBushels, 0),
   };
 
   const expenseCategoryReport = expensesByCategory.map((category) => ({
@@ -144,7 +144,7 @@ module.exports = (params = {}) => {
     totalBushels,
     expenses: {
       ...expenses,
-      BU: expenses.perAcre / revenuePerBushel,
+      BU: divZero(expenses.perAcre, revenuePerBushel, 0),
       pctCost: 1,
       categories: expenseCategoryReport,
     },
