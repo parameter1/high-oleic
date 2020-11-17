@@ -23,6 +23,15 @@ module.exports = {
   /**
    *
    */
+  ComparisonCropTypeEnum: {
+    CORN: 'corn',
+    SOY: 'soy',
+    WHEAT: 'wheat',
+  },
+
+  /**
+   *
+   */
   Query: {
     /**
      *

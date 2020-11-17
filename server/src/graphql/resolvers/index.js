@@ -4,6 +4,7 @@ const GraphQLDate = require('@parameter1/graphql-type-date');
 const GraphQLObjectID = require('@parameter1/graphql-type-objectid');
 const pagination = require('@parameter1/graphql-mongodb-pagination/resolvers');
 
+const cropComparison = require('./crop-comparison');
 const cropType = require('./crop-type');
 const expense = require('./expense');
 const farm = require('./farm');
@@ -17,6 +18,7 @@ const genericResolveType = (_, __, info) => info.returnType.ofType.name;
 module.exports = merge(
   pagination,
 
+  cropComparison,
   cropType,
   expense,
   farm,

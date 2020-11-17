@@ -17,6 +17,15 @@ enum CropTypeEnum {
   OLEIC
 }
 
+enum ComparisonCropTypeEnum {
+  "Corn crop."
+  CORN
+  "Soybean crop."
+  SOY
+  "Wheat crop."
+  WHEAT
+}
+
 type CropType {
   "The crop type ID/type."
   id: CropTypeEnum!

@@ -4,6 +4,7 @@ const formatDateDirectives = require('@parameter1/graphql-directive-format-date/
 const interfaceDirectives = require('@parameter1/graphql-directive-interface-fields/directives');
 const pagination = require('@parameter1/graphql-mongodb-pagination/definitions');
 
+const cropComparison = require('./crop-comparison');
 const cropType = require('./crop-type');
 const expense = require('./expense');
 const farm = require('./farm');
@@ -55,6 +56,7 @@ type Mutation {
   ping: String!
 }
 
+${cropComparison}
 ${cropType}
 ${expense}
 ${farm}
