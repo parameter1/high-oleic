@@ -1,4 +1,5 @@
 const { validateAsync } = require('@parameter1/joi/utils');
+const { ObjectId } = require('@parameter1/mongodb');
 const PaginableRepo = require('./-paginable');
 const Joi = require('../joi');
 const { fields } = require('../schema/crop-comparison');
@@ -42,6 +43,7 @@ class FarmFieldRepo extends PaginableRepo {
       acres,
       createdByEmail: email,
       oleic: {
+        _id: new ObjectId(),
         cropType: 'oleic',
         yieldPerAcre: 0,
         totalBushels: 0,
@@ -49,6 +51,7 @@ class FarmFieldRepo extends PaginableRepo {
         revenuePerBushel: 0,
       },
       comparedTo: {
+        _id: new ObjectId(),
         cropType: cropToCompare,
         yieldPerAcre,
         totalBushels: yieldPerAcre * acres,
