@@ -4,6 +4,7 @@ const GraphQLDate = require('@parameter1/graphql-type-date');
 const GraphQLObjectID = require('@parameter1/graphql-type-objectid');
 const pagination = require('@parameter1/graphql-mongodb-pagination/resolvers');
 
+const cropType = require('./crop-type');
 const expense = require('./expense');
 const farm = require('./farm');
 const farmField = require('./farm-field');
@@ -15,6 +16,7 @@ const genericResolveType = (_, __, info) => info.returnType.ofType.name;
 module.exports = merge(
   pagination,
 
+  cropType,
   expense,
   farm,
   farmField,
@@ -32,15 +34,6 @@ module.exports = merge(
        *
        */
       __resolveType: genericResolveType,
-    },
-
-    /**
-     *
-     */
-    CropTypeEnum: {
-      CORN: 'corn',
-      SOY: 'soy',
-      OLEIC: 'oleic',
     },
 
     /**
@@ -71,7 +64,8 @@ module.exports = merge(
       /**
        *
        */
-      ping() {
+      async ping(_, __, { auth }) {
+        await auth.check();
         return 'pong';
       },
     },

@@ -1,5 +1,6 @@
 const Joi = require('../joi');
 const { fields: reportFields } = require('./report');
+const { fields: cropTypeFields } = require('./crop-type');
 const expenses = require('../profit-calculator/categories/expenses');
 const income = require('../profit-calculator/categories/income');
 
@@ -18,7 +19,7 @@ const fields = {
   id: Joi.mongoId(),
   reportId: reportFields.id,
   name: Joi.string().trim(),
-  cropType: Joi.string().valid('corn', 'soy', 'oleic'),
+  cropType: cropTypeFields.cropType,
   acres: Joi.number().min(1),
   yieldPerAcre: Joi.number().min(1), // in bushels :: REQUIRED
 

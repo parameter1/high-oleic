@@ -4,6 +4,7 @@ const formatDateDirectives = require('@parameter1/graphql-directive-format-date/
 const interfaceDirectives = require('@parameter1/graphql-directive-interface-fields/directives');
 const pagination = require('@parameter1/graphql-mongodb-pagination/definitions');
 
+const cropType = require('./crop-type');
 const expense = require('./expense');
 const farm = require('./farm');
 const farmField = require('./farm-field');
@@ -20,15 +21,6 @@ scalar Date
 scalar ObjectID
 
 ${pagination}
-
-enum CropTypeEnum {
-  "Corn crop."
-  CORN
-  "Soybean crop."
-  SOY
-  "High-Oleic soybean crop."
-  OLEIC
-}
 
 enum CurrencyUnitEnum {
   "Represents a value in dollars per acre."
@@ -62,6 +54,7 @@ type Mutation {
   ping: String!
 }
 
+${cropType}
 ${expense}
 ${farm}
 ${farmField}
