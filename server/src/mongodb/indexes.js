@@ -1,4 +1,7 @@
 module.exports = {
+  'crop-comparisons': [
+    { createdByEmail: 1 },
+  ],
   farms: [
     { updatedAt: 1, _id: 1 },
     [{ name: 1, _id: 1 }, { collation: { locale: 'en_US' } }],

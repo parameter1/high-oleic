@@ -2,6 +2,11 @@ const { gql } = require('apollo-server-express');
 
 module.exports = gql`
 
+extend type Query {
+  "Lists all crop comparisons for the current user."
+  myCropComparisons(input: MyCropComparisonsQueryInput = {}): CropComparisonConnection!
+}
+
 extend type Mutation {
   "Creates a new crop comparison report."
   createCropComparison(input: CreateCropComparisonMutationInput!): CropComparison!
@@ -42,6 +47,22 @@ type CropComparison implements ChangedDateInterface & UserAttributionInterface @
 type CropComparisonField implements FarmFieldDataInterface @interfaceFields {
   "The internal, unique field comparison identifier."
   id: ObjectID! @project(field: "_id")
+}
+
+type CropComparisonConnection @projectUsing(type: "CropComparison") {
+  "The total number of records found in the query."
+  totalCount: Int!
+  "An array of edge objects containing the record and the cursor."
+  edges: [CropComparisonEdge]!
+  "Contains the pagination info for this query."
+  pageInfo: PageInfo!
+}
+
+type CropComparisonEdge {
+  "The edge result node."
+  node: CropComparison!
+  "The opaque cursor value for this record edge."
+  cursor: String!
 }
 
 input CreateCropComparisonMutationInput {
@@ -123,6 +144,11 @@ input CropComparisonFarmNameMutationInput {
   id: ObjectID!
   "The farm name."
   farmName: String!
+}
+
+input MyCropComparisonsQueryInput {
+  "Sets pagination (limit/after) criteria for the query."
+  pagination: PaginationInput = {}
 }
 
 `;

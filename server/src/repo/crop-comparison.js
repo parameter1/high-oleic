@@ -63,6 +63,20 @@ class FarmFieldRepo extends PaginableRepo {
   }
 
   /**
+   * @param {object} params
+   * @param {string|ObjectId} params.email
+   * @param {object} [params.options]
+   */
+  async paginateForUser(params = {}) {
+    const { email, options } = await validateAsync(Joi.object({
+      email: userFields.email.required(),
+      options: Joi.object().default({}),
+    }).required(), params);
+    const query = { createdByEmail: email };
+    return this.paginate({ ...options, query });
+  }
+
+  /**
    *
    * @param {*} params
    */

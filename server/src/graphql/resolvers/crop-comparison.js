@@ -1,4 +1,4 @@
-const { typeProjection } = require('@parameter1/graphql-directive-project/utils');
+const { typeProjection, connectionProjection } = require('@parameter1/graphql-directive-project/utils');
 const round = require('../../utils/round');
 const calculator = require('../../profit-calculator');
 const divZero = require('../../utils/div-zero');
@@ -161,6 +161,22 @@ module.exports = {
         farmName,
         findOptions: { projection },
       });
+    },
+  },
+
+  /**
+   *
+   */
+  Query: {
+    /**
+     *
+     */
+    async myCropComparisons(_, { input }, { auth, repos }, info) {
+      await auth.check();
+      const email = auth.user.get('email');
+      const { pagination } = input;
+      const options = { projection: connectionProjection(info), ...pagination };
+      return repos.cropComparison.paginateForUser({ email, options });
     },
   },
 };
