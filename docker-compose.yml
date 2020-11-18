@@ -22,6 +22,11 @@ x-node-defaults: &node
     <<: *env
 
 services:
+  commands:
+    <<: *node
+    entrypoint: ["tail"]
+    command: ["-f", "/dev/null"]
+
   app:
     <<: *node
     working_dir: /oleic/app
