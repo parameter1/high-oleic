@@ -9,9 +9,9 @@ const expenseCategories = require('./categories/expenses');
  * @param {object} params
  * @param {string} params.cropType One of corn, soy, or oleic
  * @param {number} params.acres The number of acres
- * @param {number} params.totalBushels The total number of bushels produced
- * @param {number} params.revenuePerBushel The market price + premium per bushel (less other income)
- *                                         Needs to be a weighted average when running all fields
+ * @param {number} params.yieldPerAcre The yield per acre, in bushels
+ * @param {number} params.pricePerBushel The price per bushel, in dollars
+ * @param {number} params.premiumPerBushel The premium per bushel, in dollars
  * @param {object} params.income The income inputs
  * @param {object} params.expenses The expense inputs
  * @todo this currently doesn't handle 0 acres
@@ -19,14 +19,18 @@ const expenseCategories = require('./categories/expenses');
 module.exports = (params = {}) => {
   const {
     cropType,
-    acres,
-    totalBushels,
-    revenuePerBushel = 0,
+    acres = 0,
+    yieldPerAcre = 0,
+    pricePerBushel = 0,
+    premiumPerBushel = 0,
   } = params;
   const inputs = {
     income: getAsObject(params.income),
     expenses: getAsObject(params.expenses),
   };
+
+  const totalBushels = yieldPerAcre * acres;
+  const revenuePerBushel = pricePerBushel + premiumPerBushel;
 
   const miscIncome = (inputs.income.govtPayment || 0) + (inputs.income.other || 0);
   const avgSellingPrice = divZero((

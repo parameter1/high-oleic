@@ -19,7 +19,6 @@ class FarmFieldRepo extends PaginableRepo {
   /**
    *
    * @param {object} params
-   * @todo any time acres, yield, price, or premium change the calcs must be updated
    */
   async create(params = {}) {
     const {
@@ -53,10 +52,8 @@ class FarmFieldRepo extends PaginableRepo {
       cropType,
       acres,
       yieldPerAcre,
-      totalBushels: yieldPerAcre * acres,
       pricePerBushel,
       premiumPerBushel,
-      revenuePerBushel: pricePerBushel + premiumPerBushel,
     };
 
     return this.insertOne({ doc, options: { ...options, withDates: true } });

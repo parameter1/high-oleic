@@ -53,15 +53,15 @@ module.exports = {
     /**
      *
      */
-    revenuePerBushel({ revenuePerBushel }) {
-      return round(revenuePerBushel || 0, 2);
+    revenuePerBushel({ pricePerBushel, premiumPerBushel }) {
+      return round((pricePerBushel || 0) + (premiumPerBushel || 0), 2);
     },
 
     /**
      *
      */
-    totalBushels({ totalBushels }) {
-      return round(totalBushels || 0, 2);
+    totalBushels({ acres, yieldPerAcre }) {
+      return round((acres || 0) * (yieldPerAcre || 0), 2);
     },
 
     /**
