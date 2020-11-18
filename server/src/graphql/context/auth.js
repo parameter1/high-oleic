@@ -62,6 +62,8 @@ class AuthContext {
         return checkCreatedBy();
       case 'crop-comparison:set-farm-name':
         return checkCreatedBy();
+      case 'crop-comparison:view':
+        return checkCreatedBy();
       default:
         throw new Error(`Unable to find an authorization action for '${action}'`);
     }

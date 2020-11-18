@@ -3,6 +3,8 @@ const { gql } = require('apollo-server-express');
 module.exports = gql`
 
 extend type Query {
+  "Loads a single crop comparison by ID. The currently logged-in user must have permission to access it."
+  cropComparison(input: CropComparisonQueryInput!): CropComparison
   "Lists all crop comparisons for the current user."
   myCropComparisons(input: MyCropComparisonsQueryInput = {}): CropComparisonConnection!
 }
@@ -144,6 +146,13 @@ input CropComparisonFarmNameMutationInput {
   id: ObjectID!
   "The farm name."
   farmName: String!
+}
+
+input CropComparisonQueryInput {
+  "The crop comparison ID to query for."
+  id: ObjectID
+  "When in strict mode (default), the query will throw an error when the comparison is not found."
+  strict: Boolean = true
 }
 
 input MyCropComparisonsQueryInput {

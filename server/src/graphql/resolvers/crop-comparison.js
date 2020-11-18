@@ -171,6 +171,22 @@ module.exports = {
     /**
      *
      */
+    async cropComparison(_, { input }, { auth, repos }, info) {
+      await auth.check();
+      const { id, strict } = input;
+      const options = {
+        strict,
+        projection: { ...typeProjection(info), createdByEmail: 1 },
+      };
+      const comparison = await repos.cropComparison.findByObjectId({ id, options });
+      if (!comparison) return null;
+      await auth.checkCan('crop-comparison:view', comparison);
+      return comparison;
+    },
+
+    /**
+     *
+     */
     async myCropComparisons(_, { input }, { auth, repos }, info) {
       await auth.check();
       const email = auth.user.get('email');
