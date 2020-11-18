@@ -1,5 +1,8 @@
 # High Oleic App
 
+## To Dos
+- [ ] determine how to handle Apollo errors on the server (otherwise will crash the entire page)
+
 ## Build Setup
 
 ```bash
