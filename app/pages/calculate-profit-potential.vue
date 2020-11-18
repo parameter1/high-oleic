@@ -1,6 +1,9 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
-    <create-comparison v-model="createOpen" />
+    <create-comparison
+      v-model="createOpen"
+      :list-query="$apollo.queries.myCropComparisons"
+    />
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
       <div class="p-4">
         <h1 class="text-2xl mb-4 font-semibold">

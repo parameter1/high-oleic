@@ -104,6 +104,8 @@ import SlideOver from '../overlays/slide-over.vue';
 import Yield from './fields/yield.vue';
 
 import cropOptions from './crop-options';
+import GraphQLError from '../../utils/graphql-error';
+import { CREATE_CROP_COMPARISON } from '../../graphql/mutations';
 
 export default {
   components: {
@@ -121,6 +123,10 @@ export default {
     value: {
       type: Boolean,
       default: true,
+    },
+    listQuery: {
+      type: Object,
+      required: true,
     },
   },
 
@@ -153,9 +159,30 @@ export default {
     /**
      *
      */
-    create() {
-      this.isSaving = true;
-      console.log(this.input);
+    async create() {
+      try {
+        this.error = null;
+        this.isSaving = true;
+        const { input } = this;
+        const variables = {
+          input: {
+            ...input,
+            acres: parseInt(input.acres, 10),
+            pricePerBushel: parseFloat(input.pricePerBushel),
+            yieldPerAcre: parseFloat(input.yieldPerAcre),
+          },
+        };
+        await this.$apollo.mutate({
+          mutation: CREATE_CROP_COMPARISON,
+          variables,
+        });
+        await this.listQuery.refetch();
+        this.$emit('input', false);
+      } catch (e) {
+        this.error = new GraphQLError(e);
+      } finally {
+        this.isSaving = false;
+      }
     },
 
     /**

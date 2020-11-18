@@ -25,3 +25,11 @@ export const SEND_LOGIN_LINK = gql`
     sendAppUserLoginLink(input: $input)
   }
 `;
+
+export const CREATE_CROP_COMPARISON = gql`
+  mutation CreateCropComparison($input: CreateCropComparisonMutationInput!) {
+    createCropComparison(input: $input) {
+      id
+    }
+  }
+`;
