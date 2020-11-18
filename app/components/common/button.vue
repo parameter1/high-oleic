@@ -6,7 +6,7 @@
     @click="$emit('click', $event)"
   >
     <loading-spinner
-      color="white"
+      :color="spinnerColor"
       :show="loading"
     />
     <slot />
@@ -33,6 +33,10 @@ export default {
         'logo-green',
         'secondary-3',
       ].includes(value),
+    },
+    spinnerColor: {
+      type: String,
+      default: 'gray-700',
     },
     block: {
       type: Boolean,
@@ -63,10 +67,12 @@ export default {
         'text-white',
         'focus:outline-none',
         'disabled:cursor-not-allowed',
+        'disabled:bg-gray-300',
+        'disabled:text-gray-700',
         'transition',
         'duration-150',
         'ease-in-out',
-        'shadow-sm',
+        'shadow',
         'items-center',
       ];
       if (this.block) {
