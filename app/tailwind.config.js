@@ -1,9 +1,14 @@
 const ui = require('@tailwindcss/ui');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   plugins: [ui],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Calibri', ...defaultTheme.fontFamily.sans],
+        serif: ['Cambria', ...defaultTheme.fontFamily.serif],
+      },
       colors: {
         // logo colors
         'logo-green': '#79863c',

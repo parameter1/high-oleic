@@ -20,7 +20,7 @@
     </div>
     <div
       v-if="showDescription"
-      class="leading-5 text-logo-yellow"
+      class="leading-6 text-logo-yellow font-serif"
     >
       <slot name="description">
         <p>

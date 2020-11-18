@@ -24,7 +24,7 @@
             id="create-crop-comparison.farm-name"
             ref="farmName"
             v-model="input.farmName"
-            class="mb-4"
+            class="mb-5"
             label="Farm name"
             required
             hint="What is the farm name where you’re looking to place high oleic soy?"
@@ -33,7 +33,7 @@
           <input-group
             id="create-crop-comparison.acres"
             v-model="input.acres"
-            class="mb-4"
+            class="mb-5"
             label="How many acres is it?"
             type="number"
             :min="1"
@@ -47,7 +47,7 @@
             type="number"
             :min="0.01"
             :step="0.01"
-            class="mb-4"
+            class="mb-5"
             input-class="pl-7 pr-20"
             required
             hint="What market price would you like to use for [crop], in dollars per bushel"

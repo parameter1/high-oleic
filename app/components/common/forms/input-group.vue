@@ -38,7 +38,7 @@
       v-if="showHint"
       name="hint"
     >
-      <p class="text-xs text-cool-gray-500 mt-2 ml-1">
+      <p class="text-xs font-serif text-cool-gray-600 leading-5 mt-1 ml-1">
         {{ hint }}
       </p>
     </slot>
