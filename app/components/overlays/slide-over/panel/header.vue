@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between space-x-3">
       <div
         v-if="showTitle"
-        class="text-lg leading-7 font-medium text-white"
+        class="text-lg leading-7 font-bold text-white"
       >
         <slot name="title">
           <h2>
@@ -20,7 +20,7 @@
     </div>
     <div
       v-if="showDescription"
-      class="text-sm leading-5 text-logo-yellow"
+      class="leading-5 text-logo-yellow"
     >
       <slot name="description">
         <p>

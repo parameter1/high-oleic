@@ -52,7 +52,7 @@ export default {
         'ease-in-out',
         'duration-150',
       ],
-      desktop: ['text-sm', 'leading-5'],
+      desktop: ['text-base', 'leading-6'],
       mobile: ['text-base', 'leading-6'],
     },
   }),
