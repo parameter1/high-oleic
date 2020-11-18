@@ -18,7 +18,10 @@
         <slot name="body" />
       </div>
     </div>
-    <div v-if="hasFooterSlot" class="flex-shrink-0 px-4 py-4 space-x-4 flex justify-start">
+    <div
+      v-if="hasFooterSlot"
+      class="flex-shrink-0 p-4 flex flex-col"
+    >
       <slot name="footer" />
     </div>
   </div>
