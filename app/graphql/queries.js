@@ -20,6 +20,18 @@ export const LIST_CROP_COMPARISONS = gql`
           acres
           createdAt
           updatedAt
+          comparedTo {
+            crop {
+              id
+              label
+            }
+          }
+          oleic {
+            crop {
+              id
+              label
+            }
+          }
         }
       }
       pageInfo {
