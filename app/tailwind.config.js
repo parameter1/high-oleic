@@ -2,7 +2,9 @@ const ui = require('@tailwindcss/ui');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  plugins: [ui],
+  plugins: [
+    ui({ layout: 'sidebar' }),
+  ],
   theme: {
     extend: {
       fontFamily: {
