@@ -19,7 +19,7 @@
         class="py-8 px-4"
         @submit.prevent="create"
       >
-        <fieldset :disabled="isCreating">
+        <fieldset :disabled="isSaving">
           <farm-name
             id="create-crop-comparison.farm-name"
             ref="farmName"
@@ -40,6 +40,7 @@
             v-model="input.cropToCompare"
             class="mb-5"
             required
+            :disabled="isSaving"
           />
 
           <market-price
@@ -61,28 +62,40 @@
     </template>
 
     <template #footer>
-      <btn
-        form="create-crop-comparison"
-        color="logo-green"
-        type="submit"
-        :loading="isCreating"
+      <alert
+        v-if="error"
+        type="danger"
+        header="Save Failed"
+        class="mb-6"
       >
-        Save &amp; Continue
-      </btn>
-      <btn
-        form="create-crop-comparison"
-        color="secondary-3"
-        :disabled="isCreating"
-        @click.stop="$emit('input', false)"
-      >
-        Cancel
-      </btn>
+        {{ error.message }}
+      </alert>
+
+      <div class="flex justify-start space-x-4">
+        <btn
+          form="create-crop-comparison"
+          color="logo-green"
+          type="submit"
+          :loading="isSaving"
+        >
+          Save &amp; Continue
+        </btn>
+        <btn
+          form="create-crop-comparison"
+          color="secondary-3"
+          :disabled="isSaving"
+          @click.stop="$emit('input', false)"
+        >
+          Cancel
+        </btn>
+      </div>
     </template>
   </slide-over>
 </template>
 
 <script>
 import Acres from './fields/acres.vue';
+import Alert from '../common/alert.vue';
 import Btn from '../common/button.vue';
 import CropToCompare from './fields/crop-to-compare.vue';
 import FarmName from './fields/farm-name.vue';
@@ -95,6 +108,7 @@ import cropOptions from './crop-options';
 export default {
   components: {
     Acres,
+    Alert,
     Btn,
     CropToCompare,
     FarmName,
@@ -120,7 +134,7 @@ export default {
       pricePerBushel: null,
       yieldPerAcre: null,
     },
-    isCreating: false,
+    isSaving: false,
   }),
 
   computed: {
@@ -140,6 +154,7 @@ export default {
      *
      */
     create() {
+      this.isSaving = true;
       console.log(this.input);
     },
 
@@ -155,7 +170,7 @@ export default {
      *
      */
     reset() {
-      this.isCreating = false;
+      this.isSaving = false;
       this.error = null;
       this.input = {
         farmName: null,

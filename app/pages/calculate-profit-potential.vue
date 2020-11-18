@@ -6,66 +6,110 @@
         <h1 class="text-2xl mb-4 font-semibold">
           Calculate Profit Potential
         </h1>
-        <p v-if="!hasToken">
-          You must be
-          <nuxt-link
-            class="text-blue-500"
-            :to="{ path: '/login', query: { r: '/calculate-profit-potential' } }"
-          >
-            logged in
-          </nuxt-link>
-          to run profit scenerios.
+        <!-- @todo DETERMINE HOW TO HANDLE AUTHENTICATION! -->
+
+        <btn
+          class="shadow mb-8"
+          @click="createOpen = !createOpen"
+        >
+          Create New Scenerio
+        </btn>
+
+        <p class="mb-2 px-2 text-sm text-cool-gray-500">
+          Total Scenerios: {{ myCropComparisons.totalCount }}
         </p>
-        <p v-else-if="error">
+
+        <transition-group
+          tag="ul"
+          class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          enter-active-class="ease-in-out duration-150"
+          enter-class="opacity-0"
+          enter-to-class="opacity-100"
+          leave-active-class="ease-in-out duration-150"
+          leave-class="opacity-100"
+          leave-to-class="opacity-0"
+          mode="out-in"
+        >
+          <list-item
+            v-for="node in nodes"
+            :key="node.id"
+            :node="node"
+          />
+        </transition-group>
+
+        <alert
+          v-if="error"
+          type="danger"
+          class="mt-5 shadow-sm"
+        >
           {{ error.message }}
-        </p>
-        <p v-else>
-          <btn
-            class="shadow"
-            @click="createOpen = !createOpen"
-          >
-            Create New Scenerio
-          </btn>
-        </p>
+        </alert>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import gql from 'graphql-tag';
-
+import Alert from '../components/common/alert.vue';
 import Btn from '../components/common/button.vue';
 import CreateComparison from '../components/crop-comparison/create.vue';
+import ListItem from '../components/crop-comparison/list-item.vue';
 
+import { LIST_CROP_COMPARISONS } from '../graphql/queries';
 import GraphQLError from '../utils/graphql-error';
 
 export default {
-  components: { Btn, CreateComparison },
+  components: {
+    Alert,
+    Btn,
+    CreateComparison,
+    ListItem,
+  },
 
   apollo: {
-    ping: {
-      query: gql`
-        query Ping {
-          ping
-        }
-      `,
+    myCropComparisons: {
+      query: LIST_CROP_COMPARISONS,
       fetchPolicy: 'cache-and-network',
       error(e) { this.error = new GraphQLError(e); },
+      watchLoading(isLoading) {
+        this.isLoading = isLoading;
+        if (isLoading) this.error = null;
+      },
     },
   },
 
   data: () => ({
     createOpen: false,
     error: null,
-    ping: null,
+    isLoading: false,
+    myCropComparisons: {
+      totalCount: 0,
+      edges: [],
+      pageInfo: { hasNextPage: false, endCursor: null },
+    },
   }),
 
   computed: {
-    hasToken() {
-      return this.$apolloHelpers.getToken();
+    /**
+     *
+     */
+    nodes() {
+      return this.myCropComparisons.edges.map((edge) => edge.node);
+    },
+
+    /**
+     *
+     */
+    endCursor() {
+      return this.myCropComparisons.pageInfo.endCursor;
     },
   },
+
+  // computed: {
+  //   hasToken() {
+  //     return this.$apolloHelpers.getToken();
+  //   },
+  // },
 
   head: {
     title: 'Caclulate Profit Potential',
