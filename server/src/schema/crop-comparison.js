@@ -11,6 +11,8 @@ const fields = {
   cropToCompare: Joi.string().valid(...comparableCrops),
   yieldPerAcre: farmFieldFields.yieldPerAcre,
   pricePerBushel: farmFieldFields.pricePerBushel,
+  premiumPerBushel: farmFieldFields.premiumPerBushel,
+  applyTo: Joi.string().trim().valid('oleic', 'comparedTo'),
 };
 
 module.exports = { fields };
