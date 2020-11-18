@@ -15,6 +15,8 @@ export default {
   publicRuntimeConfig: {
     idxUri: process.env.IDENTITY_X_URI || 'https://identity-x.parameter1.com/graphql',
     idxAppId: process.env.IDENTITY_X_APP_ID || '5fb2d401b8a845090ecc01d1',
+    graphqlUri: process.env.GRAPHQL_URI || 'http://server.highsoy.com:53190/graphql',
+    graphqlBrowser: process.env.BROWSER_GRAPHQL_URI || 'http://server.highsoy.com:53190/graphql',
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -46,9 +48,7 @@ export default {
 
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: 'http://server.highsoy.com:53190/graphql',
-      },
+      default: '@/plugins/apollo/default.js',
       identityX: '@/plugins/apollo/identity-x.js',
     },
   },
