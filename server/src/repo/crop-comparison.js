@@ -89,6 +89,31 @@ class FarmFieldRepo extends PaginableRepo {
 
   /**
    *
+   * @param {object} params
+   */
+  async setCropToCompare(params = {}) {
+    const {
+      id,
+      cropToCompare,
+      findOptions,
+      updateOptions,
+    } = await validateAsync(Joi.object({
+      id: fields.id.required(),
+      cropToCompare: fields.cropToCompare.required(),
+      findOptions: Joi.object().default({}),
+      updateOptions: Joi.object().default({}),
+    }), params);
+    const $set = { 'comparedTo.cropType': cropToCompare, updatedAt: new Date() };
+    await this.updateOne({
+      query: { _id: id },
+      update: { $set },
+      options: { ...updateOptions, strict: true },
+    });
+    return this.findByObjectId({ id, options: findOptions });
+  }
+
+  /**
+   *
    * @param {*} params
    */
   async setData(params = {}) {
@@ -177,6 +202,31 @@ class FarmFieldRepo extends PaginableRepo {
       updatedAt: new Date(),
     };
     await this.updateOne({ query, update: { $set }, options: { ...updateOptions, strict: true } });
+    return this.findByObjectId({ id, options: findOptions });
+  }
+
+  /**
+   *
+   * @param {object} params
+   */
+  async setFarmName(params = {}) {
+    const {
+      id,
+      farmName,
+      findOptions,
+      updateOptions,
+    } = await validateAsync(Joi.object({
+      id: fields.id.required(),
+      farmName: fields.farmName.required(),
+      findOptions: Joi.object().default({}),
+      updateOptions: Joi.object().default({}),
+    }), params);
+    const $set = { farmName, updatedAt: new Date() };
+    await this.updateOne({
+      query: { _id: id },
+      update: { $set },
+      options: { ...updateOptions, strict: true },
+    });
     return this.findByObjectId({ id, options: findOptions });
   }
 }

@@ -88,6 +88,21 @@ module.exports = {
     /**
      *
      */
+    async cropComparisonCrop(_, { input }, { auth, repos }, info) {
+      await auth.check();
+      const { id, cropToCompare } = input;
+      await checkUserCan('crop-comparison:set-crop-to-compare', { id, repos, auth });
+      const projection = typeProjection(info);
+      return repos.cropComparison.setCropToCompare({
+        id,
+        cropToCompare,
+        findOptions: { projection },
+      });
+    },
+
+    /**
+     *
+     */
     async cropComparisonData(_, { input }, { auth, repos }, info) {
       await auth.check();
       const {
@@ -129,6 +144,21 @@ module.exports = {
         crop,
         fieldOps,
         handling,
+        findOptions: { projection },
+      });
+    },
+
+    /**
+     *
+     */
+    async cropComparisonFarmName(_, { input }, { auth, repos }, info) {
+      await auth.check();
+      const { id, farmName } = input;
+      await checkUserCan('crop-comparison:set-farm-name', { id, repos, auth });
+      const projection = typeProjection(info);
+      return repos.cropComparison.setFarmName({
+        id,
+        farmName,
         findOptions: { projection },
       });
     },

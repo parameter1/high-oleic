@@ -7,10 +7,14 @@ extend type Mutation {
   createCropComparison(input: CreateCropComparisonMutationInput!): CropComparison!
   "Sets/updates the number of acres being compared."
   cropComparisonAcres(input: CropComparisonAcresMutationInput!): CropComparison!
+  "Sets/updates the crop being compared to high oleic soybeans."
+  cropComparisonCrop(input: CropComparisonCropMutationInput!): CropComparison!
   "Sets/updates core crop comparison data such as yield and price per bushel."
   cropComparisonData(input: CropComparisonDataMutationInput = {}): CropComparison!
-  "Sets/updated expenses for a crop comparison."
+  "Sets/updates expenses for a crop comparison."
   cropComparisonExpenses(input: CropComparisonExpensesMutationInput!): CropComparison!
+  "Sets/updates the farm name of a crop comparison."
+  cropComparisonFarmName(input: CropComparisonFarmNameMutationInput!): CropComparison!
 }
 
 enum CropComparisonFieldTypeEnum {
@@ -105,6 +109,20 @@ input CropComparisonHandlingExpenseInput {
   lineItem: ExpenseCategoryHandlingLineItemEnum!
   "The expense in $ cost / bushel."
   value: Float!
+}
+
+input CropComparisonCropMutationInput {
+  "The comparison report to set the comparison crop to."
+  id: ObjectID!
+  "The crop to compare."
+  cropToCompare: ComparisonCropTypeEnum!
+}
+
+input CropComparisonFarmNameMutationInput {
+  "The comparison report to set the farm name to."
+  id: ObjectID!
+  "The farm name."
+  farmName: String!
 }
 
 `;
