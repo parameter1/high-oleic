@@ -29,6 +29,10 @@ type CropComparison implements ChangedDateInterface & UserAttributionInterface @
   oleic: CropComparisonField @project
   "The field being compared to."
   comparedTo: CropComparisonField! @project
+  "The high oleic advantage per acre (profit of HO compared to the other crop)"
+  advantage: Float! @project(field: "oleic", needs: ["comparedTo"])
+  "The market price ratio between high oleic and the compared crop. "
+  ratio: Float! @project(field: "oleic", needs: ["comparedTo"])
 }
 
 type CropComparisonField implements FarmFieldDataInterface @interfaceFields {
