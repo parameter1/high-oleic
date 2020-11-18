@@ -20,66 +20,42 @@
         @submit.prevent="create"
       >
         <fieldset :disabled="isCreating">
-          <input-group
+          <farm-name
             id="create-crop-comparison.farm-name"
             ref="farmName"
             v-model="input.farmName"
             class="mb-5"
-            label="Farm name"
             required
-            hint="What is the farm name where you’re looking to place high oleic soy?"
           />
 
-          <input-group
+          <acres
             id="create-crop-comparison.acres"
             v-model="input.acres"
             class="mb-5"
-            label="How many acres is it?"
-            type="number"
-            :min="1"
             required
           />
 
-          <input-group
+          <crop-to-compare
+            id="create-crop-comparison.crop-to-compare"
+            v-model="input.cropToCompare"
+            class="mb-5"
+            required
+          />
+
+          <market-price
             id="create-crop-comparison.price-per-bushel"
             v-model="input.pricePerBushel"
-            label="Market price"
-            type="number"
-            :min="0.01"
-            :step="0.01"
+            :crop="cropLabel"
             class="mb-5"
-            input-class="pl-7 pr-20"
             required
-            hint="What market price would you like to use for [crop], in dollars per bushel"
-          >
-            <template #prepend>
-              <span class="text-gray-500 sm:text-sm sm:leading-5">
-                $
-              </span>
-            </template>
-            <template #append>
-              <span class="text-gray-500 sm:text-sm sm:leading-5">
-                per bushel
-              </span>
-            </template>
-          </input-group>
+          />
 
-          <input-group
+          <yield
             id="create-crop-comparison.yield-per-acre"
             v-model="input.yieldPerAcre"
-            label="What is the yield of [crop]?"
-            type="number"
-            :min="1"
-            input-class="pr-32"
+            :crop="cropLabel"
             required
-            hint="The yield of the crop in bushels per acre"
-          >
-            <template #append>
-              <span class="text-gray-500 sm:text-sm sm:leading-5">
-                bushels per acre
-              </span>
-            </template>
-          </input-group>
+          />
         </fieldset>
       </form>
     </template>
@@ -106,15 +82,25 @@
 </template>
 
 <script>
+import Acres from './fields/acres.vue';
 import Btn from '../common/button.vue';
-import InputGroup from '../common/forms/input-group.vue';
+import CropToCompare from './fields/crop-to-compare.vue';
+import FarmName from './fields/farm-name.vue';
+import MarketPrice from './fields/market-price.vue';
 import SlideOver from '../overlays/slide-over.vue';
+import Yield from './fields/yield.vue';
+
+import cropOptions from './crop-options';
 
 export default {
   components: {
+    Acres,
     Btn,
-    InputGroup,
+    CropToCompare,
+    FarmName,
+    MarketPrice,
     SlideOver,
+    Yield,
   },
 
   props: {
@@ -136,6 +122,18 @@ export default {
     },
     isCreating: false,
   }),
+
+  computed: {
+    /**
+     *
+     */
+    cropLabel() {
+      const { cropToCompare } = this.input;
+      if (!cropToCompare) return null;
+      const crop = cropOptions().find((option) => option.value === cropToCompare);
+      return crop.label;
+    },
+  },
 
   methods: {
     /**
