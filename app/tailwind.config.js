@@ -57,6 +57,11 @@ module.exports = {
       },
     },
   },
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'disabled'],
+    textColor: ['responsive', 'hover', 'focus', 'disabled'],
+    cursor: ['disabled'],
+  },
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
