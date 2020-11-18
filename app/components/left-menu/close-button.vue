@@ -40,7 +40,7 @@ export default {
       'w-12',
       'rounded-full',
       'focus:outline-none',
-      'focus:bg-gray-600',
+      'focus:bg-logo-blue',
     ],
   }),
 };

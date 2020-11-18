@@ -19,10 +19,10 @@ export default {
       'px-4',
       'border-r',
       'border-gray-200',
-      'text-gray-500',
+      'text-logo-blue',
       'focus:outline-none',
-      'focus:bg-gray-100',
-      'focus:text-gray-600',
+      'focus:bg-secondary-5-200',
+      'focus:logo-blue',
     ],
   }),
 };

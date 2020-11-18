@@ -31,7 +31,7 @@ export default {
 
   data: () => ({
     activeClassDefs: {
-      common: ['text-gray-900', 'bg-gray-100'],
+      common: ['text-logo-blue', 'bg-secondary-5-200'],
       desktop: [],
       mobile: [],
     },
@@ -43,10 +43,10 @@ export default {
         'px-2',
         'py-2',
         'font-medium',
-        'text-gray-600',
+        'text-logo-blue',
         'rounded-md',
-        'hover:text-gray-900',
-        'hover:bg-gray-100',
+        'hover:text-logo-blue',
+        'hover:bg-secondary-5-200',
         'focus:outline-none',
         'transition',
         'ease-in-out',

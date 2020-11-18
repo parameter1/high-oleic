@@ -16,7 +16,7 @@
           v-show="value"
           class="fixed inset-0"
         >
-          <div class="absolute inset-0 bg-gray-600 opacity-75" />
+          <div class="absolute inset-0 bg-primary-1 opacity-75" />
         </div>
       </transition>
 

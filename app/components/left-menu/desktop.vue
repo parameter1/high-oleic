@@ -31,7 +31,7 @@ export default {
       'flex-col',
       'flex-grow',
       'border-r',
-      'border-gray-200',
+      'border-secondary-5-300',
       'pt-5',
       'pb-4',
       'bg-white',
