@@ -38,9 +38,7 @@
       v-if="showHint"
       name="hint"
     >
-      <p class="text-xs font-serif text-cool-gray-600 leading-5 mt-1 ml-1">
-        {{ hint }}
-      </p>
+      <hint :value="hint" />
     </slot>
   </div>
 </template>
@@ -48,11 +46,13 @@
 <script>
 import FieldLabel from './label.vue';
 import InputField from './input.vue';
+import Hint from './hint.vue';
 
 export default {
   components: {
     FieldLabel,
     InputField,
+    Hint,
   },
 
   props: {

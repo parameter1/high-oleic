@@ -21,20 +21,20 @@
       v-if="showHint"
       name="hint"
     >
-      <p class="text-xs font-serif text-cool-gray-600 leading-5 mt-1 ml-1">
-        {{ hint }}
-      </p>
+      <hint :value="hint" />
     </slot>
   </div>
 </template>
 
 <script>
 import FieldLabel from './label.vue';
+import Hint from './hint.vue';
 import SelectField from './select.vue';
 
 export default {
   components: {
     FieldLabel,
+    Hint,
     SelectField,
   },
 
