@@ -25,11 +25,13 @@ export default {
       default: 'button',
       validator: (value) => ['button', 'submit', 'reset'].includes(value),
     },
-    flavor: {
+    color: {
       type: String,
       default: 'logo-blue',
       validator: (value) => [
         'logo-blue',
+        'logo-green',
+        'secondary-3',
       ].includes(value),
     },
     block: {
@@ -70,7 +72,7 @@ export default {
       if (this.block) {
         core.push('w-full');
       }
-      const flavors = {
+      const colors = {
         'logo-blue': [
           'bg-logo-blue',
           'hover:bg-opacity-85',
@@ -79,10 +81,26 @@ export default {
           'focus:shadow-outline-gray',
           'active:bg-opacity-85',
         ],
+        'logo-green': [
+          'bg-logo-green',
+          'hover:bg-opacity-85',
+          'focus:bg-opacity-85',
+          'focus:border-logo-green',
+          'focus:shadow-outline-gray',
+          'active:bg-opacity-85',
+        ],
+        'secondary-3': [
+          'bg-secondary-3',
+          'hover:bg-opacity-85',
+          'focus:bg-opacity-85',
+          'focus:border-secondary-3',
+          'focus:shadow-outline-gray',
+          'active:bg-opacity-85',
+        ],
       };
-      const flavor = flavors[this.flavor];
-      if (!flavor) return core;
-      return [...core, ...flavor];
+      const color = colors[this.color];
+      if (!color) return core;
+      return [...core, ...color];
     },
   },
 };
