@@ -9,6 +9,8 @@ extend type Mutation {
   cropComparisonAcres(input: CropComparisonAcresMutationInput!): CropComparison!
   "Sets/updates core crop comparison data such as yield and price per bushel."
   cropComparisonData(input: CropComparisonDataMutationInput = {}): CropComparison!
+  "Sets/updated expenses for a crop comparison."
+  cropComparisonExpenses(input: CropComparisonExpensesMutationInput!): CropComparison!
 }
 
 enum CropComparisonFieldTypeEnum {
@@ -65,6 +67,40 @@ input CropComparisonDataMutationInput {
   premiumPerBushel: Float
   "The yield per acre, in bushels. If null, no value will be set."
   yieldPerAcre: Float
+}
+
+input CropComparisonExpensesMutationInput {
+  "The comparison report to apply the data to."
+  id: ObjectID!
+  "Which field to apply the data to."
+  applyTo: CropComparisonFieldTypeEnum!
+  "Crop expenses to set."
+  crop: [CropComparisonCropExpenseInput!] = []
+  "Field operation expenses to set."
+  fieldOps: [CropComparisonFieldOpsExpenseInput!] = []
+  "Handling expenses to set."
+  handling: [CropComparisonHandlingExpenseInput!] = []
+}
+
+input CropComparisonCropExpenseInput {
+  "The crop expense category line item."
+  lineItem: ExpenseCategoryCropLineItemEnum!
+  "The expense in $ cost / acre."
+  value: Float!
+}
+
+input CropComparisonFieldOpsExpenseInput {
+  "The field ops expense category line item."
+  lineItem: ExpenseCategoryFieldOpsLineItemEnum!
+  "The expense in $ cost / acre."
+  value: Float!
+}
+
+input CropComparisonHandlingExpenseInput {
+  "The handling expense category line item."
+  lineItem: ExpenseCategoryHandlingLineItemEnum!
+  "The expense in $ cost / bushel."
+  value: Float!
 }
 
 `;

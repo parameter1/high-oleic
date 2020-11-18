@@ -4,6 +4,7 @@ const PaginableRepo = require('./-paginable');
 const Joi = require('../joi');
 const { fields } = require('../schema/crop-comparison');
 const { fields: userFields } = require('../schema/user');
+const { fields: farmFieldFields, expensesCategories } = require('../schema/farm-field');
 
 class FarmFieldRepo extends PaginableRepo {
   constructor({ client, dbName }) {
@@ -86,6 +87,10 @@ class FarmFieldRepo extends PaginableRepo {
     return this.findByObjectId({ id, options: findOptions });
   }
 
+  /**
+   *
+   * @param {*} params
+   */
   async setData(params = {}) {
     const {
       id,
@@ -119,6 +124,60 @@ class FarmFieldRepo extends PaginableRepo {
       });
     }
     return this.findByObjectId({ id, options: { ...findOptions, strict: true } });
+  }
+
+  /**
+   *
+   * @param {object} params
+   */
+  async setExpenses(params = {}) {
+    const {
+      id,
+      applyTo,
+      updateOptions,
+      findOptions,
+    } = await validateAsync(Joi.object({
+      id: fields.id.required(),
+      applyTo: fields.applyTo.required(),
+
+      crop: Joi.array().items(
+        Joi.object({
+          lineItem: farmFieldFields.cropExpenseLineItems.required(),
+          value: farmFieldFields.expenseValue.required(),
+        }),
+      ).default([]),
+
+      fieldOps: Joi.array().items(
+        Joi.object({
+          lineItem: farmFieldFields.fieldOpsExpenseLineItems.required(),
+          value: farmFieldFields.expenseValue.required(),
+        }),
+      ).default([]),
+
+      handling: Joi.array().items(
+        Joi.object({
+          lineItem: farmFieldFields.handlingExpenseLineItems.required(),
+          value: farmFieldFields.expenseValue.required(),
+        }),
+      ).default([]),
+
+      updateOptions: Joi.object().default({}),
+      findOptions: Joi.object().default({}),
+    }), params);
+
+    const query = { _id: id };
+    const $set = {
+      ...expensesCategories.reduce((o, key) => ({
+        ...o,
+        ...params[key].reduce((o2, { lineItem, value }) => {
+          const field = `${applyTo}.expenses.${key}.${lineItem}`;
+          return { ...o2, [field]: value };
+        }, {}),
+      }), {}),
+      updatedAt: new Date(),
+    };
+    await this.updateOne({ query, update: { $set }, options: { ...updateOptions, strict: true } });
+    return this.findByObjectId({ id, options: findOptions });
   }
 }
 

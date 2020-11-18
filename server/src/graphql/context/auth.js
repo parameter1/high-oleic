@@ -52,9 +52,11 @@ class AuthContext {
     };
 
     switch (action) {
+      case 'crop-comparison:set-acres':
+        return checkCreatedBy();
       case 'crop-comparison:set-data':
         return checkCreatedBy();
-      case 'crop-comparison:set-acres':
+      case 'crop-comparison:set-expenses':
         return checkCreatedBy();
       default:
         throw new Error(`Unable to find an authorization action for '${action}'`);

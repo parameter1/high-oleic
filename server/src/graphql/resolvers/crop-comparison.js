@@ -86,5 +86,29 @@ module.exports = {
         findOptions: { projection },
       });
     },
+
+    /**
+     *
+     */
+    async cropComparisonExpenses(_, { input }, { auth, repos }, info) {
+      await auth.check();
+      const {
+        id,
+        applyTo,
+        crop,
+        fieldOps,
+        handling,
+      } = input;
+      await checkUserCan('crop-comparison:set-expenses', { id, repos, auth });
+      const projection = typeProjection(info);
+      return repos.cropComparison.setExpenses({
+        id,
+        applyTo,
+        crop,
+        fieldOps,
+        handling,
+        findOptions: { projection },
+      });
+    },
   },
 };
