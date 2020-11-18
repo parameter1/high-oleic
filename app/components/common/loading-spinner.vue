@@ -28,7 +28,7 @@ export default {
     color: {
       type: String,
       default: 'logo-blue',
-      validator: (color) => ['logo-blue', 'white'].includes(color),
+      validator: (color) => ['logo-blue', 'white', 'gray-700'].includes(color),
     },
     size: {
       type: String,
@@ -43,6 +43,7 @@ export default {
       const classes = ['animate-spin-fast', '-ml-1', 'mr-2'];
       if (color === 'logo-blue') classes.push('text-logo-blue');
       if (color === 'white') classes.push('text-white');
+      if (color === 'gray-700') classes.push('text-gray-700');
       if (size === 'medium') classes.push('w-5', 'h-5');
       if (size === 'large') classes.push('w-8', 'h-8');
       return classes;
