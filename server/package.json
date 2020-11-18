@@ -1,6 +1,6 @@
 {
   "name": "@high-oleic/server",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "The high oleic server.",
   "author": "Jacob Bare <jacob@parameter1.com>",
   "homepage": "https://github.com/parameter1/high-oleic/tree/master/server#readme",
