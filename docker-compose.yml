@@ -34,7 +34,7 @@ services:
     command: ["dev"]
     environment:
       <<: *env
-      BROWSER_GRAPHQL_URI: http://0.0.0.0:53190/graphql
+      BROWSER_GRAPHQL_URI: http://server.highsoy.com:53190/graphql
     depends_on:
       - server
     ports:
