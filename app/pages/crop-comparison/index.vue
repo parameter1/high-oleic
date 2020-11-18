@@ -53,13 +53,13 @@
 </template>
 
 <script>
-import Alert from '../components/common/alert.vue';
-import Btn from '../components/common/button.vue';
-import CreateComparison from '../components/crop-comparison/create.vue';
-import ListItem from '../components/crop-comparison/list-item.vue';
+import Alert from '../../components/common/alert.vue';
+import Btn from '../../components/common/button.vue';
+import CreateComparison from '../../components/crop-comparison/create.vue';
+import ListItem from '../../components/crop-comparison/list-item.vue';
 
-import { LIST_CROP_COMPARISONS } from '../graphql/queries';
-import GraphQLError from '../utils/graphql-error';
+import { LIST_CROP_COMPARISONS } from '../../graphql/queries';
+import GraphQLError from '../../utils/graphql-error';
 
 export default {
   components: {

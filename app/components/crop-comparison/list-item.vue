@@ -24,7 +24,7 @@
     <div class="border-t border-gray-200">
       <div class="-mt-px flex">
         <button-link
-          to="/"
+          :to="`/crop-comparison/${node.id}`"
           position="left"
           label="Modify"
         >
@@ -34,7 +34,7 @@
         </button-link>
 
         <button-link
-          to="/"
+          :to="`/crop-comparison/${node.id}/report`"
           position="right"
           label="Report"
         >

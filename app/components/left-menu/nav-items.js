@@ -6,7 +6,7 @@ export default [
   },
   {
     label: 'Calculate Profit Potential',
-    to: '/calculate-profit-potential',
+    to: '/crop-comparison',
   },
   {
     label: 'Find Your Elevator',
