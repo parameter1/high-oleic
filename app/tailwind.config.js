@@ -36,6 +36,11 @@ module.exports = {
         'secondary-5-400': '#e2dedb',
         'secondary-5-500': '#dbd6d2',
       },
+      boxShadow: {
+        'outline-primary-3': '0 0 0 3px rgba(139, 122, 39, 0.5)',
+        'outline-secondary-4': '0 0 0 3px rgba(143, 130, 122, 0.5)',
+        'outline-secondary-5': '0 0 0 3px rgba(182, 173, 165, 0.5)',
+      },
       width: {
         '300px': '300px',
         '250px': '250px',
