@@ -38,6 +38,13 @@ module.exports = {
       animation: {
         'spin-fast': 'spin 500ms linear infinite',
       },
+      backgroundOpacity: {
+        65: '0.65',
+        70: '0.70',
+        80: '0.80',
+        85: '0.85',
+        90: '0.90',
+      },
     },
   },
   future: {
