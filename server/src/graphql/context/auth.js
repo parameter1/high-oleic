@@ -1,4 +1,5 @@
 const { ApolloError } = require('apollo-server-express');
+const { get } = require('@parameter1/utils');
 const UserContext = require('./user');
 
 class AuthContext {
@@ -23,11 +24,41 @@ class AuthContext {
     }
   }
 
+  /**
+   *
+   */
   async check() {
     await this.load();
     if (this.didError()) throw AuthContext.error(this.error.message);
     if (!this.hasUser()) throw AuthContext.error('You must be authenticated to access this resource.');
     return true;
+  }
+
+  /**
+   *
+   */
+  async checkCan(action, params = {}) {
+    const email = this.user.get('email');
+    if (!action) throw new Error('Unable to authorize: no action was provided.');
+
+    const checkParam = (path) => {
+      if (!get(params, path)) throw new Error(`Unable to authorize: no '${path}' was provided.`);
+    };
+
+    const checkCreatedBy = () => {
+      checkParam('createdByEmail');
+      if (params.createdByEmail === email) return true;
+      throw AuthContext.forbidden();
+    };
+
+    switch (action) {
+      case 'crop-comparison:set-data':
+        return checkCreatedBy();
+      case 'crop-comparison:set-acres':
+        return checkCreatedBy();
+      default:
+        throw new Error(`Unable to find an authorization action for '${action}'`);
+    }
   }
 
   /**
@@ -68,6 +99,10 @@ class AuthContext {
     const e = new ApolloError(message);
     e.statusCode = statusCode;
     return e;
+  }
+
+  static forbidden() {
+    return AuthContext.error('You do not have the proper permissions to perform this operation.', 403);
   }
 }
 
