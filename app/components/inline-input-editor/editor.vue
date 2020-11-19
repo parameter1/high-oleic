@@ -38,7 +38,7 @@
       :class="editButtonClasses"
       @click.stop="$emit('input', true)"
     >
-      <edit-icon class="w-5 h-5 text-gray-500" />
+      <edit-icon class="w-5 h-5 text-secondary-4" />
     </button>
   </component>
 </template>

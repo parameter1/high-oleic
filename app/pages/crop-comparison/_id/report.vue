@@ -14,7 +14,7 @@
             {{ error.message }}
           </alert>
           <div v-else>
-            <div class="bg-white overflow-hidden shadow rounded-lg p-4 mb-6">
+            <div class="bg-white overflow-hidden shadow rounded-lg p-4">
               <h1 class="text-2xl mb-4 font-semibold">
                 High Oleic Scenerio Report
               </h1>
@@ -46,52 +46,92 @@
               </div>
             </div>
 
-            <div>
-              <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                  <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
-                      Total Acres
-                    </dt>
-                    <edit-acres
-                      tag="dd"
-                      class="mt-1 text-2xl font-semibold text-gray-900"
-                      :comparison-id="cropComparison.id"
-                      :value="cropComparison.acres"
-                      :disabled="isUpdatingReport"
-                      @saving="isUpdatingReport = $event"
-                    />
+            <dl class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div class="bg-white shadow rounded-lg p-4">
+                <dt class="text-sm font-medium text-logo-brown">
+                  Total Acres
+                </dt>
+                <edit-acres
+                  tag="dd"
+                  class="mt-1 text-2xl font-semibold"
+                  :comparison-id="cropComparison.id"
+                  :value="cropComparison.acres"
+                  :disabled="isUpdatingReport"
+                  @saving="isUpdatingReport = $event"
+                />
+              </div>
+
+              <div class="bg-white shadow rounded-lg p-4">
+                <dt class="text-sm font-medium text-logo-brown">
+                  High Oleic Advantage
+                </dt>
+
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                  <div class="flex items-baseline text-2xl font-semibold">
+                    {{ formatUSD(cropComparison.advantage) }}
+                    <span class="ml-2 text-sm font-medium text-secondary-4">
+                      profit per acre
+                    </span>
                   </div>
+                </dd>
+              </div>
+
+              <div class="bg-white shadow rounded-lg p-4">
+                <dt class="text-sm font-medium text-logo-brown">
+                  HO Ratio
+                </dt>
+                <dd class="mt-1 text-2xl font-semibold">
+                  {{ cropComparison.ratio }}
+                </dd>
+              </div>
+            </dl>
+
+            <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div class="bg-white shadow rounded-lg">
+                <div class="p-4">
+                  <h3 class="text-lg leading-6 font-medium">
+                    {{ cropComparison.comparedTo.crop.label }}
+                  </h3>
+                  <p class="mt-1 max-w-2xl font-medium text-base text-logo-green">
+                    Economic results
+                  </p>
                 </div>
 
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                  <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
-                      High Oleic Advantage
-                    </dt>
-
-                    <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                      <div class="flex items-baseline text-2xl font-semibold text-gray-900">
-                        {{ formatUSD(cropComparison.advantage) }}
-                        <span class="ml-2 text-sm font-medium text-gray-500">
-                          profit per acre
+                <div class="border-t-2 border-secondary-5-300">
+                  <dl class="sm:divide-y sm:divide-secondary-5-300">
+                    <div class="p-4 sm:grid sm:grid-cols-3 sm:gap-4">
+                      <dt class="text-sm font-medium text-logo-brown">
+                        Total expense
+                      </dt>
+                      <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2 text-logo-blue">
+                        {{ formatUSD(cropComparison.comparedTo.expenses.total) }}
+                        <span class="text-primary-1">
+                          ({{ formatUSD(cropComparison.comparedTo.expenses.perAcre) }} per acre)
                         </span>
-                      </div>
-                    </dd>
-                  </div>
-                </div>
+                      </dd>
 
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                  <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
-                      HO Ratio
-                    </dt>
-                    <dd class="mt-1 text-2xl font-semibold text-gray-900">
-                      {{ cropComparison.ratio }}
-                    </dd>
-                  </div>
+                      <dt class="text-sm font-medium text-logo-brown">
+                        Total gross revenue
+                      </dt>
+                      <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2 text-logo-blue">
+                        {{ formatUSD(cropComparison.comparedTo.income.total) }}
+                        <span class="text-primary-1">
+                          ({{ formatUSD(cropComparison.comparedTo.income.perAcre) }} per acre)
+                        </span>
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
-              </dl>
+              </div>
+
+              <div class="bg-white shadow rounded-lg p-5">
+                <h3 class="text-lg leading-6 font-medium">
+                  {{ cropComparison.oleic.crop.label }}
+                </h3>
+                <p class="mt-1 max-w-2xl font-medium text-base text-logo-green">
+                  Economic results
+                </p>
+              </div>
             </div>
           </div>
         </client-only>
