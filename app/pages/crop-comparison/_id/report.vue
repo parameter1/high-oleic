@@ -114,6 +114,25 @@
                   :premium-per-bushel="comparedTo.premiumPerBushel"
                   :total-bushels="comparedTo.totalBushels"
                 />
+
+                <div
+                  v-for="expense in comparedTo.expenses.categories"
+                  :key="expense.category.id"
+                >
+                  <table-header type="secondary">
+                    {{ expense.category.label }}
+                  </table-header>
+                  <expense-category
+                    apply-to="COMPARED_CROP"
+                    :expense="expense"
+                    :crop-name="comparedTo.crop.label"
+                    :comparison-id="cropComparison.id"
+                    :yield-per-acre="comparedTo.yieldPerAcre"
+                    :price-per-bushel="comparedTo.pricePerBushel"
+                    :premium-per-bushel="comparedTo.premiumPerBushel"
+                    :total-bushels="comparedTo.totalBushels"
+                  />
+                </div>
               </div>
 
               <!-- Oleic -->
@@ -143,6 +162,25 @@
                   :premium-per-bushel="oleic.premiumPerBushel"
                   :total-bushels="oleic.totalBushels"
                 />
+
+                <div
+                  v-for="expense in oleic.expenses.categories"
+                  :key="expense.category.id"
+                >
+                  <table-header type="secondary">
+                    {{ expense.category.label }}
+                  </table-header>
+                  <expense-category
+                    apply-to="OLEIC"
+                    :expense="expense"
+                    :crop-name="oleic.crop.label"
+                    :comparison-id="cropComparison.id"
+                    :yield-per-acre="oleic.yieldPerAcre"
+                    :price-per-bushel="oleic.pricePerBushel"
+                    :premium-per-bushel="oleic.premiumPerBushel"
+                    :total-bushels="oleic.totalBushels"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -155,6 +193,7 @@
 <script>
 import Alert from '../../../components/common/alert.vue';
 import EconomicResults from '../../../components/crop-comparison/report-tables/economic-results.vue';
+import ExpenseCategory from '../../../components/crop-comparison/report-tables/expense-category.vue';
 import TableHeader from '../../../components/crop-comparison/report-tables/common/header.vue';
 import ToggleDateFormat from '../../../components/toggle-date-format.vue';
 import YieldPrice from '../../../components/crop-comparison/report-tables/yield-price.vue';
@@ -179,6 +218,7 @@ export default {
   components: {
     Alert,
     EconomicResults,
+    ExpenseCategory,
     EditAcres,
     EditFarmName,
     TableHeader,
