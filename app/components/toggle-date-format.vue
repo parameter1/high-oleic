@@ -2,7 +2,7 @@
   <a
     v-if="timestamp"
     href="#toggle-date-format"
-    class="border-b border-dotted focus:outline-none focus:shadow-outline-gray rounded"
+    :class="classes"
     aria-label="Toggle date format"
     :title="title"
     @click.prevent="relative = !relative"
@@ -28,6 +28,14 @@ export default {
 
   data: () => ({
     relative: true,
+    classes: [
+      'border-b',
+      'border-dotted',
+      'focus:outline-none',
+      'focus:shadow-outline-secondary-5',
+      'focus:border-secondary-5',
+      'rounded',
+    ],
   }),
 
   computed: {
