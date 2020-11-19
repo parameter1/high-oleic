@@ -9,6 +9,7 @@
     :error="error"
     :disabled="disabled"
     @submit="save"
+    @input="$emit('editing', $event)"
   >
     <slot />
   </inline-editor>
