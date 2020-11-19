@@ -29,10 +29,12 @@
         @click="cancel"
       />
     </form>
-    <hint
-      v-if="value && error"
-      :value="error.message"
-    />
+    <hint v-if="value && error">
+      <span class="text-red-500">
+        <error-icon class="w-4 h-4 inline-block" />
+        {{ error.message }}
+      </span>
+    </hint>
     <button
       v-if="!value"
       :class="editButtonClasses"
@@ -46,6 +48,7 @@
 <script>
 import Btn from './button.vue';
 import EditIcon from '../icons/pencil-alt-sm.vue';
+import ErrorIcon from '../icons/exclamation-sm.vue';
 import Hint from '../common/forms/hint.vue';
 import InputField from '../common/forms/input.vue';
 
@@ -53,6 +56,7 @@ export default {
   components: {
     Btn,
     EditIcon,
+    ErrorIcon,
     Hint,
     InputField,
   },
