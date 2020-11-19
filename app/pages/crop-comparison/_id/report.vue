@@ -96,41 +96,27 @@
                     Economic results
                   </p>
                 </div>
-
-                <div class="border-t-2 border-secondary-5-300">
-                  <dl class="sm:divide-y sm:divide-secondary-5-300">
-                    <div class="p-4 sm:grid sm:grid-cols-3 sm:gap-4">
-                      <dt class="text-sm font-medium text-logo-brown">
-                        Total expense
-                      </dt>
-                      <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2 text-logo-blue">
-                        {{ formatUSD(cropComparison.comparedTo.expenses.total) }}
-                        <span class="text-primary-1">
-                          ({{ formatUSD(cropComparison.comparedTo.expenses.perAcre) }} per acre)
-                        </span>
-                      </dd>
-
-                      <dt class="text-sm font-medium text-logo-brown">
-                        Total gross revenue
-                      </dt>
-                      <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2 text-logo-blue">
-                        {{ formatUSD(cropComparison.comparedTo.income.total) }}
-                        <span class="text-primary-1">
-                          ({{ formatUSD(cropComparison.comparedTo.income.perAcre) }} per acre)
-                        </span>
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
+                <economic-results
+                  :income="cropComparison.comparedTo.income"
+                  :expenses="cropComparison.comparedTo.expenses"
+                  :profit="cropComparison.comparedTo.profit"
+                />
               </div>
 
-              <div class="bg-white shadow rounded-lg p-5">
-                <h3 class="text-lg leading-6 font-medium">
-                  {{ cropComparison.oleic.crop.label }}
-                </h3>
-                <p class="mt-1 max-w-2xl font-medium text-base text-logo-green">
-                  Economic results
-                </p>
+              <div class="bg-white shadow rounded-lg">
+                <div class="p-4">
+                  <h3 class="text-lg leading-6 font-medium">
+                    {{ cropComparison.oleic.crop.label }}
+                  </h3>
+                  <p class="mt-1 max-w-2xl font-medium text-base text-logo-green">
+                    Economic results
+                  </p>
+                </div>
+                <economic-results
+                  :income="cropComparison.oleic.income"
+                  :expenses="cropComparison.oleic.expenses"
+                  :profit="cropComparison.oleic.profit"
+                />
               </div>
             </div>
           </div>
@@ -142,6 +128,7 @@
 
 <script>
 import Alert from '../../../components/common/alert.vue';
+import EconomicResults from '../../../components/crop-comparison/report-tables/economic-results.vue';
 import ToggleDateFormat from '../../../components/toggle-date-format.vue';
 
 import EditAcres from '../../../components/crop-comparison/inline-editor/acres.vue';
@@ -163,6 +150,7 @@ const defaultCropField = {
 export default {
   components: {
     Alert,
+    EconomicResults,
     EditAcres,
     EditFarmName,
     ToggleDateFormat,
@@ -200,6 +188,9 @@ export default {
     },
     formatUSD(value) {
       return formatNumber.usd(value);
+    },
+    formatPercent(value) {
+      return formatNumber.percent(value);
     },
   },
 };
