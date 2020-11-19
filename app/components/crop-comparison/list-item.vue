@@ -9,11 +9,17 @@
         </div>
         <p class="mt-3 text-primary-1 text-base leading-6">
           Comparing
-          <span class="text-logo-green font-semibold">{{ node.acres }}</span>
+          <span class="text-logo-green font-semibold">
+            {{ formatInteger(node.acres) }}
+          </span>
           acres of
-          <span class="text-logo-green font-semibold">{{ node.comparedTo.crop.label }}</span>
+          <span class="text-logo-green font-semibold">
+            {{ node.comparedTo.crop.label }}
+          </span>
           to
-          <span class="text-logo-green font-semibold">{{ node.oleic.crop.label }}</span>
+          <span class="text-logo-green font-semibold">
+            {{ node.oleic.crop.label }}
+          </span>
         </p>
 
         <div class="mt-6 text-sm leading-5 text-secondary-4">
@@ -52,6 +58,7 @@ import ButtonLink from './list-item/button-link.vue';
 import PencilIcon from '../icons/pencil-alt-md.vue';
 import ReportIcon from '../icons/document-report-md.vue';
 import ToggleDateFormat from '../toggle-date-format.vue';
+import formatNumber from '../../utils/format-number';
 
 export default {
   components: {
@@ -65,6 +72,12 @@ export default {
     node: {
       type: Object,
       default: () => ({}),
+    },
+  },
+
+  methods: {
+    formatInteger(value) {
+      return formatNumber.integer(value);
     },
   },
 };
