@@ -1,5 +1,5 @@
 <template>
-  <table class="min-w-full divide-y divide-secondary-5-300">
+  <table class="min-w-full table-fixed divide-y divide-secondary-5-300">
     <row>
       <template #left>
         Yield

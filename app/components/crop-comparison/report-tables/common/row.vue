@@ -21,6 +21,7 @@ export default {
       default: () => ({
         color: 'logo-brown',
         fontWeight: 'medium',
+        class: 'w-1/3',
       }),
     },
     rightAttrs: {

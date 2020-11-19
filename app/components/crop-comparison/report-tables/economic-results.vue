@@ -1,5 +1,5 @@
 <template>
-  <table class="min-w-full divide-y divide-secondary-5-300">
+  <table class="min-w-full table-fixed divide-y divide-secondary-5-300">
     <row>
       <template #left>
         Total expense
@@ -18,7 +18,7 @@
     </row>
     <row>
       <template #left>
-        Production cost per bushel
+        Total cost per bushel
       </template>
       <template #right>
         <format-number format="usd" :value="expenses.perBushel" />
