@@ -18,9 +18,14 @@
               <h1 class="text-2xl mb-4 font-semibold">
                 High Oleic Scenerio Report
               </h1>
-              <h2 class="text-logo-blue text-lg leading-6 font-semibold">
-                {{ cropComparison.farmName }}
-              </h2>
+              <edit-farm-name
+                tag="h2"
+                class="text-logo-blue text-lg leading-6 font-semibold max-w-sm"
+                :comparison-id="cropComparison.id"
+                :value="cropComparison.farmName"
+                :disabled="isUpdatingReport"
+                @saving="isUpdatingReport = $event"
+              />
               <p class="mt-1 text-primary-1 text-base leading-6">
                 Comparing
                 <span class="text-logo-green font-semibold">
@@ -100,6 +105,7 @@ import Alert from '../../../components/common/alert.vue';
 import ToggleDateFormat from '../../../components/toggle-date-format.vue';
 
 import EditAcres from '../../../components/crop-comparison/inline-editor/acres.vue';
+import EditFarmName from '../../../components/crop-comparison/inline-editor/farm-name.vue';
 
 import { CROP_COMPARISON_REPORT } from '../../../graphql/queries';
 import GraphQLError from '../../../utils/graphql-error';
@@ -115,7 +121,12 @@ const defaultCropField = {
 };
 
 export default {
-  components: { Alert, EditAcres, ToggleDateFormat },
+  components: {
+    Alert,
+    EditAcres,
+    EditFarmName,
+    ToggleDateFormat,
+  },
 
   apollo: {
     cropComparison: {

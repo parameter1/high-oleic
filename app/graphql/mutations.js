@@ -44,3 +44,13 @@ export const UPDATE_COMPARISON_REPORT_ACRES = gql`
 
   ${CROP_COMPARISON_REPORT_FRAGMENT}
 `;
+
+export const UPDATE_COMPARISON_REPORT_FARM_NAME = gql`
+  mutation UpdateComparisonReportFarmName($input: CropComparisonFarmNameMutationInput!) {
+    cropComparisonFarmName(input: $input) {
+      ...CropComparisonReportFragment
+    }
+  }
+
+  ${CROP_COMPARISON_REPORT_FRAGMENT}
+`;
