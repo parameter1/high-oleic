@@ -4,6 +4,7 @@
     :value="value"
     :input-attrs="{ type: 'number', min: 1, required: true }"
     :save-func="update.bind(this)"
+    :disabled="disabled"
     @saving="$emit('saving', $event)"
   >
     {{ formatInteger(value) }}
@@ -24,7 +25,6 @@ export default {
       type: String,
       required: true,
     },
-
     tag: {
       type: String,
       default: 'div',
@@ -32,6 +32,10 @@ export default {
     value: {
       type: [Number, String],
       default: null,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
 
