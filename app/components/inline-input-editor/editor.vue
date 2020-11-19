@@ -42,7 +42,7 @@
 
 <script>
 import Btn from './button.vue';
-import EditIcon from '../icons/pencil-alt-md.vue';
+import EditIcon from '../icons/pencil-alt-sm.vue';
 import Hint from '../common/forms/hint.vue';
 import InputField from '../common/forms/input.vue';
 
@@ -84,6 +84,8 @@ export default {
   data: () => ({
     current: null,
     editButtonClasses: [
+      'my-auto',
+      'ml-1',
       'inline-block',
       'focus:outline-none',
       'focus:shadow-outline-secondary-5',
@@ -96,7 +98,7 @@ export default {
     wrapperClasses() {
       const classes = [];
       const { value } = this;
-      if (!value) classes.push('inline-block');
+      if (!value) classes.push('inline-flex');
       return classes;
     },
   },
