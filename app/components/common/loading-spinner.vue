@@ -35,12 +35,17 @@ export default {
       default: 'medium',
       validator: (size) => ['medium', 'large'].includes(size),
     },
+    withLabel: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   computed: {
     classes() {
-      const { color, size } = this;
-      const classes = ['animate-spin-fast', '-ml-1', 'mr-2'];
+      const { color, size, withLabel } = this;
+      const classes = ['animate-spin-fast'];
+      if (withLabel) classes.push('-ml-1', 'mr-2');
       if (color === 'logo-blue') classes.push('text-logo-blue');
       if (color === 'white') classes.push('text-white');
       if (color === 'gray-700') classes.push('text-gray-700');
