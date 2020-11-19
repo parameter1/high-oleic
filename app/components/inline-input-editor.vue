@@ -1,118 +1,75 @@
 <template>
-  <div :class="wrapperClasses">
-    <slot v-if="!value" />
-    <form
-      v-show="value"
-      class="flex shadow-sm"
-      @submit.prevent="$emit('submit', current)"
+  <component :is="tag">
+    <inline-editor
+      v-model="isEditing"
+      :input-value="inputValue"
+      :input-attrs="inputAttrs"
+      :is-loading="isSaving"
+      :error="error"
+      :disabled="disabled"
+      @submit="save"
     >
-      <input-field
-        ref="editor"
-        v-model="current"
-        v-bind="inputAttrs"
-        class="rounded-r-none shadow-none focus-within:z-10"
-        :disabled="isLoading"
-        @escape="$emit('input', false)"
-      />
-      <btn
-        type="submit"
-        :is-loading="isLoading"
-      />
-      <btn
-        type="cancel"
-        :is-loading="isLoading"
-        @click="cancel"
-      />
-    </form>
-    <hint
-      v-if="value && error"
-      :value="error.message"
-    />
-    <button
-      v-if="!value"
-      :class="editButtonClasses"
-      @click.stop="$emit('input', true)"
-    >
-      <edit-icon class="w-5 h-5 text-gray-500" />
-    </button>
-  </div>
+      <slot />
+    </inline-editor>
+  </component>
 </template>
 
 <script>
-import Btn from './inline-input-editor/button.vue';
-import EditIcon from './icons/pencil-alt-md.vue';
-import Hint from './common/forms/hint.vue';
-import InputField from './common/forms/input.vue';
+import GraphQLError from '../utils/graphql-error';
+import InlineEditor from './inline-input-editor/editor.vue';
 
 export default {
-  components: {
-    Btn,
-    EditIcon,
-    Hint,
-    InputField,
-  },
+  components: { InlineEditor },
 
   props: {
-    value: {
-      type: Boolean,
-      default: false,
+    saveFunc: {
+      type: Function,
+      required: true,
     },
-    inputValue: {
+    tag: {
       type: String,
+      default: 'div',
+    },
+    value: {
+      type: [Number, String],
       default: null,
     },
     inputAttrs: {
       type: Object,
       default: () => ({}),
     },
-    isLoading: {
+    disabled: {
       type: Boolean,
       default: false,
-    },
-    error: {
-      type: Error,
-      default: null,
     },
   },
 
   data: () => ({
-    current: null,
-    editButtonClasses: [
-      'inline-block',
-      'focus:outline-none',
-      'focus:shadow-outline-secondary-5',
-      'focus:border-secondary-5',
-      'rounded',
-    ],
+    error: null,
+    isEditing: false,
+    isSaving: false,
   }),
 
   computed: {
-    wrapperClasses() {
-      const classes = [];
-      const { value } = this;
-      if (!value) classes.push('inline-block');
-      return classes;
+    inputValue() {
+      return `${this.value}`;
     },
-  },
-
-  watch: {
-    value(v) {
-      if (v) {
-        this.$nextTick(() => {
-          this.$refs.editor.$el.focus();
-        });
-      }
-    },
-  },
-
-  created() {
-    this.current = this.inputValue;
   },
 
   methods: {
-    cancel() {
-      this.$emit('input', false);
-      this.current = this.inputValue;
+    async save(value) {
+      try {
+        this.error = null;
+        this.isSaving = true;
+        this.$emit('saving', true);
+        await this.saveFunc({ newValue: value });
+        this.isEditing = false;
+      } catch (e) {
+        this.error = new GraphQLError(e);
+      } finally {
+        this.isSaving = false;
+        this.$emit('saving', false);
+      }
     },
   },
 };
