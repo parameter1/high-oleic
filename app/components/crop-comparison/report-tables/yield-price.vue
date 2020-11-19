@@ -30,7 +30,18 @@
         Premium
       </template>
       <template #right>
-        <format-number #default="{ formatted }" format="usd" :value="premiumPerBushel">
+        <edit-premium-per-bushel
+          v-if="applyTo === 'OLEIC'"
+          :comparison-id="comparisonId"
+          :apply-to="applyTo"
+          :value="premiumPerBushel"
+        />
+        <format-number
+          v-else
+          #default="{ formatted }"
+          format="usd"
+          :value="premiumPerBushel"
+        >
           {{ formatted }} per bushel
         </format-number>
       </template>
@@ -48,6 +59,7 @@
 
 <script>
 import EditPricePerBushel from '../inline-editor/price-per-bushel.vue';
+import EditPremiumPerBushel from '../inline-editor/premium-per-bushel.vue';
 import EditYieldPerAcre from '../inline-editor/yield-per-acre.vue';
 import FormatNumber from '../../format-number.vue';
 import Row from './common/row.vue';
@@ -55,6 +67,7 @@ import Row from './common/row.vue';
 export default {
   components: {
     EditPricePerBushel,
+    EditPremiumPerBushel,
     EditYieldPerAcre,
     FormatNumber,
     Row,

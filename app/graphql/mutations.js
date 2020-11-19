@@ -74,3 +74,13 @@ export const UPDATE_COMPARISON_REPORT_PRICE_PER_BUSHEL = gql`
 
   ${CROP_COMPARISON_REPORT_FRAGMENT}
 `;
+
+export const UPDATE_COMPARISON_REPORT_PREMIUM_PER_BUSHEL = gql`
+  mutation UpdateComparisonReportPremiumPerBushel($input: CropComparisonDataMutationInput!) {
+    cropComparisonData(input: $input) {
+      ...CropComparisonReportFragment
+    }
+  }
+
+  ${CROP_COMPARISON_REPORT_FRAGMENT}
+`;
