@@ -35,8 +35,8 @@ export const CREATE_CROP_COMPARISON = gql`
   }
 `;
 
-export const UPDATE_COMPARISON_ACRES = gql`
-  mutation UpdateComparisonAcres($input: CropComparisonAcresMutationInput!) {
+export const UPDATE_COMPARISON_REPORT_ACRES = gql`
+  mutation UpdateComparisonReportAcres($input: CropComparisonAcresMutationInput!) {
     cropComparisonAcres(input: $input) {
       ...CropComparisonReportFragment
     }

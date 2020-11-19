@@ -3,7 +3,7 @@
     :tag="tag"
     :value="value"
     :input-attrs="{ type: 'number', min: 1, required: true }"
-    :save-func="updateAcres.bind(this)"
+    :save-func="update.bind(this)"
     @saving="$emit('saving', $event)"
   >
     {{ formatInteger(value) }}
@@ -14,7 +14,7 @@
 import InlineEditor from '../../inline-input-editor.vue';
 import formatNumber from '../../../utils/format-number';
 
-import { UPDATE_COMPARISON_ACRES } from '../../../graphql/mutations';
+import { UPDATE_COMPARISON_REPORT_ACRES } from '../../../graphql/mutations';
 
 export default {
   components: { InlineEditor },
@@ -40,10 +40,10 @@ export default {
       return formatNumber.integer(value);
     },
 
-    async updateAcres({ newValue }) {
+    async update({ newValue }) {
       const input = { id: this.comparisonId, acres: parseInt(newValue, 10) };
       await this.$apollo.mutate({
-        mutation: UPDATE_COMPARISON_ACRES,
+        mutation: UPDATE_COMPARISON_REPORT_ACRES,
         variables: { input },
       });
     },
