@@ -55,6 +55,12 @@ export default {
     },
   },
 
+  watch: {
+    isEditing(value) {
+      if (!value) this.error = null;
+    },
+  },
+
   methods: {
     async save(value) {
       try {
