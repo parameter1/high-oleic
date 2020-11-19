@@ -33,11 +33,11 @@
                 </span>
                 acres of
                 <span class="text-logo-green font-semibold">
-                  {{ cropComparison.comparedTo.crop.label }}
+                  {{ comparedTo.crop.label }}
                 </span>
                 to
                 <span class="text-logo-green font-semibold">
-                  {{ cropComparison.oleic.crop.label }}
+                  {{ oleic.crop.label }}
                 </span>
               </p>
 
@@ -87,35 +87,55 @@
             </dl>
 
             <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <!-- Compared To -->
               <div class="bg-white shadow rounded-lg">
-                <div class="p-4">
-                  <h3 class="text-lg leading-6 font-medium">
-                    {{ cropComparison.comparedTo.crop.label }}
-                  </h3>
-                  <p class="mt-1 max-w-2xl font-medium text-base text-logo-green">
-                    Economic results
-                  </p>
-                </div>
+                <table-header type="primary">
+                  {{ comparedTo.crop.label }}
+                </table-header>
+
+                <table-header type="secondary">
+                  Economic Results
+                </table-header>
                 <economic-results
-                  :income="cropComparison.comparedTo.income"
-                  :expenses="cropComparison.comparedTo.expenses"
-                  :profit="cropComparison.comparedTo.profit"
+                  :income="comparedTo.income"
+                  :expenses="comparedTo.expenses"
+                  :profit="comparedTo.profit"
+                />
+
+                <table-header type="secondary">
+                  Yield &amp; Price
+                </table-header>
+                <yield-price
+                  :yield-per-acre="comparedTo.yieldPerAcre"
+                  :price-per-bushel="comparedTo.pricePerBushel"
+                  :premium-per-bushel="comparedTo.premiumPerBushel"
+                  :total-bushels="comparedTo.totalBushels"
                 />
               </div>
 
+              <!-- Oleic -->
               <div class="bg-white shadow rounded-lg">
-                <div class="p-4">
-                  <h3 class="text-lg leading-6 font-medium">
-                    {{ cropComparison.oleic.crop.label }}
-                  </h3>
-                  <p class="mt-1 max-w-2xl font-medium text-base text-logo-green">
-                    Economic results
-                  </p>
-                </div>
+                <table-header type="primary">
+                  {{ oleic.crop.label }}
+                </table-header>
+
+                <table-header type="secondary">
+                  Economic Results
+                </table-header>
                 <economic-results
-                  :income="cropComparison.oleic.income"
-                  :expenses="cropComparison.oleic.expenses"
-                  :profit="cropComparison.oleic.profit"
+                  :income="oleic.income"
+                  :expenses="oleic.expenses"
+                  :profit="oleic.profit"
+                />
+
+                <table-header type="secondary">
+                  Yield &amp; Price
+                </table-header>
+                <yield-price
+                  :yield-per-acre="oleic.yieldPerAcre"
+                  :price-per-bushel="oleic.pricePerBushel"
+                  :premium-per-bushel="oleic.premiumPerBushel"
+                  :total-bushels="oleic.totalBushels"
                 />
               </div>
             </div>
@@ -129,7 +149,9 @@
 <script>
 import Alert from '../../../components/common/alert.vue';
 import EconomicResults from '../../../components/crop-comparison/report-tables/economic-results.vue';
+import TableHeader from '../../../components/crop-comparison/report-tables/common/header.vue';
 import ToggleDateFormat from '../../../components/toggle-date-format.vue';
+import YieldPrice from '../../../components/crop-comparison/report-tables/yield-price.vue';
 
 import EditAcres from '../../../components/crop-comparison/inline-editor/acres.vue';
 import EditFarmName from '../../../components/crop-comparison/inline-editor/farm-name.vue';
@@ -153,7 +175,9 @@ export default {
     EconomicResults,
     EditAcres,
     EditFarmName,
+    TableHeader,
     ToggleDateFormat,
+    YieldPrice,
   },
 
   apollo: {
@@ -181,6 +205,15 @@ export default {
     },
     isUpdatingReport: false,
   }),
+
+  computed: {
+    oleic() {
+      return this.cropComparison.oleic;
+    },
+    comparedTo() {
+      return this.cropComparison.comparedTo;
+    },
+  },
 
   methods: {
     formatInteger(value) {

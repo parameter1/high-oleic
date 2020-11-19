@@ -1,5 +1,5 @@
 <template>
-  <table class="border-t-2 border-secondary-5-300 min-w-full divide-y divide-secondary-5-300">
+  <table class="min-w-full divide-y divide-secondary-5-300">
     <row>
       <template #left>
         Total expense
