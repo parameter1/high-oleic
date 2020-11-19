@@ -49,7 +49,7 @@ export default {
   },
 
   data: () => ({
-    settings: { ...fieldSettings.yieldPerAcre },
+    settings: fieldSettings.yieldPerAcre(),
   }),
 
   methods: {

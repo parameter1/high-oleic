@@ -42,7 +42,7 @@ export default {
   },
 
   data: () => ({
-    settings: { ...fieldSettings.acres },
+    settings: fieldSettings.acres(),
   }),
 
   methods: {
