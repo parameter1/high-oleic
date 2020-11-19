@@ -2,23 +2,25 @@
   <inline-editor
     :tag="tag"
     :value="value"
-    :input-attrs="{ type: 'number', min: 1, required: true }"
+    :input-attrs="settings.attrs"
+    :hint="settings.hint"
     :save-func="update.bind(this)"
     :disabled="disabled"
     @saving="$emit('saving', $event)"
   >
-    {{ formatInteger(value) }}
+    <format-number format="integer" :value="value" />
   </inline-editor>
 </template>
 
 <script>
+import FormatNumber from '../../format-number.vue';
 import InlineEditor from '../../inline-input-editor.vue';
-import formatNumber from '../../../utils/format-number';
 
+import fieldSettings from '../field-settings';
 import { UPDATE_COMPARISON_REPORT_ACRES } from '../../../graphql/mutations';
 
 export default {
-  components: { InlineEditor },
+  components: { FormatNumber, InlineEditor },
 
   props: {
     comparisonId: {
@@ -39,11 +41,11 @@ export default {
     },
   },
 
-  methods: {
-    formatInteger(value) {
-      return formatNumber.integer(value);
-    },
+  data: () => ({
+    settings: { ...fieldSettings.acres },
+  }),
 
+  methods: {
     async update({ newValue }) {
       const input = { id: this.comparisonId, acres: parseInt(newValue, 10) };
       await this.$apollo.mutate({

@@ -3,6 +3,7 @@
     :tag="tag"
     :value="value"
     :input-attrs="settings.attrs"
+    :hint="settings.hint"
     :save-func="update.bind(this)"
     :disabled="disabled"
     @saving="$emit('saving', $event)"
