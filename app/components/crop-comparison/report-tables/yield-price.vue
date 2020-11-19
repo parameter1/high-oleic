@@ -5,9 +5,11 @@
         Yield
       </template>
       <template #right>
-        <format-number #default="{ formatted }" format="integer" :value="yieldPerAcre">
-          {{ formatted }} bushels per acre
-        </format-number>
+        <edit-yield-per-acre
+          :comparison-id="comparisonId"
+          :apply-to="applyTo"
+          :value="yieldPerAcre"
+        />
       </template>
     </row>
     <row>
@@ -42,13 +44,27 @@
 </template>
 
 <script>
+import EditYieldPerAcre from '../inline-editor/yield-per-acre.vue';
 import FormatNumber from '../../format-number.vue';
 import Row from './common/row.vue';
 
 export default {
-  components: { FormatNumber, Row },
+  components: {
+    EditYieldPerAcre,
+    FormatNumber,
+    Row,
+  },
 
   props: {
+    comparisonId: {
+      type: String,
+      required: true,
+    },
+    applyTo: {
+      type: String,
+      required: true,
+      validator: (applyTo) => ['OLEIC', 'COMPARED_CROP'].includes(applyTo),
+    },
     yieldPerAcre: {
       type: Number,
       default: 0,
