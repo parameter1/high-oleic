@@ -107,6 +107,7 @@
                 </table-header>
                 <yield-price
                   apply-to="COMPARED_CROP"
+                  :crop-name="comparedTo.crop.label"
                   :comparison-id="cropComparison.id"
                   :yield-per-acre="comparedTo.yieldPerAcre"
                   :price-per-bushel="comparedTo.pricePerBushel"
@@ -135,6 +136,7 @@
                 </table-header>
                 <yield-price
                   apply-to="OLEIC"
+                  :crop-name="oleic.crop.label"
                   :comparison-id="cropComparison.id"
                   :yield-per-acre="oleic.yieldPerAcre"
                   :price-per-bushel="oleic.pricePerBushel"

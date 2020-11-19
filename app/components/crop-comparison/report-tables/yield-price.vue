@@ -17,9 +17,12 @@
         Market price
       </template>
       <template #right>
-        <format-number #default="{ formatted }" format="usd" :value="pricePerBushel">
-          {{ formatted }} per bushel
-        </format-number>
+        <edit-price-per-bushel
+          :comparison-id="comparisonId"
+          :apply-to="applyTo"
+          :crop-name="cropName"
+          :value="pricePerBushel"
+        />
       </template>
     </row>
     <row>
@@ -44,12 +47,14 @@
 </template>
 
 <script>
+import EditPricePerBushel from '../inline-editor/price-per-bushel.vue';
 import EditYieldPerAcre from '../inline-editor/yield-per-acre.vue';
 import FormatNumber from '../../format-number.vue';
 import Row from './common/row.vue';
 
 export default {
   components: {
+    EditPricePerBushel,
     EditYieldPerAcre,
     FormatNumber,
     Row,
@@ -64,6 +69,10 @@ export default {
       type: String,
       required: true,
       validator: (applyTo) => ['OLEIC', 'COMPARED_CROP'].includes(applyTo),
+    },
+    cropName: {
+      type: String,
+      required: true,
     },
     yieldPerAcre: {
       type: Number,
