@@ -13,16 +13,13 @@ module.exports = {
   ],
   plugins: [
   ],
-  // add your custom rules here
-  rules: {},
-  // settings: {
-  //   'import/resolver': {
-  //     alias: {
-  //       map: [
-  //         ['@', '.'],
-  //       ],
-  //       extensions: ['.vue', '.js'],
-  //     },
-  //   },
-  // },
+  rules: {
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": 3,
+      "multiline": {
+        "max": 1,
+        "allowFirstLine": false
+      }
+    }]
+  }
 };
