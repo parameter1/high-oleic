@@ -4,6 +4,7 @@
     :tag="tag"
     :input-value="inputValue"
     :input-attrs="inputAttrs"
+    :hint="hint"
     :is-loading="isSaving"
     :error="error"
     :disabled="disabled"
@@ -40,6 +41,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    hint: {
+      type: String,
+      default: null,
     },
   },
 

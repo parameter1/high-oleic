@@ -29,10 +29,13 @@
         @click="cancel"
       />
     </form>
-    <hint v-if="value && error">
-      <span class="text-red-500">
+    <hint v-if="value && (hint || error)">
+      <span v-if="error" class="text-red-500">
         <error-icon class="w-4 h-4 inline-block" />
         {{ error.message }}
+      </span>
+      <span v-else>
+        {{ hint }}
       </span>
     </hint>
     <button
@@ -85,6 +88,10 @@ export default {
     isLoading: {
       type: Boolean,
       default: false,
+    },
+    hint: {
+      type: String,
+      default: null,
     },
     error: {
       type: Error,
