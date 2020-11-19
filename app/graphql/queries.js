@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { CROP_COMPARISON_REPORT_FRAGMENT } from './fragments';
 
 export const LOOKUP_USER = gql`
   query LookupUser($email: String!) {
@@ -21,12 +22,14 @@ export const LIST_CROP_COMPARISONS = gql`
           createdAt
           updatedAt
           comparedTo {
+            id
             crop {
               id
               label
             }
           }
           oleic {
+            id
             crop {
               id
               label
@@ -40,4 +43,14 @@ export const LIST_CROP_COMPARISONS = gql`
       }
     }
   }
+`;
+
+export const CROP_COMPARISON_REPORT = gql`
+  query CropComparisonReport($id: ObjectID!) {
+    cropComparison(input: { id: $id }) {
+      ...CropComparisonReportFragment
+    }
+  }
+
+  ${CROP_COMPARISON_REPORT_FRAGMENT}
 `;
