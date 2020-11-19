@@ -1,5 +1,8 @@
 <template>
-  <div :class="wrapperClasses">
+  <component
+    :is="tag"
+    :class="wrapperClasses"
+  >
     <slot v-if="!value" />
     <form
       v-show="value"
@@ -37,7 +40,7 @@
     >
       <edit-icon class="w-5 h-5 text-gray-500" />
     </button>
-  </div>
+  </component>
 </template>
 
 <script>
@@ -55,6 +58,10 @@ export default {
   },
 
   props: {
+    tag: {
+      type: String,
+      default: 'div',
+    },
     value: {
       type: Boolean,
       default: false,

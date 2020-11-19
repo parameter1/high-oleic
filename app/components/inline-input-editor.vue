@@ -1,17 +1,16 @@
 <template>
-  <component :is="tag">
-    <inline-editor
-      v-model="isEditing"
-      :input-value="inputValue"
-      :input-attrs="inputAttrs"
-      :is-loading="isSaving"
-      :error="error"
-      :disabled="disabled"
-      @submit="save"
-    >
-      <slot />
-    </inline-editor>
-  </component>
+  <inline-editor
+    v-model="isEditing"
+    :tag="tag"
+    :input-value="inputValue"
+    :input-attrs="inputAttrs"
+    :is-loading="isSaving"
+    :error="error"
+    :disabled="disabled"
+    @submit="save"
+  >
+    <slot />
+  </inline-editor>
 </template>
 
 <script>
