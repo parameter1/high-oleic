@@ -9,6 +9,8 @@
           :comparison-id="comparisonId"
           :apply-to="applyTo"
           :value="yieldPerAcre"
+          :disabled="editorsDisabled"
+          @saving="$emit('saving', $event)"
         />
       </template>
     </row>
@@ -22,6 +24,8 @@
           :apply-to="applyTo"
           :crop-name="cropName"
           :value="pricePerBushel"
+          :disabled="editorsDisabled"
+          @saving="$emit('saving', $event)"
         />
       </template>
     </row>
@@ -35,6 +39,8 @@
           :comparison-id="comparisonId"
           :apply-to="applyTo"
           :value="premiumPerBushel"
+          :disabled="editorsDisabled"
+          @saving="$emit('saving', $event)"
         />
         <format-number
           v-else
@@ -102,6 +108,10 @@ export default {
     totalBushels: {
       type: Number,
       default: 0,
+    },
+    editorsDisabled: {
+      type: Boolean,
+      default: false,
     },
   },
 };

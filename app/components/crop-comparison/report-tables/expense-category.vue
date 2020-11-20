@@ -15,6 +15,8 @@
           :comparison-id="comparisonId"
           :apply-to="applyTo"
           :crop-name="cropName"
+          :editors-disabled="editorsDisabled"
+          @saving="$emit('saving', $event)"
         />
       </template>
     </row>
@@ -48,6 +50,10 @@ export default {
     cropName: {
       type: String,
       required: true,
+    },
+    editorsDisabled: {
+      type: Boolean,
+      default: false,
     },
   },
 };

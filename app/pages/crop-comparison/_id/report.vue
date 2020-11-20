@@ -113,6 +113,8 @@
                   :price-per-bushel="comparedTo.pricePerBushel"
                   :premium-per-bushel="comparedTo.premiumPerBushel"
                   :total-bushels="comparedTo.totalBushels"
+                  :editors-disabled="isUpdatingReport"
+                  @saving="isUpdatingReport = $event"
                 />
 
                 <div
@@ -131,6 +133,8 @@
                     :price-per-bushel="comparedTo.pricePerBushel"
                     :premium-per-bushel="comparedTo.premiumPerBushel"
                     :total-bushels="comparedTo.totalBushels"
+                    :editors-disabled="isUpdatingReport"
+                    @saving="isUpdatingReport = $event"
                   />
                 </div>
               </div>
@@ -161,6 +165,8 @@
                   :price-per-bushel="oleic.pricePerBushel"
                   :premium-per-bushel="oleic.premiumPerBushel"
                   :total-bushels="oleic.totalBushels"
+                  :editors-disabled="isUpdatingReport"
+                  @saving="isUpdatingReport = $event"
                 />
 
                 <div
@@ -179,6 +185,8 @@
                     :price-per-bushel="oleic.pricePerBushel"
                     :premium-per-bushel="oleic.premiumPerBushel"
                     :total-bushels="oleic.totalBushels"
+                    :editors-disabled="isUpdatingReport"
+                    @saving="isUpdatingReport = $event"
                   />
                 </div>
               </div>

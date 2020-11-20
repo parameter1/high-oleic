@@ -8,7 +8,9 @@
           :apply-to="applyTo"
           :crop-name="cropName"
           :value="expense.costs.perAcre"
+          :disabled="editorsDisabled"
           @editing="isEditing = $event"
+          @saving="$emit('saving', $event)"
         />
         <format-number
           v-else
@@ -22,10 +24,13 @@
       <td v-show="showRight" :class="rightClasses">
         <edit-expense-line-item
           v-if="unit === 'PER_BUSHEL'"
+          :comparison-id="comparisonId"
           :apply-to="applyTo"
           :crop-name="cropName"
           :value="expense.costs.perBushel"
+          :disabled="editorsDisabled"
           @editing="isEditing = $event"
+          @saving="$emit('saving', $event)"
         />
         <format-number
           v-else
@@ -65,6 +70,10 @@ export default {
       type: String,
       required: true,
     },
+    editorsDisabled: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data: () => ({
@@ -77,13 +86,8 @@ export default {
       return 'w-1/3';
     },
     rightClasses() {
-      const classes = ['text-right'];
-      if (this.isEditing && this.unit === 'PER_BUSHEL') {
-        classes.push('w-full');
-      } else {
-        classes.push('w-1/3');
-      }
-      return classes;
+      if (this.isEditing && this.unit === 'PER_BUSHEL') return 'w-full';
+      return 'text-right w-1/3';
     },
     showLeft() {
       if (!this.isEditing) return true;
