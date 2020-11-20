@@ -4,6 +4,8 @@
     :class="classes"
     fill="none"
     viewBox="0 0 24 24"
+    title="Loading..."
+    aria-label="Loading..."
   >
     <circle
       class="opacity-25"
@@ -33,7 +35,7 @@ export default {
     size: {
       type: String,
       default: 'medium',
-      validator: (size) => ['medium', 'large'].includes(size),
+      validator: (size) => ['medium', 'large', 'xl'].includes(size),
     },
     withLabel: {
       type: Boolean,
@@ -51,6 +53,7 @@ export default {
       if (color === 'gray-700') classes.push('text-gray-700');
       if (size === 'medium') classes.push('w-5', 'h-5');
       if (size === 'large') classes.push('w-8', 'h-8');
+      if (size === 'xl') classes.push('w-10', 'h-10');
       return classes;
     },
   },
