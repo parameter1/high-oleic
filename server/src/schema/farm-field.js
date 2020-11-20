@@ -12,6 +12,7 @@ const expensesCategories = expenses.map(({ type }) => type);
 const incomeCategories = income.map(({ type }) => type);
 
 const cropExpenseLineItems = getLineItemTypes('crop');
+const chemicalsExpenseLineItems = getLineItemTypes('chemicals');
 const fieldOpsExpenseLineItems = getLineItemTypes('fieldOps');
 const handlingExpenseLineItems = getLineItemTypes('handling');
 
@@ -30,6 +31,7 @@ const fields = {
   incomeCategory: Joi.string().trim().valid(...incomeCategories),
 
   cropExpenseLineItems: Joi.string().trim().valid(...cropExpenseLineItems),
+  chemicalsExpenseLineItems: Joi.string().trim().valid(...chemicalsExpenseLineItems),
   fieldOpsExpenseLineItems: Joi.string().trim().valid(...fieldOpsExpenseLineItems),
   handlingExpenseLineItems: Joi.string().trim().valid(...handlingExpenseLineItems),
 

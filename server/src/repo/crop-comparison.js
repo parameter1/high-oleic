@@ -186,6 +186,13 @@ class FarmFieldRepo extends PaginableRepo {
         }),
       ).default([]),
 
+      chemicals: Joi.array().items(
+        Joi.object({
+          lineItem: farmFieldFields.chemicalsExpenseLineItems.required(),
+          value: farmFieldFields.expenseValue.required(),
+        }),
+      ).default([]),
+
       fieldOps: Joi.array().items(
         Joi.object({
           lineItem: farmFieldFields.fieldOpsExpenseLineItems.required(),

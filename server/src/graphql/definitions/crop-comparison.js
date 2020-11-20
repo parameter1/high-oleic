@@ -107,6 +107,8 @@ input CropComparisonExpensesMutationInput {
   applyTo: CropComparisonFieldTypeEnum!
   "Crop expenses to set."
   crop: [CropComparisonCropExpenseInput!] = []
+  "Chemical expenses to set."
+  chemicals: [CropComparisonChemicalsExpenseInput!] = []
   "Field operation expenses to set."
   fieldOps: [CropComparisonFieldOpsExpenseInput!] = []
   "Handling expenses to set."
@@ -116,6 +118,13 @@ input CropComparisonExpensesMutationInput {
 input CropComparisonCropExpenseInput {
   "The crop expense category line item."
   lineItem: ExpenseCategoryCropLineItemEnum!
+  "The expense in $ cost / acre."
+  value: Float!
+}
+
+input CropComparisonChemicalsExpenseInput {
+  "The chemical expense category line item."
+  lineItem: ExpenseCategoryChemicalsLineItemEnum!
   "The expense in $ cost / acre."
   value: Float!
 }

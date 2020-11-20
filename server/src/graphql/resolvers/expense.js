@@ -49,8 +49,17 @@ module.exports = {
    */
   ExpenseCategoryTypeEnum: {
     CROP: 'crop',
+    CHEMICALS: 'chemicals',
     FIELD_OPS: 'fieldOps',
     HANDLING: 'handling',
+  },
+
+  /**
+   *
+   */
+  ExpenseCategoryChemicalsLineItemEnum: {
+    HERBICIDE: 'herb',
+    INSECTICIDE: 'insect',
   },
 
   /**
@@ -65,20 +74,20 @@ module.exports = {
     SEEDS: 'seeds',
     FERT_LIME: 'fertLime',
     NITROGEN: 'nitro',
-    CHEMICALS: 'chem',
   },
 
   /**
    *
    */
   ExpenseCategoryFieldOpsLineItemEnum: {
-    NITROGEN: 'nitro',
-    CULTIVATION: 'cult',
-    PLANTER: 'planter',
-    DRILL: 'drill',
+    // NITROGEN: 'nitro',
+    // CULTIVATION: 'cult',
+    // PLANTER: 'planter',
+    // DRILL: 'drill',
+    EQUIPMENT: 'equipment',
     SPRAYER: 'sprayer',
-    COMBINE: 'combine',
-    VRT: 'vrt',
+    // COMBINE: 'combine',
+    // VRT: 'vrt',
     OTHER: 'other',
   },
 

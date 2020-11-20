@@ -10,6 +10,8 @@ extend type Query {
 enum ExpenseCategoryTypeEnum {
   "Crop expenses."
   CROP
+  "Chemical expenses."
+  CHEMICALS
   "Field operation expenses."
   FIELD_OPS
   "Grain handling expenses."
@@ -33,25 +35,34 @@ enum ExpenseCategoryCropLineItemEnum {
   FERT_LIME
   "Nitrogen crop expense line item."
   NITROGEN
-  "Chemical crop expense line item."
-  CHEMICALS
+  # "Chemical crop expense line item."
+  # CHEMICALS
+}
+
+enum ExpenseCategoryChemicalsLineItemEnum {
+  "Herbicides chemical expense line item."
+  HERBICIDE
+  "Insecticides/fungicide chemical expense line item."
+  INSECTICIDE
 }
 
 enum ExpenseCategoryFieldOpsLineItemEnum {
-  "Nitrogen application field ops expense line item."
-  NITROGEN
-  "Cultivation field ops expense line item."
-  CULTIVATION
-  "Planter field ops expense line item."
-  PLANTER
-  "Drill field ops expense line item."
-  DRILL
+  # "Nitrogen application field ops expense line item."
+  # NITROGEN
+  # "Cultivation field ops expense line item."
+  # CULTIVATION
+  # "Planter field ops expense line item."
+  # PLANTER
+  # "Drill field ops expense line item."
+  # DRILL
   "Sprayer (2/3 pass) field ops expense line item."
   SPRAYER
-  "Combine field ops expense line item."
-  COMBINE
-  "VRT field ops expense line item."
-  VRT
+  "Equipment field ops expense line item."
+  EQUIPMENT
+  # "Combine field ops expense line item."
+  # COMBINE
+  # "VRT field ops expense line item."
+  # VRT
   "Other field ops expense line item."
   OTHER
 }

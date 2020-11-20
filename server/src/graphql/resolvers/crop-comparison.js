@@ -133,6 +133,7 @@ module.exports = {
         id,
         applyTo,
         crop,
+        chemicals,
         fieldOps,
         handling,
       } = input;
@@ -142,6 +143,7 @@ module.exports = {
         id,
         applyTo,
         crop,
+        chemicals,
         fieldOps,
         handling,
         findOptions: { projection },
