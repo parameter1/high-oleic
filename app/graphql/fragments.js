@@ -33,6 +33,7 @@ export const CROP_COMPARISON_FIELD_FRAGMENT = gql`
           lineItem {
             id
             label
+            unit
           }
           costs {
             total
