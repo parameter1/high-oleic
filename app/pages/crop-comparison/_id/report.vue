@@ -1,6 +1,6 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
-    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
+    <div class="max-w-7xl mx-auto sm:px-4">
       <div class="p-4">
         <client-only placeholder="Loading...">
           <div v-if="isLoading">
@@ -86,7 +86,7 @@
               </div>
             </dl>
 
-            <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
               <!-- Compared To -->
               <div class="bg-white shadow rounded-lg mb-6">
                 <table-header type="primary">
