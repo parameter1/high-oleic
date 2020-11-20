@@ -88,7 +88,7 @@
 
             <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <!-- Compared To -->
-              <div class="bg-white shadow rounded-lg">
+              <div class="bg-white shadow rounded-lg mb-6">
                 <table-header type="primary">
                   {{ comparedTo.crop.label }}
                 </table-header>
@@ -136,7 +136,7 @@
               </div>
 
               <!-- Oleic -->
-              <div class="bg-white shadow rounded-lg">
+              <div class="bg-white shadow rounded-lg mb-6">
                 <table-header type="primary">
                   {{ oleic.crop.label }}
                 </table-header>
