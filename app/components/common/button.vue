@@ -54,6 +54,7 @@ export default {
 
   computed: {
     classes() {
+      const disabled = this.loading || this.disabled;
       const core = [
         'flex',
         'justify-center',
@@ -72,16 +73,18 @@ export default {
         'transition',
         'duration-150',
         'ease-in-out',
-        'shadow',
         'items-center',
       ];
+      if (!disabled) {
+        core.push('shadow');
+        core.push('hover:bg-opacity-85');
+      }
       if (this.block) {
         core.push('w-full');
       }
       const colors = {
         'logo-blue': [
           'bg-logo-blue',
-          'hover:bg-opacity-85',
           'focus:bg-opacity-85',
           'focus:border-logo-blue',
           'focus:shadow-outline-gray',
@@ -89,7 +92,6 @@ export default {
         ],
         'logo-green': [
           'bg-logo-green',
-          'hover:bg-opacity-85',
           'focus:bg-opacity-85',
           'focus:border-logo-green',
           'focus:shadow-outline-gray',
@@ -97,7 +99,6 @@ export default {
         ],
         'secondary-3': [
           'bg-secondary-3',
-          'hover:bg-opacity-85',
           'focus:bg-opacity-85',
           'focus:border-secondary-3',
           'focus:shadow-outline-gray',
