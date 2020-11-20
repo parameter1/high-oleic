@@ -20,18 +20,31 @@ export default {
     fontSize: {
       type: String,
       default: 'sm',
-      validator: (fontSize) => ['base', 'sm'].includes(fontSize),
+      validator: (fontSize) => ['base', 'sm', 'xs'].includes(fontSize),
+    },
+    paddingY: {
+      type: String,
+      default: 'sm',
+      validator: (paddingY) => ['xs', 'sm'].includes(paddingY),
     },
   },
   computed: {
     classes() {
-      const classes = ['px-4', 'py-2'];
-      const { color, fontWeight, fontSize } = this;
+      const classes = ['px-4'];
+      const {
+        color,
+        fontWeight,
+        fontSize,
+        paddingY,
+      } = this;
+      if (paddingY === 'sm') classes.push('py-2');
+      if (paddingY === 'xs') classes.push('py-1');
       if (color === 'logo-blue') classes.push('text-logo-blue');
       if (color === 'logo-brown') classes.push('text-logo-brown');
       if (color === 'primary-1') classes.push('text-primary-1');
       if (fontWeight === 'medium') classes.push('font-medium');
       if (fontWeight === 'semibold') classes.push('font-semibold');
+      if (fontSize === 'xs') classes.push('text-xs');
       if (fontSize === 'sm') classes.push('text-sm');
       if (fontSize === 'base') classes.push('text-base');
       return classes;
