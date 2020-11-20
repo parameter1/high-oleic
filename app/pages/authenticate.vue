@@ -2,27 +2,30 @@
   <div class="pt-2 pb-6 md:py-6">
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
       <div class="p-4">
-        <h1 class="text-2xl mb-4">
-          <span v-if="isLoading">
+        <client-only>
+          <h1 slot="placeholder" class="text-2xl mb-4">
             Logging In...
-          </span>
-          <span v-else-if="error">
-            Oops...
-          </span>
-        </h1>
-        <p v-if="error">
-          {{ error.message }}
-        </p>
+          </h1>
+          <h1 slot="placeholder">
+            Logging In...
+          </h1>
+          <alert v-if="error" type="danger" class="shadow-sm">
+            {{ error.message }}
+          </alert>
+        </client-only>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Alert from '../components/common/alert.vue';
 import { AUTHENTICATE } from '../graphql/mutations';
 import GraphQLError from '../utils/graphql-error';
 
 export default {
+  components: { Alert },
+
   apollo: {
     $client: 'identityX',
   },
@@ -33,8 +36,8 @@ export default {
   }),
 
   /**
-   * @todo by running this in the mounted hook it will only run client-side.
-   * @todo confirm this. running server then client breaks the token, since it's used more than once
+   *
+   *
    */
   mounted() {
     this.authenticate();
@@ -42,7 +45,7 @@ export default {
 
   methods: {
     /**
-     * @todo should this use async data or a nuxt middleware??
+     *
      */
     async authenticate() {
       try {
