@@ -28,25 +28,6 @@ module.exports = {
   /**
    *
    */
-  ExpenseCategoryLineItem: {
-    /**
-     *
-     */
-    id({ categoryType, type }) {
-      return `${categoryType}.${type}`;
-    },
-
-    /**
-     *
-     */
-    fixed({ fixed }) {
-      return Boolean(fixed);
-    },
-  },
-
-  /**
-   *
-   */
   ExpenseCategoryTypeEnum: {
     CROP: 'crop',
     CHEMICALS: 'chemicals',
@@ -98,6 +79,30 @@ module.exports = {
     HAULING: 'hauling',
     DRYER: 'dryer',
     STORAGE: 'storage',
+  },
+
+  /**
+   *
+   */
+  ExpenseCategoryLineItemInterface: {
+    /**
+     *
+     */
+    id({ categoryType, type }) {
+      return `${categoryType}.${type}`;
+    },
+
+    /**
+     *
+     */
+    fixed({ fixed }) {
+      return Boolean(fixed);
+    },
+
+    __resolveType({ categoryType }) {
+      const type = `${categoryType.charAt(0).toUpperCase()}${categoryType.slice(1)}`;
+      return `ExpenseCategory${type}LineItem`;
+    },
   },
 
   /**

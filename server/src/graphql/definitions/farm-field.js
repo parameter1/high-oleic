@@ -118,7 +118,7 @@ The expenses, per line item of a category, of a farm field.
 """
 type FarmFieldExpenseCategoryLineItem {
   "The expense category line item."
-  lineItem: ExpenseCategoryLineItem!
+  lineItem: ExpenseCategoryLineItemInterface!
   "The costs of the line item."
   costs: FarmFieldExpenseCosts!
 }

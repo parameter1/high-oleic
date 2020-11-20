@@ -67,7 +67,7 @@ type ReportExpenseCategorySummary {
 
 type ReportExpenseCategoryLineItemSummary {
   "The expense line item."
-  lineItem: ExpenseCategoryLineItem!
+  lineItem: ExpenseCategoryLineItemInterface!
   "The total line item expense, in dollars."
   total: Float!
   "The average line item expense, per acre."

@@ -89,14 +89,12 @@ type ExpenseCategory {
   "The expected input cost unit, e.g. cost per acre or cost per bushel."
   unit: CurrencyUnitEnum!
   "Expense line items belong to this category."
-  lineItems(input: ExpenseCategoryLineItemsInput = {}): [ExpenseCategoryLineItem!]!
+  lineItems(input: ExpenseCategoryLineItemsInput = {}): [ExpenseCategoryLineItemInterface!]!
 }
 
-type ExpenseCategoryLineItem {
+interface ExpenseCategoryLineItemInterface {
   "The expense line item ID. Is a combination of the category type and the line item type."
   id: String!
-  "The expense line item type, e.g. land or tax."
-  type: String!
   "The expense line item label"
   label: String!
   "The expense line item description"
@@ -107,6 +105,26 @@ type ExpenseCategoryLineItem {
   fixed: Boolean!
 }
 
+type ExpenseCategoryCropLineItem implements ExpenseCategoryLineItemInterface @interfaceFields {
+  "The expense line item type."
+  type: ExpenseCategoryCropLineItemEnum!
+}
+
+type ExpenseCategoryChemicalsLineItem implements ExpenseCategoryLineItemInterface @interfaceFields {
+  "The expense line item type."
+  type: ExpenseCategoryChemicalsLineItemEnum!
+}
+
+type ExpenseCategoryFieldOpsLineItem implements ExpenseCategoryLineItemInterface @interfaceFields {
+  "The expense line item type."
+  type: ExpenseCategoryFieldOpsLineItemEnum!
+}
+
+type ExpenseCategoryHandlingLineItem implements ExpenseCategoryLineItemInterface @interfaceFields {
+  "The expense line item type."
+  type: ExpenseCategoryHandlingLineItemEnum!
+}
+
 type ExpenseCategoryCosts {
   "The expense category."
   category: ExpenseCategory!
@@ -115,7 +133,7 @@ type ExpenseCategoryCosts {
 }
 
 type ExpenseCategoryLineItemCost {
-  lineItem: ExpenseCategoryLineItem!
+  lineItem: ExpenseCategoryHandlingLineItem!
   total: Float!
   perAcre: Float!
   perBushel: Float!
