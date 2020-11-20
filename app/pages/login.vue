@@ -1,54 +1,58 @@
 <template>
-  <div class="pt-2 pb-6 md:py-6">
-    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
-      <div class="p-4">
-        <h1 class="text-2xl mb-4">
-          Login
-        </h1>
-        <div v-if="sent">
-          Login link sent to {{ email }}
-        </div>
-        <div v-else>
-          <p>
-            To login or register, please submit your email address below.
-            A login link will be sent to the email address you enter.
-          </p>
-          <form @submit.prevent="sendLoginLink">
-            <div>
-              <label for="login.email">Email Address</label>
-              <input
-                id="login.email"
-                v-model="email"
-                :disabled="isLoading"
-                type="email"
-                placeholder="email@domain.com"
-                required
-              >
-            </div>
-            <button
-              type="submit"
-              :disabled="isLoading"
-            >
-              Login / Register
-            </button>
-          </form>
-          <div v-if="isLoading">
-            Loading...
-          </div>
-          <div v-if="error">
+  <div class="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <h1 class="mt-6 text-center text-2xl font-semibold">
+        Login / Register
+      </h1>
+    </div>
+
+    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <form v-if="!sent" class="space-y-6" @submit.prevent="sendLoginLink">
+          <input-group
+            id="sign-in.email"
+            v-model="email"
+            :hint="hint"
+            :disabled="isSending"
+            label="Email address"
+            type="email"
+            required
+          />
+          <btn
+            type="submit"
+            color="logo-blue"
+            :loading="isSending"
+            block
+          >
+            Send login link
+          </btn>
+          <alert v-if="error" type="danger">
             {{ error.message }}
-          </div>
-        </div>
+          </alert>
+        </form>
+        <login-link-sent v-else :email="email" @start-over="reset" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Alert from '../components/common/alert.vue';
+import Btn from '../components/common/button.vue';
+import InputGroup from '../components/common/forms/input-group.vue';
+import LoginLinkSent from '../components/login-link-sent.vue';
+
 import sendLoginLink from '../utils/send-login-link';
 import GraphQLError from '../utils/graphql-error';
 
 export default {
+  components: {
+    Alert,
+    Btn,
+    InputGroup,
+    LoginLinkSent,
+  },
+
   apollo: {
     $client: 'identityX',
   },
@@ -56,15 +60,27 @@ export default {
   data: () => ({
     email: null,
     error: null,
-    isLoading: false,
+    isSending: false,
     sent: false,
+    hint: 'You must have access to this email account. A login link will be emailed to this address.',
   }),
 
   methods: {
+    /**
+     *
+     */
+    reset() {
+      this.email = null;
+      this.sent = false;
+    },
+
+    /**
+     *
+     */
     async sendLoginLink() {
       try {
         this.error = null;
-        this.isLoading = true;
+        this.isSending = true;
         await sendLoginLink(this.$apollo, {
           email: this.email,
           authUrl: `${window.location.origin}/authenticate`,
@@ -74,7 +90,7 @@ export default {
       } catch (e) {
         this.error = new GraphQLError(e);
       } finally {
-        this.isLoading = false;
+        this.isSending = false;
       }
     },
   },
