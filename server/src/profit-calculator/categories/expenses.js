@@ -84,6 +84,7 @@ module.exports = [
   const lineItems = category.lineItems.map((lineItem) => ({
     ...lineItem,
     categoryType: category.type,
+    unit: category.unit,
   }));
   return {
     ...category,

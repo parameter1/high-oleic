@@ -101,6 +101,8 @@ type ExpenseCategoryLineItem {
   label: String!
   "The expense line item description"
   description: String
+  "The expected input cost unit, e.g. cost per acre or cost per bushel."
+  unit: CurrencyUnitEnum!
   "Whether the cost is considered fixed."
   fixed: Boolean!
 }
