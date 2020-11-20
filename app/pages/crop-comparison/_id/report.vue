@@ -137,6 +137,10 @@
                     @saving="isUpdatingReport = $event"
                   />
                 </div>
+                <table-header type="secondary" class="uppercase">
+                  Total Expenses
+                </table-header>
+                <expense-totals :expenses="comparedTo.expenses" />
               </div>
 
               <!-- Oleic -->
@@ -189,6 +193,10 @@
                     @saving="isUpdatingReport = $event"
                   />
                 </div>
+                <table-header type="secondary" class="uppercase">
+                  Total Expenses
+                </table-header>
+                <expense-totals :expenses="oleic.expenses" />
               </div>
             </div>
           </div>
@@ -202,6 +210,7 @@
 import Alert from '../../../components/common/alert.vue';
 import EconomicResults from '../../../components/crop-comparison/report-tables/economic-results.vue';
 import ExpenseCategory from '../../../components/crop-comparison/report-tables/expense-category.vue';
+import ExpenseTotals from '../../../components/crop-comparison/report-tables/expense-totals.vue';
 import TableHeader from '../../../components/crop-comparison/report-tables/common/header.vue';
 import ToggleDateFormat from '../../../components/toggle-date-format.vue';
 import YieldPrice from '../../../components/crop-comparison/report-tables/yield-price.vue';
@@ -227,6 +236,7 @@ export default {
     Alert,
     EconomicResults,
     ExpenseCategory,
+    ExpenseTotals,
     EditAcres,
     EditFarmName,
     TableHeader,
