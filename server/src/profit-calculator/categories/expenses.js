@@ -76,7 +76,7 @@ module.exports = [
     unit: 'perBushel',
     lineItems: [
       { type: 'hauling', label: 'Hauling' },
-      { type: 'dryer', label: 'Dryer' },
+      { type: 'dryer', label: 'Drying' },
       { type: 'storage', label: 'Storage' },
     ],
   },
