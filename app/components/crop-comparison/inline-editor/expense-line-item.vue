@@ -3,7 +3,7 @@
     :tag="tag"
     :value="value"
     :input-attrs="{ type: 'number', min: 0, step: 0.01, required: true }"
-    :hint="settings.hint"
+    :hint="hint"
     :save-func="update.bind(this)"
     :disabled="disabled"
     @saving="$emit('saving', $event)"
@@ -16,14 +16,18 @@
 <script>
 import FormatNumber from '../../format-number.vue';
 import InlineEditor from '../../inline-input-editor.vue';
+import lineItemHints from '../line-item-hints';
 
-// import fieldSettings from '../field-settings';
 import { UPDATE_COMPARISON_REPORT_PRICE_PER_BUSHEL } from '../../../graphql/mutations';
 
 export default {
   components: { FormatNumber, InlineEditor },
 
   props: {
+    lineItemId: {
+      type: String,
+      required: true,
+    },
     cropName: {
       type: String,
       required: true,
@@ -52,9 +56,8 @@ export default {
   },
 
   computed: {
-    settings() {
-      return {};
-      // return fieldSettings.pricePerBushel({ crop: this.cropName });
+    hint() {
+      return lineItemHints({ id: this.lineItemId, cropName: this.cropName });
     },
   },
 

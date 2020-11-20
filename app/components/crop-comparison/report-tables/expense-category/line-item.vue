@@ -3,8 +3,9 @@
     <tr>
       <td v-show="showLeft" :class="leftClasses">
         <edit-expense-line-item
-          v-if="unit === 'PER_ACRE'"
+          v-if="canEdit && unit === 'PER_ACRE'"
           :comparison-id="comparisonId"
+          :line-item-id="lineItem.id"
           :apply-to="applyTo"
           :crop-name="cropName"
           :value="expense.costs.perAcre"
@@ -23,8 +24,9 @@
       </td>
       <td v-show="showRight" :class="rightClasses">
         <edit-expense-line-item
-          v-if="unit === 'PER_BUSHEL'"
+          v-if="canEdit && unit === 'PER_BUSHEL'"
           :comparison-id="comparisonId"
+          :line-item-id="lineItem.id"
           :apply-to="applyTo"
           :crop-name="cropName"
           :value="expense.costs.perBushel"
@@ -45,6 +47,7 @@
 <script>
 import EditExpenseLineItem from '../../inline-editor/expense-line-item.vue';
 import FormatNumber from '../../../format-number.vue';
+import sharedLineItems from '../../shared-line-items';
 
 export default {
   components: {
@@ -81,6 +84,13 @@ export default {
   }),
 
   computed: {
+    lineItem() {
+      return this.expense.lineItem;
+    },
+    canEdit() {
+      if (this.applyTo === 'COMPARED_CROP') return true;
+      return !sharedLineItems.includes(this.lineItem.id);
+    },
     leftClasses() {
       if (this.isEditing && this.unit === 'PER_ACRE') return 'w-full';
       return 'w-1/3';
