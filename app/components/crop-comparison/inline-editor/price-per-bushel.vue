@@ -7,6 +7,7 @@
     :save-func="update.bind(this)"
     :disabled="disabled"
     @saving="$emit('saving', $event)"
+    @editing="$emit('editing', $event)"
   >
     <format-number #default="{ formatted }" format="usd" :value="value">
       {{ formatted }} per bushel

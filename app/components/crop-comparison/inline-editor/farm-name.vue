@@ -6,6 +6,7 @@
     :save-func="update.bind(this)"
     :disabled="disabled"
     @saving="$emit('saving', $event)"
+    @editing="$emit('editing', $event)"
   >
     {{ value }}
   </inline-editor>
