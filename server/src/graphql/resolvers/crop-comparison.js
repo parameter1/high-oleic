@@ -131,7 +131,6 @@ module.exports = {
       await auth.check();
       const {
         id,
-        applyTo,
         crop,
         chemicals,
         fieldOps,
@@ -141,7 +140,6 @@ module.exports = {
       const projection = typeProjection(info);
       return repos.cropComparison.setExpenses({
         id,
-        applyTo,
         crop,
         chemicals,
         fieldOps,

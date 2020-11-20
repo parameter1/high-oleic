@@ -103,8 +103,6 @@ input CropComparisonDataMutationInput {
 input CropComparisonExpensesMutationInput {
   "The comparison report to apply the data to."
   id: ObjectID!
-  "Which field to apply the data to."
-  applyTo: CropComparisonFieldTypeEnum!
   "Crop expenses to set."
   crop: [CropComparisonCropExpenseInput!] = []
   "Chemical expenses to set."
@@ -116,6 +114,8 @@ input CropComparisonExpensesMutationInput {
 }
 
 input CropComparisonCropExpenseInput {
+  "Which field to apply the data to."
+  applyTo: CropComparisonFieldTypeEnum!
   "The crop expense category line item."
   lineItem: ExpenseCategoryCropLineItemEnum!
   "The expense in $ cost / acre."
@@ -123,6 +123,8 @@ input CropComparisonCropExpenseInput {
 }
 
 input CropComparisonChemicalsExpenseInput {
+  "Which field to apply the data to."
+  applyTo: CropComparisonFieldTypeEnum!
   "The chemical expense category line item."
   lineItem: ExpenseCategoryChemicalsLineItemEnum!
   "The expense in $ cost / acre."
@@ -130,6 +132,8 @@ input CropComparisonChemicalsExpenseInput {
 }
 
 input CropComparisonFieldOpsExpenseInput {
+  "Which field to apply the data to."
+  applyTo: CropComparisonFieldTypeEnum!
   "The field ops expense category line item."
   lineItem: ExpenseCategoryFieldOpsLineItemEnum!
   "The expense in $ cost / acre."
@@ -137,6 +141,8 @@ input CropComparisonFieldOpsExpenseInput {
 }
 
 input CropComparisonHandlingExpenseInput {
+  "Which field to apply the data to."
+  applyTo: CropComparisonFieldTypeEnum!
   "The handling expense category line item."
   lineItem: ExpenseCategoryHandlingLineItemEnum!
   "The expense in $ cost / bushel."

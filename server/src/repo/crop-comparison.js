@@ -172,15 +172,14 @@ class FarmFieldRepo extends PaginableRepo {
   async setExpenses(params = {}) {
     const {
       id,
-      applyTo,
       updateOptions,
       findOptions,
     } = await validateAsync(Joi.object({
       id: fields.id.required(),
-      applyTo: fields.applyTo.required(),
 
       crop: Joi.array().items(
         Joi.object({
+          applyTo: fields.applyTo.required(),
           lineItem: farmFieldFields.cropExpenseLineItems.required(),
           value: farmFieldFields.expenseValue.required(),
         }),
@@ -188,6 +187,7 @@ class FarmFieldRepo extends PaginableRepo {
 
       chemicals: Joi.array().items(
         Joi.object({
+          applyTo: fields.applyTo.required(),
           lineItem: farmFieldFields.chemicalsExpenseLineItems.required(),
           value: farmFieldFields.expenseValue.required(),
         }),
@@ -195,6 +195,7 @@ class FarmFieldRepo extends PaginableRepo {
 
       fieldOps: Joi.array().items(
         Joi.object({
+          applyTo: fields.applyTo.required(),
           lineItem: farmFieldFields.fieldOpsExpenseLineItems.required(),
           value: farmFieldFields.expenseValue.required(),
         }),
@@ -202,6 +203,7 @@ class FarmFieldRepo extends PaginableRepo {
 
       handling: Joi.array().items(
         Joi.object({
+          applyTo: fields.applyTo.required(),
           lineItem: farmFieldFields.handlingExpenseLineItems.required(),
           value: farmFieldFields.expenseValue.required(),
         }),
@@ -215,7 +217,7 @@ class FarmFieldRepo extends PaginableRepo {
     const $set = {
       ...expensesCategories.reduce((o, key) => ({
         ...o,
-        ...params[key].reduce((o2, { lineItem, value }) => {
+        ...params[key].reduce((o2, { applyTo, lineItem, value }) => {
           const field = `${applyTo}.expenses.${key}.${lineItem}`;
           return { ...o2, [field]: value };
         }, {}),
