@@ -17,15 +17,16 @@
 import FormatNumber from '../../format-number.vue';
 import InlineEditor from '../../inline-input-editor.vue';
 import lineItemHints from '../line-item-hints';
+import sharedLineItems from '../shared-line-items';
 
-import { UPDATE_COMPARISON_REPORT_PRICE_PER_BUSHEL } from '../../../graphql/mutations';
+import { UPDATE_COMPARISON_REPORT_EXPENSES } from '../../../graphql/mutations';
 
 export default {
   components: { FormatNumber, InlineEditor },
 
   props: {
-    lineItemId: {
-      type: String,
+    lineItem: {
+      type: Object,
       required: true,
     },
     cropName: {
@@ -57,22 +58,37 @@ export default {
 
   computed: {
     hint() {
-      return lineItemHints({ id: this.lineItemId, cropName: this.cropName });
+      return lineItemHints({ id: this.lineItem.id, cropName: this.cropName });
+    },
+    inputKey() {
+      const [key] = this.lineItem.id.split('.');
+      return key;
+    },
+    type() {
+      return this.lineItem[`${this.inputKey}Type`];
+    },
+    applyToOleic() {
+      return this.applyTo === 'COMPARED_CROP' && sharedLineItems.includes(this.lineItem.id);
     },
   },
 
   methods: {
     async update({ newValue }) {
-      throw new Error('NYI');
+      const applies = [this.applyTo];
+      if (this.applyToOleic) applies.push('OLEIC');
       const input = {
         id: this.comparisonId,
-        applyTo: this.applyTo,
-        pricePerBushel: parseFloat(newValue),
+        [this.inputKey]: applies.map((applyTo) => ({
+          applyTo,
+          lineItem: this.type,
+          value: parseFloat(newValue),
+        })),
       };
       await this.$apollo.mutate({
-        mutation: UPDATE_COMPARISON_REPORT_PRICE_PER_BUSHEL,
+        mutation: UPDATE_COMPARISON_REPORT_EXPENSES,
         variables: { input },
       });
+      this.$emit('editing', false);
     },
   },
 };

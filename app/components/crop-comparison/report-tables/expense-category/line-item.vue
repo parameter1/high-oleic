@@ -5,7 +5,7 @@
         <edit-expense-line-item
           v-if="canEdit && unit === 'PER_ACRE'"
           :comparison-id="comparisonId"
-          :line-item-id="lineItem.id"
+          :line-item="lineItem"
           :apply-to="applyTo"
           :crop-name="cropName"
           :value="expense.costs.perAcre"
@@ -26,7 +26,7 @@
         <edit-expense-line-item
           v-if="canEdit && unit === 'PER_BUSHEL'"
           :comparison-id="comparisonId"
-          :line-item-id="lineItem.id"
+          :line-item="lineItem"
           :apply-to="applyTo"
           :crop-name="cropName"
           :value="expense.costs.perBushel"

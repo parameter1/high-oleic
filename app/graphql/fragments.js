@@ -33,6 +33,18 @@ export const CROP_COMPARISON_FIELD_FRAGMENT = gql`
           lineItem {
             id
             label
+            ... on ExpenseCategoryCropLineItem {
+              cropType: type
+            }
+            ... on ExpenseCategoryChemicalsLineItem {
+              chemicalsType: type
+            }
+            ... on ExpenseCategoryFieldOpsLineItem {
+              fieldOpsType: type
+            }
+            ... on ExpenseCategoryHandlingLineItem {
+              handlingType: type
+            }
             unit
           }
           costs {
