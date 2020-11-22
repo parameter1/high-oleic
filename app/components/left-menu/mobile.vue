@@ -35,7 +35,7 @@
         <div
           v-show="value"
           v-closeable="emit"
-          class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white"
+          class="relative flex-1 flex flex-col max-w-xs w-full pt-5 bg-white"
         >
           <div class="absolute top-0 right-0 -mr-14 p-1">
             <close-button
@@ -57,6 +57,7 @@
               @nav-item-click="emit"
             />
           </div>
+          <user />
         </div>
       </transition>
 
@@ -70,9 +71,15 @@
 import MenuNav from './nav.vue';
 import Logo from '../logo.vue';
 import CloseButton from './close-button.vue';
+import User from './user.vue';
 
 export default {
-  components: { Logo, MenuNav, CloseButton },
+  components: {
+    Logo,
+    MenuNav,
+    CloseButton,
+    User,
+  },
 
   props: {
     /**

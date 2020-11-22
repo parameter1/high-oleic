@@ -13,6 +13,7 @@
         <div class="mt-5 flex-grow flex flex-col">
           <menu-nav size="desktop" />
         </div>
+        <user />
       </div>
     </div>
   </div>
@@ -21,9 +22,10 @@
 <script>
 import MenuNav from './nav.vue';
 import Logo from '../logo.vue';
+import User from './user.vue';
 
 export default {
-  components: { Logo, MenuNav },
+  components: { Logo, MenuNav, User },
 
   data: () => ({
     sidebarClasses: [
@@ -33,7 +35,6 @@ export default {
       'border-r',
       'border-secondary-5-300',
       'pt-5',
-      'pb-4',
       'bg-white',
       'overflow-y-auto',
     ],
