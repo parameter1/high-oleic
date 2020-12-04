@@ -92,7 +92,8 @@ import MarketPrice from '../../../components/crop-comparison/fields/market-price
 import Yield from '../../../components/crop-comparison/fields/yield.vue';
 
 import cropOptions from '../../../components/crop-comparison/crop-options';
-import { MODIFY_COMPARISON_FARM_INFO } from '../../../graphql/queries';
+import { CROP_COMPARISON_FARM_INFO } from '../../../graphql/queries';
+import { UPDATE_CROP_COMPARISON_FARM_INFO } from '../../../graphql/mutations';
 import GraphQLError from '../../../utils/graphql-error';
 
 export default {
@@ -108,7 +109,7 @@ export default {
 
   apollo: {
     cropComparison: {
-      query: MODIFY_COMPARISON_FARM_INFO,
+      query: CROP_COMPARISON_FARM_INFO,
       fetchPolicy: 'cache-and-network',
       variables() {
         return { id: this.comparisonId };
@@ -130,13 +131,13 @@ export default {
   },
 
   async beforeRouteLeave(to, from, next) {
+    if (this.saved) return next();
     if (/^crop-comparison-id-/.test(to.name)) {
       // auto-save when navigating between edit pages
       await this.save();
-      next();
-    } else {
-      next();
+      return next();
     }
+    return next();
   },
 
   props: {
@@ -153,6 +154,7 @@ export default {
       comparedTo: { crop: {} },
     },
     isSaving: false,
+    saved: false,
     savingError: null,
   }),
 
@@ -179,6 +181,18 @@ export default {
       try {
         this.savingError = null;
         this.isSaving = true;
+        const { comparisonId, cropComparison, comparedTo } = this;
+        const variables = {
+          id: comparisonId,
+          acres: parseFloat(cropComparison.acres),
+          farmName: cropComparison.farmName,
+          cropToCompare: comparedTo.crop.id,
+          pricePerBushel: parseFloat(comparedTo.pricePerBushel),
+          yieldPerAcre: parseFloat(comparedTo.yieldPerAcre),
+        };
+        await this.$apollo.mutate({ mutation: UPDATE_CROP_COMPARISON_FARM_INFO, variables });
+        this.saved = true;
+        this.$router.push(`/crop-comparison/${comparisonId}/yield-price`);
       } catch (e) {
         this.savingError = new GraphQLError(e);
       } finally {

@@ -87,3 +87,21 @@ export const CROP_COMPARISON_REPORT_FRAGMENT = gql`
 
   ${CROP_COMPARISON_FIELD_FRAGMENT}
 `;
+
+export const CROP_COMPARISON_FARM_INFO_FRAGMENT = gql`
+  fragment CropComparisonFarmInfoFragment on CropComparison {
+    id
+    acres
+    farmName
+    comparedTo {
+      id
+      cropType
+      crop {
+        id
+        label
+      }
+      pricePerBushel
+      yieldPerAcre
+    }
+  }
+`;

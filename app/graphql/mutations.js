@@ -94,3 +94,48 @@ export const UPDATE_COMPARISON_REPORT_EXPENSES = gql`
 
   ${CROP_COMPARISON_REPORT_FRAGMENT}
 `;
+
+export const UPDATE_CROP_COMPARISON_FARM_INFO = gql`
+  mutation UpdateCropComparisonFarmInfo(
+    $id: ObjectID!
+    $acres: Float!
+    $farmName: String!
+    $cropToCompare: ComparisonCropTypeEnum!
+    $pricePerBushel: Float
+    $yieldPerAcre: Float
+  ) {
+    cropComparisonAcres(input: { id: $id, acres: $acres }) {
+      id
+      acres
+    }
+    cropComparisonFarmName(input: { id: $id, farmName: $farmName }) {
+      id
+      farmName
+    }
+    cropComparisonCrop(input: { id: $id, cropToCompare: $cropToCompare }) {
+      id
+      comparedTo {
+        id
+        cropType
+        crop {
+          id
+          label
+        }
+      }
+    }
+    cropComparisonData(input: {
+      id: $id
+      applyTo: COMPARED_CROP
+      pricePerBushel: $pricePerBushel,
+      yieldPerAcre: $yieldPerAcre,
+    }) {
+      id
+      updatedAt
+      comparedTo {
+        id
+        pricePerBushel
+        yieldPerAcre
+      }
+    }
+  }
+`;
