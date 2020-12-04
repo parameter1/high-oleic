@@ -1,16 +1,16 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
-    <create-comparison
-      v-model="createOpen"
-      :list-query="$apollo.queries.myCropComparisons"
-    />
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
       <div class="p-4">
         <client-only>
           <page-header slot="placeholder" is-loading />
           <page-header :is-loading="isLoading" />
 
-          <btn class="shadow mb-8" :disabled="!hasToken" @click="createOpen = !createOpen">
+          <btn
+            class="shadow mb-8"
+            :disabled="!hasToken"
+            @click="$router.push('/crop-comparison/create')"
+          >
             Create New Scenerio
           </btn>
 
@@ -57,6 +57,7 @@
             </transition-group>
           </div>
         </client-only>
+        <nuxt-child :list-query="$apollo.queries.myCropComparisons" />
       </div>
     </div>
   </div>
@@ -65,7 +66,6 @@
 <script>
 import Alert from '../../components/common/alert.vue';
 import Btn from '../../components/common/button.vue';
-import CreateComparison from '../../components/crop-comparison/create.vue';
 import ListItem from '../../components/crop-comparison/list-item.vue';
 import PageHeader from '../../components/crop-comparison/page-header.vue';
 
@@ -76,7 +76,6 @@ export default {
   components: {
     Alert,
     Btn,
-    CreateComparison,
     ListItem,
     PageHeader,
   },
