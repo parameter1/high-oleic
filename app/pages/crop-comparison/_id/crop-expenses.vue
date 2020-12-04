@@ -1,3 +1,3 @@
 <template>
-  <div>Crop Expenses</div>
+  <div class="p-4">Crop Expenses</div>
 </template>

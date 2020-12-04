@@ -1,3 +1,3 @@
 <template>
-  <div>Grain Handling</div>
+  <div class="p-4">Grain Handling</div>
 </template>

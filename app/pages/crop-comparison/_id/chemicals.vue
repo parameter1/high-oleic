@@ -1,3 +1,3 @@
 <template>
-  <div>Chemicals</div>
+  <div class="p-4">Chemicals</div>
 </template>

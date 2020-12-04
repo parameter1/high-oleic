@@ -1,3 +1,3 @@
 <template>
-  <div>Land</div>
+  <div class="p-4">Land</div>
 </template>

@@ -1,3 +1,3 @@
 <template>
-  <div>Field Ops</div>
+  <div class="p-4">Field Ops</div>
 </template>
