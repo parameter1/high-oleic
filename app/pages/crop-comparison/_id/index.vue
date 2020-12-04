@@ -117,7 +117,10 @@ export default {
       update({ cropComparison }) {
         return {
           ...cropComparison,
-          comparedTo: { ...cropComparison.comparedTo },
+          comparedTo: {
+            ...cropComparison.comparedTo,
+            crop: { ...cropComparison.comparedTo.crop },
+          },
         };
       },
       error(e) { this.error = new GraphQLError(e); },
@@ -128,16 +131,6 @@ export default {
       },
       prefetch: false,
     },
-  },
-
-  async beforeRouteLeave(to, from, next) {
-    if (this.saved) return next();
-    if (/^crop-comparison-id-/.test(to.name)) {
-      // auto-save when navigating between edit pages
-      await this.save();
-      return next();
-    }
-    return next();
   },
 
   props: {
@@ -154,7 +147,6 @@ export default {
       comparedTo: { crop: {} },
     },
     isSaving: false,
-    saved: false,
     savingError: null,
   }),
 
@@ -191,7 +183,6 @@ export default {
           yieldPerAcre: parseFloat(comparedTo.yieldPerAcre),
         };
         await this.$apollo.mutate({ mutation: UPDATE_CROP_COMPARISON_FARM_INFO, variables });
-        this.saved = true;
         this.$router.push(`/crop-comparison/${comparisonId}/yield-price`);
       } catch (e) {
         this.savingError = new GraphQLError(e);
