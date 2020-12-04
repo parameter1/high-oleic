@@ -11,30 +11,35 @@
             {{ error.message }}
           </alert>
           <main v-else>
-            <div class="bg-white overflow-hidden shadow rounded-lg p-4 mb-5">
-              <page-header :is-loading="isLoading || isChildLoading">
-                Modify Profit Scenerio
-              </page-header>
-              <h2 class="text-logo-blue text-lg leading-6 font-semibold max-w-sm">
-                {{ cropComparison.farmName }}
-              </h2>
-              <p class="mt-1 text-primary-1 text-base leading-6">
-                Comparing
-                <span class="text-logo-green font-semibold">
-                  <format-number format="integer" :value="cropComparison.acres" />
-                </span>
-                acres of
-                <span class="text-logo-green font-semibold">
-                  {{ comparedTo.crop.label }}
-                </span>
-                to
-                <span class="text-logo-green font-semibold">
-                  {{ oleic.crop.label }}
-                </span>
-              </p>
+            <div class="bg-white overflow-hidden shadow rounded-lg mb-5">
+              <div class="flex">
+                <back-link />
+                <div class="p-4">
+                  <page-header :is-loading="isLoading || isChildLoading">
+                    Modify Profit Scenerio
+                  </page-header>
+                  <h2 class="text-logo-blue text-lg leading-6 font-semibold max-w-sm">
+                    {{ cropComparison.farmName }}
+                  </h2>
+                  <p class="mt-1 text-primary-1 text-base leading-6">
+                    Comparing
+                    <span class="text-logo-green font-semibold">
+                      <format-number format="integer" :value="cropComparison.acres" />
+                    </span>
+                    acres of
+                    <span class="text-logo-green font-semibold">
+                      {{ comparedTo.crop.label }}
+                    </span>
+                    to
+                    <span class="text-logo-green font-semibold">
+                      {{ oleic.crop.label }}
+                    </span>
+                  </p>
 
-              <div class="mt-1 text-sm leading-5 text-secondary-4">
-                Scenerio last modified <toggle-date-format :timestamp="cropComparison.updatedAt" />
+                  <div class="mt-1 text-sm leading-5 text-secondary-4">
+                    Scenerio last modified <toggle-date-format :timestamp="cropComparison.updatedAt" />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -54,6 +59,7 @@
 
 <script>
 import Alert from '../../components/common/alert.vue';
+import BackLink from '../../components/crop-comparison/back-to-list-link.vue';
 import FormatNumber from '../../components/format-number.vue';
 import ModifyNav from '../../components/crop-comparison/modify-nav.vue';
 import PageHeader from '../../components/crop-comparison/page-header.vue';
@@ -65,6 +71,7 @@ import GraphQLError from '../../utils/graphql-error';
 export default {
   components: {
     Alert,
+    BackLink,
     FormatNumber,
     ModifyNav,
     PageHeader,
