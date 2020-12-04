@@ -1,7 +1,7 @@
 <template>
   <fieldset :disabled="disabled">
     <h3
-      v-if="cropName"
+      v-if="cropName && displayCropName"
       class="border-secondary-5-300 pb-2 mb-4 border-b-2 text-lg leading-6 font-semibold"
     >
       {{ cropName }}
@@ -47,6 +47,10 @@ export default {
     cropName: {
       type: String,
       default: null,
+    },
+    displayCropName: {
+      type: Boolean,
+      default: true,
     },
     applyTo: {
       type: String,
