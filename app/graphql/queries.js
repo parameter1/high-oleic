@@ -54,3 +54,48 @@ export const CROP_COMPARISON_REPORT = gql`
 
   ${CROP_COMPARISON_REPORT_FRAGMENT}
 `;
+
+export const MODIFY_COMPARISON_FARM_INFO = gql`
+  query ModifyComparisonFarmInfo($id: ObjectID!) {
+    cropComparison(input: { id: $id }) {
+      id
+      acres
+      farmName
+      comparedTo {
+        id
+        cropType
+        crop {
+          id
+          label
+        }
+        pricePerBushel
+        yieldPerAcre
+      }
+    }
+  }
+`;
+
+export const MODIFY_COMPARISON_ROOT = gql`
+  query ModifyComparisonRoot($id: ObjectID!) {
+    cropComparison(input: { id: $id }) {
+      id
+      acres
+      farmName
+      updatedAt
+      comparedTo {
+        id
+        crop {
+          id
+          label
+        }
+      }
+      oleic {
+        id
+        crop {
+          id
+          label
+        }
+      }
+    }
+  }
+`;
