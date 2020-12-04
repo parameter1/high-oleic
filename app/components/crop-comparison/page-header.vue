@@ -1,7 +1,7 @@
 <template>
   <div class="mb-4 flex items-center">
     <h1 class="text-2xl font-semibold">
-      Calculate Profit Potential
+      <slot />
     </h1>
     <loading-spinner
       v-if="isLoading"

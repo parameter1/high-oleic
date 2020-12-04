@@ -3,8 +3,12 @@
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
       <div class="p-4">
         <client-only>
-          <page-header slot="placeholder" is-loading />
-          <page-header :is-loading="isLoading" />
+          <page-header slot="placeholder" is-loading>
+            Calculate Profit Potential
+          </page-header>
+          <page-header :is-loading="isLoading">
+            Calculate Profit Potential
+          </page-header>
 
           <btn
             class="shadow mb-8"
