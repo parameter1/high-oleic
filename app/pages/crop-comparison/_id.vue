@@ -2,22 +2,19 @@
   <div class="pt-2 pb-6 md:py-6">
     <div class="max-w-7xl mx-auto sm:px-4">
       <div class="p-4">
-        <client-only placeholder="Loading...">
-          <div v-if="isLoading">
-            Loading...
-          </div>
+        <client-only>
           <alert
-            v-else-if="error"
+            v-if="error"
             type="danger"
             class="mb-5 shadow-sm"
           >
             {{ error.message }}
           </alert>
-          <div v-else>
+          <main v-else>
             <div class="bg-white overflow-hidden shadow rounded-lg p-4 mb-5">
-              <h1 class="text-2xl mb-4 font-semibold">
+              <page-header :is-loading="isLoading || isChildLoading">
                 Modify Profit Scenerio
-              </h1>
+              </page-header>
               <h2 class="text-logo-blue text-lg leading-6 font-semibold max-w-sm">
                 {{ cropComparison.farmName }}
               </h2>
@@ -43,9 +40,12 @@
 
             <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
               <modify-nav class="p-4" :comparison-id="comparisonId" />
-              <nuxt-child :comparison-id="comparisonId" />
+              <nuxt-child
+                :comparison-id="comparisonId"
+                @loading="isChildLoading = $event"
+              />
             </div>
-          </div>
+          </main>
         </client-only>
       </div>
     </div>
@@ -56,6 +56,7 @@
 import Alert from '../../components/common/alert.vue';
 import FormatNumber from '../../components/format-number.vue';
 import ModifyNav from '../../components/crop-comparison/modify-nav.vue';
+import PageHeader from '../../components/crop-comparison/page-header.vue';
 import ToggleDateFormat from '../../components/toggle-date-format.vue';
 
 import { MODIFY_COMPARISON_ROOT } from '../../graphql/queries';
@@ -66,6 +67,7 @@ export default {
     Alert,
     FormatNumber,
     ModifyNav,
+    PageHeader,
     ToggleDateFormat,
   },
 
@@ -87,10 +89,11 @@ export default {
 
   data: () => ({
     error: null,
+    isChildLoading: false,
     isLoading: true,
     cropComparison: {
-      oleic: {},
-      comparedTo: {},
+      oleic: { crop: {} },
+      comparedTo: { crop: {} },
     },
   }),
 
