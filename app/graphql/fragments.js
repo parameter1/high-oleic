@@ -105,3 +105,15 @@ export const CROP_COMPARISON_FARM_INFO_FRAGMENT = gql`
     }
   }
 `;
+
+export const CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT = gql`
+  fragment CropComparisonYieldAndPriceFragment on CropComparison {
+    id
+    updatedAt
+    oleic {
+      id
+      yieldPerAcre
+      premiumPerBushel
+    }
+  }
+`;

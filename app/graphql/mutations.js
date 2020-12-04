@@ -1,5 +1,8 @@
 import gql from 'graphql-tag';
-import { CROP_COMPARISON_REPORT_FRAGMENT } from './fragments';
+import {
+  CROP_COMPARISON_REPORT_FRAGMENT,
+  CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT,
+} from './fragments';
 
 export const AUTHENTICATE = gql`
   mutation Authenticate($token: String!) {
@@ -138,4 +141,23 @@ export const UPDATE_CROP_COMPARISON_FARM_INFO = gql`
       }
     }
   }
+`;
+
+export const UPDATE_CROP_COMPARISON_YIELD_AND_PRICE = gql`
+  mutation UpdateCropComparisonYieldAndPrice(
+    $id: ObjectID!
+    $premiumPerBushel: Float
+    $yieldPerAcre: Float
+  ) {
+    cropComparisonData(input: {
+      id: $id
+      applyTo: OLEIC
+      premiumPerBushel: $premiumPerBushel,
+      yieldPerAcre: $yieldPerAcre,
+    }) {
+      ...CropComparisonYieldAndPriceFragment
+    }
+  }
+
+  ${CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT}
 `;

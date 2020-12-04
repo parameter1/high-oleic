@@ -1,5 +1,9 @@
 import gql from 'graphql-tag';
-import { CROP_COMPARISON_REPORT_FRAGMENT, CROP_COMPARISON_FARM_INFO_FRAGMENT } from './fragments';
+import {
+  CROP_COMPARISON_REPORT_FRAGMENT,
+  CROP_COMPARISON_FARM_INFO_FRAGMENT,
+  CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT,
+} from './fragments';
 
 export const LOOKUP_USER = gql`
   query LookupUser($email: String!) {
@@ -63,6 +67,16 @@ export const CROP_COMPARISON_FARM_INFO = gql`
   }
 
   ${CROP_COMPARISON_FARM_INFO_FRAGMENT}
+`;
+
+export const CROP_COMPARISON_YIELD_AND_PRICE = gql`
+  query CropComparisonYieldAndPrice($id: ObjectID!) {
+    cropComparison(input: { id: $id }) {
+      ...CropComparisonYieldAndPriceFragment
+    }
+  }
+
+  ${CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT}
 `;
 
 export const MODIFY_COMPARISON_ROOT = gql`
