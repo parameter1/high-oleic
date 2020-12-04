@@ -37,7 +37,8 @@
                   </p>
 
                   <div class="mt-1 text-sm leading-5 text-secondary-4">
-                    Scenerio last modified <toggle-date-format :timestamp="cropComparison.updatedAt" />
+                    Scenerio last modified
+                    <toggle-date-format :timestamp="cropComparison.updatedAt" />
                   </div>
                 </div>
               </div>
