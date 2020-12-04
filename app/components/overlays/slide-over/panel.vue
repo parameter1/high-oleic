@@ -14,24 +14,23 @@
           <slot name="description" />
         </template>
       </panel-header>
-      <div class="flex-1 flex flex-col justify-between">
+      <panel-body>
         <slot name="body" />
-      </div>
+      </panel-body>
     </div>
-    <div
-      v-if="hasFooterSlot"
-      class="flex-shrink-0 p-4 flex flex-col"
-    >
+    <panel-footer v-if="hasFooterSlot">
       <slot name="footer" />
-    </div>
+    </panel-footer>
   </div>
 </template>
 
 <script>
+import PanelBody from './panel/body.vue';
+import PanelFooter from './panel/footer.vue';
 import PanelHeader from './panel/header.vue';
 
 export default {
-  components: { PanelHeader },
+  components: { PanelBody, PanelFooter, PanelHeader },
 
   props: {
     title: {
