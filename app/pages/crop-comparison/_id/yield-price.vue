@@ -8,19 +8,26 @@
       {{ error.message }}
     </alert>
     <section v-else>
-      <form id="modify-crop-comparison" class="max-w-md" @submit.prevent="save">
-        <fieldset :disabled="isLoading || isSaving">
-          <ho-yield
-            id="modify-crop-comparison.ho-yield-per-acre"
-            v-model="oleic.yieldPerAcre"
-            class="mb-5"
-          />
-          <ho-premium
-            id="modify-crop-comparison.ho-premium"
-            v-model="oleic.premiumPerBushel"
-          />
-        </fieldset>
-      </form>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <form id="modify-crop-comparison" class="max-w-md" @submit.prevent="save">
+          <fieldset :disabled="isLoading || isSaving">
+            <ho-yield
+              id="modify-crop-comparison.ho-yield-per-acre"
+              v-model="oleic.yieldPerAcre"
+              class="mb-5"
+            />
+            <ho-market-price
+              id="modify-crop-comparison.ho-market-price"
+              v-model="oleic.pricePerBushel"
+              class="mb-5"
+            />
+            <ho-premium
+              id="modify-crop-comparison.ho-premium"
+              v-model="oleic.premiumPerBushel"
+            />
+          </fieldset>
+        </form>
+      </div>
 
       <alert
         v-if="savingError"
@@ -67,6 +74,7 @@
 import Alert from '../../../components/common/alert.vue';
 import Btn from '../../../components/common/button.vue';
 
+import HoMarketPrice from '../../../components/crop-comparison/fields/ho-market-price.vue';
 import HoPremium from '../../../components/crop-comparison/fields/ho-premium.vue';
 import HoYield from '../../../components/crop-comparison/fields/ho-yield.vue';
 
@@ -78,6 +86,7 @@ export default {
   components: {
     Alert,
     Btn,
+    HoMarketPrice,
     HoPremium,
     HoYield,
   },
@@ -140,6 +149,7 @@ export default {
         const variables = {
           id: comparisonId,
           yieldPerAcre: parseFloat(oleic.yieldPerAcre),
+          pricePerBushel: parseFloat(oleic.pricePerBushel),
           premiumPerBushel: parseFloat(oleic.premiumPerBushel),
         };
         await this.$apollo.mutate({ mutation: UPDATE_CROP_COMPARISON_YIELD_AND_PRICE, variables });

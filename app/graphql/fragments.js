@@ -113,6 +113,7 @@ export const CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT = gql`
     oleic {
       id
       yieldPerAcre
+      pricePerBushel
       premiumPerBushel
     }
   }

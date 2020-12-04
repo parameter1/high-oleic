@@ -146,12 +146,14 @@ export const UPDATE_CROP_COMPARISON_FARM_INFO = gql`
 export const UPDATE_CROP_COMPARISON_YIELD_AND_PRICE = gql`
   mutation UpdateCropComparisonYieldAndPrice(
     $id: ObjectID!
+    $pricePerBushel: Float
     $premiumPerBushel: Float
     $yieldPerAcre: Float
   ) {
     cropComparisonData(input: {
       id: $id
       applyTo: OLEIC
+      pricePerBushel: $pricePerBushel,
       premiumPerBushel: $premiumPerBushel,
       yieldPerAcre: $yieldPerAcre,
     }) {
