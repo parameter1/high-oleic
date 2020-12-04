@@ -177,7 +177,7 @@ export default {
           variables,
         });
         await this.listQuery.refetch();
-        this.$router.push(`/crop-comparison/${data.id}`);
+        this.$router.push(`/crop-comparison/${data.createCropComparison.id}/yield-price`);
       } catch (e) {
         this.error = new GraphQLError(e);
       } finally {
