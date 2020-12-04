@@ -19,7 +19,7 @@
                     Modify Profit Scenerio
                   </page-header>
                   <h2 class="text-logo-blue text-lg leading-6 font-semibold max-w-sm">
-                    {{ cropComparison.farmName }}
+                    {{ isLoading ? 'Loading...' : cropComparison.farmName }}
                   </h2>
                   <p class="mt-1 text-primary-1 text-base leading-6">
                     Comparing
