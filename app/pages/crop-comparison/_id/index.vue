@@ -7,8 +7,8 @@
     >
       {{ error.message }}
     </alert>
-    <section v-else class="max-w-md">
-      <form id="modify-crop-comparison" @submit.prevent="save">
+    <section v-else>
+      <form id="modify-crop-comparison" class="max-w-md" @submit.prevent="save">
         <fieldset :disabled="isLoading || isSaving">
           <farm-name
             id="modify-crop-comparison.farm-name"
@@ -58,7 +58,7 @@
         {{ savingError.message }}
       </alert>
 
-      <div class="flex justify-start space-x-4 mt-6">
+      <div class="flex justify-start mt-6 pt-4 border-t border-secondary-5-200">
         <btn
           form="modify-crop-comparison"
           color="logo-green"
@@ -71,10 +71,19 @@
         <btn
           form="modify-crop-comparison"
           color="secondary-3"
+          class="ml-4"
           :disabled="isLoading || isSaving"
           @click="reset"
         >
           Reset
+        </btn>
+
+        <btn
+          class="ml-auto"
+          :disabled="isLoading || isSaving"
+          @click.prevent="$router.push(`/crop-comparison/report/${comparisonId}`)"
+        >
+          View Report
         </btn>
       </div>
     </section>
