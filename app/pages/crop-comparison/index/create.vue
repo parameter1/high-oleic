@@ -172,12 +172,12 @@ export default {
             yieldPerAcre: parseFloat(input.yieldPerAcre),
           },
         };
-        await this.$apollo.mutate({
+        const { data } = await this.$apollo.mutate({
           mutation: CREATE_CROP_COMPARISON,
           variables,
         });
         await this.listQuery.refetch();
-        this.show = false;
+        this.$router.push(`/crop-comparison/${data.id}`);
       } catch (e) {
         this.error = new GraphQLError(e);
       } finally {
