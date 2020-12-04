@@ -8,46 +8,48 @@
       {{ error.message }}
     </alert>
     <section v-else>
-      <form id="modify-crop-comparison" class="max-w-md" @submit.prevent="save">
-        <fieldset :disabled="isLoading || isSaving">
-          <farm-name
-            id="modify-crop-comparison.farm-name"
-            ref="farmName"
-            v-model="cropComparison.farmName"
-            class="mb-5"
-            required
-          />
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <form id="modify-crop-comparison" class="max-w-md" @submit.prevent="save">
+          <fieldset :disabled="isLoading || isSaving">
+            <farm-name
+              id="modify-crop-comparison.farm-name"
+              ref="farmName"
+              v-model="cropComparison.farmName"
+              class="mb-5"
+              required
+            />
 
-          <acres
-            id="modify-crop-comparison.acres"
-            v-model="cropComparison.acres"
-            class="mb-5"
-            required
-          />
+            <acres
+              id="modify-crop-comparison.acres"
+              v-model="cropComparison.acres"
+              class="mb-5"
+              required
+            />
 
-          <crop-to-compare
-            id="modify-crop-comparison.crop-to-compare"
-            v-model="comparedTo.crop.id"
-            class="mb-5"
-            required
-          />
+            <crop-to-compare
+              id="modify-crop-comparison.crop-to-compare"
+              v-model="comparedTo.crop.id"
+              class="mb-5"
+              required
+            />
 
-          <market-price
-            id="modify-crop-comparison.price-per-bushel"
-            v-model="comparedTo.pricePerBushel"
-            :crop="cropLabel"
-            class="mb-5"
-            required
-          />
+            <market-price
+              id="modify-crop-comparison.price-per-bushel"
+              v-model="comparedTo.pricePerBushel"
+              :crop="cropLabel"
+              class="mb-5"
+              required
+            />
 
-          <yield
-            id="modify-crop-comparison.yield-per-acre"
-            v-model="comparedTo.yieldPerAcre"
-            :crop="cropLabel"
-            required
-          />
-        </fieldset>
-      </form>
+            <yield
+              id="modify-crop-comparison.yield-per-acre"
+              v-model="comparedTo.yieldPerAcre"
+              :crop="cropLabel"
+              required
+            />
+          </fieldset>
+        </form>
+      </div>
 
       <alert
         v-if="savingError"
