@@ -118,3 +118,51 @@ export const CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT = gql`
     }
   }
 `;
+
+export const CROP_COMPARISON_LAND_TAXES_FRAGMENT = gql`
+  fragment CropComparisonLandTaxesFragment on CropComparison {
+    id
+    updatedAt
+    comparedTo {
+      id
+      expenses {
+        categories {
+          lineItems {
+            lineItem {
+              id
+              label
+              ... on ExpenseCategoryCropLineItem {
+                cropType: type
+              }
+            }
+            costs {
+              total
+              perAcre
+            }
+          }
+        }
+      }
+    }
+
+    oleic {
+      id
+      expenses {
+        categories {
+          lineItems {
+            lineItem {
+              id
+              label
+              ... on ExpenseCategoryCropLineItem {
+                cropType: type
+              }
+            }
+            costs {
+              total
+              perAcre
+            }
+          }
+        }
+      }
+    }
+  }
+`;

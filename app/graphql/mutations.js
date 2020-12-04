@@ -163,3 +163,13 @@ export const UPDATE_CROP_COMPARISON_YIELD_AND_PRICE = gql`
 
   ${CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT}
 `;
+
+export const UPDATE_CROP_COMPARISON_EXPENSES = gql`
+  mutation UpdateCropComparisonExpenses($input: CropComparisonExpensesMutationInput!) {
+    cropComparisonExpenses(input: $input) {
+      ...CropComparisonReportFragment
+    }
+  }
+
+  ${CROP_COMPARISON_REPORT_FRAGMENT}
+`;

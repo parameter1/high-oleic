@@ -79,6 +79,16 @@ export const CROP_COMPARISON_YIELD_AND_PRICE = gql`
   ${CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT}
 `;
 
+export const CROP_COMPARISON_EXPENSES = gql`
+  query CropComparisonExpenses($id: ObjectID!) {
+    cropComparison(input: { id: $id }) {
+      ...CropComparisonReportFragment
+    }
+  }
+
+  ${CROP_COMPARISON_REPORT_FRAGMENT}
+`;
+
 export const MODIFY_COMPARISON_ROOT = gql`
   query ModifyComparisonRoot($id: ObjectID!) {
     cropComparison(input: { id: $id }) {
