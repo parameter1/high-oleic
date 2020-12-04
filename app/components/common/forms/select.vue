@@ -5,7 +5,7 @@
     @input="$emit('input', $event.target.value)"
     @focus="$emit('focus', $event)"
   >
-    <option value="">
+    <option v-if="withPlaceholder" value="">
       {{ placeholder }}
     </option>
     <option
@@ -47,6 +47,10 @@ export default {
     optionLabelPath: {
       type: String,
       default: 'label',
+    },
+    withPlaceholder: {
+      type: Boolean,
+      default: true,
     },
   },
 
