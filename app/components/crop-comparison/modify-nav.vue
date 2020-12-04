@@ -43,7 +43,7 @@ export default {
   data: () => ({
     items: [
       { label: 'Farm Info', to: '' },
-      { label: 'Yield & Price', to: '/yield-price' },
+      { label: 'HO Yield & Price', to: '/yield-price' },
       { label: 'Land, Taxes, RTM', to: '/land-taxes-rtm' },
       { label: 'Crop Expenses', to: '/crop-expenses' },
       { label: 'Chemicals', to: '/chemicals' },

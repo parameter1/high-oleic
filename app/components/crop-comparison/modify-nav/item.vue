@@ -32,11 +32,12 @@ export default {
         'py-2',
         'font-medium',
         'text-sm',
+        'text-center',
         'rounded-md',
       ];
       if (this.active) classes.push('bg-secondary-5-200');
       return classes;
-    }
+    },
   },
 };
 </script>
