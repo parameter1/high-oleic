@@ -40,7 +40,7 @@
         </button-link>
 
         <button-link
-          :to="`/crop-comparison/${node.id}/report`"
+          :to="`/crop-comparison/report/${node.id}`"
           position="right"
           label="Report"
         >
