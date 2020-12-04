@@ -2,7 +2,7 @@
   <input-group
     :id="id"
     :value="value"
-    label="Projected market price for HO soybeans"
+    label="Projected market price for High Oleic Soybeans"
     type="number"
     :min="settings.attrs.min"
     :step="settings.attrs.step"
