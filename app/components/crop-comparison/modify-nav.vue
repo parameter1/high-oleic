@@ -13,24 +13,25 @@
     <div class="hidden sm:block">
       <nav class="flex space-x-4" aria-label="Tabs">
         <!-- aria-current="page" -->
-        <nuxt-link
+        <nav-item-link
           v-for="item in navItems"
           :key="item.to"
           :to="item.to"
-          class="text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-sm rounded-md"
+          :label="item"
         >
           {{ item.label }}
-        </nuxt-link>
+        </nav-item-link>
       </nav>
     </div>
   </div>
 </template>
 
 <script>
+import NavItemLink from './modify-nav/item.vue';
 import SelectField from '../common/forms/select.vue';
 
 export default {
-  components: { SelectField },
+  components: { NavItemLink, SelectField },
 
   props: {
     comparisonId: {
