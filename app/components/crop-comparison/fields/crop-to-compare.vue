@@ -2,7 +2,7 @@
   <select-group
     :id="id"
     :value="value"
-    label="Crop to compare"
+    label="Crop to compare High Oleic Soybeans to"
     :disabled="disabled"
     :required="required"
     hint="Which crop would you like to compare to high oleic production?"
