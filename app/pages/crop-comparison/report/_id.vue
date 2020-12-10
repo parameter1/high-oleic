@@ -70,7 +70,7 @@
 
               <div class="bg-white shadow rounded-lg p-4">
                 <dt class="text-sm font-medium text-logo-brown">
-                  High Oleic Advantage
+                  High Oleic Advantage/Difference
                 </dt>
 
                 <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
