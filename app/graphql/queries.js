@@ -23,6 +23,8 @@ export const LIST_CROP_COMPARISONS = gql`
           id
           farmName
           acres
+          advantage
+          ratio
           createdAt
           updatedAt
           comparedTo {
@@ -37,6 +39,9 @@ export const LIST_CROP_COMPARISONS = gql`
             crop {
               id
               label
+            }
+            profit {
+              margin
             }
           }
         }

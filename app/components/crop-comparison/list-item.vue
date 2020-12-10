@@ -22,6 +22,39 @@
           </span>
         </p>
 
+        <div class="mt-5">
+          <div class="mb-3">
+            <div class="text-sm font-medium text-logo-brown">
+              High Oleic Advantage/Difference
+            </div>
+            <format-number
+              class="font-semibold"
+              format="usd"
+              :value="node.advantage"
+              with-conditional
+            />
+          </div>
+          <div class="mb-3">
+            <div class="text-sm font-medium text-logo-brown">
+              HO:CROP Ratio
+            </div>
+            <div class="font-semibold">
+              {{ node.ratio }}
+            </div>
+          </div>
+          <div>
+            <div class="text-sm font-medium text-logo-brown">
+              High Oleic ROI
+            </div>
+            <format-number
+              class="font-semibold"
+              format="percent"
+              :value="node.oleic.profit.margin"
+              with-conditional
+            />
+          </div>
+        </div>
+
         <div class="mt-6 text-sm leading-5 text-secondary-4">
           Scenario last modified <toggle-date-format :timestamp="node.updatedAt" />
         </div>
@@ -55,6 +88,7 @@
 
 <script>
 import ButtonLink from './list-item/button-link.vue';
+import FormatNumber from '../format-number.vue';
 import PencilIcon from '../icons/pencil-alt-md.vue';
 import ReportIcon from '../icons/document-report-md.vue';
 import ToggleDateFormat from '../toggle-date-format.vue';
@@ -63,6 +97,7 @@ import formatNumber from '../../utils/format-number';
 export default {
   components: {
     ButtonLink,
+    FormatNumber,
     PencilIcon,
     ReportIcon,
     ToggleDateFormat,
@@ -71,7 +106,9 @@ export default {
   props: {
     node: {
       type: Object,
-      default: () => ({}),
+      default: () => ({
+        oleic: { profit: {} },
+      }),
     },
   },
 
