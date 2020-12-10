@@ -17,7 +17,7 @@
           <expense-fieldset
             apply-to="COMPARED_CROP"
             :category-id="categoryId"
-            :line-item-keys="lineItemKeys"
+            :line-item-keys="lineItemKeys.comparedTo"
             :categories="comparedTo.expenses.categories"
             :crop-name="comparedTo.crop.label"
             :disabled="isLoading || isSaving"
@@ -28,7 +28,7 @@
           <expense-fieldset
             apply-to="OLEIC"
             :category-id="categoryId"
-            :line-item-keys="lineItemKeys"
+            :line-item-keys="lineItemKeys.oleic"
             :categories="oleic.expenses.categories"
             :crop-name="oleic.crop.label"
             :disabled="isLoading || isSaving"
@@ -127,7 +127,10 @@ export default {
 
   data: () => ({
     categoryId: 'crop',
-    lineItemKeys: ['seeds', 'fertLine', 'nitro'],
+    lineItemKeys: {
+      comparedTo: ['seeds', 'fertLine', 'nitro'],
+      oleic: ['seeds', 'fertLine'],
+    },
     error: null,
     isLoading: true,
     cropComparison: {
