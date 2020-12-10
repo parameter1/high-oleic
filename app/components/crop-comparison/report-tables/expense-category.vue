@@ -10,7 +10,7 @@
             <td class="w-1/3">
               Per Acre
             </td>
-            <td class="w-1/3 text-center">
+            <td class="w-1/3">
               Total
             </td>
             <td class="w-1/3 text-right">

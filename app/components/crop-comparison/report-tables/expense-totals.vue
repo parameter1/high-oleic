@@ -10,7 +10,7 @@
             <td class="w-1/3">
               <format-number format="usd" :value="expenses.perAcre" />
             </td>
-            <td class="w-1/3 text-center">
+            <td class="w-1/3">
               <format-number format="usd" :value="expenses.total" />
             </td>
             <td class="w-1/3 text-right">

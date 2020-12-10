@@ -19,7 +19,7 @@
           :value="expense.costs.perAcre"
         />
       </td>
-      <td v-show="!isEditing" class="w-1/3 text-center">
+      <td v-show="!isEditing" class="w-1/3">
         <format-number format="usd" :value="expense.costs.total" />
       </td>
       <td v-show="showRight" :class="rightClasses">
