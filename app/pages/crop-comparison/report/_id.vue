@@ -85,7 +85,7 @@
 
               <div class="bg-white shadow rounded-lg p-4">
                 <dt class="text-sm font-medium text-logo-brown">
-                  HO Ratio
+                  HO:CROP Ratio
                 </dt>
                 <dd class="mt-1 text-2xl font-semibold">
                   {{ cropComparison.ratio }}
