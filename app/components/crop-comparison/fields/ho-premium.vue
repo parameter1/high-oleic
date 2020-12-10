@@ -2,7 +2,7 @@
   <input-group
     :id="id"
     :value="value"
-    label="What do you anticipate the premium to be on High Oleic in your area?"
+    label="What do you anticipate the premium to be on High Oleic Soybeans in your area?"
     type="number"
     :min="settings.attrs.min"
     :step="settings.attrs.step"
