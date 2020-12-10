@@ -15,15 +15,18 @@ export default {
       hint: `What market price would you like to use${suffix}, in dollars per bushel`,
     };
   },
-  premiumPerBushel: () => ({
-    attrs: {
-      type: 'number',
-      min: 0,
-      step: 0.01,
-      required: true,
-    },
-    hint: 'Premiums across the nation can range from $.25-$.75, depending on your location and market demand',
-  }),
+  premiumPerBushel: ({ crop } = {}) => {
+    const hint = crop === 'High Oleic Soybeans' ? 'Premiums across the nation can range from $.25-$.75, depending on your location and market demand' : null;
+    return {
+      attrs: {
+        type: 'number',
+        min: 0,
+        step: 0.01,
+        required: true,
+      },
+      hint,
+    };
+  },
   yieldPerAcre: () => ({
     attrs: { type: 'number', min: 1, required: true },
     hint: 'The yield of the crop, in bushels per acre',

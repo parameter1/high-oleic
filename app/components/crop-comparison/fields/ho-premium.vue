@@ -53,7 +53,7 @@ export default {
   },
 
   data: () => ({
-    settings: fieldSettings.premiumPerBushel(),
+    settings: fieldSettings.premiumPerBushel({ crop: 'High Oleic Soybeans' }),
   }),
 };
 </script>

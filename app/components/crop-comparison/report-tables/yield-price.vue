@@ -35,21 +35,13 @@
       </template>
       <template #right>
         <edit-premium-per-bushel
-          v-if="applyTo === 'OLEIC'"
           :comparison-id="comparisonId"
           :apply-to="applyTo"
+          :crop-name="cropName"
           :value="premiumPerBushel"
           :disabled="editorsDisabled"
           @saving="$emit('saving', $event)"
         />
-        <format-number
-          v-else
-          #default="{ formatted }"
-          format="usd"
-          :value="premiumPerBushel"
-        >
-          {{ formatted }} per bushel
-        </format-number>
       </template>
     </row>
     <row>

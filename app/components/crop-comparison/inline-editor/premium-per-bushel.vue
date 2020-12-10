@@ -29,9 +29,13 @@ export default {
     applyTo: {
       type: String,
       required: true,
-      validator: (applyTo) => ['OLEIC'].includes(applyTo),
+      validator: (applyTo) => ['OLEIC', 'COMPARED_CROP'].includes(applyTo),
     },
     comparisonId: {
+      type: String,
+      required: true,
+    },
+    cropName: {
       type: String,
       required: true,
     },
@@ -51,7 +55,7 @@ export default {
 
   computed: {
     settings() {
-      return fieldSettings.premiumPerBushel();
+      return fieldSettings.premiumPerBushel({ crop: this.cropName });
     },
   },
 
