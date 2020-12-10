@@ -4,9 +4,8 @@
       <span
         v-if="value"
         class="text-cool-gray-600"
-      >
-        {{ value }}
-      </span>
+        v-html="value"
+      />
     </slot>
   </div>
 </template>
