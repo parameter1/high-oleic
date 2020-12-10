@@ -9,7 +9,12 @@
     </alert>
     <section v-else>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <form id="modify-crop-comparison" class="max-w-md" @submit.prevent="save">
+        <form
+          id="modify-crop-comparison"
+          ref="form"
+          class="max-w-md"
+          @submit.prevent="save"
+        >
           <fieldset :disabled="isLoading || isSaving">
             <farm-name
               id="modify-crop-comparison.farm-name"
@@ -62,6 +67,7 @@
 
       <div class="flex justify-start mt-6 pt-4 border-t border-secondary-5-200">
         <btn
+          ref="submitButton"
           form="modify-crop-comparison"
           color="logo-green"
           type="submit"
@@ -116,6 +122,18 @@ export default {
     FarmName,
     MarketPrice,
     Yield,
+  },
+
+  async beforeRouteLeave(to, from, next) {
+    const { form, submitButton } = this.$refs;
+    if (!form.checkValidity()) {
+      // simulate the form submit (via click) to trigger the native validation UI.
+      submitButton.$el.click();
+    } else {
+      // form is valid. save the form and continue
+      await this.save({ redirect: false });
+      next();
+    }
   },
 
   apollo: {
@@ -180,7 +198,7 @@ export default {
     /**
      *
      */
-    async save() {
+    async save({ redirect = false } = {}) {
       try {
         this.savingError = null;
         this.isSaving = true;
@@ -194,7 +212,7 @@ export default {
           yieldPerAcre: parseFloat(comparedTo.yieldPerAcre),
         };
         await this.$apollo.mutate({ mutation: UPDATE_CROP_COMPARISON_FARM_INFO, variables });
-        this.$router.push(`/crop-comparison/${comparisonId}/yield-price`);
+        if (redirect) this.$router.push(`/crop-comparison/${comparisonId}/yield-price`);
       } catch (e) {
         this.savingError = new GraphQLError(e);
       } finally {

@@ -9,7 +9,12 @@
     </alert>
     <section v-else>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <form id="modify-crop-comparison" class="max-w-md" @submit.prevent="save">
+        <form
+          id="modify-crop-comparison"
+          ref="form"
+          class="max-w-md"
+          @submit.prevent="save"
+        >
           <fieldset :disabled="isLoading || isSaving">
             <ho-yield
               id="modify-crop-comparison.ho-yield-per-acre"
@@ -40,6 +45,7 @@
 
       <div class="flex justify-start mt-6 pt-4 border-t border-secondary-5-200">
         <btn
+          ref="submitButton"
           form="modify-crop-comparison"
           color="logo-green"
           type="submit"
@@ -89,6 +95,18 @@ export default {
     HoMarketPrice,
     HoPremium,
     HoYield,
+  },
+
+  async beforeRouteLeave(to, from, next) {
+    const { form, submitButton } = this.$refs;
+    if (!form.checkValidity()) {
+      // simulate the form submit (via click) to trigger the native validation UI.
+      submitButton.$el.click();
+    } else {
+      // form is valid. save the form and continue
+      await this.save({ redirect: false });
+      next();
+    }
   },
 
   apollo: {
@@ -141,7 +159,7 @@ export default {
     /**
      *
      */
-    async save() {
+    async save({ redirect = false } = {}) {
       try {
         this.savingError = null;
         this.isSaving = true;
@@ -153,7 +171,7 @@ export default {
           premiumPerBushel: parseFloat(oleic.premiumPerBushel),
         };
         await this.$apollo.mutate({ mutation: UPDATE_CROP_COMPARISON_YIELD_AND_PRICE, variables });
-        this.$router.push(`/crop-comparison/${comparisonId}/land-taxes-rtm`);
+        if (redirect) this.$router.push(`/crop-comparison/${comparisonId}/land-taxes-rtm`);
       } catch (e) {
         this.savingError = new GraphQLError(e);
       } finally {
