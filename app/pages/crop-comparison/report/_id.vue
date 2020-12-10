@@ -33,7 +33,7 @@
                   <p class="mt-1 text-primary-1 text-base leading-6">
                     Comparing
                     <span class="text-logo-green font-semibold">
-                      {{ formatInteger(cropComparison.acres) }}
+                      <format-number format="integer" :value="cropComparison.acres" />
                     </span>
                     acres of
                     <span class="text-logo-green font-semibold">
@@ -78,7 +78,7 @@
 
                   <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                     <div class="flex flex-col items-baseline text-2xl font-semibold">
-                      {{ formatUSD(cropComparison.advantage) }}
+                      <format-number format="usd" :value="cropComparison.advantage" />
                       <span class="text-sm font-medium text-secondary-4">
                         profit per acre
                       </span>
@@ -235,6 +235,7 @@ import CropTableHeader from '../../../components/crop-comparison/report-tables/c
 import EconomicResults from '../../../components/crop-comparison/report-tables/economic-results.vue';
 import ExpenseCategory from '../../../components/crop-comparison/report-tables/expense-category.vue';
 import ExpenseTotals from '../../../components/crop-comparison/report-tables/expense-totals.vue';
+import FormatNumber from '../../../components/format-number.vue';
 import TableHeader from '../../../components/crop-comparison/report-tables/common/header.vue';
 import ToggleDateFormat from '../../../components/toggle-date-format.vue';
 import YieldPrice from '../../../components/crop-comparison/report-tables/yield-price.vue';
@@ -244,7 +245,6 @@ import EditFarmName from '../../../components/crop-comparison/inline-editor/farm
 
 import { CROP_COMPARISON_REPORT } from '../../../graphql/queries';
 import GraphQLError from '../../../utils/graphql-error';
-import formatNumber from '../../../utils/format-number';
 
 const defaultCropField = {
   crop: {},
@@ -263,6 +263,7 @@ export default {
     EconomicResults,
     ExpenseCategory,
     ExpenseTotals,
+    FormatNumber,
     EditAcres,
     EditFarmName,
     TableHeader,
@@ -302,18 +303,6 @@ export default {
     },
     comparedTo() {
       return this.cropComparison.comparedTo;
-    },
-  },
-
-  methods: {
-    formatInteger(value) {
-      return formatNumber.integer(value);
-    },
-    formatUSD(value) {
-      return formatNumber.usd(value);
-    },
-    formatPercent(value) {
-      return formatNumber.percent(value);
     },
   },
 };
