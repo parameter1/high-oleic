@@ -10,6 +10,8 @@ extend type Query {
 }
 
 extend type Mutation {
+  "Clones a crop comparison report from an existing one."
+  cloneCropComparison(input: CloneCropComparisonMutationInput!): CropComparison!
   "Creates a new crop comparison report."
   createCropComparison(input: CreateCropComparisonMutationInput!): CropComparison!
   "Sets/updates the number of acres being compared."
@@ -65,6 +67,11 @@ type CropComparisonEdge {
   node: CropComparison!
   "The opaque cursor value for this record edge."
   cursor: String!
+}
+
+input CloneCropComparisonMutationInput {
+  "The comparison report to clone."
+  id: ObjectID!
 }
 
 input CreateCropComparisonMutationInput {

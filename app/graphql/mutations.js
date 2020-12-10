@@ -173,3 +173,11 @@ export const UPDATE_CROP_COMPARISON_EXPENSES = gql`
 
   ${CROP_COMPARISON_REPORT_FRAGMENT}
 `;
+
+export const CLONE_COMPARISON_REPORT = gql`
+  mutation CloneComparisonReport($input: CloneCropComparisonMutationInput!) {
+    cloneCropComparison(input: $input) {
+      id
+    }
+  }
+`;

@@ -20,6 +20,22 @@ class FarmFieldRepo extends PaginableRepo {
    *
    * @param {object} params
    */
+  async clone(params = {}) {
+    const { id } = await validateAsync(Joi.object({
+      id: fields.id.required(),
+    }), params);
+
+    const doc = await this.findByObjectId({ id, options: { strict: true } });
+    return this.insertOne({
+      doc: { ...doc, farmName: `Copy of ${doc.farmName}`, _id: undefined },
+      options: { withDates: true },
+    });
+  }
+
+  /**
+   *
+   * @param {object} params
+   */
   async create(params = {}) {
     const {
       farmName,

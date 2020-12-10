@@ -57,6 +57,7 @@
                 v-for="node in nodes"
                 :key="node.id"
                 :node="node"
+                :list-query="$apollo.queries.myCropComparisons"
               />
             </transition-group>
           </div>
