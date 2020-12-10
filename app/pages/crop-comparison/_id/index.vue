@@ -70,7 +70,7 @@
         >
           Save &amp; Continue
         </btn>
-        <btn
+        <!-- <btn
           form="modify-crop-comparison"
           color="secondary-3"
           class="ml-4"
@@ -78,7 +78,7 @@
           @click="reset"
         >
           Reset
-        </btn>
+        </btn> -->
 
         <btn
           class="ml-auto"
