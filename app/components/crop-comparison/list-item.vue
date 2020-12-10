@@ -42,7 +42,7 @@
         <button-link
           :to="`/crop-comparison/report/${node.id}`"
           position="right"
-          label="Report"
+          label="See Report"
         >
           <template #icon>
             <report-icon class="w-5 h-5 text-gray-400" />
