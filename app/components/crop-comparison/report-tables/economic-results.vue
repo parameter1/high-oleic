@@ -48,7 +48,7 @@
         </format-number>
       </template>
     </row>
-    <row :left-attrs="rowLeftAttrs">
+    <row :left-attrs="rowLeftAttrs" :right-attrs="{ fontWeight: 'semibold' }">
       <template #left>
         Cost of Production/Bushel
       </template>
