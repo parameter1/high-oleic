@@ -78,7 +78,11 @@
 
                   <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                     <div class="flex flex-col items-baseline text-2xl font-semibold">
-                      <format-number format="usd" :value="cropComparison.advantage" />
+                      <format-number
+                        format="usd"
+                        :value="cropComparison.advantage"
+                        with-conditional
+                      />
                       <span class="text-sm font-medium text-secondary-4">
                         profit per acre
                       </span>

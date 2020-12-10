@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span :class="conditionalClasses">
     <slot :formatted="formatted">
       {{ formatted }}
     </slot>
@@ -23,6 +23,14 @@ export default {
         return ['usd', 'integer', 'percent'].includes(format);
       },
     },
+    withConditional: {
+      type: Boolean,
+      default: false,
+    },
+    darken: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -31,6 +39,15 @@ export default {
       if (value == null || !format) return value;
       const func = formatNumber[format];
       return func(value);
+    },
+
+    conditionalClasses() {
+      const classes = [];
+      const { withConditional, value, darken } = this;
+      if (!withConditional || value == null) return classes;
+      if (value > 0) classes.push(darken ? 'text-green-800' : 'text-green-600');
+      if (value < 0) classes.push(darken ? 'text-red-700' : 'text-red-500');
+      return classes;
     },
   },
 };

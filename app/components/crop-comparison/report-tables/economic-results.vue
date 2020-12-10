@@ -37,12 +37,17 @@
         Total profit
       </template>
       <template #right>
-        <format-number format="usd" :value="profit.total" />
+        <format-number
+          format="usd"
+          :value="profit.total"
+          with-conditional
+        />
         <format-number
           #default="{ formatted }"
-          class="text-primary-1"
           format="usd"
           :value="profit.perAcre"
+          with-conditional
+          darken
         >
           ({{ formatted }} per acre)
         </format-number>
