@@ -8,7 +8,7 @@
   >
     <template #title>
       <div class="flex items-center">
-        Create New Scenerio
+        Create New Scenario
       </div>
     </template>
 
@@ -126,7 +126,7 @@ export default {
   },
 
   data: () => ({
-    description: 'Get started on a new crop comparison scenerio by filling in the information below.',
+    description: 'Get started on a new crop comparison scenario by filling in the information below.',
     error: null,
     input: {
       farmName: null,
