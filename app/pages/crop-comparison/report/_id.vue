@@ -54,42 +54,55 @@
             </div>
 
             <dl class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <div class="bg-white shadow rounded-lg p-4">
-                <dt class="text-sm font-medium text-logo-brown">
-                  Total Acres
-                </dt>
-                <edit-acres
-                  tag="dd"
-                  class="mt-1 text-2xl font-semibold"
-                  :comparison-id="cropComparison.id"
-                  :value="cropComparison.acres"
-                  :disabled="isUpdatingReport"
-                  @saving="isUpdatingReport = $event"
-                />
+              <div class="flex flex-col bg-white shadow rounded-lg p-4">
+                <div class="my-auto">
+                  <dt class="text-sm font-medium text-logo-brown">
+                    Total Acres
+                  </dt>
+                  <edit-acres
+                    tag="dd"
+                    class="mt-1 text-2xl font-semibold"
+                    :comparison-id="cropComparison.id"
+                    :value="cropComparison.acres"
+                    :disabled="isUpdatingReport"
+                    @saving="isUpdatingReport = $event"
+                  />
+                </div>
               </div>
 
-              <div class="bg-white shadow rounded-lg p-4">
-                <dt class="text-sm font-medium text-logo-brown">
-                  High Oleic Advantage/Difference
-                </dt>
+              <div class="flex flex-col bg-white shadow rounded-lg p-4">
+                <div class="my-auto">
+                  <dt class="text-sm font-medium text-logo-brown">
+                    High Oleic Advantage/Difference
+                  </dt>
 
-                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                  <div class="flex items-baseline text-2xl font-semibold">
-                    {{ formatUSD(cropComparison.advantage) }}
-                    <span class="ml-2 text-sm font-medium text-secondary-4">
-                      profit per acre
-                    </span>
-                  </div>
-                </dd>
+                  <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                    <div class="flex flex-col items-baseline text-2xl font-semibold">
+                      {{ formatUSD(cropComparison.advantage) }}
+                      <span class="text-sm font-medium text-secondary-4">
+                        profit per acre
+                      </span>
+                    </div>
+                  </dd>
+                </div>
               </div>
 
-              <div class="bg-white shadow rounded-lg p-4">
-                <dt class="text-sm font-medium text-logo-brown">
-                  HO:CROP Ratio
-                </dt>
-                <dd class="mt-1 text-2xl font-semibold">
-                  {{ cropComparison.ratio }}
-                </dd>
+              <div class="flex flex-col bg-white shadow rounded-lg p-4">
+                <div class="my-auto">
+                  <dt class="text-sm font-medium text-logo-brown">
+                    HO:CROP Ratio
+                  </dt>
+
+                  <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                    <div class="flex flex-col items-baseline text-2xl font-semibold">
+                      {{ cropComparison.ratio }}
+                      <span class="text-sm font-medium text-secondary-4">
+                        This ratio can help with decision-making in next year’s
+                        production planning when comparing crop prices and yields.
+                      </span>
+                    </div>
+                  </dd>
+                </div>
               </div>
             </dl>
 
