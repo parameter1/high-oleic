@@ -135,7 +135,7 @@ export default {
   },
 
   head: {
-    title: 'Caclulate Profit Potential',
+    title: 'Calculate Profit Potential',
   },
 };
 </script>
