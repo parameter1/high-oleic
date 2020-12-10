@@ -20,7 +20,7 @@
 
                 <div class="p-4">
                   <h1 class="text-2xl mb-4 font-semibold">
-                    High Oleic Scenerio Report
+                    High Oleic Scenario Report
                   </h1>
                   <edit-farm-name
                     tag="h2"
@@ -46,7 +46,7 @@
                   </p>
 
                   <div class="mt-1 text-sm leading-5 text-secondary-4">
-                    Scenerio last modified
+                    Scenario last modified
                     <toggle-date-format :timestamp="cropComparison.updatedAt" />
                   </div>
                 </div>

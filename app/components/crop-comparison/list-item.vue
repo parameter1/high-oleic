@@ -23,7 +23,7 @@
         </p>
 
         <div class="mt-6 text-sm leading-5 text-secondary-4">
-          Scenerio last modified <toggle-date-format :timestamp="node.updatedAt" />
+          Scenario last modified <toggle-date-format :timestamp="node.updatedAt" />
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@
                 <back-link />
                 <div class="p-4">
                   <page-header :is-loading="isLoading || isChildLoading">
-                    Modify Profit Scenerio
+                    Modify Profit Scenario
                   </page-header>
                   <h2 class="text-logo-blue text-lg leading-6 font-semibold max-w-sm">
                     {{ isLoading ? 'Loading...' : cropComparison.farmName }}
@@ -37,7 +37,7 @@
                   </p>
 
                   <div class="mt-1 text-sm leading-5 text-secondary-4">
-                    Scenerio last modified
+                    Scenario last modified
                     <toggle-date-format :timestamp="cropComparison.updatedAt" />
                   </div>
                 </div>

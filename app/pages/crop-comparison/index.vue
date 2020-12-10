@@ -15,12 +15,12 @@
             :disabled="!hasToken"
             @click="$router.push('/crop-comparison/create')"
           >
-            Create New Scenerio
+            Create New Scenario
           </btn>
 
           <div v-if="!hasToken">
             <p class="mb-4 text-lg font-medium text-logo-blue">
-              You must be logged in to access and create crop comparison scenerios.
+              You must be logged in to access and create crop comparison scenarios.
             </p>
             <p>
               To continue, please
@@ -39,7 +39,7 @@
             </alert>
 
             <p class="mb-2 px-2 text-sm text-cool-gray-500">
-              Total Scenerios: {{ myCropComparisons.totalCount }}
+              Total Scenarios: {{ myCropComparisons.totalCount }}
             </p>
 
             <transition-group
