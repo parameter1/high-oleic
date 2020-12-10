@@ -8,7 +8,7 @@
     required
     :disabled="disabled"
     input-class="pr-32"
-    hint="High Oleic Soybeans yield the same or better than regular soybeans in almost all cases."
+    :hint="hint"
     @input="$emit('input', $event)"
     @focus="$emit('focus', $event)"
   >
@@ -44,5 +44,9 @@ export default {
       default: false,
     },
   },
+
+  data: () => ({
+    hint: 'High Oleic Soybeans yield the same or even better than regular soybeans in almost all cases. If you don’t have an anticipated yield, use your soybean APH for your farm, or the same number you input if comparing to soybeans on the prior tab.',
+  }),
 };
 </script>
