@@ -1,6 +1,6 @@
 <template>
   <table class="min-w-full table-fixed divide-y divide-secondary-5-300">
-    <row>
+    <row :left-attrs="rowLeftAttrs">
       <template #left>
         Total expense
       </template>
@@ -16,15 +16,7 @@
         </format-number>
       </template>
     </row>
-    <row>
-      <template #left>
-        Total cost per bushel
-      </template>
-      <template #right>
-        <format-number format="usd" :value="expenses.perBushel" />
-      </template>
-    </row>
-    <row>
+    <row :left-attrs="rowLeftAttrs">
       <template #left>
         Total gross revenue
       </template>
@@ -40,7 +32,7 @@
         </format-number>
       </template>
     </row>
-    <row>
+    <row :left-attrs="rowLeftAttrs">
       <template #left>
         Total profit
       </template>
@@ -54,6 +46,14 @@
         >
           ({{ formatted }} per acre)
         </format-number>
+      </template>
+    </row>
+    <row :left-attrs="rowLeftAttrs">
+      <template #left>
+        Cost of Production/Bushel
+      </template>
+      <template #right>
+        <format-number format="usd" :value="expenses.perBushel" />
       </template>
     </row>
     <row
@@ -91,5 +91,13 @@ export default {
       default: () => ({}),
     },
   },
+
+  data: () => ({
+    rowLeftAttrs: {
+      color: 'logo-brown',
+      fontWeight: 'medium',
+      class: 'w-1/2',
+    },
+  }),
 };
 </script>
