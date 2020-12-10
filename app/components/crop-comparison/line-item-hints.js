@@ -4,7 +4,10 @@ const hints = {
   'crop.tax': () => 'What is your farm’s property tax cost per acre? This should include all tax costs divided by ALL acres, not just the ones evaluated in this scenario.',
   'crop.int': () => 'What is your interest cost per acre? This should include all interest on borrowed money that the farm is paying for divided by ALL acres farmed, not just the acres in this scenario. You can find a rough estimate from your previous year tax return.',
   'crop.ins': ({ cropName }) => `What is your ${cropName || ''} insurance cost per acre?`,
-  'crop.seeds': ({ cropName }) => `What is your ${cropName || ''} seed cost per acre? Seed costs for High Oleic Soybeans are the same or lower as most other soybean costs.`,
+  'crop.seeds': ({ cropName }) => {
+    if (cropName === 'High Oleic Soybeans') return `What is your ${cropName || ''} seed cost per acre? Seed costs for High Oleic Soybeans are the same or lower as most other soybean costs.`;
+    return '';
+  },
   'crop.fertLime': ({ cropName }) => `What is your ${cropName || ''} fertilizer cost per acre, exlcuding Nitrogen? P, K, micro’s and application cost/acre.`,
   'crop.nitro': ({ cropName }) => `What is your ${cropName || ''} nitrogen cost per acre?`,
 
