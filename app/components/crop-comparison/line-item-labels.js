@@ -1,7 +1,7 @@
 const labels = {
   'crop.rtm': () => 'What is your return to management cost?',
   'crop.land': () => 'What is your land cost per acre?',
-  'crop.tax': () => 'What is your farm’s tax cost per acre?',
+  'crop.tax': () => 'What is your farm’s property tax cost per acre?',
   'crop.int': () => 'What is your interest cost per acre?',
   'crop.ins': ({ cropName }) => `What is your ${cropName || ''} insurance cost per acre?`,
   'crop.seeds': ({ cropName }) => `What is your ${cropName || ''} seed cost per acre?`,
