@@ -8,7 +8,7 @@
     :disabled="disabled"
     :required="required"
     input-class="pr-32"
-    hint="The yield of the crop, in bushels per acre"
+    :hint="hint"
     @input="$emit('input', $event)"
     @focus="$emit('focus', $event)"
   >
@@ -50,6 +50,11 @@ export default {
   },
 
   computed: {
+    hint() {
+      const { crop } = this;
+      const suffix = crop ? ` ${crop}` : ' the crop';
+      return `The yield of${suffix}, in bushels per acre`;
+    },
     label() {
       const { crop } = this;
       const suffix = crop ? ` of ${crop}` : '';
