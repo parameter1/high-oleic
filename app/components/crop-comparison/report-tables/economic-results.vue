@@ -56,17 +56,6 @@
         <format-number format="usd" :value="expenses.perBushel" />
       </template>
     </row>
-    <row
-      :left-attrs="{ fontWeight: 'semibold', fontSize: 'base', color: 'primary-1' }"
-      :right-attrs="{ fontWeight: 'semibold', fontSize: 'base' }"
-    >
-      <template #left>
-        ROI
-      </template>
-      <template #right>
-        <format-number format="percent" :value="profit.margin" />
-      </template>
-    </row>
   </table>
 </template>
 

@@ -109,9 +109,10 @@
             <div class="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
               <!-- Compared To -->
               <div class="bg-white shadow rounded-lg mb-6">
-                <table-header type="primary">
-                  {{ comparedTo.crop.label }}
-                </table-header>
+                <crop-table-header
+                  :crop="comparedTo.crop"
+                  :profit="comparedTo.profit"
+                />
 
                 <table-header type="secondary">
                   Economic Results
@@ -165,9 +166,10 @@
 
               <!-- Oleic -->
               <div class="bg-white shadow rounded-lg mb-6">
-                <table-header type="primary">
-                  {{ oleic.crop.label }}
-                </table-header>
+                <crop-table-header
+                  :crop="oleic.crop"
+                  :profit="oleic.profit"
+                />
 
                 <table-header type="secondary">
                   Economic Results
@@ -229,6 +231,7 @@
 <script>
 import Alert from '../../../components/common/alert.vue';
 import BackLink from '../../../components/crop-comparison/back-to-list-link.vue';
+import CropTableHeader from '../../../components/crop-comparison/report-tables/crop-table-header.vue';
 import EconomicResults from '../../../components/crop-comparison/report-tables/economic-results.vue';
 import ExpenseCategory from '../../../components/crop-comparison/report-tables/expense-category.vue';
 import ExpenseTotals from '../../../components/crop-comparison/report-tables/expense-totals.vue';
@@ -256,6 +259,7 @@ export default {
   components: {
     Alert,
     BackLink,
+    CropTableHeader,
     EconomicResults,
     ExpenseCategory,
     ExpenseTotals,
