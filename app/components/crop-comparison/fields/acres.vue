@@ -2,7 +2,7 @@
   <input-group
     :id="id"
     :value="value"
-    label="How many acres is it?"
+    label="How many acres is this field?"
     type="number"
     :min="1"
     hint="Only include the acres being evaluated for high oleic production for accurate comparison"
