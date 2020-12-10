@@ -34,9 +34,7 @@
         <error-icon class="w-4 h-4 inline-block" />
         {{ error.message }}
       </span>
-      <span v-else>
-        {{ hint }}
-      </span>
+      <span v-else v-html="hint" />
     </hint>
     <button
       v-if="!value"
