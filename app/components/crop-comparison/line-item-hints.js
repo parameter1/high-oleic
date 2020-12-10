@@ -11,7 +11,10 @@ const hints = {
   'crop.fertLime': ({ cropName }) => `What is your ${cropName || ''} fertilizer cost per acre, exlcuding Nitrogen? P, K, micro’s and application cost/acre.`,
   'crop.nitro': ({ cropName }) => `What is your ${cropName || ''} nitrogen cost per acre?`,
 
-  'chemicals.herb': ({ cropName }) => `What is your ${cropName || ''} herbicide cost per acre?`,
+  'chemicals.herb': ({ cropName }) => {
+    if (cropName === 'High Oleic Soybeans') return 'Keep in mind today’s High Oleic Soybean technologies include conventional and Roundup Ready products only. How might your herbicide cost be affected by this, and how might your number of passes and hence rates and amount be affected by this?';
+    return `What is your ${cropName || ''} herbicide cost per acre?`;
+  },
   'chemicals.insect': ({ cropName }) => `What is your ${cropName || ''} fungicide/insecticide cost per acre?`,
 
   'fieldOps.sprayer': ({ cropName }) => `What is your ${cropName || ''} spray cost per acre? This should include the spray cost for one application, TIMES the number of passes you anticipate making on these acres.`,
