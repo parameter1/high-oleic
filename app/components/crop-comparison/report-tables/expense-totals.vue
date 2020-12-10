@@ -1,5 +1,6 @@
 <template>
   <table class="min-w-full table-fixed divide-y divide-secondary-5-300">
+    <expense-type-header />
     <row
       :left-attrs="{ class: 'w-1/3', ...commonClasses }"
       :right-attrs="{ class: 'w-2/3', ...commonClasses }"
@@ -24,11 +25,12 @@
 </template>
 
 <script>
+import ExpenseTypeHeader from './expense-type-header.vue';
 import FormatNumber from '../../format-number.vue';
 import Row from './common/row.vue';
 
 export default {
-  components: { FormatNumber, Row },
+  components: { ExpenseTypeHeader, FormatNumber, Row },
 
   props: {
     expenses: {

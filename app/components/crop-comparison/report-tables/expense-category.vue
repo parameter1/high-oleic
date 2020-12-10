@@ -1,25 +1,6 @@
 <template>
   <table class="min-w-full table-fixed divide-y divide-secondary-5-300">
-    <row
-      :left-attrs="{ class: 'w-1/3', ...headerClasses }"
-      :right-attrs="{ class: 'w-2/3', ...headerClasses }"
-    >
-      <template #right>
-        <table class="min-w-full table-fixed">
-          <tr>
-            <td class="w-1/3">
-              Per Acre
-            </td>
-            <td class="w-1/3">
-              Total
-            </td>
-            <td class="w-1/3 text-right">
-              Per Bushel
-            </td>
-          </tr>
-        </table>
-      </template>
-    </row>
+    <expense-type-header />
     <row
       v-for="lineItemExpense in expense.lineItems"
       :key="lineItemExpense.lineItem.id"
@@ -44,11 +25,13 @@
 </template>
 
 <script>
+import ExpenseTypeHeader from './expense-type-header.vue';
 import LineItemTable from './expense-category/line-item.vue';
 import Row from './common/row.vue';
 
 export default {
   components: {
+    ExpenseTypeHeader,
     LineItemTable,
     Row,
   },
