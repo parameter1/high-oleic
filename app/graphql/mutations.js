@@ -181,3 +181,9 @@ export const CLONE_COMPARISON_REPORT = gql`
     }
   }
 `;
+
+export const DELETE_COMPARISON_REPORT = gql`
+  mutation DeleteComparisonReport($input: DeleteCropComparisonMutationInput!) {
+    deleteCropComparison(input: $input)
+  }
+`;

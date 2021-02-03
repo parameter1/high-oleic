@@ -177,6 +177,22 @@ module.exports = {
         findOptions: { projection },
       });
     },
+
+    /**
+     *
+     */
+    async deleteCropComparison(_, { input }, { auth, repos }) {
+      await auth.check();
+      const { id } = input;
+      const email = auth.user.get('email');
+      const comparison = await repos.cropComparison.findByObjectId({
+        id,
+        options: { strict: true, projection: { createdByEmail: 1 } },
+      });
+      if (email !== comparison.createdByEmail) throw new Error('You do not have permission to delete this report.');
+      await repos.cropComparison.deleteOne({ query: { _id: id } });
+      return true;
+    },
   },
 
   /**

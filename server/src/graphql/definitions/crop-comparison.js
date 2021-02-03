@@ -24,6 +24,8 @@ extend type Mutation {
   cropComparisonExpenses(input: CropComparisonExpensesMutationInput!): CropComparison!
   "Sets/updates the farm name of a crop comparison."
   cropComparisonFarmName(input: CropComparisonFarmNameMutationInput!): CropComparison!
+  "Deletes a crop comparison report."
+  deleteCropComparison(input: DeleteCropComparisonMutationInput!): Boolean!
 }
 
 enum CropComparisonFieldTypeEnum {
@@ -180,6 +182,11 @@ input CropComparisonQueryInput {
 input MyCropComparisonsQueryInput {
   "Sets pagination (limit/after) criteria for the query."
   pagination: PaginationInput = {}
+}
+
+input DeleteCropComparisonMutationInput {
+  "The comparison report to delete."
+  id: ObjectID!
 }
 
 `;
