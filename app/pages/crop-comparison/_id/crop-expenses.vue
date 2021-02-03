@@ -142,8 +142,8 @@ export default {
   data: () => ({
     categoryId: 'crop',
     lineItemKeys: {
-      comparedTo: ['seeds', 'fertLine', 'nitro'],
-      oleic: ['seeds', 'fertLine'],
+      comparedTo: ['ins', 'seeds', 'fertLime', 'nitro'],
+      oleic: ['ins', 'seeds', 'fertLime'],
     },
     error: null,
     isLoading: true,
