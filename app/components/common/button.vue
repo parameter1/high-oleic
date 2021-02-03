@@ -31,6 +31,7 @@ export default {
       validator: (value) => [
         'logo-blue',
         'logo-green',
+        'red-600',
         'secondary-3',
       ].includes(value),
     },
@@ -101,6 +102,13 @@ export default {
           'bg-secondary-3',
           'focus:bg-opacity-85',
           'focus:border-secondary-3',
+          'focus:shadow-outline-gray',
+          'active:bg-opacity-85',
+        ],
+        'red-600': [
+          'bg-red-600',
+          'focus:bg-opacity-85',
+          'focus:border-red-600',
           'focus:shadow-outline-gray',
           'active:bg-opacity-85',
         ],
