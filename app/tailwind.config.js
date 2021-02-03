@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        print: { raw: 'print' },
+      },
       fontFamily: {
         sans: ['Calibri', ...defaultTheme.fontFamily.sans],
         serif: ['Cambria', ...defaultTheme.fontFamily.serif],
