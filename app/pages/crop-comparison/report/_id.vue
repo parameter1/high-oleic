@@ -18,36 +18,48 @@
               <div class="flex">
                 <back-link />
 
-                <div class="p-4">
-                  <h1 class="text-2xl mb-4 font-semibold">
-                    High Oleic Scenario Report
-                  </h1>
-                  <edit-farm-name
-                    tag="h2"
-                    class="text-logo-blue text-lg leading-6 font-semibold max-w-sm"
-                    :comparison-id="cropComparison.id"
-                    :value="cropComparison.farmName"
-                    :disabled="isUpdatingReport"
-                    @saving="isUpdatingReport = $event"
-                  />
-                  <p class="mt-1 text-primary-1 text-base leading-6">
-                    Comparing
-                    <span class="text-logo-green font-semibold">
-                      <format-number format="integer" :value="cropComparison.acres" />
-                    </span>
-                    acres of
-                    <span class="text-logo-green font-semibold">
-                      {{ comparedTo.crop.label }}
-                    </span>
-                    to
-                    <span class="text-logo-green font-semibold">
-                      {{ oleic.crop.label }}
-                    </span>
-                  </p>
+                <div class="p-4 w-full">
+                  <div class="flex justify-between">
+                    <div>
+                      <h1 class="text-2xl mb-4 font-semibold">
+                        High Oleic Scenario Report
+                      </h1>
+                      <edit-farm-name
+                        tag="h2"
+                        class="text-logo-blue text-lg leading-6 font-semibold max-w-sm"
+                        :comparison-id="cropComparison.id"
+                        :value="cropComparison.farmName"
+                        :disabled="isUpdatingReport"
+                        @saving="isUpdatingReport = $event"
+                      />
+                      <p class="mt-1 text-primary-1 text-base leading-6">
+                        Comparing
+                        <span class="text-logo-green font-semibold">
+                          <format-number format="integer" :value="cropComparison.acres" />
+                        </span>
+                        acres of
+                        <span class="text-logo-green font-semibold">
+                          {{ comparedTo.crop.label }}
+                        </span>
+                        to
+                        <span class="text-logo-green font-semibold">
+                          {{ oleic.crop.label }}
+                        </span>
+                      </p>
 
-                  <div class="mt-1 text-sm leading-5 text-secondary-4">
-                    Scenario last modified
-                    <toggle-date-format :timestamp="cropComparison.updatedAt" />
+                      <div class="mt-1 text-sm leading-5 text-secondary-4">
+                        Scenario last modified
+                        <toggle-date-format :timestamp="cropComparison.updatedAt" />
+                      </div>
+                    </div>
+
+                    <btn
+                      class="mt-auto"
+                      color="logo-blue"
+                      @click="print"
+                    >
+                      Print Report
+                    </btn>
                   </div>
                 </div>
               </div>
@@ -235,6 +247,7 @@
 <script>
 import Alert from '../../../components/common/alert.vue';
 import BackLink from '../../../components/crop-comparison/back-to-list-link.vue';
+import Btn from '../../../components/common/button.vue';
 import CropTableHeader from '../../../components/crop-comparison/report-tables/crop-table-header.vue';
 import EconomicResults from '../../../components/crop-comparison/report-tables/economic-results.vue';
 import ExpenseCategory from '../../../components/crop-comparison/report-tables/expense-category.vue';
@@ -263,6 +276,7 @@ export default {
   components: {
     Alert,
     BackLink,
+    Btn,
     CropTableHeader,
     EconomicResults,
     ExpenseCategory,
@@ -307,6 +321,12 @@ export default {
     },
     comparedTo() {
       return this.cropComparison.comparedTo;
+    },
+  },
+
+  methods: {
+    print() {
+      window.print();
     },
   },
 };
