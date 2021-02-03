@@ -26,8 +26,20 @@ class FarmFieldRepo extends PaginableRepo {
     }), params);
 
     const doc = await this.findByObjectId({ id, options: { strict: true } });
+
+    const pattern = /\((\d+)\)$/;
+    const matches = pattern.exec(doc.farmName);
+
+    let farmName;
+    if (matches && matches[1]) {
+      const num = parseInt(matches[1], 10) + 1;
+      farmName = doc.farmName.replace(pattern, `(${num})`);
+    } else {
+      farmName = `${doc.farmName} (2)`;
+    }
+
     return this.insertOne({
-      doc: { ...doc, farmName: `Copy of ${doc.farmName}`, _id: undefined },
+      doc: { ...doc, farmName, _id: undefined },
       options: { withDates: true },
     });
   }
