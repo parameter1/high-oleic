@@ -107,6 +107,7 @@ export default {
       'focus:shadow-outline-secondary-5',
       'focus:border-secondary-5',
       'rounded',
+      'print:hidden',
     ],
   }),
 

@@ -1,9 +1,9 @@
 <template>
   <table-header type="primary">
-    <div class="mb-2">
+    <div class="mb-2 print:text-base">
       {{ crop.label }}
     </div>
-    <div class="flex justify-between text-base font-semibold">
+    <div class="flex justify-between text-base print:text-sm font-semibold">
       <span>
         ROI
         <format-number

@@ -11,7 +11,7 @@
           <p class="mt-3 text-primary-1 text-base leading-6">
             Comparing
             <span class="text-logo-green font-semibold">
-              <format-number format="integer" :value=node.acres />
+              <format-number format="integer" :value="node.acres" />
             </span>
             acres of
             <span class="text-logo-green font-semibold">

@@ -23,6 +23,7 @@ export default {
       'focus:outline-none',
       'focus:bg-secondary-5-200',
       'focus:logo-blue',
+      'print:hidden',
     ],
   }),
 };

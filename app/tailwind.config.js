@@ -60,6 +60,9 @@ module.exports = {
         85: '0.85',
         90: '0.90',
       },
+      fontSize: {
+        xxs: '.5rem',
+      },
     },
   },
   variants: {

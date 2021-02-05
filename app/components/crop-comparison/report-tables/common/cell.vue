@@ -30,14 +30,14 @@ export default {
   },
   computed: {
     classes() {
-      const classes = ['px-4'];
+      const classes = ['px-4', 'print:px-2', 'print:py-0.5'];
       const {
         color,
         fontWeight,
         fontSize,
         paddingY,
       } = this;
-      if (paddingY === 'sm') classes.push('py-2');
+      if (paddingY === 'sm') classes.push('py-2', 'print:py-0.5');
       if (paddingY === 'xs') classes.push('py-1');
       if (color === 'logo-blue') classes.push('text-logo-blue');
       if (color === 'logo-brown') classes.push('text-logo-brown');
@@ -45,8 +45,8 @@ export default {
       if (fontWeight === 'medium') classes.push('font-medium');
       if (fontWeight === 'semibold') classes.push('font-semibold');
       if (fontSize === 'xs') classes.push('text-xs');
-      if (fontSize === 'sm') classes.push('text-sm');
-      if (fontSize === 'base') classes.push('text-base');
+      if (fontSize === 'sm') classes.push('text-sm', 'print:text-xxs');
+      if (fontSize === 'base') classes.push('text-base', 'print:text-xs');
       return classes;
     },
   },

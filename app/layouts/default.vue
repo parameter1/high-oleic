@@ -1,9 +1,9 @@
 <template>
-  <div class="h-screen flex overflow-hidden bg-secondary-5-50">
+  <div :class="classes">
     <left-menu v-model="menuOpen" />
 
-    <div class="flex flex-col w-0 flex-1 overflow-hidden">
-      <div class="lg:hidden relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+    <div class="flex flex-col w-0 flex-1 overflow-hidden print:overflow-visible">
+      <div class="lg:hidden print:hidden relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
         <!-- open menu button (on mobile) -->
         <open-menu-button @click.stop="menuOpen = !menuOpen" />
         <div class="flex-1 px-4 flex justify-between">
@@ -50,6 +50,15 @@ export default {
   components: { LeftMenu, Logo, OpenMenuButton },
 
   data: () => ({
+    classes: [
+      'h-screen',
+      'print:h-auto',
+      'flex',
+      'overflow-hidden',
+      'print:overflow-visible',
+      'bg-secondary-5-50',
+      'print:bg-white',
+    ],
     menuOpen: false,
   }),
 };

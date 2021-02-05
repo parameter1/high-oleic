@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:hidden">
+  <div class="lg:hidden print:hidden">
     <div
       v-show="showWrapper"
       class="fixed inset-0 flex z-40"
