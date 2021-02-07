@@ -69,6 +69,22 @@ class IdentityX {
     const { data } = await this.query({ query: LOAD_USER, variables: { email } });
     return data.appUser;
   }
+
+  /**
+   *
+   */
+  async getCurrentApp({ fields } = {}) {
+    const { data } = await this.query({
+      query: gql`
+        query CurrentApplication {
+          activeApplication {
+            ${fields}
+          }
+        }
+      `,
+    });
+    return data.activeApplication;
+  }
 }
 
 module.exports = ({ req, uri, appId } = {}) => new IdentityX({ req, uri, appId });
