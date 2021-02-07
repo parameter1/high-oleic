@@ -8,7 +8,15 @@
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-        <form v-if="!sent" class="space-y-6" @submit.prevent="sendLoginLink">
+        <div v-if="isLoggedIn">
+          <div class="mb-6">
+            You are already logged-in.
+          </div>
+          <nuxt-link to="/logout" class="text-logo-green hover:underline font-medium">
+            Logout
+          </nuxt-link>
+        </div>
+        <form v-else-if="!sent" class="space-y-6" @submit.prevent="sendLoginLink">
           <input-group
             id="sign-in.email"
             v-model="email"
@@ -64,6 +72,12 @@ export default {
     sent: false,
     hint: 'You must have access to this email account. A login link will be emailed to this address.',
   }),
+
+  computed: {
+    isLoggedIn() {
+      return !!this.$apolloHelpers.getToken();
+    },
+  },
 
   methods: {
     /**
