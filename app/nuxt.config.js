@@ -1,7 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: (chunk) => (chunk ? `${chunk} - High Oleic Soy` : 'High Oleic Soy'),
+    titleTemplate: (chunk) => (chunk ? `${chunk} - High Oil Soy` : 'High Oil Soy'),
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
