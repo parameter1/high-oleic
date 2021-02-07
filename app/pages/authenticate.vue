@@ -6,9 +6,6 @@
           <h1 slot="placeholder" class="text-2xl mb-4">
             Logging In...
           </h1>
-          <h1 slot="placeholder">
-            Logging In...
-          </h1>
           <alert v-if="error" type="danger" class="shadow-sm">
             {{ error.message }}
           </alert>
@@ -59,7 +56,7 @@ export default {
           variables: { token },
         });
         await this.$apolloHelpers.onLogin(data.loginAppUser.token.value);
-        this.$router.push(redirectTo);
+        window.location.href = redirectTo;
       } catch (e) {
         if (/no token was found/i.test(e.message)) {
           e.message = 'This login link has either expired or was already used. Please login again.';
