@@ -6,6 +6,7 @@ export default [
   },
   {
     label: 'Calculate Profit Potential',
+    subLabel: 'Powered by Ag View Solutions',
     to: '/crop-comparison',
   },
   {

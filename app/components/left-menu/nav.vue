@@ -10,6 +10,12 @@
       @click="$emit('nav-item-click', { item, event: $event })"
     >
       {{ item.label }}
+      <span
+        v-if="item.subLabel"
+        class="text-xs text-black italic"
+      >
+        {{ item.subLabel }}
+      </span>
     </nav-item-link>
   </nav>
 </template>

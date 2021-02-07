@@ -39,7 +39,7 @@ export default {
       common: [
         'group',
         'flex',
-        'items-center',
+        'flex-col',
         'px-2',
         'py-2',
         'font-medium',
