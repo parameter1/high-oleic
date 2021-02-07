@@ -72,7 +72,7 @@ export const CROP_COMPARISON_FIELD_FRAGMENT = gql`
 export const CROP_COMPARISON_REPORT_FRAGMENT = gql`
   fragment CropComparisonReportFragment on CropComparison {
     id
-    publicId
+    publicLink
     createdBy {
       id
       email

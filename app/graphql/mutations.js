@@ -193,3 +193,9 @@ export const DELETE_COMPARISON_REPORT = gql`
     deleteCropComparison(input: $input)
   }
 `;
+
+export const SEND_REPORT_EMAIL = gql`
+  mutation SendReportEmail($input: SendComparisonReportEmailMutationInput!) {
+    sendComparisonReportEmail(input: $input)
+  }
+`;

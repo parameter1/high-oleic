@@ -28,6 +28,8 @@ extend type Mutation {
   cropComparisonFarmName(input: CropComparisonFarmNameMutationInput!): CropComparison!
   "Deletes a crop comparison report."
   deleteCropComparison(input: DeleteCropComparisonMutationInput!): Boolean!
+  "Sends a public crop comparison report share link via email."
+  sendComparisonReportEmail(input: SendComparisonReportEmailMutationInput!): Boolean!
 }
 
 enum CropComparisonFieldTypeEnum {
@@ -200,6 +202,15 @@ input PublicCropComparisonQueryInput {
 input DeleteCropComparisonMutationInput {
   "The comparison report to delete."
   id: ObjectID!
+}
+
+input SendComparisonReportEmailMutationInput {
+  "The comparison report ID."
+  id: ObjectID!
+  "The email address to send the link to."
+  to: String!
+  "An optional message to include in the email."
+  message: String
 }
 
 `;

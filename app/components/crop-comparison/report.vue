@@ -19,7 +19,8 @@
             <share-overlay
               v-if="canShare"
               v-model="isShareOpen"
-              :public-id="cropComparison.publicId"
+              :comparison-id="comparisonId"
+              :public-link="cropComparison.publicLink"
             />
 
             <!-- Main report header -->

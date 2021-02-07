@@ -2,6 +2,8 @@ const { typeProjection, connectionProjection } = require('@parameter1/graphql-di
 const round = require('../../utils/round');
 const calculator = require('../../profit-calculator');
 const divZero = require('../../utils/div-zero');
+const { APP_HOST, isProduction } = require('../../env');
+const sendShareEmail = require('../../email/share-report');
 
 const checkUserCan = async (action, { id, repos, auth }) => {
   const comparison = await repos.cropComparison.findByObjectId({
@@ -203,6 +205,33 @@ module.exports = {
       });
       if (email !== comparison.createdByEmail) throw new Error('You do not have permission to delete this report.');
       await repos.cropComparison.deleteOne({ query: { _id: id } });
+      return true;
+    },
+
+    /**
+     *
+     */
+    async sendComparisonReportEmail(_, { input }, { auth, repos, idx }) {
+      await auth.check();
+      const { id, to, message } = input;
+      const email = auth.user.get('email');
+      const projection = {
+        createdByEmail: 1,
+        publicId: 1,
+        farmName: 1,
+      };
+      const comparison = await repos.cropComparison.findByObjectId({
+        id,
+        options: { strict: true, projection },
+      });
+      if (email !== comparison.createdByEmail) throw new Error('You do not have permission to share this report.');
+      await sendShareEmail({
+        fromEmail: email,
+        to,
+        message,
+        link: generatePublicLink(comparison),
+        identityX: idx,
+      });
       return true;
     },
   },
