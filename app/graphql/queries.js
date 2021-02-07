@@ -64,6 +64,16 @@ export const CROP_COMPARISON_REPORT = gql`
   ${CROP_COMPARISON_REPORT_FRAGMENT}
 `;
 
+export const PUBLIC_CROP_COMPARISON_REPORT = gql`
+  query PublicCropComparisonReport($id: String!) {
+    publicCropComparison(input: { id: $id }) {
+      ...CropComparisonReportFragment
+    }
+  }
+
+  ${CROP_COMPARISON_REPORT_FRAGMENT}
+`;
+
 export const CROP_COMPARISON_FARM_INFO = gql`
   query CropComparisonFarmInfo($id: ObjectID!) {
     cropComparison(input: { id: $id }) {

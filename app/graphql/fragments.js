@@ -73,6 +73,10 @@ export const CROP_COMPARISON_REPORT_FRAGMENT = gql`
   fragment CropComparisonReportFragment on CropComparison {
     id
     publicId
+    createdBy {
+      id
+      email
+    }
     farmName
     acres
     advantage

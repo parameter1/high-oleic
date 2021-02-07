@@ -1,5 +1,5 @@
 <template>
-  <report :comparison-id="$route.params.id" />
+  <report :public-id="$route.params.hash" />
 </template>
 
 <script>
