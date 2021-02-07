@@ -6,11 +6,11 @@
       </dt>
       <slot v-if="$slots.body" name="body" />
       <dd v-else class="mt-1 print:mt-0 flex justify-between items-baseline md:block lg:flex">
-        <div class="flex flex-col items-baseline text-2xl print:text-base font-semibold">
+        <div class="flex flex-col items-baseline text-2xl print:text-sm font-semibold">
           <slot />
           <span
             v-if="description"
-            class="text-sm print:text-xs print:leading-4 font-medium text-secondary-4"
+            :class="descriptionClasses"
           >
             {{ description }}
           </span>
@@ -31,6 +31,10 @@ export default {
       type: String,
       default: null,
     },
+    hidePrintDescription: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => ({
     classes: [
@@ -44,5 +48,19 @@ export default {
       'print:p-2',
     ],
   }),
+
+  computed: {
+    descriptionClasses() {
+      const classes = [
+        'text-sm',
+        'print:text-xs',
+        'print:leading-4',
+        'font-medium',
+        'text-secondary-4',
+      ];
+      if (this.hidePrintDescription) classes.push('print:hidden');
+      return classes;
+    },
+  },
 };
 </script>

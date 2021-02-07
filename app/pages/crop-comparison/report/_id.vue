@@ -21,18 +21,18 @@
                 <div class="p-4 w-full print:p-2">
                   <div class="flex justify-between">
                     <div>
-                      <h1 class="text-2xl print:text-lg mb-4 print:mb-1 font-semibold">
+                      <h1 class="text-2xl print:text-base mb-4 print:mb-0 font-semibold">
                         High Oleic Scenario Report
                       </h1>
                       <edit-farm-name
                         tag="h2"
-                        class="text-logo-blue text-lg print:text-base font-semibold max-w-sm"
+                        class="text-logo-blue text-lg print:text-sm font-semibold max-w-sm"
                         :comparison-id="cropComparison.id"
                         :value="cropComparison.farmName"
                         :disabled="isUpdatingReport"
                         @saving="isUpdatingReport = $event"
                       />
-                      <p class="mt-1 text-primary-1 text-base print:text-sm leading-6">
+                      <p class="mt-1 text-primary-1 text-base print:text-xs leading-6">
                         Comparing
                         <span class="text-logo-green font-semibold">
                           <format-number format="integer" :value="cropComparison.acres" />
@@ -47,7 +47,7 @@
                         </span>
                       </p>
 
-                      <div class="mt-1 text-sm print:text-xs leading-5 text-secondary-4">
+                      <div class="mt-1 text-sm print:hidden leading-5 text-secondary-4">
                         Scenario last modified
                         <toggle-date-format :timestamp="cropComparison.updatedAt" />
                       </div>
@@ -70,7 +70,7 @@
                 <template #body>
                   <edit-acres
                     tag="dd"
-                    class="mt-1 print:mt-0 text-2xl print:text-base font-semibold"
+                    class="mt-1 print:mt-0 text-2xl print:text-sm font-semibold"
                     :comparison-id="cropComparison.id"
                     :value="cropComparison.acres"
                     :disabled="isUpdatingReport"
@@ -79,7 +79,10 @@
                 </template>
               </overview-card>
 
-              <overview-card title="High Oleic Advantage/Difference" description="profit per acre">
+              <overview-card
+                title="High Oleic Advantage/Difference"
+                description="profit per acre"
+              >
                 <format-number
                   format="usd"
                   :value="cropComparison.advantage"
@@ -87,7 +90,11 @@
                 />
               </overview-card>
 
-              <overview-card title="HO:CROP Ratio" :description="hoDescription">
+              <overview-card
+                title="HO:CROP Ratio"
+                :description="hoDescription"
+                hide-print-description
+              >
                 {{ cropComparison.ratio }}
               </overview-card>
             </dl>
@@ -158,11 +165,7 @@
               </div>
             </grid-container>
 
-            <div class="hidden mt-4 print:block text-sm">
-              Expenses are displayed on next page...
-            </div>
-
-            <grid-container class="print-page-break">
+            <grid-container class="">
               <!-- Compared To -->
               <div class="bg-white shadow rounded-b-lg mb-6 print:mb-0 print:shadow-none">
                 <div
@@ -220,7 +223,7 @@
               </div>
             </grid-container>
 
-            <ag-view-solutions />
+            <ag-view-solutions class="print:mt-3" />
           </div>
         </client-only>
       </div>

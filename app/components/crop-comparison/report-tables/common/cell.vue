@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     classes() {
-      const classes = ['px-4', 'print:px-2', 'print:py-0.5'];
+      const classes = ['px-4', 'print:px-2', 'print:leading-none'];
       const {
         color,
         fontWeight,
@@ -38,7 +38,7 @@ export default {
         paddingY,
       } = this;
       if (paddingY === 'sm') classes.push('py-2', 'print:py-0.5');
-      if (paddingY === 'xs') classes.push('py-1');
+      if (paddingY === 'xs') classes.push('py-1', 'print:py-0.5');
       if (color === 'logo-blue') classes.push('text-logo-blue');
       if (color === 'logo-brown') classes.push('text-logo-brown');
       if (color === 'primary-1') classes.push('text-primary-1');
