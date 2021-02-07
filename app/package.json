@@ -29,7 +29,8 @@
     "lodash.clonedeep": "^4.5.0",
     "nuxt": "^2.14.12",
     "object-path": "^0.11.5",
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^1.8.10",
+    "v-clipboard": "^2.2.3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.4.2",
