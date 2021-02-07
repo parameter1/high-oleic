@@ -225,5 +225,20 @@ module.exports = {
       const options = { projection: connectionProjection(info), ...pagination };
       return repos.cropComparison.paginateForUser({ email, options });
     },
+
+    /**
+     *
+     */
+    async publicCropComparison(_, { input }, { repos }, info) {
+      const { id, strict } = input;
+      const options = {
+        strict,
+        projection: { ...typeProjection(info) },
+      };
+      const query = { publicId: id };
+      const comparison = await repos.cropComparison.findOne({ query, options });
+      if (!comparison) return null;
+      return comparison;
+    },
   },
 };

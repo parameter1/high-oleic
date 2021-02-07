@@ -7,6 +7,8 @@ extend type Query {
   cropComparison(input: CropComparisonQueryInput!): CropComparison
   "Lists all crop comparisons for the current user."
   myCropComparisons(input: MyCropComparisonsQueryInput = {}): CropComparisonConnection!
+  "Loads a single crop comparison by public ID. Anyone can view this data."
+  publicCropComparison(input: PublicCropComparisonQueryInput!): CropComparison
 }
 
 extend type Mutation {
@@ -176,7 +178,7 @@ input CropComparisonFarmNameMutationInput {
 
 input CropComparisonQueryInput {
   "The crop comparison ID to query for."
-  id: ObjectID
+  id: ObjectID!
   "When in strict mode (default), the query will throw an error when the comparison is not found."
   strict: Boolean = true
 }
@@ -184,6 +186,13 @@ input CropComparisonQueryInput {
 input MyCropComparisonsQueryInput {
   "Sets pagination (limit/after) criteria for the query."
   pagination: PaginationInput = {}
+}
+
+input PublicCropComparisonQueryInput {
+  "The crop comparison public ID to query for."
+  id: String!
+  "When in strict mode (default), the query will throw an error when the comparison is not found."
+  strict: Boolean = true
 }
 
 input DeleteCropComparisonMutationInput {
