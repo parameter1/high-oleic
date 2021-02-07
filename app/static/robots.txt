@@ -1,0 +1,4 @@
+User-agent: *
+
+Disallow: /crop-comparison/report
+Disallow: /crop-comparison/shared
