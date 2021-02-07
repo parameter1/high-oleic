@@ -15,6 +15,12 @@ export const AUTHENTICATE = gql`
   }
 `;
 
+export const LOGOUT = gql`
+  mutation Logout($token: String!) {
+    logoutAppUser(input: { token: $token })
+  }
+`;
+
 export const CREATE_USER = gql`
   mutation CreateUser($email: String!) {
     createAppUser(input: { email: $email }) {
