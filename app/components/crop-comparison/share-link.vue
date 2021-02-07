@@ -42,7 +42,7 @@ export default {
   computed: {
     buttonLabel() {
       if (this.didCopy) return 'Link Copied!';
-      return 'Click to Copy Link';
+      return 'Copy Link to Clipboard';
     },
   },
 
