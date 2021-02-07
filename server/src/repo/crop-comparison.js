@@ -1,5 +1,6 @@
 const { validateAsync } = require('@parameter1/joi/utils');
 const { ObjectId } = require('@parameter1/mongodb');
+const { nanoid } = require('nanoid');
 const PaginableRepo = require('./-paginable');
 const Joi = require('../joi');
 const { fields } = require('../schema/crop-comparison');
@@ -39,7 +40,12 @@ class FarmFieldRepo extends PaginableRepo {
     }
 
     return this.insertOne({
-      doc: { ...doc, farmName, _id: undefined },
+      doc: {
+        ...doc,
+        farmName,
+        _id: undefined,
+        publicId: nanoid(),
+      },
       options: { withDates: true },
     });
   }
@@ -71,6 +77,7 @@ class FarmFieldRepo extends PaginableRepo {
       farmName,
       acres,
       createdByEmail: email,
+      publicId: nanoid(),
       oleic: {
         _id: new ObjectId(),
         cropType: 'oleic',

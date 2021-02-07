@@ -36,6 +36,8 @@ enum CropComparisonFieldTypeEnum {
 type CropComparison implements ChangedDateInterface & UserAttributionInterface @interfaceFields {
   "The internal, unqiue report report identifier."
   id: ObjectID! @project(field: "_id")
+  "The public ID of the report, for sharing."
+  publicId: String! @project
   "The farm name."
   farmName: String! @project
   "The number of acres to compare."
