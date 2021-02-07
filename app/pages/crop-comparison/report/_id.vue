@@ -219,6 +219,8 @@
                 <expense-totals :expenses="oleic.expenses" />
               </div>
             </grid-container>
+
+            <ag-view-solutions />
           </div>
         </client-only>
       </div>
@@ -227,6 +229,7 @@
 </template>
 
 <script>
+import AgViewSolutions from '../../../components/ag-view-solutions.vue';
 import Alert from '../../../components/common/alert.vue';
 import BackLink from '../../../components/crop-comparison/back-to-list-link.vue';
 import Btn from '../../../components/common/button.vue';
@@ -258,6 +261,7 @@ const defaultCropField = {
 
 export default {
   components: {
+    AgViewSolutions,
     Alert,
     BackLink,
     Btn,

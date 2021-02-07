@@ -60,6 +60,8 @@
                 :list-query="$apollo.queries.myCropComparisons"
               />
             </transition-group>
+
+            <ag-view-solutions class="mt-6" />
           </div>
         </client-only>
         <nuxt-child :list-query="$apollo.queries.myCropComparisons" />
@@ -69,6 +71,7 @@
 </template>
 
 <script>
+import AgViewSolutions from '../../components/ag-view-solutions.vue';
 import Alert from '../../components/common/alert.vue';
 import Btn from '../../components/common/button.vue';
 import ListItem from '../../components/crop-comparison/list-item.vue';
@@ -79,6 +82,7 @@ import GraphQLError from '../../utils/graphql-error';
 
 export default {
   components: {
+    AgViewSolutions,
     Alert,
     Btn,
     ListItem,
