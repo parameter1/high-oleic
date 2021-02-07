@@ -13,25 +13,18 @@
 
     <template #body>
       <div class="py-8 px-4">
-        <input-group
-          id="share-report.public-link"
-          :value="publicLink"
-          :hint="linkDescription"
-          label="Public link"
-          type="text"
-          readonly
-        />
+        <share-link :link="publicLink" />
       </div>
     </template>
   </slide-over>
 </template>
 
 <script>
-import InputGroup from '../common/forms/input-group.vue';
+import ShareLink from './share-link.vue';
 import SlideOver from '../overlays/slide-over.vue';
 
 export default {
-  components: { InputGroup, SlideOver },
+  components: { ShareLink, SlideOver },
 
   props: {
     /**
@@ -50,7 +43,6 @@ export default {
 
   data: () => ({
     description: 'Share this report using a public link or via email',
-    linkDescription: 'Copy this link and give it to anyone you\'d like to access this report. Anyone using this link can only read the report and cannot edit any values.',
   }),
 
   computed: {
