@@ -6,6 +6,7 @@ const {
 } = require('envalid');
 
 module.exports = cleanEnv(process.env, {
+  APP_HOST: str({ desc: 'The host name of the front-end application' }),
   HOST: str({ desc: 'The host that the service will run on.', default: '0.0.0.0' }),
   IDENTITY_X_APP_ID: str({ desc: 'The IdentityX Application ID to use.', default: '5fb2d401b8a845090ecc01d1' }),
   IDENTITY_X_URI: str({ desc: 'The IdentityX API URI', default: 'https://identity-x.parameter1.com/graphql' }),

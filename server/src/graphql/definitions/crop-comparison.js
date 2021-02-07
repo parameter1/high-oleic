@@ -40,6 +40,8 @@ type CropComparison implements ChangedDateInterface & UserAttributionInterface @
   id: ObjectID! @project(field: "_id")
   "The public ID of the report, for sharing."
   publicId: String! @project
+  "The publically viewable link for this report."
+  publicLink: String! @project(field: "publicId")
   "The farm name."
   farmName: String! @project
   "The number of acres to compare."

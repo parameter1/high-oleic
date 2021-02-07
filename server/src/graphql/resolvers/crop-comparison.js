@@ -11,6 +11,11 @@ const checkUserCan = async (action, { id, repos, auth }) => {
   await auth.checkCan(action, comparison);
 };
 
+const generatePublicLink = ({ publicId }) => {
+  const proto = isProduction ? 'https' : 'http';
+  return `${proto}://${APP_HOST}/crop-comparison/shared/${publicId}`;
+};
+
 module.exports = {
   /**
    *
@@ -38,6 +43,13 @@ module.exports = {
      */
     comparedTo({ comparedTo, acres }) {
       return { ...comparedTo, acres };
+    },
+
+    /**
+     *
+     */
+    publicLink({ publicId }) {
+      return generatePublicLink({ publicId });
     },
 
     /**
