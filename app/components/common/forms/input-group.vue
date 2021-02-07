@@ -19,6 +19,7 @@
         :type="type"
         :value="value"
         :disabled="disabled"
+        :readonly="readonly"
         :required="required"
         :placeholder="placeholder"
         :max="max"
@@ -77,6 +78,10 @@ export default {
       default: null,
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    readonly: {
       type: Boolean,
       default: false,
     },
