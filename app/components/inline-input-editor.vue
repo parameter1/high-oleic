@@ -1,6 +1,7 @@
 <template>
   <inline-editor
     v-model="isEditing"
+    :can-edit="canEdit"
     :tag="tag"
     :input-value="inputValue"
     :input-attrs="inputAttrs"
@@ -23,6 +24,10 @@ export default {
   components: { InlineEditor },
 
   props: {
+    canEdit: {
+      type: Boolean,
+      default: true,
+    },
     saveFunc: {
       type: Function,
       required: true,

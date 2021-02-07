@@ -12,6 +12,7 @@
       </template>
       <template #right>
         <line-item-table
+          :can-edit="canEdit"
           :expense="lineItemExpense"
           :comparison-id="comparisonId"
           :apply-to="applyTo"
@@ -53,6 +54,10 @@ export default {
     cropName: {
       type: String,
       required: true,
+    },
+    canEdit: {
+      type: Boolean,
+      default: true,
     },
     editorsDisabled: {
       type: Boolean,

@@ -3,7 +3,8 @@
     <tr>
       <td v-show="showLeft" :class="leftClasses">
         <edit-expense-line-item
-          v-if="canEdit && unit === 'PER_ACRE'"
+          v-if="showEditor && unit === 'PER_ACRE'"
+          :can-edit="canEdit"
           :comparison-id="comparisonId"
           :line-item="lineItem"
           :apply-to="applyTo"
@@ -24,7 +25,8 @@
       </td>
       <td v-show="showRight" :class="rightClasses">
         <edit-expense-line-item
-          v-if="canEdit && unit === 'PER_BUSHEL'"
+          v-if="showEditor && unit === 'PER_BUSHEL'"
+          :can-edit="canEdit"
           :comparison-id="comparisonId"
           :line-item="lineItem"
           :apply-to="applyTo"
@@ -73,6 +75,10 @@ export default {
       type: String,
       required: true,
     },
+    canEdit: {
+      type: Boolean,
+      default: true,
+    },
     editorsDisabled: {
       type: Boolean,
       default: false,
@@ -87,7 +93,7 @@ export default {
     lineItem() {
       return this.expense.lineItem;
     },
-    canEdit() {
+    showEditor() {
       if (this.applyTo === 'COMPARED_CROP') return true;
       return !sharedLineItems.includes(this.lineItem.id);
     },

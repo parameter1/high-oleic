@@ -1,5 +1,6 @@
 <template>
   <inline-editor
+    :can-edit="canEdit"
     :tag="tag"
     :value="value"
     :input-attrs="{ type: 'text', required: true }"
@@ -25,6 +26,10 @@ export default {
       type: String,
       required: true,
     },
+    canEdit: {
+      type: Boolean,
+      default: true,
+    },
     tag: {
       type: String,
       default: 'div',
@@ -41,6 +46,7 @@ export default {
 
   methods: {
     async update({ newValue }) {
+      if (!this.canEdit) return;
       const input = { id: this.comparisonId, farmName: newValue };
       await this.$apollo.mutate({
         mutation: UPDATE_COMPARISON_REPORT_FARM_NAME,

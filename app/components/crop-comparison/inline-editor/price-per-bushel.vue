@@ -1,5 +1,6 @@
 <template>
   <inline-editor
+    :can-edit="canEdit"
     :tag="tag"
     :value="value"
     :input-attrs="settings.attrs"
@@ -39,6 +40,10 @@ export default {
       type: String,
       required: true,
     },
+    canEdit: {
+      type: Boolean,
+      default: true,
+    },
     tag: {
       type: String,
       default: 'div',
@@ -61,6 +66,7 @@ export default {
 
   methods: {
     async update({ newValue }) {
+      if (!this.canEdit) return;
       const input = {
         id: this.comparisonId,
         applyTo: this.applyTo,

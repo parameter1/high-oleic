@@ -37,7 +37,7 @@
       <span v-else v-html="hint" />
     </hint>
     <button
-      v-if="!value"
+      v-if="canEdit && !value"
       :class="editButtonClasses"
       @click.stop="$emit('input', true)"
     >
@@ -63,6 +63,13 @@ export default {
   },
 
   props: {
+    /**
+     * Whether the inline editor supports editing.
+     */
+    canEdit: {
+      type: Boolean,
+      default: true,
+    },
     tag: {
       type: String,
       default: 'div',

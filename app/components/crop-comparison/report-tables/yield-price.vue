@@ -6,6 +6,7 @@
       </template>
       <template #right>
         <edit-yield-per-acre
+          :can-edit="canEdit"
           :comparison-id="comparisonId"
           :apply-to="applyTo"
           :value="yieldPerAcre"
@@ -20,6 +21,7 @@
       </template>
       <template #right>
         <edit-price-per-bushel
+          :can-edit="canEdit"
           :comparison-id="comparisonId"
           :apply-to="applyTo"
           :crop-name="cropName"
@@ -35,6 +37,7 @@
       </template>
       <template #right>
         <edit-premium-per-bushel
+          :can-edit="canEdit"
           :comparison-id="comparisonId"
           :apply-to="applyTo"
           :crop-name="cropName"
@@ -84,6 +87,10 @@ export default {
     cropName: {
       type: String,
       required: true,
+    },
+    canEdit: {
+      type: Boolean,
+      default: true,
     },
     yieldPerAcre: {
       type: Number,

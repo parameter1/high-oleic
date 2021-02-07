@@ -1,5 +1,6 @@
 <template>
   <inline-editor
+    :can-edit="canEdit"
     :tag="tag"
     :value="value"
     :input-attrs="{ type: 'number', min: 0, step: 0.01, required: true }"
@@ -42,6 +43,10 @@ export default {
       type: String,
       required: true,
     },
+    canEdit: {
+      type: Boolean,
+      default: true,
+    },
     tag: {
       type: String,
       default: 'div',
@@ -74,6 +79,7 @@ export default {
 
   methods: {
     async update({ newValue }) {
+      if (!this.canEdit) return;
       const applies = [this.applyTo];
       if (this.applyToOleic) applies.push('OLEIC');
       const input = {
