@@ -49,6 +49,7 @@ services:
     environment:
       <<: *env
       MONGO_URI: ${PM_MONGO_URI-mongodb://root:password123@mongodb-primary:27017,mongodb-secondary:27017/?replicaSet=unitedsoybean&authSource=admin&readPreference=primary}
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY-notset}
     ports:
       - "53190:53190"
     depends_on:
