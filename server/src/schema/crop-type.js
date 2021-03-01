@@ -17,6 +17,10 @@ const getCropTypes = () => [
     type: 'wheat',
     label: 'Wheat',
   },
+  {
+    type: 'other',
+    label: 'Other Crop',
+  },
 ];
 
 const fields = {
