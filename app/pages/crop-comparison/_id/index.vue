@@ -13,7 +13,7 @@
           id="modify-crop-comparison"
           ref="form"
           class="max-w-md"
-          @submit.prevent="save"
+          @submit.prevent="$router.push(`/crop-comparison/${comparisonId}/yield-price`)"
         >
           <fieldset :disabled="isLoading || isSaving">
             <farm-name
@@ -76,16 +76,6 @@
         >
           Save &amp; Continue
         </btn>
-        <!-- <btn
-          form="modify-crop-comparison"
-          color="secondary-3"
-          class="ml-4"
-          :disabled="isLoading || isSaving"
-          @click="reset"
-        >
-          Reset
-        </btn> -->
-
         <btn
           class="ml-auto"
           :disabled="isLoading || isSaving"
@@ -126,13 +116,13 @@ export default {
 
   async beforeRouteLeave(to, from, next) {
     const { form, submitButton } = this.$refs;
-    if (!form.checkValidity()) {
+    if (form.checkValidity()) {
+      // form is valid. save the form and continue
+      await this.save();
+      next();
+    } else {
       // simulate the form submit (via click) to trigger the native validation UI.
       submitButton.$el.click();
-    } else {
-      // form is valid. save the form and continue
-      await this.save({ redirect: false });
-      next();
     }
   },
 
@@ -198,7 +188,7 @@ export default {
     /**
      *
      */
-    async save({ redirect = false } = {}) {
+    async save() {
       try {
         this.savingError = null;
         this.isSaving = true;
@@ -212,7 +202,6 @@ export default {
           yieldPerAcre: parseFloat(comparedTo.yieldPerAcre),
         };
         await this.$apollo.mutate({ mutation: UPDATE_CROP_COMPARISON_FARM_INFO, variables });
-        if (redirect) this.$router.push(`/crop-comparison/${comparisonId}/yield-price`);
       } catch (e) {
         this.savingError = new GraphQLError(e);
       } finally {
