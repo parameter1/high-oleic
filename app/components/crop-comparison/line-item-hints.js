@@ -15,7 +15,7 @@ const hints = {
     if (cropName === 'High Oleic Soybeans') return 'Keep in mind today’s High Oleic Soybean technologies include conventional and Roundup Ready products only. How might your herbicide cost be affected by this, and how might your number of passes and hence rates and amount be affected by this?';
     return `What is your ${cropName || ''} herbicide cost per acre?`;
   },
-  'chemicals.insect': ({ cropName }) => `What is your ${cropName || ''} fungicide/insecticide cost per acre?`,
+  'chemicals.insect': ({ cropName }) => `What is your ${cropName || ''} fungicide/insecticide cost per acre? Cost of product plus custom application cost if you are not doing the spraying yourself. Spray costs are accounted for on the next page.`,
 
   'fieldOps.sprayer': ({ cropName }) => `What is your ${cropName || ''} spray cost per acre? This should include the spray cost for one application, TIMES the number of passes you anticipate making on these acres.`,
   'fieldOps.equipment': ({ cropName }) => `What is your ${cropName || ''} equipment cost per acre? The best way to input this number is write down the passes it takes to put the crop in and take the crop out, and assign a value per pass for each field operation. You can use University rates if you don't know your own numbers. Generally, $110 will complete a corn crop, and $90 will complete a soybean crop, but it varies by farm and by region! If you would like to learn more about calculating your equipment cost of production, visit <a href="https://agviewsolutions.com/profit-manager/" target="_blank" rel="noopener" class="text-secondary-3 hover:text-secondary-4 underline">agviewsolutions.com/profit-manager</a> to learn more.`,
