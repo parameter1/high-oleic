@@ -1,9 +1,10 @@
 <template>
   <inline-editor
+    v-currency
     :can-edit="canEdit"
     :tag="tag"
     :value="value"
-    :input-attrs="settings.attrs"
+    :input-attrs="{ ...settings.attrs, type: 'text' }"
     :hint="settings.hint"
     :save-func="update.bind(this)"
     :disabled="disabled"
@@ -17,10 +18,12 @@
 </template>
 
 <script>
+import { parse } from 'vue-currency-input';
 import FormatNumber from '../../format-number.vue';
 import InlineEditor from '../../inline-input-editor.vue';
 
 import fieldSettings from '../field-settings';
+import currencyOptions from '../../../currency-options';
 import { UPDATE_COMPARISON_REPORT_PRICE_PER_BUSHEL } from '../../../graphql/mutations';
 
 export default {
@@ -70,7 +73,7 @@ export default {
       const input = {
         id: this.comparisonId,
         applyTo: this.applyTo,
-        pricePerBushel: parseFloat(newValue),
+        pricePerBushel: parse(newValue, currencyOptions),
       };
       await this.$apollo.mutate({
         mutation: UPDATE_COMPARISON_REPORT_PRICE_PER_BUSHEL,

@@ -1,9 +1,10 @@
 <template>
   <inline-editor
+    v-currency
     :can-edit="canEdit"
     :tag="tag"
     :value="value"
-    :input-attrs="{ type: 'number', min: 0, step: 0.01, required: true }"
+    :input-attrs="{ type: 'text', min: 0, step: 0.01, required: true }"
     :hint="hint"
     :save-func="update.bind(this)"
     :disabled="disabled"
@@ -15,10 +16,12 @@
 </template>
 
 <script>
+import { parse } from 'vue-currency-input';
 import FormatNumber from '../../format-number.vue';
 import InlineEditor from '../../inline-input-editor.vue';
 import lineItemHints from '../line-item-hints';
 import sharedLineItems from '../shared-line-items';
+import currencyOptions from '../../../currency-options';
 
 import { UPDATE_COMPARISON_REPORT_EXPENSES } from '../../../graphql/mutations';
 
@@ -87,7 +90,7 @@ export default {
         [this.inputKey]: applies.map((applyTo) => ({
           applyTo,
           lineItem: this.type,
-          value: parseFloat(newValue),
+          value: parse(newValue, currencyOptions),
         })),
       };
       await this.$apollo.mutate({
