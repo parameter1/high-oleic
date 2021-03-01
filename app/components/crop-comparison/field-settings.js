@@ -1,7 +1,7 @@
 export default {
   acres: () => ({
     attrs: { type: 'number', min: 1, required: true },
-    hint: 'Only include the acres being evaluated for high oleic production for accurate comparison',
+    hint: 'Only include the acres being evaluated for high oleic production for accurate comparison.',
   }),
   pricePerBushel: ({ crop } = {}) => {
     const suffix = crop ? ` for ${crop}` : '';
@@ -12,11 +12,11 @@ export default {
         step: 0.01,
         required: true,
       },
-      hint: `What market price would you like to use${suffix}, in dollars per bushel`,
+      hint: `What market price would you like to use${suffix}, in dollars per bushel?`,
     };
   },
   premiumPerBushel: ({ crop } = {}) => {
-    const hint = crop === 'High Oleic Soybeans' ? 'Premiums across the nation can range from $.25-$.75, depending on your location and market demand' : null;
+    const hint = crop === 'High Oleic Soybeans' ? 'Premiums across the nation can range from $.25-$.75, depending on your location and market demand.' : null;
     return {
       attrs: {
         type: 'number',

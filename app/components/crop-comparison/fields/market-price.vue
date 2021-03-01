@@ -59,7 +59,7 @@ export default {
     hint() {
       const { crop } = this;
       const suffix = crop ? ` for ${crop}` : '';
-      return `What market price would you like to use${suffix}, in dollars per bushel`;
+      return `What market price would you like to use${suffix}, in dollars per bushel?`;
     },
   },
 };
