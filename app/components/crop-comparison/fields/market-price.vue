@@ -1,23 +1,19 @@
 <template>
   <input-group
     :id="id"
+    v-currency
     :value="value"
     label="Projected market price"
-    type="number"
+    type="text"
     :min="0.01"
     :step="0.01"
     :disabled="disabled"
     :required="required"
-    input-class="pl-7 pr-20"
+    input-class="pr-20"
     :hint="hint"
     @input="$emit('input', $event)"
     @focus="$emit('focus', $event)"
   >
-    <template #prepend>
-      <span class="text-gray-500 sm:text-sm sm:leading-5">
-        $
-      </span>
-    </template>
     <template #append>
       <span class="text-gray-500 sm:text-sm sm:leading-5">
         per bushel

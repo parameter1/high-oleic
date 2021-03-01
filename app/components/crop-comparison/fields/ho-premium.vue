@@ -1,23 +1,19 @@
 <template>
   <input-group
     :id="id"
+    v-currency
     :value="value"
     label="What do you anticipate the premium to be on High Oleic Soybeans in your area?"
-    type="number"
+    type="text"
     :min="settings.attrs.min"
     :step="settings.attrs.step"
     :required="settings.attrs.required"
     :disabled="disabled"
-    input-class="pl-7 pr-20"
+    input-class="pr-20"
     :hint="settings.hint"
     @input="$emit('input', $event)"
     @focus="$emit('focus', $event)"
   >
-    <template #prepend>
-      <span class="text-gray-500 sm:text-sm sm:leading-5">
-        $
-      </span>
-    </template>
     <template #append>
       <span class="text-gray-500 sm:text-sm sm:leading-5">
         per bushel

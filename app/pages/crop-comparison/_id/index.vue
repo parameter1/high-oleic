@@ -15,7 +15,7 @@
           class="max-w-md"
           @submit.prevent="$router.push(`/crop-comparison/${comparisonId}/yield-price`)"
         >
-          <fieldset :disabled="isLoading || isSaving">
+          <fieldset v-if="!isLoading" :disabled="isSaving">
             <farm-name
               id="modify-crop-comparison.farm-name"
               ref="farmName"
@@ -89,6 +89,7 @@
 </template>
 
 <script>
+import clone from 'lodash.clonedeep';
 import Alert from '../../../components/common/alert.vue';
 import Btn from '../../../components/common/button.vue';
 
@@ -102,6 +103,7 @@ import cropOptions from '../../../components/crop-comparison/crop-options';
 import { CROP_COMPARISON_FARM_INFO } from '../../../graphql/queries';
 import { UPDATE_CROP_COMPARISON_FARM_INFO } from '../../../graphql/mutations';
 import GraphQLError from '../../../utils/graphql-error';
+import parseCurrency from '../../../utils/parse-currency';
 
 export default {
   components: {
@@ -134,13 +136,7 @@ export default {
         return { id: this.comparisonId };
       },
       update({ cropComparison }) {
-        return {
-          ...cropComparison,
-          comparedTo: {
-            ...cropComparison.comparedTo,
-            crop: { ...cropComparison.comparedTo.crop },
-          },
-        };
+        return clone(cropComparison);
       },
       error(e) { this.error = new GraphQLError(e); },
       watchLoading(isLoading) {
@@ -198,7 +194,7 @@ export default {
           acres: parseFloat(cropComparison.acres),
           farmName: cropComparison.farmName,
           cropToCompare: comparedTo.crop.id,
-          pricePerBushel: parseFloat(comparedTo.pricePerBushel),
+          pricePerBushel: parseCurrency(comparedTo.pricePerBushel),
           yieldPerAcre: parseFloat(comparedTo.yieldPerAcre),
         };
         await this.$apollo.mutate({ mutation: UPDATE_CROP_COMPARISON_FARM_INFO, variables });
