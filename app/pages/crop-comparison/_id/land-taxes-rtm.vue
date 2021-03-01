@@ -187,11 +187,8 @@ export default {
       category,
       lineItem,
       applyTo,
-      costs,
       value,
     }) {
-      const expenseField = lineItem.unit === 'PER_ACRE' ? 'perAcre' : 'perBushel';
-      set(costs, expenseField, value);
       const lineItemType = lineItem[`${category.id}Type`];
       const path = `${category.id}.${applyTo}.${lineItemType}`;
       set(this.values, path, value);
