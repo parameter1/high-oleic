@@ -131,10 +131,6 @@ export default {
 
   data: () => ({
     categoryId: 'crop',
-    lineItemKeys: {
-      comparedTo: ['ins', 'seeds', 'fertLime', 'nitro'],
-      oleic: ['ins', 'seeds', 'fertLime'],
-    },
     error: null,
     isLoading: true,
     cropComparison: {
@@ -152,6 +148,13 @@ export default {
     },
     oleic() {
       return this.cropComparison.oleic;
+    },
+    lineItemKeys() {
+      const common = ['ins', 'seeds', 'fertLime'];
+      return {
+        comparedTo: this.comparedTo.crop.id === 'SOY' ? [...common] : [...common, 'nitro'],
+        oleic: [...common],
+      };
     },
   },
 
