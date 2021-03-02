@@ -30,7 +30,8 @@
     "nuxt": "^2.14.12",
     "object-path": "^0.11.5",
     "tailwindcss": "^1.8.10",
-    "v-clipboard": "^2.2.3"
+    "v-clipboard": "^2.2.3",
+    "vue-currency-input": "^1.22.6"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.4.2",

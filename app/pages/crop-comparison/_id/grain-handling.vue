@@ -13,7 +13,7 @@
           id="modify-crop-comparison"
           ref="form"
           class="grid grid-cols-1 gap-4 md:grid-cols-2"
-          @submit.prevent="save"
+          @submit.prevent="$router.push(`/crop-comparison/report/${comparisonId}`)"
         >
           <expense-fieldset
             apply-to="COMPARED_CROP"
@@ -59,16 +59,6 @@
         >
           Save &amp; View Report
         </btn>
-        <!-- <btn
-          form="modify-crop-comparison"
-          color="secondary-3"
-          class="ml-4"
-          :disabled="isLoading || isSaving"
-          @click="reset"
-        >
-          Reset
-        </btn> -->
-
         <btn
           class="ml-auto"
           :disabled="isLoading || isSaving"
@@ -102,13 +92,13 @@ export default {
 
   async beforeRouteLeave(to, from, next) {
     const { form, submitButton } = this.$refs;
-    if (!form.checkValidity()) {
+    if (form.checkValidity()) {
+      // form is valid. save the form and continue
+      await this.save();
+      next();
+    } else {
       // simulate the form submit (via click) to trigger the native validation UI.
       submitButton.$el.click();
-    } else {
-      // form is valid. save the form and continue
-      await this.save({ redirect: false });
-      next();
     }
   },
 
@@ -166,7 +156,7 @@ export default {
     /**
      *
      */
-    async save({ redirect = false } = {}) {
+    async save() {
       try {
         this.savingError = null;
         this.isSaving = true;
@@ -187,7 +177,6 @@ export default {
         });
         const variables = { input };
         await this.$apollo.mutate({ mutation: UPDATE_CROP_COMPARISON_EXPENSES, variables });
-        if (redirect) this.$router.push(`/crop-comparison/report/${comparisonId}`);
       } catch (e) {
         this.savingError = new GraphQLError(e);
       } finally {
@@ -204,11 +193,8 @@ export default {
       category,
       lineItem,
       applyTo,
-      costs,
       value,
     }) {
-      const expenseField = lineItem.unit === 'PER_ACRE' ? 'perAcre' : 'perBushel';
-      set(costs, expenseField, value);
       const lineItemType = lineItem[`${category.id}Type`];
       const path = `${category.id}.${applyTo}.${lineItemType}`;
       set(this.values, path, value);

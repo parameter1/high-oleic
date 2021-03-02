@@ -105,6 +105,7 @@ import Yield from '../../../components/crop-comparison/fields/yield.vue';
 import cropOptions from '../../../components/crop-comparison/crop-options';
 import GraphQLError from '../../../utils/graphql-error';
 import { CREATE_CROP_COMPARISON } from '../../../graphql/mutations';
+import parseCurrency from '../../../utils/parse-currency';
 
 export default {
   components: {
@@ -168,7 +169,7 @@ export default {
           input: {
             ...input,
             acres: parseInt(input.acres, 10),
-            pricePerBushel: parseFloat(input.pricePerBushel),
+            pricePerBushel: parseCurrency(input.pricePerBushel),
             yieldPerAcre: parseFloat(input.yieldPerAcre),
           },
         };

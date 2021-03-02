@@ -15,6 +15,8 @@ enum CropTypeEnum {
   WHEAT
   "High-Oleic soybean crop."
   OLEIC
+  "Other, non-specified crop."
+  OTHER
 }
 
 enum ComparisonCropTypeEnum {
@@ -24,6 +26,8 @@ enum ComparisonCropTypeEnum {
   SOY
   "Wheat crop."
   WHEAT
+  "Other, non-specified crop."
+  OTHER
 }
 
 type Crop {

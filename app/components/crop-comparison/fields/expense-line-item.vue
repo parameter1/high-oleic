@@ -1,23 +1,18 @@
 <template>
   <input-group
     :id="id"
+    v-currency
     :value="value"
     :label="label"
-    type="number"
     :min="0"
     :step="0.01"
     :required="required"
     :disabled="disabled"
-    input-class="pl-7 pr-20"
+    input-class="pr-20"
     :hint="hint"
-    @input="$emit('input', $event)"
+    @input="input"
     @focus="$emit('focus', $event)"
   >
-    <template #prepend>
-      <span class="text-gray-500 sm:text-sm sm:leading-5">
-        $
-      </span>
-    </template>
     <template #append>
       <span class="text-gray-500 sm:text-sm sm:leading-5">
         {{ unitLabel }}
@@ -30,6 +25,7 @@
 import InputGroup from '../../common/forms/input-group.vue';
 import hints from '../line-item-hints';
 import labels from '../line-item-labels';
+import parse from '../../../utils/parse-currency';
 
 export default {
   components: { InputGroup },
@@ -80,6 +76,12 @@ export default {
       if (unit === 'PER_ACRE') return 'per acre';
       if (unit === 'PER_BUSHEL') return 'per bushel';
       return null;
+    },
+  },
+
+  methods: {
+    input(value) {
+      this.$emit('input', parse(value));
     },
   },
 };

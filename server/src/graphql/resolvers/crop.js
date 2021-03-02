@@ -18,6 +18,7 @@ module.exports = {
     SOY: 'soy',
     OLEIC: 'oleic',
     WHEAT: 'wheat',
+    OTHER: 'other',
   },
 
   /**
@@ -27,6 +28,7 @@ module.exports = {
     CORN: 'corn',
     SOY: 'soy',
     WHEAT: 'wheat',
+    OTHER: 'other',
   },
 
   /**
