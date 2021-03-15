@@ -74,6 +74,7 @@
 import AgViewSolutions from '../../components/ag-view-solutions.vue';
 import Alert from '../../components/common/alert.vue';
 import Btn from '../../components/common/button.vue';
+import SiteLink from '../../components/common/link.vue';
 import ListItem from '../../components/crop-comparison/list-item.vue';
 import PageHeader from '../../components/crop-comparison/page-header.vue';
 
@@ -85,6 +86,7 @@ export default {
     AgViewSolutions,
     Alert,
     Btn,
+    SiteLink,
     ListItem,
     PageHeader,
   },
