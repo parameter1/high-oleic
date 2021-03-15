@@ -37,7 +37,7 @@
             </div>
             <div class="mb-3">
               <div class="text-sm font-medium text-logo-brown">
-                HO:CROP Ratio
+                HO:CROP Price Ratio
               </div>
               <div class="font-semibold">
                 {{ node.ratio }}

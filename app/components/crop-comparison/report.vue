@@ -120,7 +120,7 @@
               </overview-card>
 
               <overview-card
-                title="HO:CROP Ratio"
+                title="HO:CROP Price Ratio"
                 :description="hoDescription"
                 hide-print-description
               >
