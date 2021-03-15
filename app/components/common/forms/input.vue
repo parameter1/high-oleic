@@ -4,7 +4,7 @@
     :value="value"
     @input="$emit('input', $event.target.value)"
     @change="$emit('change', $event.target.value)"
-    @focus="$emit('focus', $event)"
+    @focus="$emit('focus', $event.target.select())"
     @keyup.esc="$emit('escape', $event)"
   >
 </template>
