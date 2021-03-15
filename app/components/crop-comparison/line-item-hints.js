@@ -8,7 +8,7 @@ const hints = {
     if (cropName === 'High Oleic Soybeans') return `What is your ${cropName || ''} seed cost per acre? Seed costs for High Oleic Soybeans are the same or lower as most other soybean costs.`;
     return '';
   },
-  'crop.fertLime': ({ cropName }) => `What is your ${cropName || ''} fertilizer cost per acre, exlcuding Nitrogen? P, K, micro’s and application cost/acre.`,
+  'crop.fertLime': ({ cropName }) => `What is your ${cropName || ''} fertilizer cost per acre, excluding Nitrogen? P, K, micro’s and application cost/acre.`,
   'crop.nitro': ({ cropName }) => `What is your ${cropName || ''} nitrogen cost per acre?`,
 
   'chemicals.herb': ({ cropName }) => {

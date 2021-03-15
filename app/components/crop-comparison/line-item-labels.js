@@ -5,7 +5,7 @@ const labels = {
   'crop.int': () => 'What is your interest cost per acre?',
   'crop.ins': ({ cropName }) => `What is your ${cropName || ''} insurance cost per acre?`,
   'crop.seeds': ({ cropName }) => `What is your ${cropName || ''} seed cost per acre?`,
-  'crop.fertLime': ({ cropName }) => `What is your ${cropName || ''} fertilizer cost per acre, exlcuding Nitrogen?`,
+  'crop.fertLime': ({ cropName }) => `What is your ${cropName || ''} fertilizer cost per acre, excluding Nitrogen?`,
   'crop.nitro': ({ cropName }) => `What is your ${cropName || ''} nitrogen cost per acre?`,
 
   'chemicals.herb': ({ cropName }) => `What is your ${cropName || ''} herbicide cost per acre?`,
