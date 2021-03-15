@@ -4,7 +4,7 @@
     :value="value"
     @input="$emit('input', $event.target.value)"
     @change="$emit('change', $event.target.value)"
-    @focus="$emit('focus', $event.target.select())"
+    @focus="handleFocus"
     @keyup.esc="$emit('escape', $event)"
   >
 </template>
@@ -19,6 +19,10 @@ export default {
     autoFocus: {
       type: Boolean,
       default: false,
+    },
+    autoSelect: {
+      type: Boolean,
+      default: true,
     },
   },
 
@@ -52,6 +56,13 @@ export default {
 
   mounted() {
     if (this.autoFocus) this.$el.focus();
+  },
+
+  methods: {
+    handleFocus(event) {
+      if (this.autoSelect) this.$el.select();
+      this.$emit('focus', event);
+    },
   },
 };
 </script>
