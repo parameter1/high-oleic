@@ -10,13 +10,33 @@
             Calculate Profit Potential
           </page-header>
 
-          <btn
-            class="shadow mb-8"
-            :disabled="!hasToken"
-            @click="$router.push('/crop-comparison/create')"
-          >
-            Create New Scenario
-          </btn>
+          <div class="flex flex-wrap mb-1">
+            <btn
+              class="shadow mr-3 mb-3"
+              :disabled="!hasToken"
+              @click="$router.push('/crop-comparison/create')"
+            >
+              Create New Scenario
+            </btn>
+            <site-link
+              class="shadow mr-3 mb-3"
+              color="secondary-3"
+              href="/profit-calculator-faq-03-12-20.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Frequently Asked Questions
+            </site-link>
+            <site-link
+              class="shadow mb-3"
+              color="secondary-3"
+              href="https://www.youtube.com/watch?v=nEZzA42Wa2c"
+              target="_blank"
+              rel="noopener"
+            >
+              Demonstration Video
+            </site-link>
+          </div>
 
           <div v-if="!hasToken">
             <p class="mb-4 text-lg font-medium text-logo-blue">
