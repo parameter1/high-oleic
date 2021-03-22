@@ -12,6 +12,9 @@
 
 <script>
 export default {
+  fetch({ redirect }) {
+    redirect(301, '/crop-comparison');
+  },
   head: {
     title: 'Home',
   },
