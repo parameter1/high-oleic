@@ -48,12 +48,15 @@
                 :to="{ path: '/login', query: { r: $route.path } }"
                 class="text-logo-green font-medium hover:underline"
               >
-                Login/Register
+                Login/Register.
               </nuxt-link>
             </p>
-            <p>Step 2: Enter your email address and click "Send login link".</p>
-            <p>Step 3: You will receive a personal login link via email. Within it, click "Login to High Oil Soy".</p>
-            <p>Step 4: Create your personalized scenario</p>
+            <p>Step 2: Enter your email address and click "Send login link."</p>
+            <p>
+              Step 3: You will receive a personal login link via email.
+              Within it, click "Login to High Oil Soy."
+            </p>
+            <p>Step 4: Create your personalized scenario.</p>
           </div>
           <div v-else>
             <!-- Query error -->
