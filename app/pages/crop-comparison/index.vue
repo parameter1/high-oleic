@@ -39,9 +39,6 @@
           </div>
 
           <div v-if="!hasToken">
-            <!-- <p class="mb-4 text-lg font-medium text-logo-blue">
-              You must be logged in to access and create crop comparison scenarios.
-            </p> -->
             <p class="mb-4 text-lg font-medium text-logo-blue">
               How to get started:
             </p>
@@ -57,15 +54,6 @@
             <p>Step 2: Enter your email address and click "Send login link".</p>
             <p>Step 3: You will receive a personal login link via email. Within it, click "Login to High Oil Soy".</p>
             <p>Step 4: Create your personalized scenario</p>
-            <!-- <p>
-              To continue, please
-              <nuxt-link
-                :to="{ path: '/login', query: { r: $route.path } }"
-                class="text-logo-green font-medium hover:underline"
-              >
-                Login or Register
-              </nuxt-link>
-            </p> -->
           </div>
           <div v-else>
             <!-- Query error -->
