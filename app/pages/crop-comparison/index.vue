@@ -27,6 +27,7 @@
             >
               Frequently Asked Questions
             </site-link>
+            <div v-if=false>
             <site-link
               class="shadow mb-3"
               color="secondary-3"
@@ -36,6 +37,7 @@
             >
               Demonstration Video
             </site-link>
+            </div>
           </div>
 
           <div v-if="!hasToken">
