@@ -28,12 +28,12 @@
               Frequently Asked Questions
             </site-link>
             <site-link
+              v-if="false"
               class="shadow mb-3"
               color="secondary-3"
               href="https://www.youtube.com/watch?v=nEZzA42Wa2c"
               target="_blank"
               rel="noopener"
-              v-if=false
             >
               Demonstration Video
             </site-link>
