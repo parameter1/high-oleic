@@ -19,7 +19,6 @@
               Create New Scenario
             </btn>
             <site-link
-              v-if="false"
               class="shadow mr-3 mb-3"
               color="secondary-3"
               href="/profit-calculator-faq-03-12-20.pdf"
