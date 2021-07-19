@@ -3,7 +3,7 @@ module.exports = [
     type: 'ADM', name: 'Clunette Elevator', streetAddress: '4316 W 600 N', city: 'Leesburg', state: 'IN', zip: 46538, contact: 'Gabe Ayers', phone1: '574-858-2281', lat: 41.320556932439004, long: -85.92748073078249,
   },
   {
-    type: 'ADM', name: 'Gerald Grain (main office)', streetAddress: '14540,Co Rd U', city: 'Napoleon', state: 'OH', zip: 43545, contact: 'Lisa Mitchell', phone1: '419-598-8015', lat: 41.45800898724374, long: -84.14449893369621,
+    type: 'ADM', name: 'Gerald Grain (main office)', streetAddress: '14540 County Rd U', city: 'Napoleon', state: 'OH', zip: 43545, contact: 'Lisa Mitchell', phone1: '419-598-8015', lat: 41.45800898724374, long: -84.14449893369621,
   },
   {
     type: 'ADM', name: 'Gerald Grain', streetAddress: '', city: 'Montpelier', state: 'OH', contact: 'Lisa Mitchell', phone1: '419-598-8015',
@@ -36,7 +36,7 @@ module.exports = [
     type: 'ADM', name: 'Wheatfield Grain', streetAddress: '147 Railroad St.', city: 'Wheatfield', state: 'IN', zip: 46392, contact: 'Dave Bykerk', phone1: '219-956-3152', lat: 41.19377607894951, long: -87.05259959030565,
   },
   {
-    type: 'ADM', name: 'ADM', streetAddress: '2191 Co Rd. 0 NS', city: 'Frankfort', state: 'IN', zip: 46041, contact: '', phone1: '765-654-4411', phone2: '765-523-3210', lat: 40.28548684991576, long: -86.54835791731783,
+    type: 'ADM', name: 'ADM', streetAddress: '2191 County Rd. 0 NS', city: 'Frankfort', state: 'IN', zip: 46041, contact: '', phone1: '765-654-4411', phone2: '765-523-3210', lat: 40.28548684991576, long: -86.54835791731783,
   },
   {
     type: 'ADM', name: 'ADM', streetAddress: '2906 S County Rd. 930 W', city: 'Fickle', state: 'IN', zip: 46041, contact: 'Joe Franklin', phone1: '317-912-3275', lat: 40.24503007431031, long: -86.68108135779943,
@@ -69,7 +69,7 @@ module.exports = [
     type: 'Bunge', name: 'Clunette Elevator Co.', streetAddress: '4316 W 600 N', city: 'Leesburg', state: 'IN', zip: 46538, contact: 'Gabe Ayers', phone1: '574-858-2281', lat: 41.32054887479004, long: -85.9275021884535,
   },
   {
-    type: 'Bunge', name: 'Custer Grain', streetAddress: '2006 Co Rd 48', city: 'Garrett', state: 'IN', zip: 46738, contact: 'Kevin Custer', phone1: '260-357-5432', lat: 41.35134153314137, long: -85.09654661728813,
+    type: 'Bunge', name: 'Custer Grain', streetAddress: '2006 County Rd 48', city: 'Garrett', state: 'IN', zip: 46738, contact: 'Kevin Custer', phone1: '260-357-5432', lat: 41.35134153314137, long: -85.09654661728813,
   },
   {
     type: 'Bunge', name: 'Deatsman Grain Farms', streetAddress: '1213 E Armstrong Rd', city: 'Leesburg', state: 'IN', zip: 46538, contact: 'Max Deatsman', phone1: '574-453-4470', lat: 41.32356539689297, long: -85.82081970379537,
@@ -87,10 +87,10 @@ module.exports = [
     type: 'Bunge', name: 'Frick Services Inc.', streetAddress: '3154 Depot St', city: 'Wawaka', state: 'IN', zip: 46794, contact: 'Dan Frick', phone1: '260-761-3311', lat: 41.45869409037805, long: -85.48423283077857,
   },
   {
-    type: 'Bunge', name: 'Gerald Grain Center Inc.', streetAddress: '14540,Co Rd U', city: 'Napoleon', state: 'OH', zip: 43545, contact: 'Lisa Mitchell', phone1: '419-598-8015', lat: 41.458178354184625, long: -84.1444832596141,
+    type: 'Bunge', name: 'Gerald Grain Center Inc.', streetAddress: '14540 County Rd U', city: 'Napoleon', state: 'OH', zip: 43545, contact: 'Lisa Mitchell', phone1: '419-598-8015', lat: 41.458178354184625, long: -84.1444832596141,
   },
   {
-    type: 'Bunge', name: 'Grelton Elevator Inc.', streetAddress: '6944 Co Rd M', city: 'Grelton', state: 'OH', zip: 43523, contact: 'Tom Norden', phone1: '419-256-6381', lat: 41.34211172914725, long: -83.99920370194633,
+    type: 'Bunge', name: 'Grelton Elevator Inc.', streetAddress: '6944 County Rd M', city: 'Grelton', state: 'OH', zip: 43523, contact: 'Tom Norden', phone1: '419-256-6381', lat: 41.34211172914725, long: -83.99920370194633,
   },
   {
     type: 'Bunge', name: 'Hemker Grain Inc.', streetAddress: '15970,Jonestown Rd', city: 'Venedocia', state: 'OH', zip: 45894, contact: 'Steve or Lois Hemker', phone1: '419-667-3055', lat: 40.772476104961235, long: -84.51491485778479,
@@ -111,10 +111,10 @@ module.exports = [
     type: 'Bunge', name: 'Pandora Grain & Supply', streetAddress: '305 S Jefferson St', city: 'Pandora', state: 'OH', zip: 45877, contact: 'Kevin Phillips', phone1: '419-643-4135', lat: 40.94603645132555, long: -83.96173627497052,
   },
   {
-    type: 'Bunge', name: 'Pettisville Grain Co. Inc.', streetAddress: '18251 Co Rd DE', city: 'Pettisville', state: 'OH', zip: 43553, contact: 'Neil Rupp', phone1: '419-446-2547', lat: 41.53147030039514, long: -84.21627602843795,
+    type: 'Bunge', name: 'Pettisville Grain Co. Inc.', streetAddress: '18251 County Rd DE', city: 'Pettisville', state: 'OH', zip: 43553, contact: 'Neil Rupp', phone1: '419-446-2547', lat: 41.53147030039514, long: -84.21627602843795,
   },
   {
-    type: 'Bunge', name: 'Ridgeville Elevator', streetAddress: '726 Co Rd J 10', city: 'Malinta', state: 'OH', zip: 34535, contact: 'Andrew Clady', phone1: '419-264-5601', lat: 41.315056079574084, long: -84.0429750837245,
+    type: 'Bunge', name: 'Ridgeville Elevator', streetAddress: '726 County Rd J 10', city: 'Malinta', state: 'OH', zip: 34535, contact: 'Andrew Clady', phone1: '419-264-5601', lat: 41.315056079574084, long: -84.0429750837245,
   },
   {
     type: 'Bunge', name: 'Stryker Farmers Exchange', streetAddress: '114 S West St', city: 'Stryker', state: 'OH', zip: 43557, contact: 'Neil Nofziger', phone1: '419-682-3251', lat: 41.50299462077481, long: -84.41966395961282,
