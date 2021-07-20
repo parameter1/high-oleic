@@ -41,7 +41,7 @@
             class="px-2 md:flex md:flex-row flex-wrap bg-secondary-5 py-2 rounded-lg"
           >
             <div
-              v-for="(address, index) in validLocations"
+              v-for="address in validLocations"
               :key="address.streetAddress"
               class="py-2 px-2 break-normal sm:w-full md:w-1/3"
             >
@@ -63,7 +63,7 @@
                 {{ address.city }} {{ address.state }}, {{ address.zip }}
               </div>
               <div>
-                {{ parseInt(distances[index]) }} miles away
+                {{ parseInt(address.final) }} miles away
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default {
         this.finished = false;
         this.validLocations = [];
         this.distances = [];
-        await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAwjusFWUbl1Mlo2oN-AN-KD-j4FBww2HY&components=postal_code:${this.zip}`)
+        await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=INSERT_API_KEY&components=postal_code:${this.zip}`)
           .then((response) => response.json())
           .then((data) => {
             const pair = data.results[0].geometry.location;
@@ -129,6 +129,7 @@ export default {
               this.distanceCalc(pair.lat, pair.lng, address.lat, address.long, address);
             });
             this.finished = true;
+            this.validLocations.sort(this.compare);
           });
       }
     },
@@ -144,9 +145,19 @@ export default {
       const radius = 3956;
       const final = (finalCalc * radius);
       if (final <= this.selectedRadius) {
-        this.validLocations.push(address);
-        this.distances.push(final);
+        this.validLocations.push({ ...address, final });
       }
+    },
+    compare(a, b) {
+      const aDist = a.final;
+      const bDist = b.final;
+      let comparison = 0;
+      if (aDist > bDist) {
+        comparison = 1;
+      } else if (aDist < bDist) {
+        comparison = -1;
+      }
+      return comparison;
     },
   },
   head: {
