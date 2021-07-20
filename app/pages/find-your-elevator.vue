@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
       <!-- Replace with your content -->
       <div class="py-4">
-        <div class="border-4 border-dashed border-gray-200 rounded-lg h-full overflow-y-scroll">
+        <div class="h-full overflow-y-scroll">
           <page-header class="px-2">
             Find Grain Elevators Near You
           </page-header>
@@ -38,12 +38,12 @@
           </div>
           <div
             v-if="finished && validLocations.length > 0"
-            class="px-2 md:flex md:flex-row flex-wrap bg-secondary-5 py-2 rounded-lg"
+            class="px-2 bg-secondary-5 py-2 rounded-lg"
           >
             <div
               v-for="address in validLocations"
               :key="address.streetAddress"
-              class="py-2 px-2 break-normal sm:w-full md:w-1/3"
+              class="py-2 px-2 break-normal w-full"
             >
               <div>Type: {{ address.type }}</div>
               <div> Name: {{ address.name }}</div>
