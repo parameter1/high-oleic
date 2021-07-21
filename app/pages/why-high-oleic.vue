@@ -5,7 +5,7 @@
       <h1 class="text-5xl">
         Why High Oleic?
       </h1>
-      <div class="py-40 grid grid-cols-1 md:grid-cols-2 text-center">
+      <div class="py-40 grid grid-cols-1 md:grid-cols-2">
         <home-page-article-block
           v-for="article in articles"
           :key="article.name"
