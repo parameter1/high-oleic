@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mx-auto h-screen">
+  <div class="h-screen overflow-y-scroll">
     <!-- Replace with your content -->
     <div class="py-4 bg-primary-1 h-full text-white md:pl-20">
       <h1 class="text-5xl">
