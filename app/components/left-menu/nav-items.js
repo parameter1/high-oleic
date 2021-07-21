@@ -24,8 +24,4 @@ export default [
     label: 'Market Analysis',
     to: '/market-analysis',
   },
-  {
-    label: 'Partner Links',
-    to: '/partner-links',
-  },
 ];
