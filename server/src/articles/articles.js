@@ -5,6 +5,7 @@ module.exports = [
     status: 1,
     teaser: 'When soybeans became a staple rotational row crop for U.S. farmers in the 1940s and 1950s, it kicked off a decades‐long effort by plant breeders to develop varieties with high‐demand traits.',
     alias: '/article/market-history',
+    scheduledSections: ['why-high-oleic'],
   },
   {
     name: 'Market Outlook',
@@ -12,5 +13,6 @@ module.exports = [
     status: 1,
     teaser: 'Soybean oil has long been a major component of the consumer, industrial and commercial vegetable oil complex, but as end‐user preferences have shifted, a market for healthy oil has developed.',
     alias: '/article/market-outlook',
+    scheduledSections: ['why-high-oleic'],
   },
 ];
