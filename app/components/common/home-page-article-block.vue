@@ -1,13 +1,13 @@
 <template>
-  <div class="md:w-1/3">
+  <div class="md:w-2/3 bg-gray-900">
     <img :src="articleImage" width="200">
-    <h3 class=" text-xl">
+    <h3 class="text-xl">
       {{ articleTitle }}
     </h3>
-    <p class=" text-md">
+    <p class="text-md">
       {{ articleTease }}
     </p>
-    <div class="md:w-1/4">
+    <div class="md:w-2/5">
       <btn
         class="text-md"
         type="button"
@@ -35,7 +35,7 @@ export default {
     },
     articleTitle: {
       type: String,
-      default: 'Title',
+      default: 'Title Title Title Title Title Title Title Title Title',
     },
     articleTease: {
       type: String,
