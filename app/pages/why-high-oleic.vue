@@ -1,19 +1,36 @@
 <template>
-  <div class="pt-2 pb-6 md:py-6">
-    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
-      <!-- Replace with your content -->
-      <div class="py-4">
-        <div class="border-4 border-dashed border-gray-200 rounded-lg h-96" />
+  <div class="w-full mx-auto h-screen">
+    <!-- Replace with your content -->
+    <div class="py-4 bg-primary-1 h-full text-white md:pl-20">
+      <h1 class="text-5xl">
+        Why High Oleic?
+      </h1>
+      <div class="py-40 grid grid-cols-1 md:grid-cols-2 text-center">
+        <home-page-article-block
+          v-for="article in articles"
+          :key="article.name"
+          :article-title="article.name"
+          :article-tease="article.teaser"
+        />
       </div>
-      <!-- /End replace -->
     </div>
+    <!-- /End replace -->
   </div>
 </template>
 
 <script>
+import HomePageArticleBlock from '../components/common/home-page-article-block.vue';
+import articles from '../../server/src/why-high-oleic/articles';
+
 export default {
+  components: {
+    HomePageArticleBlock,
+  },
+  data: () => ({
+    articles,
+  }),
   head: {
-    title: 'About Us',
+    title: 'Why High Oleic?',
   },
 };
 </script>
