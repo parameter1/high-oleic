@@ -13,27 +13,30 @@
           v-if="currentPageName !== 'find your seed'"
           class="py-40 grid grid-cols-1 md:grid-cols-2"
         >
-          <div v-for="article in articles" :key="article.name">
+          <div v-for="article in displayArticles" :key="article.name" class="py-4">
             <home-page-article-block
-              v-if="article.scheduledSections.includes($route.params.pageName)"
               :article-title="article.name"
               :article-tease="article.teaser"
               :link-location="article.alias"
             />
           </div>
         </div>
-        <div v-else class="py-40 grid grid-cols-1 md:w-4/5">
-          <home-page-block
-            section-label="Seed Selection"
-            button-label="Seed Selector"
-            link-location="/seed-selection"
-          />
-          <div class="py-10" />
-          <home-page-block
-            section-label="Find Your Elevator"
-            button-label="Find Your Elevator"
-            link-location="/find-your-elevator"
-          />
+        <div v-else class="py-40 grid grid-cols-1 md:grid-cols-2">
+          <div v-for="article in displayArticles" :key="article.name" class="py-4">
+            <home-page-article-block
+              :article-title="article.name"
+              :article-tease="article.teaser"
+              :link-location="article.alias"
+            />
+          </div>
+          <div class="py-4">
+            <home-page-article-block
+              article-title="Find Your Elevator"
+              article-tease=""
+              link-location="/find-your-elevator"
+              button-label="Find Your Elevator"
+            />
+          </div>
         </div>
         <!-- /End replace -->
       </div>
@@ -45,13 +48,11 @@
 </template>
 
 <script>
-import HomePageBlock from '../../components/common/home-page-block.vue';
 import HomePageArticleBlock from '../../components/common/home-page-article-block.vue';
 import articles from '../../../server/src/articles/articles';
 
 export default {
   components: {
-    HomePageBlock,
     HomePageArticleBlock,
   },
   data: () => ({
@@ -62,10 +63,15 @@ export default {
       'knowledge-center',
       'market-analysis',
     ],
+    notHome: true,
   }),
   computed: {
     currentPageName() {
       return this.$route.params.pageName.replace(/-/g, ' ');
+    },
+    displayArticles() {
+      const internalArticles = this.articles.filter((item) => item.scheduledSections.includes(this.$route.params.pageName)); // eslint-disable-line
+      return internalArticles;
     },
   },
   methods: {
