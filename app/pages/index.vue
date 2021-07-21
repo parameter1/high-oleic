@@ -17,21 +17,21 @@
       button-label="Find Your Seed"
       link-location="/find-your-seed"
     />
-    <div class="w-full bg-primary-2 text-white md:pl-20 pt-12">
+    <div class="w-full bg-primary-2 text-white md:pl-20 pt-10">
       <h2 class="text-4xl">
         Knowledge Center
       </h2>
-      <div class="md:flex md:flex-row py-4">
+      <div class="py-2 grid grid-cols-1 md:grid-cols-3">
         <home-page-article-block />
         <home-page-article-block />
         <home-page-article-block />
       </div>
     </div>
-    <div class="w-full bg-primary-2 text-white md:pl-20 pt-12">
+    <div class="w-full bg-primary-2 text-white md:pl-20 pt-10">
       <h2 class="text-4xl">
         Market Analysis
       </h2>
-      <div class="md:flex md:flex-row py-4">
+      <div class="py-2 grid grid-cols-1 md:grid-cols-3">
         <home-page-article-block />
         <home-page-article-block />
         <home-page-article-block />
