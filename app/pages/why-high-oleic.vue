@@ -11,6 +11,7 @@
           :key="article.name"
           :article-title="article.name"
           :article-tease="article.teaser"
+          :link-location="article.alias"
         />
       </div>
     </div>
