@@ -4,7 +4,7 @@
     <h3 class="text-xl font-bold pt-2">
       {{ articleTitle }}
     </h3>
-    <p class="text-md py-2 mb-2">
+    <p class="text-md px-2 py-2 mb-2">
       {{ articleTease }}
     </p>
     <div class="grid justify-items-center">
