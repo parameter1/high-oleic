@@ -3,29 +3,41 @@
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
       <!-- Replace with your content -->
       <div class="py-4">
-        <div class="h-full overflow-y-scroll">
-          <page-header class="px-2">
+        <div class="h-full overflow-y-scroll px-2">
+          <page-header>
             Find Grain Elevators Near You
           </page-header>
-          <div class="flex py-2 px-2">
-            <div class="w-1/3">
+          <div class="grid grid-cols-1 w-full">
+            <div class="md:w-1/5 py-1">
+              <field-label
+                for="Zip"
+                class="ml-1 mb-1"
+              >
+                ZIP Code
+              </field-label>
               <input-field
                 ref="editor"
                 v-model="zip"
                 placeholder="Enter Zip"
-                class="rounded-r-none shadow-none focus-within:z-10"
               />
             </div>
-            <div class="w-1/3">
+            <div class="md:w-1/5 py-1">
+              <field-label
+                for="Distance"
+                class="ml-1 mb-1"
+              >
+                Distance
+              </field-label>
               <select-field
                 id="radius"
                 v-model="selectedRadius"
                 name="radius"
                 option-value-path="radii"
                 :options="radiiList"
+                :with-placeholder="usePlaceholder"
               />
             </div>
-            <div class="w-1/3">
+            <div class="md:w-1/5 py-1">
               <btn
                 type="button"
                 :block="isBlock"
@@ -35,40 +47,45 @@
                 Look for Silos
               </btn>
             </div>
-          </div>
-          <div
-            v-if="finished && validLocations.length > 0"
-            class="px-2 bg-secondary-5 py-2 rounded-lg"
-          >
+
             <div
-              v-for="address in validLocations"
-              :key="address.streetAddress"
-              class="py-2 px-2 break-normal w-full"
+              v-if="finished && validLocations.length > 0"
+              class="bg-white shadow rounded-t-lg pt-2"
             >
-              <div>Type: {{ address.type }}</div>
-              <div> Name: {{ address.name }}</div>
-              <div v-if="address.contact && address.contact !== ''">
-                Contact: {{ address.contact }}
-              </div>
-              <div>
-                Phone: {{ address.phone1 }}
-                <div v-if="address.phone2">
-                  Phone 2: {{ address.phone2 }}
+              <div
+                v-for="address in validLocations"
+                :key="address.streetAddress"
+                class="py-2 px-2 break-normal"
+              >
+                <div class="border-secondary-5-300 border-b-2 text-lg leading-6 font-bold pb-2">
+                  {{ address.name }}
+                </div>
+                <div class="py-2 text-sm">
+                  <div>Type: {{ address.type }}</div>
+                  <div>
+                    {{ parseInt(address.final) }} miles away
+                  </div>
+                  <div v-if="address.streetAddress && address.streetAddress !==''">
+                    {{ address.streetAddress }},
+                  </div>
+                  <div>
+                    {{ address.city }} {{ address.state }}, {{ address.zip }}
+                  </div>
+                  <div v-if="address.contact && address.contact !== ''">
+                    Contact: {{ address.contact }}
+                  </div>
+                  <div class="border-secondary-5-300 border-b-2 pb-2">
+                    Phone: {{ address.phone1 }}
+                    <div v-if="address.phone2">
+                      Phone 2: {{ address.phone2 }}
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div v-if="address.streetAddress && address.streetAddress !==''">
-                {{ address.streetAddress }},
-              </div>
-              <div>
-                {{ address.city }} {{ address.state }}, {{ address.zip }}
-              </div>
-              <div>
-                {{ parseInt(address.final) }} miles away
-              </div>
             </div>
-          </div>
-          <div v-else-if="finished && validLocations.length === 0" class="px-2">
-            The requested zip and radius returned no results.
+            <div v-else-if="finished && validLocations.length === 0" class="px-2">
+              The requested zip and radius returned no results.
+            </div>
           </div>
         </div>
       </div>
@@ -79,6 +96,7 @@
 
 <script>
 import fetch from 'node-fetch';  // eslint-disable-line
+import FieldLabel from '../components/common/forms/label.vue';
 import addressList from '../../server/src/elevator-locator/address-list';
 import SelectField from '../components/common/forms/select.vue';
 import InputField from '../components/common/forms/input.vue';
@@ -87,6 +105,7 @@ import PageHeader from '../components/crop-comparison/page-header.vue';
 
 export default {
   components: {
+    FieldLabel,
     SelectField,
     InputField,
     Btn,
@@ -114,14 +133,18 @@ export default {
     distances: [],
     finished: false,
     isBlock: true,
+    usePlaceholder: false,
   }),
+  mounted() {
+    this.selectedRadius = this.radiiList[0].radii;
+  },
   methods: {
     async checkDistance() {
       if (this.selectedRadius && this.zip) {
         this.finished = false;
         this.validLocations = [];
         this.distances = [];
-        await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=INSERT_API_KEY&components=postal_code:${this.zip}`)
+        await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAwjusFWUbl1Mlo2oN-AN-KD-j4FBww2HY&components=postal_code:${this.zip}`)
           .then((response) => response.json())
           .then((data) => {
             const pair = data.results[0].geometry.location;
