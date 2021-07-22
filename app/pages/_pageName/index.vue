@@ -14,14 +14,15 @@
             {{ currentPageName }}
           </h1>
         </div>
+        <div class="pt-40 border-secondary-5-300 border-b-2" />
         <div
           v-if="currentPageName !== 'find your seed'"
-          class="pt-40 grid grid-cols-1 lg:grid-cols-3 border-secondary-5-300 border-b-2"
+          class="grid grid-cols-1 lg:grid-cols-3 border-secondary-5-300 border-b-2"
         >
           <div
             v-for="article in displayArticles"
             :key="article.name"
-            class="py-10 border-secondary-5-300 border-t-2 md:pl-52 lg:pl-20"
+            class="py-10 md:pl-52 lg:pl-20"
           >
             <home-page-article-block
               :article-title="article.name"
