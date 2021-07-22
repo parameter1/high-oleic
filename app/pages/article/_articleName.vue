@@ -1,8 +1,10 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2">
-    <div v-if="displayArticle[0]" class="md:pl-40 md:pt-20">
-      <h1 class="text-5xl">{{ displayArticle[0].name }}</h1>
-      <div class="py-4" v-html="displayArticle[0].body" />
+  <div class="grid grid-cols-1 lg:grid-cols-2">
+    <div v-if="displayArticle[0]" class="lg:pl-40 pt-5 md:pt-20">
+      <h1 class="text-4xl font-semibold text-center md:text-left md:px-4">
+        {{ displayArticle[0].name }}
+      </h1>
+      <div class="py-4 px-4" v-html="displayArticle[0].body" />
     </div>
     <div v-else>
       404 PAGE NOT FOUND
