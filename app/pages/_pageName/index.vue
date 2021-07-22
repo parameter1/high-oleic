@@ -1,12 +1,15 @@
 <template>
-  <div class="h-screen bg-primary-1 overflow-y-scroll">
+  <div class="h-screen overflow-y-scroll">
     <!-- Replace with your content -->
-    <div class="py-4 h-full text-white">
+    <div class="py-4 h-full">
       <div v-if="acceptedRoutes.includes($route.params.pageName)" class="md:pl-20">
-        <h1 v-if="currentPageName === 'why high oleic'" class="text-5xl capitalize">
+        <h1
+          v-if="currentPageName === 'why high oleic'"
+          class="text-5xl capitalize font-semibold text-center md:text-left"
+        >
           {{ currentPageName }}?
         </h1>
-        <h1 v-else class="text-5xl capitalize">
+        <h1 v-else class="text-5xl capitalize font-semibold text-center md:text-left">
           {{ currentPageName }}
         </h1>
         <div

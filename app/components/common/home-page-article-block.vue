@@ -1,17 +1,17 @@
 <template>
-  <div class="md:w-2/3 bg-gray-900 text-center">
+  <div class="md:w-2/3 bg-white text-center">
     <img :src="articleImage" width="200" class="mx-auto">
-    <h3 class="text-xl">
+    <h3 class="text-xl font-bold">
       {{ articleTitle }}
     </h3>
-    <p class="text-md">
+    <p class="text-md py-2 mb-2">
       {{ articleTease }}
     </p>
     <btn
       class="text-md"
       type="button"
       :block="isBlock"
-      color="logo-green"
+      color="logo-blue"
       @click="sendTo(linkLocation)"
     >
       {{ buttonLabel }}
