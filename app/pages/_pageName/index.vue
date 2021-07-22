@@ -33,12 +33,12 @@
         </div>
         <div
           v-else
-          class="pt-40 grid grid-cols-1 lg:grid-cols-3 border-secondary-5-300 border-b-2"
+          class="grid grid-cols-1 lg:grid-cols-3 border-secondary-5-300 border-b-2"
         >
           <div
             v-for="article in displayArticles"
             :key="article.name"
-            class="py-4 border-secondary-5-300 border-t-2 md:pl-20"
+            class="py-10 md:pl-52 lg:pl-20"
           >
             <home-page-article-block
               :article-title="article.name"
@@ -46,7 +46,7 @@
               :link-location="article.alias"
             />
           </div>
-          <div class="py-4 border-secondary-5-300 border-t-2">
+          <div class="py-10 md:pl-52 lg:pl-20">
             <home-page-article-block
               article-title="Find Your Elevator"
               article-tease=""
