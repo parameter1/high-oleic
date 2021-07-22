@@ -27,7 +27,7 @@ module.exports = [
     type: 'ADM', name: 'Shideler Grain', streetAddress: '2330 E Ashcraft St.', city: 'Eaton', state: 'IN', zip: 47338, contact: 'Dave Schnepf', phone1: '765-282-6226', lat: 40.30864951707879, long: -85.3609408154687,
   },
   {
-    type: 'ADM', name: 'Smith Grain', streetAddress: '4725 W 100 N Rochester', state: 'IN', zip: 46975, contact: 'Kevin and Luke Smith', phone1: '574-532-0600', lat: 41.06749391691025, long: -86.33082279927262,
+    type: 'ADM', name: 'Smith Grain', streetAddress: '4725 W 100 N', city: 'Rochester', state: 'IN', zip: 46975, contact: 'Kevin and Luke Smith', phone1: '574-532-0600', lat: 41.06749391691025, long: -86.33082279927262,
   },
   {
     type: 'ADM', name: 'Wheatfield Grain', streetAddress: '702 N McKinley Ave', city: 'Rensselaer', state: 'IN', zip: 47978, contact: 'Todd Redlin', phone1: '219-956-3151', lat: 40.94295315433699, long: -87.1515598442866,
@@ -123,7 +123,7 @@ module.exports = [
     type: 'Perdue', name: 'Perdue AgriBusiness LLC', streetAddress: '16447 Adams Rd.', city: 'Bridgeville', state: 'DE', zip: 19933, contact: '', phone1: '866-816-7946', deliveryWindow: 'Harvest Delivery', lat: 38.75966730217668, long: -75.60564518852372,
   },
   {
-    type: 'Perdue', name: 'Schiff Farms', streetAddress: '16054,S Dupont Hwy', city: 'Harrington', state: 'DE', zip: 19952, contact: '', phone1: '866-816-7947', deliveryWindow: 'Harvest Delivery', lat: 38.94040595295112, long: -75.5666166382391,
+    type: 'Perdue', name: 'Schiff Farms', streetAddress: '16054 S Dupont Hwy', city: 'Harrington', state: 'DE', zip: 19952, contact: '', phone1: '866-816-7947', deliveryWindow: 'Harvest Delivery', lat: 38.94040595295112, long: -75.5666166382391,
   },
   {
     type: 'Perdue', name: 'Milford Grain', streetAddress: '6789 Shawnee Rd.', city: 'Milford', state: 'DE', zip: 19963, contact: '', phone1: '866-816-7948', deliveryWindow: 'Harvest Delivery', lat: 38.89326163892895, long: -75.44793164619117,
