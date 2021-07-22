@@ -144,7 +144,7 @@ export default {
         this.finished = false;
         this.validLocations = [];
         this.distances = [];
-        await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAwjusFWUbl1Mlo2oN-AN-KD-j4FBww2HY&components=postal_code:${this.zip}`)
+        await fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=INSERT_API_KEY&components=postal_code:${this.zip}`)
           .then((response) => response.json())
           .then((data) => {
             const pair = data.results[0].geometry.location;
