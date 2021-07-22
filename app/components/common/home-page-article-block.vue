@@ -1,21 +1,22 @@
 <template>
-  <div class="md:w-2/3 bg-white text-center">
-    <img :src="articleImage" width="200" class="mx-auto">
-    <h3 class="text-xl font-bold">
+  <div class="md:w-2/3 bg-white text-center rounded-lg py-2 shadow">
+    <img :src="articleImage" width="" class="h-auto w-auto">
+    <h3 class="text-xl font-bold pt-2">
       {{ articleTitle }}
     </h3>
     <p class="text-md py-2 mb-2">
       {{ articleTease }}
     </p>
-    <btn
-      class="text-md"
-      type="button"
-      :block="isBlock"
-      color="logo-blue"
-      @click="sendTo(linkLocation)"
-    >
-      {{ buttonLabel }}
-    </btn>
+    <div class="grid justify-items-center">
+      <btn
+        class="text-md"
+        type="button"
+        color="logo-blue"
+        @click="sendTo(linkLocation)"
+      >
+        {{ buttonLabel }}
+      </btn>
+    </div>
   </div>
 </template>
 
