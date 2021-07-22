@@ -2,21 +2,27 @@
   <div class="h-screen overflow-y-scroll">
     <!-- Replace with your content -->
     <div class="py-4 h-full">
-      <div v-if="acceptedRoutes.includes($route.params.pageName)" class="md:pl-20">
-        <h1
-          v-if="currentPageName === 'why high oleic'"
-          class="text-5xl capitalize font-semibold text-center md:text-left"
-        >
-          {{ currentPageName }}?
-        </h1>
-        <h1 v-else class="text-5xl capitalize font-semibold text-center md:text-left">
-          {{ currentPageName }}
-        </h1>
+      <div v-if="acceptedRoutes.includes($route.params.pageName)">
+        <div class="md:pl-20">
+          <h1
+            v-if="currentPageName === 'why high oleic'"
+            class="text-5xl capitalize font-semibold text-center md:text-left"
+          >
+            {{ currentPageName }}?
+          </h1>
+          <h1 v-else class="text-5xl capitalize font-semibold text-center md:text-left">
+            {{ currentPageName }}
+          </h1>
+        </div>
         <div
           v-if="currentPageName !== 'find your seed'"
-          class="py-40 grid grid-cols-1 md:grid-cols-2"
+          class="pt-40 grid grid-cols-1 lg:grid-cols-3 border-secondary-5-300 border-b-2"
         >
-          <div v-for="article in displayArticles" :key="article.name" class="py-4">
+          <div
+            v-for="article in displayArticles"
+            :key="article.name"
+            class="py-10 border-secondary-5-300 border-t-2 md:pl-52 lg:pl-20"
+          >
             <home-page-article-block
               :article-title="article.name"
               :article-tease="article.teaser"
@@ -24,15 +30,22 @@
             />
           </div>
         </div>
-        <div v-else class="py-40 grid grid-cols-1 md:grid-cols-2">
-          <div v-for="article in displayArticles" :key="article.name" class="py-4">
+        <div
+          v-else
+          class="pt-40 grid grid-cols-1 lg:grid-cols-3 border-secondary-5-300 border-b-2"
+        >
+          <div
+            v-for="article in displayArticles"
+            :key="article.name"
+            class="py-4 border-secondary-5-300 border-t-2 md:pl-20"
+          >
             <home-page-article-block
               :article-title="article.name"
               :article-tease="article.teaser"
               :link-location="article.alias"
             />
           </div>
-          <div class="py-4">
+          <div class="py-4 border-secondary-5-300 border-t-2">
             <home-page-article-block
               article-title="Find Your Elevator"
               article-tease=""
