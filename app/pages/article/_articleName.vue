@@ -1,6 +1,6 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2">
-    <div v-if="displayArticle[0]" class="lg:pl-40 pt-5 md:pt-20">
+  <div class="grid grid-cols-1 lg:grid-cols-2 sm:justify-items-center md:py-10 px-10">
+    <div v-if="displayArticle[0]" class="pt-5 rounded-lg shadow">
       <h1 class="text-4xl font-semibold text-center md:text-left md:px-4">
         {{ displayArticle[0].name }}
       </h1>

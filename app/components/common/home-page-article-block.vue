@@ -1,6 +1,6 @@
 <template>
-  <div class="md:w-2/3 bg-white text-center rounded-lg py-2 shadow">
-    <img :src="articleImage" width="" class="h-auto w-auto">
+  <div class="bg-white text-center rounded-lg py-2 shadow grid justify-items-center">
+    <img :src="articleImage">
     <h3 class="text-xl font-bold pt-2">
       {{ articleTitle }}
     </h3>
@@ -42,7 +42,7 @@ export default {
     },
     articleImage: {
       type: String,
-      default: 'https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673.png',
+      default: 'http://placehold.jp/300x200.png',
     },
     linkLocation: {
       type: String,
