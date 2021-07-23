@@ -1,6 +1,6 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
-    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
+    <div class="max-w-7xl sm:px-6 md:px-8">
       <!-- Replace with your content -->
       <div class="py-4">
         <div class="h-full overflow-y-scroll px-2">
@@ -37,7 +37,7 @@
                 :with-placeholder="usePlaceholder"
               />
             </div>
-            <div class="md:w-1/5 py-1">
+            <div class="md:w-1/5 py-1 pb-2">
               <btn
                 type="button"
                 :block="isBlock"
@@ -83,7 +83,7 @@
                 </div>
               </div>
             </div>
-            <div v-else-if="finished && validLocations.length === 0" class="px-2">
+            <div v-else-if="finished && validLocations.length === 0">
               The requested zip and radius returned no results.
             </div>
           </div>
