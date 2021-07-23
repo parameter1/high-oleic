@@ -24,8 +24,14 @@
       <h2 class="text-4xl font-semibold text-center md:text-left md:pl-20">
         Knowledge Center
       </h2>
-      <div class="py-2 grid grid-cols-1 md:grid-cols-3 md:pl-20 border-secondary-5-300 border-b-2">
-        <div v-for="(article,index) in knowledgeCenterArticles" :key="article.name" class="py-4">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 md:pl-20 border-secondary-5-300 border-b-2 px-4 py-4"
+      >
+        <div
+          v-for="(article,index) in knowledgeCenterArticles"
+          :key="article.name"
+          class="md:pr-10 pb-10 lg:pb-0"
+        >
           <div v-if="index < 3">
             <home-page-article-block
               :article-title="article.name"
@@ -40,8 +46,14 @@
       <h2 class="text-4xl font-semibold text-center md:text-left md:pl-20">
         Market Analysis
       </h2>
-      <div class="py-2 grid grid-cols-1 md:grid-cols-3 md:pl-20 border-secondary-5-300 border-b-2">
-        <div v-for="article in marketAnalysisArticles" :key="article.name" class="py-4">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 md:pl-20 border-secondary-5-300 border-b-2 px-4 py-4"
+      >
+        <div
+          v-for="article in marketAnalysisArticles"
+          :key="article.name"
+          class="md:pr-10 pb-10 lg:pb-0"
+        >
           <home-page-article-block
             :article-title="article.name"
             :article-tease="article.teaser"
