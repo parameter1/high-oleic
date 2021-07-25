@@ -331,6 +331,7 @@ module.exports = [
     street: '11715 Williams County Rd 13',
     city: 'Montpelier',
     regionCode: 'OH',
+    postalCode: 43543,
     contactName: 'Michele Reeder',
     phoneNumber: '419-485-3117',
     lat: 41.58277393200369,
