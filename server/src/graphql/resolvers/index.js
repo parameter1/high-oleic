@@ -9,6 +9,7 @@ const cropComparison = require('./crop-comparison');
 const expense = require('./expense');
 const farm = require('./farm');
 const farmField = require('./farm-field');
+const grainElevator = require('./grain-elevator');
 const income = require('./income');
 const report = require('./report');
 const user = require('./user');
@@ -23,6 +24,7 @@ module.exports = merge(
   expense,
   farm,
   farmField,
+  grainElevator,
   income,
   report,
   user,
@@ -68,7 +70,7 @@ module.exports = merge(
       /**
        *
        */
-      async ping() {
+      ping() {
         return 'pong';
       },
     },
