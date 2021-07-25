@@ -14,6 +14,9 @@ module.exports = {
     { acres: 1, _id: 1 },
     { updatedAt: 1, _id: 1 },
   ],
+  'postal-code-locations': [
+    [{ value: 1 }, { unique: true }],
+  ],
   reports: [
     { 'farm._id': 1 },
 
