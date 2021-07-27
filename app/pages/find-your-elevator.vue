@@ -40,10 +40,17 @@
             </div>
           </form>
 
-          <div v-if="hasSearched" class="bg-white shadow rounded-lg p-3">
-            <div v-if="!elevators.length">
-              No elevators were found within {{ selectedDistance }} miles of {{ postalCode }}
+          <div v-if="didSearch" class="bg-white shadow rounded-lg p-3">
+            <div>
+              Elevators within
+              {{ currentSearchParams.maxDistance }}
+              miles of
+              {{ currentSearchParams.postalCode }}
             </div>
+            <div v-if="!elevators.length">
+              No elevators were found.
+            </div>
+
             <div
               v-for="{ elevator, distance } in elevators"
               :key="elevator.id"
@@ -105,6 +112,10 @@ export default {
   },
 
   data: () => ({
+    currentSearchParams: {
+      maxDistance: null,
+      postalCode: null,
+    },
     distances: [
       25,
       50,
@@ -121,13 +132,17 @@ export default {
     ],
     elevators: [],
     error: null,
-    hasSearched: false,
     isLoading: false,
     postalCode: null,
     selectedDistance: '25',
   }),
 
   computed: {
+    didSearch() {
+      const { currentSearchParams: params } = this;
+      return Boolean(params.maxDistance && params.postalCode);
+    },
+
     distanceOptions() {
       return this.distances.map((value) => ({
         value: `${value}`,
@@ -148,7 +163,7 @@ export default {
         const variables = { input };
         const { data } = await this.$apollo.query({ query: LOOKUP_ELEVATORS, variables });
         this.elevators = data.grainElevatorsNearPostalCode;
-        this.hasSearched = true;
+        this.currentSearchParams = input;
       } catch (e) {
         this.error = e;
       } finally {
