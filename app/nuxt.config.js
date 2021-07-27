@@ -10,7 +10,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+      { rel: 'icon', type: 'image/png', href: 'https://img.highoilsoy.com/favicon.png' },
     ],
   },
 

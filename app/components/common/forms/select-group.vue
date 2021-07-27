@@ -14,6 +14,7 @@
       :required="required"
       :placeholder="placeholder"
       :options="options"
+      :with-placeholder="withPlaceholder"
       @input="$emit('input', $event)"
       @focus="$emit('focus', $event)"
     />
@@ -74,6 +75,10 @@ export default {
     placeholder: {
       type: String,
       default: null,
+    },
+    withPlaceholder: {
+      type: Boolean,
+      default: true,
     },
   },
 

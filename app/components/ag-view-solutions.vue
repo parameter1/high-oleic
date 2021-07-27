@@ -4,7 +4,7 @@
       <a href="https://agviewsolutions.com" target="_blank" rel="noopener">
         <img
           class="w-16 h-16 print:h-10 print:w-10"
-          src="~/assets/images/ag-view-solutions-logo.png"
+          src="https://img.highoilsoy.com/ag-view-solutions-logo.png"
           alt="Ag View Solutions logo"
         >
       </a>
