@@ -39,7 +39,11 @@
               </btn>
             </div>
           </form>
-          <div v-if="hasSearched" class="bg-white shadow rounded-t-lg pt-2">
+
+          <div v-if="hasSearched" class="bg-white shadow rounded-lg p-3">
+            <div v-if="!elevators.length">
+              No elevators were found within {{ selectedDistance }} miles of {{ postalCode }}
+            </div>
             <div
               v-for="{ elevator, distance } in elevators"
               :key="elevator.id"
