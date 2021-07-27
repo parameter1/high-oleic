@@ -2,82 +2,80 @@
   <div class="pt-2 pb-6 md:py-6">
     <div class="max-w-7xl sm:px-6 md:px-8">
       <div class="py-4">
-        <div class="h-full overflow-y-scroll px-2">
-          <page-header>
-            Find Grain Elevators Near You
-          </page-header>
-          <div class="grid grid-cols-1 w-full">
-            <form @submit.prevent="lookupElevators">
-              <div class="md:w-1/5 py-1">
-                <form-group
-                  id="elevator-postal-code"
-                  v-model="postalCode"
-                  label="ZIP/Postal Code"
-                  placeholder="Enter your zip/postal code"
-                  required
-                  :disabled="isLoading"
-                />
-              </div>
-              <div class="md:w-1/5 py-1">
-                <select-group
-                  id="elevator-max-distance"
-                  v-model="selectedDistance"
-                  label="Distance"
-                  required
-                  :options="distanceOptions"
-                  :disabled="isLoading"
-                  :with-placeholder="false"
-                />
-              </div>
-              <div class="md:w-1/5 py-1 pb-2">
-                <btn
-                  type="submit"
-                  color="logo-blue"
-                  block
-                  :loading="isLoading"
-                >
-                  Look for Delivery Point
-                </btn>
-              </div>
-            </form>
-            <div v-if="hasSearched" class="bg-white shadow rounded-t-lg pt-2">
-              <div
-                v-for="{ elevator, distance } in elevators"
-                :key="elevator.id"
-                class="py-2 px-2 break-normal"
+        <page-header>
+          Find Grain Elevators Near You
+        </page-header>
+        <div class="grid grid-cols-1 w-full">
+          <form @submit.prevent="lookupElevators">
+            <div class="md:w-1/5 py-1">
+              <form-group
+                id="elevator-postal-code"
+                v-model="postalCode"
+                label="ZIP/Postal Code"
+                placeholder="Enter your zip/postal code"
+                required
+                :disabled="isLoading"
+              />
+            </div>
+            <div class="md:w-1/5 py-1">
+              <select-group
+                id="elevator-max-distance"
+                v-model="selectedDistance"
+                label="Distance"
+                required
+                :options="distanceOptions"
+                :disabled="isLoading"
+                :with-placeholder="false"
+              />
+            </div>
+            <div class="md:w-1/5 py-1 pb-2">
+              <btn
+                type="submit"
+                color="logo-blue"
+                block
+                :loading="isLoading"
               >
-                <div class="border-secondary-5-300 border-b-2 text-lg leading-6 font-bold pb-2">
-                  {{ elevator.companyName }}
-                </div>
+                Look for Delivery Point
+              </btn>
+            </div>
+          </form>
+          <div v-if="hasSearched" class="bg-white shadow rounded-t-lg pt-2">
+            <div
+              v-for="{ elevator, distance } in elevators"
+              :key="elevator.id"
+              class="py-2 px-2 break-normal"
+            >
+              <div class="border-secondary-5-300 border-b-2 text-lg leading-6 font-bold pb-2">
+                {{ elevator.companyName }}
+              </div>
 
-                <div class="py-2 text-sm">
-                  <div>Type: {{ elevator.affiliate }}</div>
-                  <div>
-                    {{ distance }} miles away
-                  </div>
-                  <div>
-                    {{ elevator.street }}
-                  </div>
-                  <div>
-                    {{ elevator.city }} {{ elevator.regionCode }}, {{ elevator.postalCode }}
-                  </div>
-                  <div v-if="elevator.contact">
-                    Contact: {{ elevator.contact }}
-                  </div>
-                  <div class="border-secondary-5-300 border-b-2 pb-2">
-                    Phone: {{ elevator.phoneNumber }}
-                    <div v-if="elevator.phoneNumber2">
-                      Phone 2: {{ elevator.phoneNumber2 }}
-                    </div>
+              <div class="py-2 text-sm">
+                <div>Type: {{ elevator.affiliate }}</div>
+                <div>
+                  {{ distance }} miles away
+                </div>
+                <div>
+                  {{ elevator.street }}
+                </div>
+                <div>
+                  {{ elevator.city }} {{ elevator.regionCode }}, {{ elevator.postalCode }}
+                </div>
+                <div v-if="elevator.contact">
+                  Contact: {{ elevator.contact }}
+                </div>
+                <div class="border-secondary-5-300 border-b-2 pb-2">
+                  Phone: {{ elevator.phoneNumber }}
+                  <div v-if="elevator.phoneNumber2">
+                    Phone 2: {{ elevator.phoneNumber2 }}
                   </div>
                 </div>
               </div>
             </div>
-
-            <alert v-if="error" type="danger" class="mt-3">
-              {{ error.message }}
-            </alert>
           </div>
+
+          <alert v-if="error" type="danger" class="mt-3">
+            {{ error.message }}
+          </alert>
         </div>
       </div>
     </div>
