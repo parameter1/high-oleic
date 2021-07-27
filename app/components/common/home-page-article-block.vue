@@ -38,7 +38,7 @@ export default {
       type: String,
       required: true,
     },
-    slug: {
+    href: {
       type: String,
       required: true,
     },
@@ -53,12 +53,6 @@ export default {
     buttonLabel: {
       type: String,
       default: 'Read Article',
-    },
-  },
-
-  computed: {
-    href() {
-      return `/article/${this.slug}`;
     },
   },
 

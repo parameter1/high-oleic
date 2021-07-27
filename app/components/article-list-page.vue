@@ -11,7 +11,7 @@
             :key="article.id"
             :title="article.title"
             :teaser="article.teaser"
-            :slug="article.slug"
+            :href="`/article/${article.slug}`"
           />
         </div>
       </div>
