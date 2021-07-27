@@ -5,6 +5,27 @@ import {
   CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT,
 } from './fragments';
 
+export const LOAD_ARTICLE = gql`
+  query LoadArticle($slug: String!) {
+    article: articleSlug(input: { slug: $slug }) {
+      id
+      title
+      body
+    }
+  }
+`;
+
+export const LOAD_ARTICLES_FOR_SECTION = gql`
+  query LoadArticlesForSection($alias: String!) {
+    articles: articlesForSection(input: { alias: $alias }) {
+      id
+      title
+      slug
+      teaser
+    }
+  }
+`;
+
 export const LOOKUP_ELEVATORS = gql`
   query LookupElevators($input: GrainElevatorsNearPostalCodeQueryInput!) {
     grainElevatorsNearPostalCode(input: $input) {

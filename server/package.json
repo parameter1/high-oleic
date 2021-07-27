@@ -34,6 +34,7 @@
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
     "apollo-server-express": "^2.19.2",
+    "cheerio": "^1.0.0-rc.10",
     "envalid": "^6.0.2",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
@@ -42,7 +43,8 @@
     "lodash.merge": "^4.6.2",
     "nanoid": "^3.1.20",
     "newrelic": "^7.1.1",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "slug": "^4.1.0"
   },
   "devDependencies": {
     "@parameter1/gulp": "^1.1.10",

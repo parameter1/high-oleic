@@ -1,5 +1,5 @@
 <template>
-  <article-list-page title="Market Analysis" :path="$route.path" />
+  <article-list-page title="Why High Oleic?" :path="$route.path" />
 </template>
 
 <script>

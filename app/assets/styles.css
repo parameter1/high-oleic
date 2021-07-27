@@ -3,3 +3,11 @@
     page-break-before: always;
   }
 }
+
+.prose a {
+  color: #253746 !important;
+}
+
+.prose a:hover {
+  text-decoration: underline !important;
+}
