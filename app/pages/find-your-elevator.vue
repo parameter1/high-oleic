@@ -48,35 +48,12 @@
               No elevators were found for the provided criteria.
             </div>
 
-            <div
+            <list-item
               v-for="{ elevator, distance } in elevators"
               :key="elevator.id"
-            >
-              <div class="border-secondary-5-300 border-b-2 text-lg leading-6 font-bold pb-2">
-                {{ elevator.name }}
-              </div>
-
-              <div class="text-sm">
-                <div>
-                  {{ distance }} miles away
-                </div>
-                <div>
-                  {{ elevator.street }}
-                </div>
-                <div>
-                  {{ elevator.city }} {{ elevator.regionCode }}, {{ elevator.postalCode }}
-                </div>
-                <div v-if="elevator.contact">
-                  Contact: {{ elevator.contact }}
-                </div>
-                <div class="border-secondary-5-300 border-b-2 pb-2">
-                  Phone: {{ elevator.phoneNumber }}
-                  <div v-if="elevator.phoneNumber2">
-                    Phone 2: {{ elevator.phoneNumber2 }}
-                  </div>
-                </div>
-              </div>
-            </div>
+              :node="elevator"
+              :distance-from-postal-code="distance"
+            />
           </div>
 
           <alert v-if="error" type="danger" class="mt-3">
@@ -92,6 +69,7 @@
 import Alert from '../components/common/alert.vue';
 import Btn from '../components/common/button.vue';
 import FormGroup from '../components/common/forms/input-group.vue';
+import ListItem from '../components/find-your-elevator/list-item.vue';
 import PageHeader from '../components/crop-comparison/page-header.vue';
 import SelectGroup from '../components/common/forms/select-group.vue';
 
@@ -102,6 +80,7 @@ export default {
     Alert,
     Btn,
     FormGroup,
+    ListItem,
     PageHeader,
     SelectGroup,
   },
