@@ -10,6 +10,8 @@ extend type Query {
 type GrainElevator {
   "The internal, unique elevator identifier."
   id: ObjectID! @project(field: "_id")
+  "The name of the elevator. Is a combination of the affiliate and company name."
+  name: String!
   "The 'owning' grain/seed affiliate, e.g. ADM or Bunge"
   affiliate: String!
   "The elevator company name."

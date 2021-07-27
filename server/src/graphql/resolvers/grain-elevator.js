@@ -5,6 +5,21 @@ module.exports = {
   /**
    *
    */
+  GrainElevator: {
+    /**
+     *
+     */
+    name(elevator) {
+      const affiliate = elevator.affiliate.trim();
+      const companyName = elevator.companyName.trim();
+      if (affiliate === companyName) return companyName;
+      return `${companyName} (${affiliate})`;
+    },
+  },
+
+  /**
+   *
+   */
   Query: {
     /**
      *
