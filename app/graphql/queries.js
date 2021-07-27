@@ -11,8 +11,7 @@ export const LOOKUP_ELEVATORS = gql`
       distance
       elevator {
         id
-        affiliate
-        companyName
+        name
         street
         city
         regionCode

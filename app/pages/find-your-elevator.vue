@@ -54,14 +54,12 @@
             <div
               v-for="{ elevator, distance } in elevators"
               :key="elevator.id"
-              class="py-2 px-2 break-normal"
             >
               <div class="border-secondary-5-300 border-b-2 text-lg leading-6 font-bold pb-2">
-                {{ elevator.companyName }}
+                {{ elevator.name }}
               </div>
 
-              <div class="py-2 text-sm">
-                <div>Type: {{ elevator.affiliate }}</div>
+              <div class="text-sm">
                 <div>
                   {{ distance }} miles away
                 </div>
