@@ -1,5 +1,6 @@
 const { UserInputError } = require('apollo-server-express');
 const { getAsObject } = require('@parameter1/utils');
+const round = require('../../utils/round');
 
 module.exports = {
   /**
@@ -14,6 +15,20 @@ module.exports = {
       const companyName = elevator.companyName.trim();
       if (affiliate === companyName) return companyName;
       return `${companyName} (${affiliate})`;
+    },
+  },
+
+  /**
+   *
+   */
+  GrainElevatorNearPostalCode: {
+    /**
+     *
+     */
+    distance({ distance }, { input }) {
+      const { round: precision } = input;
+      if (precision == null) return distance;
+      return round(distance, precision);
     },
   },
 

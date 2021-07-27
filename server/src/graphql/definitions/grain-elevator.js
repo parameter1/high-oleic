@@ -40,7 +40,12 @@ type GrainElevatorNearPostalCode {
   "The grain elevator."
   elevator: GrainElevator!
   "The distance (in miles) from the provided postal code."
-  distance: Float!
+  distance(input: GrainElevatorNearPostalCodeDistanceInput = {}): Float!
+}
+
+input GrainElevatorNearPostalCodeDistanceInput {
+  "The rounding precision to use when returning the distance."
+  round: Int
 }
 
 input GrainElevatorsNearPostalCodeQueryInput {

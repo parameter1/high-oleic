@@ -8,7 +8,7 @@ import {
 export const LOOKUP_ELEVATORS = gql`
   query LookupElevators($input: GrainElevatorsNearPostalCodeQueryInput!) {
     grainElevatorsNearPostalCode(input: $input) {
-      distance
+      distance(input: { round: 1 })
       elevator {
         id
         name
