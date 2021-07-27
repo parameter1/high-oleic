@@ -2,46 +2,45 @@
   <div class="pt-2 pb-6 md:py-6">
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
       <div class="p-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 sm:justify-items-center md:my-10">
-          <div v-if="displayArticle[0]" class="mt-5 rounded-lg shadow">
-            <h1 class="text-4xl font-semibold text-center md:text-left md:mx-4">
-              {{ displayArticle[0].name }}
-            </h1>
-            <div class="my-4 mx-4" v-html="displayArticle[0].body" />
-          </div>
-          <div />
+        <div class="bg-white shadow rounded-lg p-4 max-w-4xl">
+          <h1 class="text-3xl font-semibold mb-5">
+            {{ article.title }}
+          </h1>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div class="prose prose-lg prose-blue" v-html="article.body" />
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import articles from '../../../server/src/articles/articles';
+import { LOAD_ARTICLE } from '../../graphql/queries';
 
 export default {
+  apollo: {
+    article: {
+      query: LOAD_ARTICLE,
+      fetchPolicy: 'cache-and-network',
+      variables() {
+        return { slug: this.slug };
+      },
+      prefetch: true,
+    },
+  },
+
   data: () => ({
-    articles,
+    article: {},
   }),
+
   computed: {
-    currentPageName() {
-      return this.$route.params.slug.replace(/-/g, ' ');
-    },
-    displayArticle() {
-      const internalArticles = this.articles.filter((item) => item.alias === this.$route.path);
-      return internalArticles;
+    slug() {
+      return this.$route.params.slug;
     },
   },
-  methods: {
-    toTitleCase(string) {
-      const internalString = string.split(' ')
-        .map((word) => word[0].toUpperCase() + word.substr(1).toLowerCase())
-        .join(' ');
-      return internalString;
-    },
-  },
+
   head() {
     return {
-      title: this.toTitleCase(this.currentPageName),
+      title: this.article.title,
     };
   },
 };
