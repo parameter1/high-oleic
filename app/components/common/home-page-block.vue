@@ -59,9 +59,9 @@ export default {
     },
     setDivClass() {
       if (this.isFirst) {
-        return 'h-5/6 md:pl-20 pt-24';
+        return 'h-5/6';
       }
-      return 'h-96 md:pl-20 py-12';
+      return 'h-96 my-12';
     },
   },
   methods: {
