@@ -7,7 +7,7 @@
             {{ article.title }}
           </h1>
           <!-- eslint-disable-next-line vue/no-v-html -->
-          <div class="prose prose-lg prose-blue" v-html="article.body" />
+          <div class="prose prose-lg text-primary-1" v-html="article.body" />
         </div>
       </div>
     </div>
