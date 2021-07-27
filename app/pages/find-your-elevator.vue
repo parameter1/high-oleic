@@ -44,7 +44,7 @@
                 color="logo-blue"
                 @click="checkDistance"
               >
-                Look for Silos
+                Look for Delivery Point
               </btn>
             </div>
 
