@@ -52,7 +52,7 @@ const articleMap = [
       <p>Currently with 16 grain elevator partners in Indiana and Ohio, ADM is the grower partner and processor for farmers in the eastern Corn Belt, with its processor in Frankfort, Indiana. Four of the locations are ADM facilities where growers can sign up for harvest delivery contracts, with one location accepting on‐farm storage contracts. Premiums from ADM are similar to Perdue; for HO soybeans stored on‐farm and under 15% moisture (14.5% at some locations), the premium is 75 cents/bushel, while the premium is 55 cents/bushel when the crop is delivered at harvest.</p>
       <p>Bunge takes delivery at 24 locations in 2021. Premium options for 75 cents/bushel exist if a farmer is willing to store the crop and participate in a preferred buyer call between December 2021 and August 2022. Farmers who prefer to deliver at harvest will receive a 65 cent/bushel premium. The Bunge contract calls for a 14% maximum moisture.</p>
       <p>Though the HO soybean market was limited to these areas for 2021, it’s expected to expand for 2022 and beyond. Plans are underway for new HO soybean contracts, with acreage expected to grow to almost twice 2021 levels in 2022 and beyond in future years.</p>
-      <h2>2021 PARTICIPATING COMPANIES AND PREMIUM OPTIONS*</h2>
+      <h4>2021 PARTICIPATING COMPANIES AND PREMIUM OPTIONS*</h4>
       <table>
       <thead>
       <tr>
