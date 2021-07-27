@@ -9,10 +9,10 @@ export default [
     subLabel: 'Powered by Ag View Solutions',
     to: '/crop-comparison',
   },
-  // {
-  //   label: 'Find Your Elevator',
-  //   to: '/find-your-elevator',
-  // },
+  {
+    label: 'Find Your Elevator',
+    to: '/find-your-elevator',
+  },
   // {
   //   label: 'Find Your Seed',
   //   to: '/find-your-seed',

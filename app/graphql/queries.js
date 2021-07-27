@@ -5,6 +5,28 @@ import {
   CROP_COMPARISON_YIELD_AND_PRICE_FRAGMENT,
 } from './fragments';
 
+export const LOOKUP_ELEVATORS = gql`
+  query LookupElevators($input: GrainElevatorsNearPostalCodeQueryInput!) {
+    grainElevatorsNearPostalCode(input: $input) {
+      distance
+      elevator {
+        id
+        affiliate
+        companyName
+        street
+        city
+        regionCode
+        postalCode
+        countryCode
+        contactName
+        phoneNumber
+        phoneNumber2
+        deliveryWindow
+      }
+    }
+  }
+`;
+
 export const LOOKUP_USER = gql`
   query LookupUser($email: String!) {
     appUser(input: { email: $email }) {
