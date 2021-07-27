@@ -15,6 +15,17 @@ export const LOAD_ARTICLE = gql`
   }
 `;
 
+export const LOAD_ARTICLES_FOR_SECTION = gql`
+  query LoadArticlesForSection($alias: String!) {
+    articles: articlesForSection(input: { alias: $alias }) {
+      id
+      title
+      slug
+      teaser
+    }
+  }
+`;
+
 export const LOOKUP_ELEVATORS = gql`
   query LookupElevators($input: GrainElevatorsNearPostalCodeQueryInput!) {
     grainElevatorsNearPostalCode(input: $input) {
