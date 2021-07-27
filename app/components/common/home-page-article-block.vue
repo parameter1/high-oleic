@@ -17,7 +17,7 @@
           class="text-md mt-3 mx-auto"
           type="button"
           color="logo-blue"
-          @click="sendTo(href)"
+          @click="goToArticle"
         >
           {{ buttonLabel }}
         </btn>
