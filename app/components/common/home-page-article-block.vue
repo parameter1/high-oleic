@@ -1,23 +1,23 @@
 <template>
-  <div class="bg-white rounded-lg shadow">
-    <nuxt-link :to="linkLocation">
-      <img class="rounded-t-lg" :src="articleImage">
+  <div class="bg-white rounded-lg shadow flex flex-col h-full">
+    <nuxt-link :to="href">
+      <img class="rounded-t-lg w-full h-auto" :src="image">
     </nuxt-link>
-    <div class="p-2">
+    <div class="p-3 flex flex-col h-full">
       <h3 class="text-xl font-bold">
-        <nuxt-link :to="linkLocation">
-          {{ articleTitle }}
+        <nuxt-link :to="href">
+          {{ title }}
         </nuxt-link>
       </h3>
-      <p class="text-md">
-        {{ articleTease }}
+      <p v-if="teaser" class="text-md mt-3 flex-grow">
+        {{ teaser }}
       </p>
-      <div class="justify-items-center">
+      <div class="flex">
         <btn
-          class="text-md"
+          class="text-md mt-3 mx-auto"
           type="button"
           color="logo-blue"
-          @click="sendTo(linkLocation)"
+          @click="sendTo(href)"
         >
           {{ buttonLabel }}
         </btn>
@@ -34,33 +34,37 @@ export default {
     Btn,
   },
   props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+    },
+    teaser: {
+      type: String,
+      default: null,
+    },
+    image: {
+      type: String,
+      default: 'http://placehold.jp/300x200.png',
+    },
     buttonLabel: {
       type: String,
       default: 'Read Article',
     },
-    articleTitle: {
-      type: String,
-      default: 'Title Title Title Title Title Title Title Title Title',
-    },
-    articleTease: {
-      type: String,
-      default: 'Teaser',
-    },
-    articleImage: {
-      type: String,
-      default: 'http://placehold.jp/300x200.png',
-    },
-    linkLocation: {
-      type: String,
-      required: true,
+  },
+
+  computed: {
+    href() {
+      return `/article/${this.slug}`;
     },
   },
-  data: () => ({
-    isBlock: true,
-  }),
+
   methods: {
-    sendTo(location) {
-      this.$router.push(location);
+    goToArticle() {
+      this.$router.push(this.href);
     },
   },
 };

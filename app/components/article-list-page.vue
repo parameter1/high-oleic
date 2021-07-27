@@ -5,13 +5,13 @@
         <h1 class="text-3xl font-semibold mb-8">
           {{ title }}
         </h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-3">
+        <div :class="containerClasses">
           <home-page-article-block
             v-for="article in articles"
             :key="article.id"
-            :article-title="article.title"
-            :article-tease="article.teaser"
-            :link-location="`/article/${article.slug}`"
+            :title="article.title"
+            :teaser="article.teaser"
+            :slug="article.slug"
           />
         </div>
       </div>
@@ -52,6 +52,14 @@ export default {
 
   data: () => ({
     articles: [],
+    containerClasses: [
+      'grid',
+      'grid-cols-1',
+      'md:grid-cols-2',
+      'lg:grid-cols-4',
+      'space-x-3',
+      'space-y-3',
+    ],
   }),
 
   computed: {
