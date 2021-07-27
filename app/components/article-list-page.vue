@@ -59,8 +59,7 @@ export default {
       'grid-cols-1',
       'md:grid-cols-2',
       'lg:grid-cols-4',
-      'space-x-3',
-      'space-y-3',
+      'gap-4',
     ],
   }),
 
