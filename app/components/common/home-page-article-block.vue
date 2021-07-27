@@ -1,21 +1,27 @@
 <template>
-  <div class="bg-white text-center rounded-lg py-2 shadow grid justify-items-center">
-    <img :src="articleImage">
-    <h3 class="text-xl font-bold pt-2">
-      {{ articleTitle }}
-    </h3>
-    <p class="text-md px-2 py-2 mb-2">
-      {{ articleTease }}
-    </p>
-    <div class="grid justify-items-center">
-      <btn
-        class="text-md"
-        type="button"
-        color="logo-blue"
-        @click="sendTo(linkLocation)"
-      >
-        {{ buttonLabel }}
-      </btn>
+  <div class="bg-white rounded-lg shadow">
+    <nuxt-link :to="linkLocation">
+      <img class="rounded-t-lg" :src="articleImage">
+    </nuxt-link>
+    <div class="p-2">
+      <h3 class="text-xl font-bold">
+        <nuxt-link :to="linkLocation">
+          {{ articleTitle }}
+        </nuxt-link>
+      </h3>
+      <p class="text-md">
+        {{ articleTease }}
+      </p>
+      <div class="justify-items-center">
+        <btn
+          class="text-md"
+          type="button"
+          color="logo-blue"
+          @click="sendTo(linkLocation)"
+        >
+          {{ buttonLabel }}
+        </btn>
+      </div>
     </div>
   </div>
 </template>
