@@ -18,18 +18,19 @@ module.exports = {
       if (!lng || !lat) throw new Error(`Unable to extract location data for postal code ${postalCode}`);
 
       const pipeline = [];
+      const milesToMeters = 1609.34;
       pipeline.push({
         $geoNear: {
           near: { type: 'Point', coordinates: [lng, lat] },
           distanceField: 'distance',
-          maxDistance: maxDistance * 1609.34, // convert miles to meters
+          maxDistance: maxDistance * milesToMeters, // convert miles to meters
         },
       });
       const cursor = await repos.grainElevator.aggregate({ pipeline });
       const docs = await cursor.toArray();
       return docs.map(({ distance, ...rest }) => ({
         elevator: rest,
-        distance: distance / 1609.34, // convert meters back to miles
+        distance: distance / milesToMeters, // convert meters back to miles
       }));
     },
   },
