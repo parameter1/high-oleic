@@ -49,7 +49,8 @@ services:
     environment:
       <<: *env
       APP_HOST: ${APP_HOST-app.highsoy.com:53191}
-      MONGO_URI: ${PM_MONGO_URI-mongodb://root:password123@mongodb-primary:27017,mongodb-secondary:27017/?replicaSet=unitedsoybean&authSource=admin&readPreference=primary}
+      GOOGLE_GEOCODE_API_KEY: ${GOOGLE_GEOCODE_API_KEY-}
+      MONGO_URI: ${MONGO_URI-mongodb://root:password123@mongodb-primary:27017,mongodb-secondary:27017/?replicaSet=unitedsoybean&authSource=admin&readPreference=primary}
       SENDGRID_API_KEY: ${SENDGRID_API_KEY-notset}
     ports:
       - "53190:53190"
