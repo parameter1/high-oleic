@@ -9,33 +9,24 @@
           <div class="grid grid-cols-1 w-full">
             <form @submit.prevent="lookupElevators">
               <div class="md:w-1/5 py-1">
-                <field-label
-                  for="elevator-postal-code"
-                  class="ml-1 mb-1"
-                >
-                  ZIP/Postal Code
-                </field-label>
-                <input-field
+                <form-group
                   id="elevator-postal-code"
                   v-model="postalCode"
-                  type="text"
+                  label="ZIP/Postal Code"
                   placeholder="Enter your zip/postal code"
                   required
+                  :disabled="isLoading"
                 />
               </div>
               <div class="md:w-1/5 py-1">
-                <field-label
-                  for="elevator-max-distance"
-                  class="ml-1 mb-1"
-                >
-                  Distance
-                </field-label>
-                <select-field
+                <select-group
                   id="elevator-max-distance"
                   v-model="selectedDistance"
-                  :options="distanceOptions"
-                  :with-placeholder="false"
+                  label="Distance"
                   required
+                  :options="distanceOptions"
+                  :disabled="isLoading"
+                  :with-placeholder="false"
                 />
               </div>
               <div class="md:w-1/5 py-1 pb-2">
@@ -43,6 +34,7 @@
                   type="submit"
                   color="logo-blue"
                   block
+                  :loading="isLoading"
                 >
                   Look for Delivery Point
                 </btn>
@@ -64,7 +56,7 @@
                     {{ distance }} miles away
                   </div>
                   <div>
-                    {{ elevator.street }},
+                    {{ elevator.street }}
                   </div>
                   <div>
                     {{ elevator.city }} {{ elevator.regionCode }}, {{ elevator.postalCode }}
@@ -94,22 +86,20 @@
 
 <script>
 import Alert from '../components/common/alert.vue';
-import FieldLabel from '../components/common/forms/label.vue';
-import SelectField from '../components/common/forms/select.vue';
-import InputField from '../components/common/forms/input.vue';
 import Btn from '../components/common/button.vue';
+import FormGroup from '../components/common/forms/input-group.vue';
 import PageHeader from '../components/crop-comparison/page-header.vue';
+import SelectGroup from '../components/common/forms/select-group.vue';
 
 import { LOOKUP_ELEVATORS } from '../graphql/queries';
 
 export default {
   components: {
     Alert,
-    FieldLabel,
-    SelectField,
-    InputField,
     Btn,
+    FormGroup,
     PageHeader,
+    SelectGroup,
   },
 
   data: () => ({
