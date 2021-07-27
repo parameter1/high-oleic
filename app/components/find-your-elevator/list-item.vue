@@ -16,7 +16,7 @@
         :href="node.googleMapsUrl"
       >
         <span class="block">{{ node.street }}</span>
-        <span class="block">{{ node.city }} {{ node.regionCode }}, {{ node.postalCode }}</span>
+        <span class="block">{{ node.city }}, {{ node.regionCode }} {{ node.postalCode }}</span>
       </a>
 
       <div class="mt-1.5">
