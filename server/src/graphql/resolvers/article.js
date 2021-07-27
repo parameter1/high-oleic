@@ -4,6 +4,7 @@ const sluggify = require('../../slug');
 const articleMap = [
   {
     title: 'Market History',
+    teaser: 'When soybeans became a staple rotational row crop for U.S. farmers in the 1940s and 1950s, it kicked off a decades‐long effort by plant breeders to develop varieties with high‐demand traits.',
     body: `
       <p>When soybeans became a staple rotational row crop for U.S. farmers in the 1940s and 1950s, it kicked off a decades‐long effort by plant breeders to develop varieties with high‐demand traits.</p>
       <p>Since then, soybean oil has become a similar staple in consumer, commercial and industrial kitchens, and food processing facilities. Today it’s a key ingredient in many high‐demand food products, especially since partially hydrogenated soybean oil became popular in food manufacturing in the 1970s. While the aggregate demand for soybean oil has grown over the years, consumer appetites and attitudes toward “unhealthy fats” have changed, and that has opened doors for high oleic (HO) soybeans. Today, there are premium market opportunities for American farmers to deliver soybeans to local elevators, resulting in a strong domestic market. U.S. farmers have a huge opportunity, and responsibility to feed this growing demand.</p>
@@ -23,6 +24,7 @@ const articleMap = [
   },
   {
     title: 'Market Outlook',
+    teaser: 'Soybean oil has long been a major component of the consumer, industrial and commercial vegetable oil complex, but as end‐user preferences have shifted, a market for healthy oil has developed.',
     body: `
       <p>High Oleic Soy Market Outook</p>
       <p>Soybean oil has long been a major component of the consumer, industrial and commercial vegetable oil complex, but as end‐user preferences have shifted, a market for healthy oil has developed. Previously, that market relied mostly on canola or cottonseed oil, but preferences are changing. After years of research and field testing funded by the U.S. Soybean Checkoff, food companies are poised to increase demand with high oleic soybeans.</p>
@@ -45,6 +47,7 @@ const articleMap = [
   },
   {
     title: 'Marketing and Logistics',
+    teaser: 'Marketing and logistics options exist throughout the trade area for 2021.',
     body: `
       <p>Marketing and logistics options exist throughout the trade area for 2021. Currently, three processors purchase HO soybeans from growers at a range of premiums based on how growers produce, market and store the crop throughout Indiana and Ohio, and the Delmarva/Pennsylvania region.</p>
       <p>With a processing facility in Salisbury, Maryland, and partnering with 17 grain elevators in Pennsylvania, Virginia, Delaware, New Jersey, New York and Maryland, Perdue is the HO soybean processor and grower partner for farmers in the Delmarva Peninsula. The HO soybeans are accepted at up to 14% crop moisture, with a discount schedule beyond that level for delivery to four of its locations.</p>
@@ -93,6 +96,7 @@ const articleMap = [
   },
   {
     title: 'Soft IP Program',
+    teaser: 'A soft IP program allows some room for error at the farm level.',
     body: `
       <p>A soft IP program allows some room for error at the farm level. The contracts are based on the commitment from the grower to plant a specific Plenish variety for 2021, so the requirements at delivery are somewhat lenient compared to traditional IP programs. High oleic oil content in soybeans is a genetic trait, meaning there’s not the variety of oil output compared to other crop output traits, so meeting the oil requirements is less restrictive.</p>
       <p>Conventional soybean oil is composed of approximately 60% polyunsaturated fatty acids, 25% monounsaturated fatty acids and 15% saturated fatty acids, whereas, HO soybean oil is made of around 75% oleic acid, with 20% less saturated fat and 2% to 3% linolenic acid. Eight percent of conventional soybean oil comprises linolenic acid, contributing to relative shelf instability compared to HO soybeans, which is why the low‐linolenic content is desirable. That is all in the genetics.<sup>4</sup></p>
@@ -111,6 +115,7 @@ const articleMap = [
   },
   {
     title: 'Transportation and Storage Costs',
+    teaser: 'Transportation and storage exist regardless of the crop, so HO Soybeans cost no more than any other production.',
     body: `
       <p>Transportation and storage exist regardless of the crop, so HO Soybeans cost no more than any other production. Storage capacity in HO soybean production regions is a key piece of the puzzle to sustaining the premium program.</p>
       <p>For transportation, estimate what it costs to have someone locally haul grain. There needs to be a charge from the field to on‐farm storage if it’s available, as well as from the farm to the processing facility. Typically, within 15 miles $.06‐$.10/bushel will cover the cost from field to storage. From there, it just depends on how far the cost is to the processing facility, who is trucking it, or if it is being picked up will‐call on the farm.</p>
@@ -133,6 +138,7 @@ const articleMap = [
   },
   {
     title: 'Seed Selection',
+    teaser: 'Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers.',
     body: `
       <p>Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers. With seven years of commercial trait development and a mature seed pipeline in place, growers have access to the varieties they need to raise trend yields with the added financial incentive of premiums up to 75 cents/bushel.</p>
       <p>In field trials from 2018 to 2020, Pioneer® Plenish HO soybeans showed in‐field performance on par with conventional varieties. High oil soybean varieties in Maryland trials showed a yield range between 76.2 and 103.2 bushels/acre, with trials in Pennsylvania yielding between 81.4 and 91.3 bushels/acre. Double‐crop yield trials in Delaware showed a yield of 68.3 bushels/acre. Average soybean yields for those three states ranged between 46 and 57 bushels/acre in 2020, according to USDA‐NASS data (<a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=DELAWARE" target="_blank" rel="noopener">Delaware</a>, <a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=MARYLAND" target="_blank" rel="noopener">Maryland</a>, <a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=PENNSYLVANIA" target="_blank" rel="noopener">Pennsylvania</a>).</p>
@@ -147,6 +153,7 @@ const articleMap = [
   },
   {
     title: 'Weed Control',
+    teaser: 'Weed control is an important consideration for any crop production decision and there are options with HO Soybeans.',
     body: `
       <p>Weed control is an important consideration for any crop production decision and there are options with HO Soybeans. In fact, it is a major area where high oleic soybeans programs have improved the most in the last seven years.</p>
       <p>Leading up to the 2021 growing season, soybean specialists in the Delmarva Peninsula estimated around one third of all soybean farmers apply an effective pre‐emergence herbicide, and many of those use lower‐cost options that typically lack residual efficacy. Agronomists recommend not only applying a pre‐emergence product, but also rotating products to mix up the modes of action and prevent development of herbicide resistance.<sup>3</sup></p>
