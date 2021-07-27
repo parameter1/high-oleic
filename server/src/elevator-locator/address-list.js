@@ -332,6 +332,7 @@ module.exports = [
     city: 'Montpelier',
     regionCode: 'OH',
     postalCode: 43543,
+    countryCode: 'USA',
     contactName: 'Michele Reeder',
     phoneNumber: '419-485-3117',
     lat: 41.58277393200369,
