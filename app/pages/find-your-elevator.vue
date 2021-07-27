@@ -38,25 +38,27 @@
 
         <div class="w-full">
           <div v-if="didSearch" class="bg-white shadow rounded-lg p-4">
-            <div class="text-lg text-logo-green font-semibold">
+            <div class="text-lg text-logo-green font-semibold mb-4">
               Elevators within
               {{ currentSearchParams.maxDistance }}
               miles of
               {{ currentSearchParams.postalCode }}
             </div>
-            <div v-if="!elevators.length" class="mt-3">
+            <div v-if="!elevators.length">
               No elevators were found for the provided criteria.
             </div>
 
-            <list-item
-              v-for="{ elevator, distance } in elevators"
-              :key="elevator.id"
-              :node="elevator"
-              :distance-from-postal-code="distance"
-            />
+            <div class="space-y-6">
+              <list-item
+                v-for="{ elevator, distance } in elevators"
+                :key="elevator.id"
+                :node="elevator"
+                :distance-from-postal-code="distance"
+              />
+            </div>
           </div>
 
-          <alert v-if="error" type="danger" class="mt-3">
+          <alert v-if="error" type="danger">
             {{ error.message }}
           </alert>
         </div>

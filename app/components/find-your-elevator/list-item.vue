@@ -1,26 +1,38 @@
 <template>
   <div>
-    <div class="border-secondary-5-300 border-b-2 text-lg leading-6 font-bold pb-2">
+    <div class="font-semibold mb-1">
       {{ node.name }}
     </div>
 
     <div class="text-sm">
-      <div>
+      <div class="text-logo-blue font-semibold">
         {{ distanceFromPostalCode }} miles away
       </div>
-      <div>
-        {{ node.street }}
-      </div>
-      <div>
-        {{ node.city }} {{ node.regionCode }}, {{ node.postalCode }}
-      </div>
-      <div v-if="node.contact">
-        Contact: {{ node.contact }}
-      </div>
-      <div class="border-secondary-5-300 border-b-2 pb-2">
-        Phone: {{ node.phoneNumber }}
+
+      <a
+        class="inline-block mt-1.5 hover:underline"
+        target="_blank"
+        rel="noopener"
+        :href="node.googleMapsUrl"
+      >
+        <span class="block">{{ node.street }}</span>
+        <span class="block">{{ node.city }} {{ node.regionCode }}, {{ node.postalCode }}</span>
+      </a>
+
+      <div class="mt-1.5">
+        <div v-if="node.contactName">
+          Contact: {{ node.contactName }}
+        </div>
+        <div v-if="node.phoneNumber">
+          Phone:
+          <a :href="`tel:${node.phoneNumber}`" class="hover:underline">{{ node.phoneNumber }}</a>
+        </div>
         <div v-if="node.phoneNumber2">
-          Phone 2: {{ node.phoneNumber2 }}
+          Phone 2:
+          <a :href="`tel:${node.phoneNumber2}`" class="hover:underline">{{ node.phoneNumber2 }}</a>
+        </div>
+        <div v-if="node.deliveryWindow">
+          Delivery Window: {{ node.deliveryWindow }}
         </div>
       </div>
     </div>
