@@ -34,6 +34,8 @@ type GrainElevator {
   phoneNumber2: String
   "The elevator's delivery window"
   deliveryWindow: String
+  "The elevator's Google Maps URL"
+  googleMapsUrl: String!
 }
 
 type GrainElevatorNearPostalCode {

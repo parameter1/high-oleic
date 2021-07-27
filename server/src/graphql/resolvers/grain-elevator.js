@@ -10,6 +10,19 @@ module.exports = {
     /**
      *
      */
+    googleMapsUrl({
+      street,
+      city,
+      regionCode,
+      postalCode,
+    }) {
+      const path = encodeURIComponent(`${street}, ${city}, ${regionCode} ${postalCode}`);
+      return `https://www.google.com/maps/place/${path}`;
+    },
+
+    /**
+     *
+     */
     name(elevator) {
       const affiliate = elevator.affiliate.trim();
       const companyName = elevator.companyName.trim();

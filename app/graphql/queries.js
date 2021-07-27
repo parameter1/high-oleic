@@ -21,6 +21,7 @@ export const LOOKUP_ELEVATORS = gql`
         phoneNumber
         phoneNumber2
         deliveryWindow
+        googleMapsUrl
       }
     }
   }
