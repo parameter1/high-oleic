@@ -1,7 +1,7 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
-    <div class="max-w-7xl sm:px-6 md:px-8">
-      <div class="py-4">
+    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
+      <div class="p-4">
         <page-header>
           Find Grain Elevators Near You
         </page-header>
