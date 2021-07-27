@@ -6,6 +6,7 @@
           {{ title }}
         </h1>
         <div :class="containerClasses">
+          <slot name="grid-before" />
           <home-page-article-block
             v-for="article in articles"
             :key="article.id"
@@ -13,6 +14,7 @@
             :teaser="article.teaser"
             :href="`/article/${article.slug}`"
           />
+          <slot name="grid-after" />
         </div>
       </div>
     </div>
