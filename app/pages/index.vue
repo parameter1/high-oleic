@@ -24,46 +24,16 @@
           />
           <div class="border-secondary-5-300 border-b-2" />
           <div class="pt-10">
-            <h2 class="text-4xl font-semibold text-center md:text-left">
+            <h2 class="text-3xl font-semibold mb-4">
               Knowledge Center
             </h2>
-            <div
-              class="grid grid-cols-1 md:grid-cols-3 border-secondary-5-300 border-b-2 my-4"
-            >
-              <div
-                v-for="(article,index) in knowledgeCenterArticles"
-                :key="article.name"
-                class="md:mr-10 mb-10 lg:mb-0"
-              >
-                <div v-if="index < 3">
-                  <home-page-article-block
-                    :article-title="article.name"
-                    :article-tease="article.teaser"
-                    :link-location="article.alias"
-                  />
-                </div>
-              </div>
-            </div>
+            <article-grid-list alias="knowledge-center" />
           </div>
           <div class="pt-10">
-            <h2 class="text-4xl font-semibold text-center md:text-left">
+            <h2 class="text-3xl font-semibold mb-4">
               Market Analysis
             </h2>
-            <div
-              class="grid grid-cols-1 md:grid-cols-3 border-secondary-5-300 border-b-2 my-4"
-            >
-              <div
-                v-for="article in marketAnalysisArticles"
-                :key="article.name"
-                class="md:mr-10 mb-10 lg:mb-0"
-              >
-                <home-page-article-block
-                  :article-title="article.name"
-                  :article-tease="article.teaser"
-                  :link-location="article.alias"
-                />
-              </div>
-            </div>
+            <article-grid-list alias="market-analysis" />
           </div>
           <!-- /End replace -->
         </div>
@@ -74,31 +44,20 @@
 
 <script>
 import HomePageBlock from '../components/common/home-page-block.vue';
-import HomePageArticleBlock from '../components/common/home-page-article-block.vue';
-import articles from '../../server/src/articles/articles';
+import ArticleGridList from '../components/article-grid-list.vue';
 
 export default {
   components: {
+    ArticleGridList,
     HomePageBlock,
-    HomePageArticleBlock,
   },
+
   data: () => ({
-    articles,
     isFirst: true,
   }),
-  computed: {
-    knowledgeCenterArticles() {
-      const internalArticles = this.articles.filter((item) => item.scheduledSections.includes('knowledge-center')); // eslint-disable-line
-      return internalArticles;
-    },
-    marketAnalysisArticles() {
-      const internalArticles = this.articles.filter((item) => item.scheduledSections.includes('market-analysis')); // eslint-disable-line
-      return internalArticles;
-    },
-  },
+
   head: {
     title: 'Home',
   },
-
 };
 </script>
