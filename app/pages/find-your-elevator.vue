@@ -143,7 +143,7 @@ export default {
         this.isLoading = true;
         const input = {
           postalCode: this.postalCode,
-          maxDistance: parseInt(this.selectedDistance, 10),
+          maxDistance: parseFloat(this.selectedDistance),
         };
         const variables = { input };
         const { data } = await this.$apollo.query({ query: LOOKUP_ELEVATORS, variables });
