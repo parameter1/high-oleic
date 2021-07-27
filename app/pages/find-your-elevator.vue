@@ -5,50 +5,47 @@
         <page-header>
           Find Grain Elevators Near You
         </page-header>
-        <div class="grid grid-cols-1 w-full">
-          <form @submit.prevent="lookupElevators">
-            <div class="md:w-1/5 py-1">
-              <form-group
-                id="elevator-postal-code"
-                v-model="postalCode"
-                label="ZIP/Postal Code"
-                placeholder="Enter your zip/postal code"
-                required
-                :disabled="isLoading"
-              />
-            </div>
-            <div class="md:w-1/5 py-1">
-              <select-group
-                id="elevator-max-distance"
-                v-model="selectedDistance"
-                label="Distance"
-                required
-                :options="distanceOptions"
-                :disabled="isLoading"
-                :with-placeholder="false"
-              />
-            </div>
-            <div class="md:w-1/5 py-1 pb-2">
-              <btn
-                type="submit"
-                color="logo-blue"
-                block
-                :loading="isLoading"
-              >
-                Look for Delivery Point
-              </btn>
-            </div>
-          </form>
 
-          <div v-if="didSearch" class="bg-white shadow rounded-lg p-3">
-            <div>
+        <form class="max-w-xs mb-8" @submit.prevent="lookupElevators">
+          <form-group
+            id="elevator-postal-code"
+            v-model="postalCode"
+            class="mb-4"
+            label="ZIP/Postal Code"
+            placeholder="Enter your zip/postal code"
+            required
+            :disabled="isLoading"
+          />
+          <select-group
+            id="elevator-max-distance"
+            v-model="selectedDistance"
+            class="mb-8"
+            label="Distance"
+            required
+            :options="distanceOptions"
+            :disabled="isLoading"
+            :with-placeholder="false"
+          />
+          <btn
+            type="submit"
+            color="logo-blue"
+            block
+            :loading="isLoading"
+          >
+            Look for Delivery Point
+          </btn>
+        </form>
+
+        <div class="w-full">
+          <div v-if="didSearch" class="bg-white shadow rounded-lg p-4">
+            <div class="text-lg text-logo-green font-semibold">
               Elevators within
               {{ currentSearchParams.maxDistance }}
               miles of
               {{ currentSearchParams.postalCode }}
             </div>
-            <div v-if="!elevators.length">
-              No elevators were found.
+            <div v-if="!elevators.length" class="mt-3">
+              No elevators were found for the provided criteria.
             </div>
 
             <div
