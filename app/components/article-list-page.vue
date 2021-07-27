@@ -44,7 +44,7 @@ export default {
       type: String,
       required: true,
     },
-    alias: {
+    path: {
       type: String,
       required: true,
     },
@@ -53,6 +53,12 @@ export default {
   data: () => ({
     articles: [],
   }),
+
+  computed: {
+    alias() {
+      return this.path.replace(/^\//, '');
+    },
+  },
 
   head() {
     return {

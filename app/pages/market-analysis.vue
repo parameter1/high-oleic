@@ -1,5 +1,5 @@
 <template>
-  <article-list-page title="Market Analysis" alias="market-analysis" />
+  <article-list-page title="Market Analysis" :path="$route.path" />
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <article-list-page title="Why High Oleic?" alias="why-high-oleic" />
+  <article-list-page title="Why High Oleic?" :path="$route.path" />
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <article-list-page title="Knowledge Center" alias="knowledge-center" />
+  <article-list-page title="Knowledge Center" :path="$route.path" />
 </template>
 
 <script>

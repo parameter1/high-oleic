@@ -1,5 +1,5 @@
 <template>
-  <article-list-page title="Find Your Seed" alias="find-your-seed" />
+  <article-list-page title="Find Your Seed" :path="$route.path" />
 </template>
 
 <script>
