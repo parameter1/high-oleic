@@ -12,14 +12,14 @@
                 Find Your Seed
               </h1>
             </div>
-            <div class="pt-40 border-secondary-5-300 border-b-2" />
+            <div class="mt-40 border-secondary-5-300 border-b-2" />
             <div
-              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-secondary-5-300 border-b-2 px-10 py-10"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-secondary-5-300 border-b-2 mx-10 my-10"
             >
               <div
                 v-for="article in displayArticles"
                 :key="article.name"
-                class="md:pr-10 pb-10 lg:pb-0"
+                class="md:mr-10 mb-10 lg:mb-0"
               >
                 <home-page-article-block
                   :article-title="article.name"
@@ -27,7 +27,7 @@
                   :link-location="article.alias"
                 />
               </div>
-              <div class="md:pr-10 pb-10 lg:pb-0">
+              <div class="md:mr-10 mb-10 lg:mb-0">
                 <home-page-article-block
                   article-title="Find Your Elevator"
                   article-tease=""
