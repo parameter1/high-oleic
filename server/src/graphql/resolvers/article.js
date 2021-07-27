@@ -206,5 +206,13 @@ module.exports = {
       }
       return article;
     },
+
+    /**
+     *
+     */
+    articlesForSection(_, { input }) {
+      const { alias } = input;
+      return [...articleMap.values()].filter((article) => article.sections.has(alias));
+    },
   },
 };

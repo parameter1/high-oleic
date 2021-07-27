@@ -5,6 +5,8 @@ module.exports = gql`
 extend type Query {
   "Finds a single article by slug."
   articleSlug(input: ArticleSlugQueryInput!): Article
+  "Finds all articles for a section."
+  articlesForSection(input: ArticlesForSectionQueryInput!): [Article!]!
 }
 
 type Article {
@@ -25,6 +27,11 @@ input ArticleSlugQueryInput {
   slug: String!
   "Whether to enable strict mode. When enabled (default), if an article cannot be found an error is thrown."
   strict: Boolean = true
+}
+
+input ArticlesForSectionQueryInput {
+  "The section alias to return articles for."
+  alias: String!
 }
 
 `;
