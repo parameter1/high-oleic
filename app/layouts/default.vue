@@ -51,6 +51,7 @@ export default {
 
   data: () => ({
     classes: [
+      'antialiased',
       'h-screen',
       'print:h-auto',
       'flex',
