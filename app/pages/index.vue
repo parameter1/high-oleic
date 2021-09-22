@@ -1,15 +1,16 @@
 <template>
-  <div class="pt-2 pb-6 md:py-6 overflow-y-scroll">
+  <div class="pb-6 overflow-y-scroll">
+    <page-intro-block
+      section-label="Grow High Oleic Soy"
+      section-tagline="The Yeild You Want. The Demand You Need."
+      section-text="Today's High oleic soybeans — those with higher oleic acid content that eliminates the need for hydrogenation, thus making them a healthier alternative to conventional soybeans when processed for vegetable oil — fill the supply needs, with the required attributes"
+      button-label="FIND OUT WHY"
+      link-location="/why-high-oleic"
+    />
     <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
       <div class="p-4">
         <div class="h-screen">
           <!-- Replace with your content -->
-          <home-page-block
-            section-label="Why High Oleic?"
-            button-label="Learn More"
-            :is-first="isFirst"
-            link-location="/why-high-oleic"
-          />
           <div class="border-secondary-5-300 border-b-2" />
           <home-page-block
             section-label="Calculate"
@@ -43,6 +44,7 @@
 </template>
 
 <script>
+import PageIntroBlock from '../components/common/page-intro-block.vue';
 import HomePageBlock from '../components/common/home-page-block.vue';
 import ArticleGridList from '../components/article-grid-list.vue';
 
@@ -50,6 +52,7 @@ export default {
   components: {
     ArticleGridList,
     HomePageBlock,
+    PageIntroBlock,
   },
 
   data: () => ({
