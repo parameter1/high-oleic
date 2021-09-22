@@ -31,6 +31,7 @@ export default {
       validator: (value) => [
         'logo-blue',
         'logo-green',
+        'logo-yellow',
         'red-600',
         'secondary-3',
       ].includes(value),
@@ -66,7 +67,6 @@ export default {
         'text-sm',
         'font-bold',
         'rounded-md',
-        'text-white',
         'focus:outline-none',
         'disabled:cursor-not-allowed',
         'disabled:bg-gray-300',
@@ -90,6 +90,7 @@ export default {
           'focus:border-logo-blue',
           'focus:shadow-outline-gray',
           'active:bg-opacity-85',
+          'text-white',
         ],
         'logo-green': [
           'bg-logo-green',
@@ -97,6 +98,15 @@ export default {
           'focus:border-logo-green',
           'focus:shadow-outline-gray',
           'active:bg-opacity-85',
+          'text-white',
+        ],
+        'logo-yellow': [
+          'bg-logo-yellow',
+          'focus:bg-opacity-85',
+          'focus:border-logo-yellow',
+          'focus:shadow-outline-gray',
+          'active:bg-opacity-85',
+          'text-gray-600',
         ],
         'secondary-3': [
           'bg-secondary-3',
@@ -104,6 +114,7 @@ export default {
           'focus:border-secondary-3',
           'focus:shadow-outline-gray',
           'active:bg-opacity-85',
+          'text-white',
         ],
         'red-600': [
           'bg-red-600',
@@ -111,6 +122,7 @@ export default {
           'focus:border-red-600',
           'focus:shadow-outline-gray',
           'active:bg-opacity-85',
+          'text-white',
         ],
       };
       const color = colors[this.color];
