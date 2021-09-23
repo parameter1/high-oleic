@@ -18,7 +18,13 @@
   font-weight: 700;
   text-transform: uppercase;
   font-style: italic;
+  transform: skewX(-15deg);
+}
+.menu-item-link-wrapper {
   border-bottom: solid 1px #E4E6E9;
+}
+.menu-item-link-contents {
+  transform: skewX(15deg);
 }
 .manage-profile {
   background-color: #253746;
