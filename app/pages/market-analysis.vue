@@ -2,6 +2,7 @@
   <div class="pb-6">
     <page-intro-block
       :section-label="title"
+      background-image-class="bg-home-banner"
     />
     <article-list-page :path="$route.path" />
   </div>
