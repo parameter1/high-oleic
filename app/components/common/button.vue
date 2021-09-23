@@ -66,7 +66,6 @@ export default {
         'border-transparent',
         'text-sm',
         'font-bold',
-        'rounded-md',
         'focus:outline-none',
         'disabled:cursor-not-allowed',
         'disabled:bg-gray-300',

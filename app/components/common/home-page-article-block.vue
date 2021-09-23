@@ -1,15 +1,15 @@
 <template>
-  <div class="bg-white rounded-lg shadow flex flex-col h-full">
+  <div class="bg-white shadow flex flex-col h-full">
     <nuxt-link :to="href">
-      <img class="rounded-t-lg w-full h-auto" :src="image">
+      <img class="w-full h-auto" :src="image">
     </nuxt-link>
     <div class="p-3 flex flex-col h-full">
-      <h3 class="text-xl font-bold">
+      <h3 class="font-bold italic text-center flex-grow">
         <nuxt-link :to="href">
           {{ title }}
         </nuxt-link>
       </h3>
-      <p v-if="teaser" class="text-md mt-3 flex-grow">
+      <p v-if="teaser" class="text-sm text-center mt-3 flex-grow">
         {{ teaser }}
       </p>
       <div class="flex">
