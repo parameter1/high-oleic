@@ -4,7 +4,7 @@
       <img class="w-full h-auto" :src="image">
     </nuxt-link>
     <div class="p-3 flex flex-col h-full">
-      <h3 class="font-bold italic text-center flex-grow">
+      <h3 class="font-bold italic text-logo-blue text-center flex-grow">
         <nuxt-link :to="href">
           {{ title }}
         </nuxt-link>
@@ -14,7 +14,7 @@
       </p>
       <div class="flex">
         <btn
-          class="text-md mt-3 mx-auto"
+          class="text-md mt-3 mx-auto text-upper"
           type="button"
           color="logo-blue"
           @click="goToArticle"
