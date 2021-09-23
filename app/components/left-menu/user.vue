@@ -3,7 +3,7 @@
     <client-only>
       <nav class="flex-1">
         <nav-item-link :to="to">
-          <div class="flex justify-center w-100%">
+          <div class="menu-item-link-contents flex justify-center w-100%">
             <svg
               class="h-6 w-6 text-white"
               fill="none"
