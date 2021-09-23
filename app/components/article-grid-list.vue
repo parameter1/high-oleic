@@ -5,7 +5,7 @@
       v-for="article in articles"
       :key="article.id"
       :title="article.title"
-      :image="article.image"
+      :image="getImagePath(article.image)"
       :teaser="article.teaser"
       :href="`/article/${article.slug}`"
     />
@@ -50,5 +50,11 @@ export default {
       'gap-4',
     ],
   }),
+  methods: {
+    getImagePath(path) {
+      if (!path) return '';
+      return `${path}?fit=crop&w=300&h=200`;
+    },
+  },
 };
 </script>
