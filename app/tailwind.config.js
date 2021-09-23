@@ -1,5 +1,5 @@
 const ui = require('@tailwindcss/ui');
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 const urwDinSemiCon = {
