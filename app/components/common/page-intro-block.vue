@@ -13,7 +13,7 @@
         </p>
       </div>
     </div>
-    <p v-if="sectionText" class="text-sm w-4/6 mb-6 mx-auto">
+    <p v-if="sectionText" class="text-sm w-4/6 mb-6 mx-auto text-center">
       {{ sectionText }}
     </p>
     <div v-if="linkLocation" class="w-100% flex justify-center">
