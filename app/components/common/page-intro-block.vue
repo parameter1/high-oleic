@@ -72,7 +72,7 @@ export default {
   }),
   computed: {
     setSectionLabelSize() {
-      return `h-72 mb-6 ${this.backgroundImageClass} bg-cover bg-center`;
+      return `h-72 mb-6 ${this.backgroundImageClass} bg-cover bg-center overflow-hidden`;
     },
     setDivClass() {
       // if (this.isFirst) {
