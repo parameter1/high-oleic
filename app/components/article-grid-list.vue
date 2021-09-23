@@ -5,6 +5,7 @@
       v-for="article in articles"
       :key="article.id"
       :title="article.title"
+      :image="article.image"
       :teaser="article.teaser"
       :href="`/article/${article.slug}`"
     />
@@ -44,8 +45,8 @@ export default {
     containerClasses: [
       'grid',
       'grid-cols-1',
-      'md:grid-cols-2',
-      'lg:grid-cols-4',
+      'sm:grid-cols-2',
+      'md:grid-cols-4',
       'gap-4',
     ],
   }),
