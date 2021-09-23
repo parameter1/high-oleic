@@ -19,6 +19,10 @@ module.exports = {
           ...urwDinSemiCon,
           fontSize: '36px',
         },
+        h3: {
+          ...urwDinSemiCon,
+          fontSize: '24px',
+        },
         p: { fontSize: '16px', fontWeight: 'initial' },
       });
     }),
