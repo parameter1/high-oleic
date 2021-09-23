@@ -17,6 +17,8 @@ type Article {
   "The article title."
   title: String!
   "The article teaser."
+  image: String
+  "The article image."
   teaser: String
   "The article body."
   body: String!

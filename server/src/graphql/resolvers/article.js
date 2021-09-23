@@ -4,6 +4,7 @@ const sluggify = require('../../slug');
 const articleMap = [
   {
     title: 'Market History',
+    image: 'https://img.highoilsoy.com/home-banner.jpg?fit=crop&w=300&h=200',
     teaser: 'When soybeans became a staple rotational row crop for U.S. farmers in the 1940s and 1950s, it kicked off a decades‐long effort by plant breeders to develop varieties with high‐demand traits.',
     body: `
       <p>When soybeans became a staple rotational row crop for U.S. farmers in the 1940s and 1950s, it kicked off a decades‐long effort by plant breeders to develop varieties with high‐demand traits.</p>
@@ -24,6 +25,7 @@ const articleMap = [
   },
   {
     title: 'Market Outlook',
+    image: 'https://img.highoilsoy.com/knowledge-5.jpg?fit=crop&w=300&h=200',
     teaser: 'Soybean oil has long been a major component of the consumer, industrial and commercial vegetable oil complex, but as end‐user preferences have shifted, a market for healthy oil has developed.',
     body: `
       <p>High Oleic Soy Market Outook</p>
@@ -47,6 +49,7 @@ const articleMap = [
   },
   {
     title: 'Marketing and Logistics',
+    image: 'https://img.highoilsoy.com/knowledge-1.jpg?fit=crop&w=300&h=200',
     teaser: 'Marketing and logistics options exist throughout the trade area for 2021.',
     body: `
       <p>Marketing and logistics options exist throughout the trade area for 2021. Currently, three processors purchase HO soybeans from growers at a range of premiums based on how growers produce, market and store the crop throughout Indiana and Ohio, and the Delmarva/Pennsylvania region.</p>
@@ -96,6 +99,7 @@ const articleMap = [
   },
   {
     title: 'Soft IP Program',
+    image: 'https://img.highoilsoy.com/knowledge-2.jpg?fit=crop&w=300&h=200',
     teaser: 'A soft IP program allows some room for error at the farm level.',
     body: `
       <p>A soft IP program allows some room for error at the farm level. The contracts are based on the commitment from the grower to plant a specific Plenish variety for 2021, so the requirements at delivery are somewhat lenient compared to traditional IP programs. High oleic oil content in soybeans is a genetic trait, meaning there’s not the variety of oil output compared to other crop output traits, so meeting the oil requirements is less restrictive.</p>
@@ -115,6 +119,7 @@ const articleMap = [
   },
   {
     title: 'Transportation and Storage Costs',
+    image: 'https://img.highoilsoy.com/knowledge-4.jpg?fit=crop&w=300&h=200',
     teaser: 'Transportation and storage exist regardless of the crop, so HO Soybeans cost no more than any other production.',
     body: `
       <p>Transportation and storage exist regardless of the crop, so HO Soybeans cost no more than any other production. Storage capacity in HO soybean production regions is a key piece of the puzzle to sustaining the premium program.</p>
@@ -138,6 +143,7 @@ const articleMap = [
   },
   {
     title: 'Seed Selection',
+    image: 'https://img.highoilsoy.com/knowledge-4.jpg?fit=crop&w=300&h=200',
     teaser: 'Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers.',
     body: `
       <p>Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers. With seven years of commercial trait development and a mature seed pipeline in place, growers have access to the varieties they need to raise trend yields with the added financial incentive of premiums up to 75 cents/bushel.</p>
@@ -153,6 +159,7 @@ const articleMap = [
   },
   {
     title: 'Weed Control',
+    image: 'https://img.highoilsoy.com/knowledge-3.jpg?fit=crop&w=300&h=200',
     teaser: 'Weed control is an important consideration for any crop production decision and there are options with HO Soybeans.',
     body: `
       <p>Weed control is an important consideration for any crop production decision and there are options with HO Soybeans. In fact, it is a major area where high oleic soybeans programs have improved the most in the last seven years.</p>
