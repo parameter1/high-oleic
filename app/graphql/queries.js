@@ -10,6 +10,7 @@ export const LOAD_ARTICLE = gql`
     article: articleSlug(input: { slug: $slug }) {
       id
       image
+      teaser
       title
       body
     }
