@@ -4,7 +4,7 @@
       :section-label="article.title"
       :section-tagline="article.teaser"
       :image="getImagePath(article.image)"
-      background-image-class="bg-home-banner"
+      :background-image-class="backgroundImageClass"
     />
     <div class="pt-2 pb-6 md:py-6">
       <div class="max-w-4xl mx-auto sm:px-6 md:px-8">
@@ -44,6 +44,10 @@ export default {
   computed: {
     slug() {
       return this.$route.params.slug;
+    },
+    backgroundImageClass() {
+      if (!this.article.image) return 'bg-home-banner';
+      return '';
     },
   },
   methods: {
