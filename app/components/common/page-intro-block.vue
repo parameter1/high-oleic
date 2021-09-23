@@ -1,12 +1,14 @@
 <template>
   <div :class="setDivClass">
     <div :class="setSectionLabelSize">
-      <!-- <div class="h-full flex justify-center flex-col bg-gray-500 bg-opacity-50"> -->
-      <div class="h-full flex justify-center flex-col">
-        <h1 class="font-bold italic text-white text-center text-shadow-dark">
+      <div class="intro-image-wrapper relative">
+        <img v-if="image" :src="image">
+      </div>
+      <div class="test h-full relative top right left flex justify-center flex-col">
+        <h1 class="font-bold mb-3 mb:mb-6 text-3xl md:text-5xl px-6 italic text-white text-center text-shadow-dark">
           {{ sectionLabel }}
         </h1>
-        <p v-if="sectionTagline" class="font-bold text-center text-white text-shadow-dark">
+        <p v-if="sectionTagline" class="font-bold md:text-sm px-6 text-center text-white text-shadow-dark">
           {{ sectionTagline }}
         </p>
       </div>
@@ -42,7 +44,11 @@ export default {
     },
     backgroundImageClass: {
       type: String,
-      default: 'bg-home-banner',
+      default: '',
+    },
+    image: {
+      type: String,
+      default: '',
     },
     sectionLabel: {
       type: String,

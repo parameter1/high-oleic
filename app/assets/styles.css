@@ -30,3 +30,13 @@
   background-color: #253746;
   border-bottom: none;
 }
+
+.intro-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  max-width: initial;
+  height: 288px;
+
+}
