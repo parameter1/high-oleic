@@ -14,6 +14,7 @@ module.exports = {
         h1: {
           ...urwDinSemiCon,
           fontSize: '48px',
+          lineHeight: '1.25em',
         },
         h2: {
           ...urwDinSemiCon,
