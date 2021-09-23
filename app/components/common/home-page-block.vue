@@ -1,12 +1,18 @@
 <template>
   <div :class="setDivClass">
     <div :class="setSectionLabelSize">
-      <h1 v-if="isFirst" class="font-semibold text-center md:text-left">
+      <h1 v-if="isFirst" class="font-semibold text-white italic text-center">
         {{ sectionLabel }}
       </h1>
-      <h2 v-else class="font-semibold text-center md:text-left">
+      <h2 v-else class="font-semibold italic text-center">
         {{ sectionLabel }}
       </h2>
+      <p v-if="isFirst" class="text-center font-semibold text-white">
+        {{ sectionDescription }}
+      </p>
+      <p v-else class="text-center font-semibold">
+        {{ sectionDescription }}
+      </p>
     </div>
     <div class="md:w-1/3">
       <btn
@@ -38,6 +44,10 @@ export default {
       type: String,
       default: '',
     },
+    sectionDescription: {
+      type: String,
+      default: '',
+    },
     isFirst: {
       type: Boolean,
       default: false,
@@ -53,14 +63,14 @@ export default {
   computed: {
     setSectionLabelSize() {
       if (this.isFirst) {
-        return 'h-4/6 text-5xl';
+        return 'h-72 mb-12 text-5xl flex justify-center flex-col bg-tilling bg-no-repeat bg-center';
       }
       return 'h-4/5 text-4xl';
     },
     setDivClass() {
-      if (this.isFirst) {
-        return 'h-5/6';
-      }
+      // if (this.isFirst) {
+      //   return 'h-5/6';
+      // }
       return 'h-96 my-12';
     },
   },

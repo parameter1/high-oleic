@@ -1,7 +1,7 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
-    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
-      <div class="p-4">
+    <div class="w-100%">
+      <div class="p-8 flex justify-between">
         <client-only>
           <page-header slot="placeholder" is-loading>
             Calculate Profit Potential
@@ -13,31 +13,35 @@
           <div class="flex flex-wrap mb-1">
             <btn
               class="shadow mr-3 mb-3"
-              :disabled="!hasToken"
-              @click="$router.push('/crop-comparison/create')"
-            >
-              Create New Scenario
-            </btn>
-            <site-link
-              class="shadow mr-3 mb-3"
-              color="secondary-3"
-              href="/profit-calculator-faq-03-12-20.pdf"
-              target="_blank"
-              rel="noopener"
-            >
-              Frequently Asked Questions
-            </site-link>
-            <site-link
-              class="shadow mb-3"
-              color="secondary-3"
+              color="logo-white-rd"
               href="https://www.youtube.com/watch?v=nEZzA42Wa2c"
               target="_blank"
               rel="noopener"
             >
-              Demonstration Video
-            </site-link>
+              How-To Video
+            </btn>
+            <btn
+              class="shadow mr-3 mb-3"
+              color="logo-white-rd"
+              href="/profit-calculator-faq-03-12-20.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              FAQ
+            </btn>
+            <btn
+              class="shadow mb-3"
+              color="logo-white-rd"
+              :disabled="!hasToken"
+              @click="$router.push('/crop-comparison/create')"
+            >
+              New Scenario
+            </btn>
           </div>
-
+        </client-only>
+      </div>
+      <div class="p-8 bg-gray-200">
+        <client-only>
           <div v-if="!hasToken">
             <p class="mb-4 text-lg font-medium text-logo-blue">
               How to get started:
@@ -100,7 +104,6 @@
 import AgViewSolutions from '../../components/ag-view-solutions.vue';
 import Alert from '../../components/common/alert.vue';
 import Btn from '../../components/common/button.vue';
-import SiteLink from '../../components/common/link.vue';
 import ListItem from '../../components/crop-comparison/list-item.vue';
 import PageHeader from '../../components/crop-comparison/page-header.vue';
 
@@ -112,7 +115,6 @@ export default {
     AgViewSolutions,
     Alert,
     Btn,
-    SiteLink,
     ListItem,
     PageHeader,
   },

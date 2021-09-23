@@ -1,9 +1,41 @@
 const ui = require('@tailwindcss/ui');
+const plugin = require('tailwindcss/plugin');
 const defaultTheme = require('tailwindcss/defaultTheme');
+
+const urwDinSemiCon = {
+  fontFamily: 'urw-din-semi-condensed',
+};
 
 module.exports = {
   plugins: [
     ui({ layout: 'sidebar' }),
+    plugin(({ addBase }) => {
+      addBase({
+        h1: {
+          ...urwDinSemiCon,
+          fontSize: '48px',
+          lineHeight: '1.25em',
+        },
+        h2: {
+          ...urwDinSemiCon,
+          fontSize: '36px',
+        },
+        h3: {
+          ...urwDinSemiCon,
+          fontSize: '24px',
+        },
+        p: { fontSize: '16px', fontWeight: 'initial' },
+      });
+    }),
+    plugin(({ addUtilities }) => {
+      const newUtilities = {
+        '.text-shadow-dark': {
+          'text-shadow': '3px 3px 6px #342e1f',
+        },
+      };
+
+      addUtilities(newUtilities);
+    }),
   ],
   theme: {
     extend: {
@@ -11,16 +43,17 @@ module.exports = {
         print: { raw: 'print' },
       },
       fontFamily: {
-        sans: ['Calibri', ...defaultTheme.fontFamily.sans],
+        sans: ['urw-din-regular', ...defaultTheme.fontFamily.sans],
         serif: ['Cambria', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         // logo colors
         'logo-green': '#79863c',
-        'logo-blue': '#253746',
-        'logo-brown': '#6c571b',
-        'logo-yellow': '#f2cd00',
+        'logo-blue': '#213748',
+        'logo-brown': '#705705',
+        'logo-yellow': '#F8CD00',
         'logo-gold': '#c5a900',
+        'logo-white': '#ffffff',
         // primary accent colors
         'primary-1': '#342e1f',
         'primary-2': '#6c5a23',
@@ -62,6 +95,11 @@ module.exports = {
       },
       fontSize: {
         xxs: '.5rem',
+      },
+      backgroundImage: {
+        'home-banner': "url('https://img.highoilsoy.com/home-banner.jpg?w=2000 2x')",
+        'knowledge-banner': "url('https://img.highoilsoy.com/knowledge-banner.jpg?w=2000 2x')",
+        'why-banner': "url('https://img.highoilsoy.com/why-banner.jpg?w=2000 2x')",
       },
     },
   },

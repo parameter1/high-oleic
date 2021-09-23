@@ -9,6 +9,8 @@ export const LOAD_ARTICLE = gql`
   query LoadArticle($slug: String!) {
     article: articleSlug(input: { slug: $slug }) {
       id
+      image
+      teaser
       title
       body
     }
@@ -20,6 +22,7 @@ export const LOAD_ARTICLES_FOR_SECTION = gql`
     articles: articlesForSection(input: { alias: $alias }) {
       id
       title
+      image
       slug
       teaser
     }

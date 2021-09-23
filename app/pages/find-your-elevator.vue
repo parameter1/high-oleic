@@ -1,11 +1,12 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
-    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
-      <div class="p-4">
+    <div class="">
+      <div class="p-8">
         <page-header>
           Find Grain Elevators Near You
         </page-header>
-
+      </div>
+      <div class="p-8 bg-gray-200">
         <form class="max-w-xs mb-8" @submit.prevent="lookupElevators">
           <form-group
             id="elevator-postal-code"

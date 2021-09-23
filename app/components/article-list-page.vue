@@ -1,10 +1,7 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
-    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
+    <div class="max-w-6xl mx-auto sm:px-6 md:px-8">
       <div class="p-4">
-        <h1 class="text-3xl font-semibold mb-8">
-          {{ title }}
-        </h1>
         <article-grid-list :alias="alias">
           <template #grid-before>
             <slot name="grid-before" />
@@ -27,10 +24,6 @@ export default {
   },
 
   props: {
-    title: {
-      type: String,
-      required: true,
-    },
     path: {
       type: String,
       required: true,
@@ -41,12 +34,6 @@ export default {
     alias() {
       return this.path.replace(/^\//, '');
     },
-  },
-
-  head() {
-    return {
-      title: this.title,
-    };
   },
 };
 </script>

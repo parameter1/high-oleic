@@ -1,22 +1,28 @@
 <template>
   <nav :class="classes">
-    <nav-item-link
+    <div
       v-for="(item, index) in navItems"
       :key="index"
-      :to="item.to"
-      :exact="item.exact"
-      :icon-component="item.icon"
-      :size="size"
-      @click="$emit('nav-item-click', { item, event: $event })"
+      class="p-4 menu-item-link-wrapper"
     >
-      {{ item.label }}
-      <span
-        v-if="item.subLabel"
-        class="text-xs text-black italic"
+      <nav-item-link
+        :to="item.to"
+        :exact="item.exact"
+        :icon-component="item.icon"
+        :size="size"
+        @click="$emit('nav-item-click', { item, event: $event })"
       >
-        {{ item.subLabel }}
-      </span>
-    </nav-item-link>
+        <div class="menu-item-link-contents flex flex-col">
+          {{ item.label }}
+          <span
+            v-if="item.subLabel"
+            class="text-xs text-black italic"
+          >
+            {{ item.subLabel }}
+          </span>
+        </div>
+      </nav-item-link>
+    </div>
   </nav>
 </template>
 
@@ -40,7 +46,7 @@ export default {
   data: () => ({
     navItems,
     classDefs: {
-      common: ['px-6', 'space-y-1'],
+      common: ['px-4', 'menu-item'],
       desktop: ['flex-1'],
       mobile: [],
     },

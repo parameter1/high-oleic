@@ -11,3 +11,38 @@
 .prose a:hover {
   text-decoration: underline !important;
 }
+
+.menu-item-link {
+  font-family: 'urw-din-semi-condensed';
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: italic;
+  transform: skewX(-15deg);
+}
+.menu-item-link-wrapper {
+  border-bottom: solid 1px #E4E6E9;
+}
+.menu-item-link-contents {
+  transform: skewX(15deg);
+}
+.manage-profile {
+  background-color: #253746;
+}
+
+.manage-profile .menu-item-link,
+.manage-profile .menu-item-link:hover {
+  color: #fff;
+  background-color: #253746;
+  border-bottom: none;
+}
+
+.intro-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  max-width: initial;
+  height: 288px;
+
+}

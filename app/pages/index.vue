@@ -1,41 +1,27 @@
 <template>
-  <div class="pt-2 pb-6 md:py-6 overflow-y-scroll">
-    <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
-      <div class="p-4">
-        <div class="h-screen">
-          <!-- Replace with your content -->
-          <home-page-block
-            section-label="Why High Oleic?"
-            button-label="Learn More"
-            :is-first="isFirst"
-            link-location="/why-high-oleic"
-          />
-          <div class="border-secondary-5-300 border-b-2" />
-          <home-page-block
-            section-label="Calculate"
-            button-label="Profit Potential Calculator"
-            link-location="/crop-comparison"
-          />
-          <div class="border-secondary-5-300 border-b-2" />
-          <home-page-block
-            section-label="Find Your Seed"
-            button-label="Find Your Seed"
-            link-location="/find-your-seed"
-          />
-          <div class="border-secondary-5-300 border-b-2" />
-          <div class="pt-10">
-            <h2 class="text-3xl font-semibold mb-4">
-              Knowledge Center
-            </h2>
-            <article-grid-list alias="knowledge-center" />
+  <div class="pb-6 overflow-y-scroll">
+    <page-intro-block
+      section-label="Grow High Oleic Soy"
+      section-tagline="The Yeild You Want. The Demand You Need."
+      background-image-class="bg-home-banner"
+      :section-text="sectionText"
+      button-label="FIND OUT WHY"
+      link-location="/why-high-oleic"
+    />
+    <div class="pt-2 pb-6 md:py-6">
+      <div class="max-w-4xl mx-auto sm:px-6 md:px-8">
+        <div class="p-4">
+          <div :class="containerClasses">
+            <home-page-article-block
+              v-for="article in articles"
+              :key="article.id"
+              :image="article.image"
+              :title="article.title"
+              :teaser="article.teaser"
+              :button-label="article.buttonLabel"
+              :href="article.slug"
+            />
           </div>
-          <div class="pt-10">
-            <h2 class="text-3xl font-semibold mb-4">
-              Market Analysis
-            </h2>
-            <article-grid-list alias="market-analysis" />
-          </div>
-          <!-- /End replace -->
         </div>
       </div>
     </div>
@@ -43,17 +29,50 @@
 </template>
 
 <script>
-import HomePageBlock from '../components/common/home-page-block.vue';
-import ArticleGridList from '../components/article-grid-list.vue';
+import PageIntroBlock from '../components/common/page-intro-block.vue';
+import HomePageArticleBlock from '../components/common/home-page-article-block.vue';
 
 export default {
   components: {
-    ArticleGridList,
-    HomePageBlock,
+    HomePageArticleBlock,
+    PageIntroBlock,
   },
 
   data: () => ({
     isFirst: true,
+    containerClasses: [
+      'grid',
+      'grid-cols-1',
+      'md:grid-cols-3',
+      'gap-4',
+    ],
+    sectionText: 'Today\'s High oleic soybeans — those with higher oleic acid content that eliminates the need for hydrogenation, thus making them a healthier alternative to conventional soybeans when processed for vegetable oil — fill the supply needs, with the required attributes',
+    articles: [
+      {
+        id: 'highOleic',
+        image: 'https://img.highoilsoy.com/profit-home.jpg?fit=crop&w=300&h=200',
+        title: 'High Oleic Profit Potential Calculator',
+        teaser: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incidunt.',
+        buttonLabel: 'Access Tool',
+        slug: '/crop-comparison',
+      },
+      {
+        id: 'knowledge',
+        image: 'https://img.highoilsoy.com/knowledge-home.jpg?fit=crop&w=300&h=200',
+        title: 'Knowledge Center',
+        teaser: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incidunt.',
+        buttonLabel: 'Read the Latest',
+        slug: '/knowledge-center',
+      },
+      {
+        id: 'findElevator',
+        image: 'https://img.highoilsoy.com/elevator-home.jpg?fit=crop&w=300&h=200',
+        title: 'Find a High Oleic Elevator Near You',
+        teaser: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incidunt.',
+        buttonLabel: 'Find Elevators',
+        slug: '/find-your-elevator',
+      },
+    ],
   }),
 
   head: {
