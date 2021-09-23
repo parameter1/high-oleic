@@ -52,6 +52,7 @@ module.exports = {
         'logo-brown': '#705705',
         'logo-yellow': '#F8CD00',
         'logo-gold': '#c5a900',
+        'logo-white': '#ffffff',
         // primary accent colors
         'primary-1': '#342e1f',
         'primary-2': '#6c5a23',
