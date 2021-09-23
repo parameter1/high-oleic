@@ -30,14 +30,10 @@
 
 <script>
 import PageIntroBlock from '../components/common/page-intro-block.vue';
-import HomePageBlock from '../components/common/home-page-block.vue';
 import HomePageArticleBlock from '../components/common/home-page-article-block.vue';
-import ArticleGridList from '../components/article-grid-list.vue';
 
 export default {
   components: {
-    ArticleGridList,
-    HomePageBlock,
     HomePageArticleBlock,
     PageIntroBlock,
   },
