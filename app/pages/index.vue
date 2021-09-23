@@ -4,7 +4,7 @@
       section-label="Grow High Oleic Soy"
       section-tagline="The Yeild You Want. The Demand You Need."
       background-image-class="bg-home-banner"
-      section-text="Today's High oleic soybeans — those with higher oleic acid content that eliminates the need for hydrogenation, thus making them a healthier alternative to conventional soybeans when processed for vegetable oil — fill the supply needs, with the required attributes"
+      :section-text="sectionText"
       button-label="FIND OUT WHY"
       link-location="/why-high-oleic"
     />
@@ -46,6 +46,7 @@ export default {
       'md:grid-cols-3',
       'gap-4',
     ],
+    sectionText: 'Today\'s High oleic soybeans — those with higher oleic acid content that eliminates the need for hydrogenation, thus making them a healthier alternative to conventional soybeans when processed for vegetable oil — fill the supply needs, with the required attributes',
     articles: [
       {
         id: 'highOleic',

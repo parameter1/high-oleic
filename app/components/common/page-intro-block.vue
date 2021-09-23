@@ -5,10 +5,10 @@
         <img v-if="image" :src="image">
       </div>
       <div class="test h-full relative top right left flex justify-center flex-col">
-        <h1 class="font-bold mb-3 mb:mb-6 text-3xl md:text-5xl px-6 italic text-white text-center text-shadow-dark">
+        <h1 :class="titleClasses">
           {{ sectionLabel }}
         </h1>
-        <p v-if="sectionTagline" class="font-bold md:text-sm px-6 text-center text-white text-shadow-dark">
+        <p v-if="sectionTagline" :class="sectionTaglineClasses">
           {{ sectionTagline }}
         </p>
       </div>
@@ -69,6 +69,8 @@ export default {
   },
   data: () => ({
     isBlock: false,
+    titleClasses: 'font-bold mb-3 mb:mb-6 text-3xl md:text-5xl px-6 italic text-white text-center text-shadow-dark',
+    sectionTaglineClasses: 'font-bold md:text-sm px-6 text-center text-white text-shadow-dark',
   }),
   computed: {
     setSectionLabelSize() {
