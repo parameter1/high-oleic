@@ -1,12 +1,15 @@
 <template>
   <div :class="setDivClass">
     <div :class="setSectionLabelSize">
-      <h1 class="font-bold italic text-white text-center text-shadow-dark">
-        {{ sectionLabel }}
-      </h1>
-      <p v-if="sectionTagline" class="font-bold text-center text-white text-shadow-dark">
-        {{ sectionTagline }}
-      </p>
+      <!-- <div class="h-full flex justify-center flex-col bg-gray-500 bg-opacity-50"> -->
+      <div class="h-full flex justify-center flex-col">
+        <h1 class="font-bold italic text-white text-center text-shadow-dark">
+          {{ sectionLabel }}
+        </h1>
+        <p v-if="sectionTagline" class="font-bold text-center text-white text-shadow-dark">
+          {{ sectionTagline }}
+        </p>
+      </div>
     </div>
     <p v-if="sectionText" class="text-sm w-4/6 mb-6 mx-auto">
       {{ sectionText }}
@@ -63,7 +66,7 @@ export default {
   }),
   computed: {
     setSectionLabelSize() {
-      return `h-72 mb-6 flex justify-center flex-col ${this.backgroundImageClass} bg-cover bg-center`;
+      return `h-72 mb-6 ${this.backgroundImageClass} bg-cover bg-center`;
     },
     setDivClass() {
       // if (this.isFirst) {
