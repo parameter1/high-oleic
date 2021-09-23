@@ -1,6 +1,6 @@
 export default [
   {
-    label: 'Profit Calculate',
+    label: 'Profit Calculator',
     subLabel: 'Powered by Ag View Solutions',
     to: '/crop-comparison',
   },
