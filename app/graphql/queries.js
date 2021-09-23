@@ -9,6 +9,7 @@ export const LOAD_ARTICLE = gql`
   query LoadArticle($slug: String!) {
     article: articleSlug(input: { slug: $slug }) {
       id
+      image
       title
       body
     }
