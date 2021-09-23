@@ -20,3 +20,14 @@
   font-style: italic;
   border-bottom: solid 1px #E4E6E9;
 }
+.manage-profile {
+  background-color: #253746;
+}
+
+.manage-profile .menu-item-link,
+.manage-profile .menu-item-link:hover {
+  line-height: 32px;
+  color: #fff;
+  background-color: #253746;
+  border-bottom: none;
+}
