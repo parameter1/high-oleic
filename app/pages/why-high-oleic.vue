@@ -2,7 +2,7 @@
   <div class="pb-6">
     <page-intro-block
       :section-label="title"
-      section-tagline="The Yeild You Want. The Demand You Need."
+      section-tagline="The Yield You Want. The Demand You Need."
       background-image-class="bg-why-banner"
     />
     <article-list-page :path="$route.path" />
