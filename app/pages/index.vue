@@ -2,7 +2,7 @@
   <div class="pb-6 overflow-y-scroll">
     <page-intro-block
       section-label="Grow High Oleic Soy"
-      section-tagline="The Yeild You Want. The Demand You Need."
+      section-tagline="The Yield You Want. The Demand You Need."
       background-image-class="bg-home-banner"
       :section-text="sectionText"
       button-label="FIND OUT WHY"
