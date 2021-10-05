@@ -6,11 +6,13 @@
           <page-header slot="placeholder" is-loading>
             Calculate Profit Potential
           </page-header>
-          <page-header :is-loading="isLoading">
-            Calculate Profit Potential
-          </page-header>
-
-          <div class="flex flex-wrap mb-1">
+          <div class="flex flex-col justify-start" :is-loading="isLoading">
+            <page-header>
+              Calculate Profit Potential
+            </page-header>
+            <div v-html="sectionText" />
+          </div>
+          <div class="flex flex-wrap self-start mb-1">
             <btn
               class="shadow mr-3 mb-3"
               color="logo-white-rd"
@@ -136,6 +138,7 @@ export default {
   },
 
   data: () => ({
+    sectionText: '<p>Decide for yourself what your farm’s profit potential could be by using our Profit Manager tool.</p><p>Follow the instructions below to build your customized profit profile.</p>',
     createOpen: false,
     error: null,
     isLoading: false,

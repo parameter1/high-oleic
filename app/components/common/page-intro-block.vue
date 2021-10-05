@@ -13,9 +13,7 @@
         </p>
       </div>
     </div>
-    <p v-if="sectionText" class="text-sm w-4/6 mb-6 mx-auto text-center">
-      {{ sectionText }}
-    </p>
+    <div v-if="sectionText" class="text-sm w-4/6 mb-6 mx-auto text-center" v-html="sectionText" />
     <div v-if="linkLocation" class="w-100% flex justify-center">
       <btn
         class="w-auto"
