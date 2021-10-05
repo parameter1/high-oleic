@@ -3,6 +3,7 @@
     <page-intro-block
       :section-label="title"
       background-image-class="bg-home-banner"
+      :section-text="sectionText"
     />
     <article-list-page :path="$route.path" />
   </div>
@@ -24,6 +25,10 @@ export default {
       default: 'Market Analysis',
     },
   },
+
+  data: () => ({
+    sectionText: '<p>The time has never been better to adopt high oleic soybeans production. The market opportunity is real, it’s domestic and is happening right now!</p>',
+  }),
 
   head() {
     return {

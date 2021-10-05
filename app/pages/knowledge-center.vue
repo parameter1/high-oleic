@@ -4,6 +4,7 @@
       :section-label="title"
       background-image-class="bg-knowledge-banner"
       section-tagline="Knowledge is power"
+      :section-text="sectionText"
     />
     <article-list-page :path="$route.path" />
   </div>
@@ -25,6 +26,10 @@ export default {
       default: 'Knowledge Center',
     },
   },
+
+  data: () => ({
+    sectionText: '<p>Knowledge is power.  Put the power of the latest research, varietal performance information, breaking news and much more, at your fingertips to help you make key management decisions.</p>',
+  }),
 
   head() {
     return {

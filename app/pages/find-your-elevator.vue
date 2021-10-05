@@ -2,9 +2,12 @@
   <div class="pt-2 pb-6 md:py-6">
     <div class="">
       <div class="p-8">
-        <page-header>
-          Find Grain Elevators Near You
-        </page-header>
+        <div class="flex flex-col justify-start" >
+          <page-header>
+            Find Grain Elevators Near You
+          </page-header>
+          <div v-html="sectionText" />
+        </div>
       </div>
       <div class="p-8 bg-gray-200">
         <form class="max-w-xs mb-8" @submit.prevent="lookupElevators">
@@ -89,6 +92,7 @@ export default {
   },
 
   data: () => ({
+    sectionText: '<p>Not sure where to market your high-oleic soybean varieties?</p><p>Find the answer by using our locator tool.</p>',
     currentSearchParams: {
       maxDistance: null,
       postalCode: null,
