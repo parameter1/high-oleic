@@ -99,7 +99,7 @@ const articleMap = [
   },
   {
     title: 'Soft IP Program',
-    image: 'https://img.highoilsoy.com/knowledge-2.jpg',
+    image: 'https://img.highoilsoy.com/knowledge-5.jpg',
     teaser: 'A soft IP program allows some room for error at the farm level.',
     body: `
       <p>A soft IP program allows some room for error at the farm level. The contracts are based on the commitment from the grower to plant a specific Plenish variety for 2021, so the requirements at delivery are somewhat lenient compared to traditional IP programs. High oleic oil content in soybeans is a genetic trait, meaning there’s not the variety of oil output compared to other crop output traits, so meeting the oil requirements is less restrictive.</p>
