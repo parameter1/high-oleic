@@ -48,6 +48,26 @@ const articleMap = [
     sections: ['why-high-oleic', 'market-analysis'],
   },
   {
+    title: 'Top 10 Reasons To Grow High Oleic Soybeans',
+    image: 'https://img.highoilsoy.com/top-10-reasons.jpeg',
+    teaser: 'There is no better time than the present to add High Oleic Soybeans (HOSoy) to your crop management plan.',
+    body: `
+    <p>There is no better time than the present to add High Oleic Soybeans (HOSoy) to your crop management plan. However, if you're still not sure why you should plant HOSoy varieties, this list of the "Top 10 Reasons to Grow High Oleic Soybeans" is a good place to start.</p>
+    <ol>
+    <li><b>It's easier than you think - </b>There are no significiant agronomic changes needed when planting high oleic soybeans.</li>
+    <li><b>No yield drag - </b>Genetics have improved, and yields are on par with traditional soybeans.</li>
+    <li><b>Domestic demand - </b>It's project that more than 1 million acres of high oleic soybeans will need to be planted by 2022 to meet food processor demands</li>
+    <li><b>Premium advantage - </b>Add more profit to your bottom line with a high oleic premium of up to $1/bushel, with the same yields as traditional soybeans.</li>
+    <li><b>Double-crop opportunity — </b>Depending on where you farm, high oleic soybeans are an ideal option in a double-cropping management strategy.</li>
+    <li><b>Easy-to-mange IP protocols - </b>Whether you use on-farm storage or direct delivery to the elevator, keeping your high oleic soybeans safe and segregated it simple.</li>
+    <li><b>Seed availabe and more coming! - </b>You will have more HOSoy varieties and suppliers to choose from in time for the 2022 planting season.</li>
+    <li><b>Realize profit potential (calculator) - </b>Visit <a href="https://soyinnovation.com/calculator" target="_blank" rel="noopener">soyinnovation.com/calculator</a> to compare the profit potential of raising HOSoy.</li>
+    <li><b>Finding a market - </b>As demand for your HOSoy crop grows, so do your options to market those beans. Visit <a href="http://soyinnovation.com/location" target="_blank" rel="noopener">soyinnovation.com/location</a> to find the elevator nearest you.</li>
+    <li><b>Available pest control strategies - </b>Visit <a href="https://iwilltakeaction.com/" target="_blank" rel="noopener">iwilltakeaction.com</a> for weed, insect and disease management strategies for HOSoy beans.</li>
+    </ol>`,
+    sections: ['why-high-oleic'],
+  },
+  {
     title: 'Marketing and Logistics',
     image: 'https://img.highoilsoy.com/knowledge-1.jpg',
     teaser: 'Marketing and logistics options exist throughout the trade area for 2021.',
