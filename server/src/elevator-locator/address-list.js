@@ -504,6 +504,8 @@ module.exports = [
     countryCode: 'USA',
     contactName: '',
     phoneNumber: '',
+    lat: 39.91998000000000,
+    long: -86.28181000000000,
   },
   {
     affiliate: 'Bunge',
@@ -515,6 +517,8 @@ module.exports = [
     countryCode: 'USA',
     contactName: '',
     phoneNumber: '419-497-2101',
+    lat: 41.29317000000000,
+    long: -84.76249000000000,
   },
   {
     affiliate: 'Bunge',
@@ -526,6 +530,8 @@ module.exports = [
     countryCode: 'USA',
     contactName: 'Jon Etzler',
     phoneNumber: '419-622-6151',
+    lat: 38.93805000000000,
+    long: -83.57044000000000,
   },
   {
     affiliate: 'Bunge',
@@ -537,6 +543,8 @@ module.exports = [
     countryCode: 'USA',
     contactName: 'David Schnepf',
     phoneNumber: '765-282-6226',
+    lat: 40.339460,
+    long: -85.354270,
   },
 
   {
