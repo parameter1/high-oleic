@@ -27,7 +27,7 @@ export default {
   },
 
   data: () => ({
-    sectionText: '<p>The time has never been better to adopt high oleic soybeans production. The market opportunity is real, it’s domestic and is happening right now!</p>',
+    sectionText: '<p>The time has never been better to adopt high oleic soybeans production. The market opportunity is real, it’s domestic and it’s happening right now!</p>',
   }),
 
   head() {

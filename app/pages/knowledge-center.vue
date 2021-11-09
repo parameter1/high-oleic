@@ -28,7 +28,7 @@ export default {
   },
 
   data: () => ({
-    sectionText: '<p>Knowledge is power.  Put the power of the latest research, varietal performance information, breaking news and much more, at your fingertips to help you make key management decisions.</p>',
+    sectionText: '<p>Put the power of the latest research, seed information and breaking news to work, helping you make more informed management decisions</p>',
   }),
 
   head() {
