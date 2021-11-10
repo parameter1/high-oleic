@@ -28,7 +28,7 @@ export default {
   },
 
   data: () => ({
-    sectionText: '<p class="mb-6">Why High-oleic? Because high-oleic soybeans present producers with an immediate opportunity to make money without significantly changing how they farm.</p><p>This site navigates you through the pathway to success with high-oleic soybeans while debunking myths on adding high-oleic to your farm’s overall management strategy.</p>',
+    sectionText: '<p class="mb-6">Why high-oleic? Because high-oleic soybeans present producers with an immediate opportunity to make money without significantly changing how they farm.</p><p>This site navigates you through the pathway to success with high-oleic soybeans while debunking myths on adding high-oleic to your farm’s overall management strategy.</p>',
   }),
 
   head() {
