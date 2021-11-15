@@ -16,7 +16,7 @@
             <btn
               class="shadow mr-3 mb-3"
               color="logo-white-rd"
-              href="https://www.youtube.com/watch?v=nEZzA42Wa2c"
+              href="https://img.highoilsoy.com/Profit+Calculator+Tool+How+To.mp4"
               target="_blank"
               rel="noopener"
             >
