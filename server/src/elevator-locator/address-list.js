@@ -500,7 +500,7 @@ module.exports = [
     street: '',
     city: 'McGrawsville',
     regionCode: 'IN',
-    postalCode: 99999, // Placeholder
+    postalCode: 46914, // Placeholder
     countryCode: 'USA',
     contactName: '',
     phoneNumber: '',
@@ -513,7 +513,7 @@ module.exports = [
     street: '',
     city: 'Hicksville',
     regionCode: 'OH',
-    postalCode: 99999, // Placeholder
+    postalCode: 43526, // Placeholder
     countryCode: 'USA',
     contactName: '',
     phoneNumber: '419-497-2101',
@@ -526,7 +526,7 @@ module.exports = [
     street: '',
     city: 'Scott',
     regionCode: 'OH',
-    postalCode: 99999, // Placeholder
+    postalCode: 45886, // Placeholder
     countryCode: 'USA',
     contactName: 'Jon Etzler',
     phoneNumber: '419-622-6151',
@@ -539,7 +539,7 @@ module.exports = [
     street: '',
     city: 'Eaton',
     regionCode: 'IN',
-    postalcode: 99999, // Placeholder
+    postalcode: 47338, // Placeholder
     countryCode: 'USA',
     contactName: 'David Schnepf',
     phoneNumber: '765-282-6226',
