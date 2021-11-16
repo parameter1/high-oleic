@@ -1,7 +1,7 @@
 <template>
   <div class="pt-2 pb-6 md:py-6">
     <div class="w-100%">
-      <div class="p-8 flex justify-between">
+      <div class="p-8 flex justify-between flex-col md:flex-row">
         <client-only>
           <page-header slot="placeholder" is-loading>
             Calculate Profit Potential
@@ -12,33 +12,22 @@
             </page-header>
             <div v-html="sectionText" />
           </div>
-          <div class="flex flex-wrap self-start mb-1">
-            <btn
-              class="shadow mr-3 mb-3"
-              color="logo-white-rd"
-              href="https://img.highoilsoy.com/Profit+Calculator+Tool+How+To.mp4"
-              target="_blank"
-              rel="noopener"
-            >
-              How-To Video
-            </btn>
-            <btn
-              class="shadow mr-3 mb-3"
-              color="logo-white-rd"
-              href="/profit-calculator-faq-03-12-20.pdf"
-              target="_blank"
-              rel="noopener"
-            >
-              FAQ
-            </btn>
-            <btn
-              class="shadow mb-3"
-              color="logo-white-rd"
-              :disabled="!hasToken"
-              @click="$router.push('/crop-comparison/create')"
-            >
-              New Scenario
-            </btn>
+          <div class="flex flex-wrap self-start mb-1 pt-8 md:pt-0 ">
+            <!-- <a href="/article/how-to-use-the-profit-calculator-tool">
+              <btn class="shadow mr-3 mb-3" color="logo-white-rd">
+                How-To Video
+              </btn>
+            </a> -->
+            <a href="/profit-calculator-faq-03-12-20.pdf" target="_blank">
+              <btn class="shadow mr-3 mb-3" color="logo-white-rd">
+                FAQ
+              </btn>
+            </a>
+            <a :disabled="!hasToken" @click="$router.push('/crop-comparison/create')">
+              <btn class="shadow mb-3" color="logo-white-rd">
+                New Scenario
+              </btn>
+            </a>
           </div>
         </client-only>
       </div>
@@ -63,6 +52,13 @@
               Within it, click "Login to High Oil Soy."
             </p>
             <p>Step 4: Create your personalized scenario.</p>
+            <p class="mb-4 mt-8 text-lg font-medium text-logo-blue">
+              How-To Video:
+            </p>
+            <video width="100%" height="auto" controls>
+              <source src="https://img.highoilsoy.com/Profit+Calculator+Tool+How+To.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div v-else>
             <!-- Query error -->
