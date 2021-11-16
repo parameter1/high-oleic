@@ -97,9 +97,9 @@ module.exports = {
         xxs: '.5rem',
       },
       backgroundImage: {
-        'home-banner': "url('https://img.highoilsoy.com/home-banner.jpg?w=2000 2x')",
-        'knowledge-banner': "url('https://img.highoilsoy.com/knowledge-banner.jpg?w=2000 2x')",
-        'why-banner': "url('https://img.highoilsoy.com/why-banner.jpg?w=2000 2x')",
+        'home-banner': "url('https://img.highoilsoy.com/home-banner.jpg?w=2000&h=400 2x')",
+        'knowledge-banner': "url('https://img.highoilsoy.com/knowledge-banner.jpg?w=2000&h=400 2x')",
+        'why-banner': "url('https://img.highoilsoy.com/why-banner.jpg?w=2000&h=400 2x')",
       },
     },
   },
