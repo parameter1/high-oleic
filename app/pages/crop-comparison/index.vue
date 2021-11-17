@@ -13,11 +13,11 @@
             <div v-html="sectionText" />
           </div>
           <div class="flex flex-wrap self-start mb-1 pt-8 md:pt-0 ">
-            <!-- <a href="/article/how-to-use-the-profit-calculator-tool">
+            <a href="/profit-calculator-tool-tutorial.pdf" target="_blank">
               <btn class="shadow mr-3 mb-3" color="logo-white-rd">
-                How-To Video
+                Tutorial
               </btn>
-            </a> -->
+            </a>
             <a href="/profit-calculator-faq-03-12-20.pdf" target="_blank">
               <btn class="shadow mr-3 mb-3" color="logo-white-rd">
                 FAQ
