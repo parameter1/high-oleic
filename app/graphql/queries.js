@@ -23,6 +23,8 @@ export const LOAD_ARTICLES_FOR_SECTION = gql`
       id
       title
       image
+      href
+      target
       slug
       teaser
     }
