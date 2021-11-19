@@ -197,7 +197,7 @@ const articleMap = [
     sections: ['knowledge-center'],
   },
   {
-    title: 'Double Crop Opportunities',
+    title: 'Double-Crop Opportunities',
     image: 'https://img.highoilsoy.com/doublecrop-hosoy-rapid-expansion-0921-revisedV2.jpg',
     href: '/doublecrop-hosoy-rapid-expansion-0921-revisedV2.pdf',
     target: '_blank',
