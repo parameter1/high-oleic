@@ -18,6 +18,10 @@ type Article {
   title: String!
   "The article teaser."
   image: String
+  "The article href."
+  href: String
+  "The article href target."
+  target: String
   "The article image."
   teaser: String
   "The article body."

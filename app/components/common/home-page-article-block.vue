@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white shadow flex flex-col h-full">
-    <nuxt-link :to="href">
+    <nuxt-link :to="href" :target="target">
       <img class="w-full h-auto" :src="image">
     </nuxt-link>
     <div class="p-3 flex flex-col h-full">
@@ -41,6 +41,10 @@ export default {
     href: {
       type: String,
       required: true,
+    },
+    target: {
+      type: String,
+      default: null,
     },
     teaser: {
       type: String,

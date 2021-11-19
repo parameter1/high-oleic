@@ -7,7 +7,8 @@
       :title="article.title"
       :image="getImagePath(article.image)"
       :teaser="article.teaser"
-      :href="`/article/${article.slug}`"
+      :href="(article.href) ? article.href : `/article/${article.slug}`"
+      :target="(article.target) ? article.target : null"
     />
     <slot name="grid-after" />
   </div>
