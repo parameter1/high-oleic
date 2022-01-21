@@ -46,7 +46,7 @@ export default {
       'md:grid-cols-3',
       'gap-4',
     ],
-    sectionText: 'Today\'s High oleic soybeans — those with higher oleic acid content that eliminates the need for hydrogenation, thus making them a healthier alternative to conventional soybeans when processed for vegetable oil — fill the supply needs, with the required attributes',
+    sectionText: 'Today\'s high oleic soybeans — those with higher oleic acid content that eliminates the need for hydrogenation, thus making them a healthier alternative to conventional soybeans when processed for vegetable oil — fill the supply needs, with the required attributes',
     articles: [
       {
         id: 'highOleic',
