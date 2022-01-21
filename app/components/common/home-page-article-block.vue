@@ -5,7 +5,7 @@
     </nuxt-link>
     <div class="p-3 flex flex-col h-full">
       <h3 class="font-bold italic text-logo-blue text-center flex-grow">
-        <nuxt-link :to="href">
+        <nuxt-link :to="href" :target="target">
           {{ title }}
         </nuxt-link>
       </h3>
@@ -62,7 +62,11 @@ export default {
 
   methods: {
     goToArticle() {
-      this.$router.push(this.href);
+      if (this.href.match(/\.pdf$/)) {
+        window.open(this.href, '_blank');
+      } else {
+        this.$router.push(this.href);
+      }
     },
   },
 };
