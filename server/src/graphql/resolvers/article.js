@@ -194,7 +194,7 @@ const articleMap = [
     image: 'https://img.highoilsoy.com/doublecrop-hosoy-rapid-expansion-0921-revisedV2.jpg',
     href: '/doublecrop-hosoy-rapid-expansion-0921-revisedV2.pdf',
     target: '_blank',
-    teaser: 'Consider high oleic soybeans in a double crop system to maximize profit potential',
+    teaser: 'High oleic soybeans provide opportunity in a double-crop system.',
     body: `
       <p>Consider high oleic soybeans in a double crop system to maximize profit potential</p>
     `,
