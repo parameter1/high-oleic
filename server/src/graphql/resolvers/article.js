@@ -184,16 +184,9 @@ const articleMap = [
   {
     title: 'Weed Control',
     image: 'https://img.highoilsoy.com/knowledge-3.jpg',
+    href: '/WeedControl.pdf',
+    target: '_blank',
     teaser: 'Weed control is an important consideration for any crop production decision and there are options with HO Soybeans.',
-    body: `
-      <p>Weed control is an important consideration for any crop production decision and there are options with HO Soybeans. In fact, it is a major area where high oleic soybeans programs have improved the most in the last seven years.</p>
-      <p>Leading up to the 2021 growing season, soybean specialists in the Delmarva Peninsula estimated around one third of all soybean farmers apply an effective pre‐emergence herbicide, and many of those use lower‐cost options that typically lack residual efficacy. Agronomists recommend not only applying a pre‐emergence product, but also rotating products to mix up the modes of action and prevent development of herbicide resistance.<sup>3</sup></p>
-      <p>The combination of high‐performance output traits and these crop performance attributes make HO soybeans competitive with conventional varieties from a yield potential standpoint, and with maturities ranging from 2.1 to 4.8, can accommodate growers in key growth geographies for HO soybeans moving into the 2022 growing season and beyond.</p>
-      <blockquote>Agronomists recommend not only applying a pre‐emergence product, but also rotating products to mix up the modes of action and prevent development of herbicide resistance.</blockquote>
-      <p>As for potential drift, farmers growing HO Soybean varieties are encouraged to talk to their neighbors and local applicators about their plans to produce varieties that may be damaged by certain herbicides.</p>
-      <p>Farmers can also register their non‐herbicide resistant fields at <a href="https://www.driftwatch.org/" target="_blank" rel="noopener">www.driftwatch.org</a> to help local applicators identify potential hazards of applying chemicals in certain conditions. From the Driftwatch.org web site:</p>
-      <p><em>This DriftWatch registry tool is meant to help pesticide applicators and specialty crop growers communicate more effectively to promote awareness and stewardship activities to help prevent and manage drift effects. Our data set is overseen by state‐ appointed stewards who verify each area submitted to the registry. The boundaries on the map are not property lines, but user‐submitted specialty site designations.</em></p>
-    `,
     sections: ['knowledge-center'],
   },
   {
@@ -201,10 +194,7 @@ const articleMap = [
     image: 'https://img.highoilsoy.com/doublecrop-hosoy-rapid-expansion-0921-revisedV2.jpg',
     href: '/doublecrop-hosoy-rapid-expansion-0921-revisedV2.pdf',
     target: '_blank',
-    teaser: 'Consider high oleic soybeans in a double crop system to maximize profit potential',
-    body: `
-      <p>Consider high oleic soybeans in a double crop system to maximize profit potential</p>
-    `,
+    teaser: 'High oleic soybeans provide opportunity in a double-crop system.',
     sections: ['why-high-oleic'],
   },
 ].reduce((map, article) => {
