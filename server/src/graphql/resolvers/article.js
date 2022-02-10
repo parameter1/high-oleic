@@ -76,12 +76,7 @@ const articleMap = [
     teaser: 'Marketing and logistics options exist throughout the trade area for 2021.',
     body: `
       <p>Marketing and logistics options exist throughout the trade area for 2021. Currently, three processors purchase HO soybeans from growers at a range of premiums based on how growers produce, market and store the crop throughout Indiana and Ohio, and the Delmarva/Pennsylvania region.</p>
-      <p>With a processing facility in Salisbury, Maryland, and partnering with 17 grain elevators in Pennsylvania, Virginia, Delaware, New Jersey, New York and Maryland, Perdue is the HO soybean processor and grower partner for farmers in the Delmarva Peninsula. The HO soybeans are accepted at up to 14% crop moisture, with a discount schedule beyond that level for delivery to four of its locations.</p>
-      <p>Perdue offers premiums starting at 50 cents/bushel. If farmers store their HO soybeans on‐farm and make them available for delivery at high‐demand times, that premium increases to 65 cents/bushel. If HO soybeans are planted on 100% of a grower’s acres devoted to the crop, the premium rises to 75 cents/bushel.</p>
-      <p>Currently with 16 grain elevator partners in Indiana and Ohio, ADM is the grower partner and processor for farmers in the eastern Corn Belt, with its processor in Frankfort, Indiana. Four of the locations are ADM facilities where growers can sign up for harvest delivery contracts, with one location accepting on‐farm storage contracts. Premiums from ADM are similar to Perdue; for HO soybeans stored on‐farm and under 15% moisture (14.5% at some locations), the premium is 75 cents/bushel, while the premium is 55 cents/bushel when the crop is delivered at harvest.</p>
-      <p>Bunge takes delivery at 24 locations in 2021. Premium options for 75 cents/bushel exist if a farmer is willing to store the crop and participate in a preferred buyer call between December 2021 and August 2022. Farmers who prefer to deliver at harvest will receive a 65 cent/bushel premium. The Bunge contract calls for a 14% maximum moisture.</p>
-      <p>Though the HO soybean market was limited to these areas for 2021, it’s expected to expand for 2022 and beyond. Plans are underway for new HO soybean contracts, with acreage expected to grow to almost twice 2021 levels in 2022 and beyond in future years.</p>
-      <h4>2021 PARTICIPATING COMPANIES AND PREMIUM OPTIONS*</h4>
+      <h4>2021-22 PARTICIPATING COMPANIES AND PREMIUM OPTIONS*</h4>
       <table>
       <thead>
       <tr>
@@ -96,27 +91,32 @@ const articleMap = [
       <tr>
       <th>ADM</th>
       <td>Indiana & Ohio</td>
-      <td>$0.75/bu.</td>
-      <td>$0.55/bu.</td>
+      <td colspan="2">Premium is set by the producer between August 13, 2021 and August 31, 2022 and is 10% of Nov. 2022 futures price. It is set only once and must be set before contracting bushels. </td>
       <td>15% max moisture</td>
       </tr>
       <tr>
       <th>Bunge</th>
       <td>Indiana, Ohio and Michigan</td>
-      <td>$0.75/bu.</td>
-      <td>$0.65/bu.</td>
-      <td>14% max moisture</td>
+      <td>$1.25/bu.</td>
+      <td>$1.15/bu.</td>
+      <td>14.5% max moisture</td>
       </tr>
       <tr>
       <th>Perdue</th>
       <td>Delaware, Maryland, New Jersey, New York, Pennsylvania, and Virginia</td>
-      <td>$0.65/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
-      <td>$0.50/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
+      <td>$0.80/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
+      <td>$0.55/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
       <td>14% max moisture</td>
       </tr>
       </tbody>
       </table>
       <p><small>*Consult your nearest participating elevator for specific premium, delivery locations, delivery timeframe, and contract specifications. Source: Pioneer.com 2021 Plenish Contracting Options</small></p>
+      <p>With a processing facility in Salisbury, Maryland, and partnering with 17 grain elevators in Pennsylvania, Virginia, Delaware, Maryland and New York, Perdue is the HO soybean processor and grower partner for farmers in the Delmarva Peninsula. The HO soybeans are accepted at up to 14% crop moisture, with a discount schedule beyond that level for delivery to four of its locations.</p>
+      <p>Perdue offers premiums starting at 55 cents/bushel. If farmers store their HO soybeans on‐farm and make them available for delivery at high‐demand times, that premium increases to 80 cents/bushel. If Plenish soybeans are planted on 100% of a grower’s acres devoted to the crop, the premium rises to 90 cents/bushel.</p>
+      <p>Currently with 16 grain elevator partners in Indiana and Ohio, ADM is the grower partner and processor for farmers in the eastern Corn Belt. Contracts for 2022 include harvest delivery and on-farm storage options, but these are dependent on the delivery location. Farmers should check with the individual elevator to determine their contracting choice. The farmer chooses when the premium price is determined and it will be set at 10% of the November 2022 soybean futures price. The price will only be set one time and it will remain for the entirety of the Plenish production. It must be established before contracting bushels. Requirements are for 15% maximum moisture (14.5% at some locations).</p>
+      <p>Bunge takes delivery at 26 locations in 2022. Premium options for $1.25/bushel exist if a farmer is willing to store the crop and participate in a preferred buyer call between December 2022 and August 2023. Farmers who prefer to deliver at harvest will receive a $1.15/bushel premium. The Bunge contract calls for a 14.5% maximum moisture.</p>
+      <p>Though the HO soybean market was limited to these areas for 2021, it’s expected to expand for 2023 and beyond. Plans are underway for new HO soybean contracts, with acreage expected to grow to almost twice 2021 levels in 2022 and beyond in future years.</p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['knowledge-center', 'market-analysis'],
   },
