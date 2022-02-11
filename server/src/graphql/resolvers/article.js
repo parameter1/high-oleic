@@ -162,10 +162,12 @@ const articleMap = [
       </p>
       <p>What we need to be careful of is not over‐inflating the cost on an annual basis.</p>
       <p>Example:<br>
-      <em>100,000 bushels of storage</em><br>
-      <em>$50,000 of debt 20‐year life expectancy</em><br>
-      <em>$50,000/100,000/20 = $.025 or $.03/bushel in storage.</em></p>
+      100,000 bushels of storage<br>
+      $50,000 of debt<br>
+      20‐year life expectancy<br>
+      $50,000/100,000/20 = $.025 or $.03/bushel in storage.</p>
       <p>If there is significant grain‐handling equipment such as grain legs, dryer, etc. a general rule of thumb for handling is $.03 in and $.03 out. Every grain handling facility is different in cost, size, and complexity, as well as the frequency of turning the system if the farm doesn’t offer 100% storage capacity of the crop.</p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['knowledge-center'],
   },
