@@ -14,12 +14,13 @@ const articleMap = [
       <p>There are challenges for producers, however. Some are real. Some are merely perception, but they all must be overcome to keep this developed market a reality. Previously, as the market developed, myriad challenges persisted that limited growers’ ability and desire to accept this opportunity. Through the efforts of farmers, grain handlers, and other participants in the HO Soybean value chain, these challenges have been addressed.</p>
       <p>This paper explores the rising value of the quality‐based market for growers, including:</p>
       <ul>
-      <li>An existing and growing demand that means this is a long‐term premium opportunity worthy of farmer consideration.</li>
+      <li>Existing and growing demand that means this is a long‐term premium opportunity worthy of farmer consideration.</li>
       <li>The reality that these seed varieties hold as much or greater yield potential than conventional soybeans.</li>
-      <li>That HO soybean growers have access to a range of widely available weed-control options.</li>
-      <li>Requirements for these U.S. based contracts have more lenient protocols than traditional identity preservation handling procedures. These premium contracts require meeting only a minimum oleic content when delivered to the elevator.</li>
-      <li>An understanding that food processors and distributers are committed to this market, see the long‐term market potential, and just need U.S. farmers to provide the products.</li>
+      <li>There are widely available weed control options available for growers.</li>
+      <li>On-farm logistics, allow for more lenient protocols than traditional identity preservation grain handling procedures that require meeting only a minimum oleic content when delivered to the elevator.</li>
+      <li>Food processors and distributers are committed to this market, see the long-term market potential, and just need U.S. farmers to provide the products.</li>
       </ul>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['why-high-oleic'],
   },
