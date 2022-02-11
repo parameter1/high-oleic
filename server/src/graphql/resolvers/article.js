@@ -217,6 +217,26 @@ const articleMap = [
     `,
     sections: ['market-analysis'],
   },
+  {
+    title: 'On-Farm Profit Potential',
+    image: '',
+    teaser: 'The High Oleic Profit Calculator Tool is available to help farmers make informed economic decisions on how High Oleic soybeans fit into their farming operation using their own farm and field data.',
+    body: `
+      <p>The <a href="/crop-comparison" target="_blank" rel="noopener">High Oleic Profit Calculator Tool</a> is available to help farmers make informed economic decisions on how High Oleic soybeans fit into their farming operation using their own farm and field data. Farmers can project HO Soybean production on individual fields to conventional soybeans, corn, wheat, or other crops. Examining scenarios based on management, costs, and variables that are important to each farm and puts the initial decision step decision in the hands of the farmer.</p>
+      <p>While this tool does address the initial step to show the true opportunity, the concerns over years of farmers seeing premium programs for identity-preserved grain falling short of promises is still real. Challenges for many farmers that have been addressed are:
+        <ol>
+          <li>Competitive Yields</li>
+          <li>Weed Control Options</li>
+          <li>Transportation and Storage Costs</li>
+          <li>A Soft IP Program</li>
+          <li>Longevity of Market Potential</li>
+        </ol>
+      </p>
+      <p>
+      To learn more about how each of these challenges are met, click here for High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper. <a href="/High_Oleic_Soybean_Oil_White_Paper_-_Jan._2022.pdf" target="_blank" rel="noopener">View it here</a></p>
+    `,
+    sections: ['market-analysis'],
+  },
 ].reduce((map, article) => {
   const slug = sluggify(article.title);
   map.set(slug, {
