@@ -204,6 +204,19 @@ const articleMap = [
     teaser: 'High oleic soybeans provide opportunity in a double-crop system.',
     sections: ['why-high-oleic'],
   },
+  {
+    title: 'Meeting Market Demand',
+    image: '',
+    teaser: 'High Oleic Soybean demand is strong and ever strengthening, which puts an added emphasis on the seed input channel.',
+    body: `
+      <p>High Oleic Soybean demand is strong and ever strengthening, which puts an added emphasis on the seed input channel. Through a renewed focus on genetic development, seed breeding and production, it is poised to catch up with the food supply chain demand from food processors, retailers, restauranteurs and consumers in the near future.</p>
+      <p>With this growth, the industry is rapidly laying the groundwork to meet that demand, ultimately forging necessary coordination from the farm to the consumer that will help growers increase farm revenues. That starts with adequate supplies of the right HO soybean seed at the farm level. The 2021 season marked the seventh year of general availability of high oleic soybeans under the Pioneer® brand Plenish® labeled to growers in two main regions with considerable soybean processing capabilities, the Delmarva Peninsula and eastern Corn Belt (Indiana and Ohio). </p>
+      <p>After adding new varieties every year since the genesis of the product line, farmers had access to eight varieties of HO soybeans in 2021, with available maturity groups ranging from 2.1 to 4.8 in the two regions with the existing market. </p>
+      <p>To meet expected demand for the heart-healthy oil in 2022, farmers will have the seed and resources to plant 1 million acres as large domestic and multinational food manufacturers advance their HO soybean processing capabilities and continue to purchase the oil from processors. By 2024, the market is expected to sustain production from more than 1 million acres throughout the United States.</p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
+    `,
+    sections: ['market-analysis'],
+  },
 ].reduce((map, article) => {
   const slug = sluggify(article.title);
   map.set(slug, {
