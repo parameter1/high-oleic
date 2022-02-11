@@ -126,7 +126,7 @@ const articleMap = [
     teaser: 'A soft IP program allows some room for error at the farm level.',
     body: `
       <p>A soft IP program allows some room for error at the farm level. The contracts are based on the commitment from the grower to plant a specific Plenish variety for 2021, so the requirements at delivery are somewhat lenient compared to traditional IP programs. High oleic oil content in soybeans is a genetic trait, meaning there’s not the variety of oil output compared to other crop output traits, so meeting the oil requirements is less restrictive.</p>
-      <p>Conventional soybean oil is composed of approximately 60% polyunsaturated fatty acids, 25% monounsaturated fatty acids and 15% saturated fatty acids, whereas, HO soybean oil is made of around 75% oleic acid, with 20% less saturated fat and 2% to 3% linolenic acid. Eight percent of conventional soybean oil comprises linolenic acid, contributing to relative shelf instability compared to HO soybeans, which is why the low‐linolenic content is desirable. That is all in the genetics.<sup>4</sup></p>
+      <p>Conventional soybean oil is composed of approximately 60% polyunsaturated fatty acids, 25% monounsaturated fatty acids and 15% saturated fatty acids, whereas, HO soybean oil is made of around 75% oleic acid, with 20% less saturated fat and 2% to 3% linolenic acid. Eight percent of conventional soybean oil comprises linolenic acid, contributing to relative shelf instability compared to HO soybeans, which is why the low‐linolenic content is desirable. That is all in the genetics.<sup>1</sup></p>
       <p>As a “soft IP” program, farmers can account for what minimal oil content variance individual loads may show in testing by blending. As long as the grain meets minimum thresholds for oil contents on an aggregate level, it meets the requirements for processing as high oleic soybean oil. Strict farm‐level grain segregation is not necessary; as long as the soybeans meet the processor’s oil requirements at the right crop moisture levels, they’re accepted.</p>
       <p>A Simple On‐Farm Process:</p>
       <p>
@@ -139,6 +139,7 @@ const articleMap = [
       </p>
       <p>As an example, Perdue requires 65% oleic acid content with their loads, which should be achievable with normal grain-handling procedures. Harvest equipment and storage facilities should be cleaned before storing HO Soybeans for the premium contracts, but the perception that equipment needs to be pristine is not accurate. The test is for minimal oil content based on the production of the approved varieties. If small amounts of unapproved varieties are in the load, it is acceptable if the delivered load contains the minimum required oil content.</p>
       <p>Testing typically takes less than 1 minute to complete, and a small number of loads are tested for sampling purposes. Tactically, this typically means farmers delivering HO soybeans to an elevator indicate their cargo via a placard and are directed to bins where the identity‐preserved (IP) grain is stored.</p>
+      <p><a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</p>
     `,
     sections: ['knowledge-center'],
   },
