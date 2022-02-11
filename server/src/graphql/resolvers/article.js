@@ -234,6 +234,7 @@ const articleMap = [
       </p>
       <p>
       To learn more about how each of these challenges are met, click here for High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper. <a href="/High_Oleic_Soybean_Oil_White_Paper_-_Jan._2022.pdf" target="_blank" rel="noopener">View it here</a></p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['market-analysis'],
   },
