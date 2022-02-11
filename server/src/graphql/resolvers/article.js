@@ -46,7 +46,7 @@ const articleMap = [
       <p>Companies that eliminate TFAs in products are ready to begin using HO soybean oil. The marketplace is poised to connect growers and processors to these end‐users and their consumers. And now, the production side of the supply chain is almost a decade into developing the infrastructure and systems to deliver.</p>
       <p>With a growing market base in the United States, there is added benefit to American soybean farmers: U.S. producers have an opportunity to supply a stable and growing domestic market at U.S.‐based crush facilities. This means this localized market is less susceptible to foreign competition and potential international trade disputes because the market is U.S.-based and relies on U.S. produced crops. The soybeans are grown, processed, and sold to consumers right here at home.</p>
       <p>High oleic soybeans now represent the impetus for vegetable oil that’s the best of both worlds for the consumer. With limited seed supply in 2021, acreage increases are required to meet demand in 2022 and beyond.<sup>2</sup></p>
-      <p><sup>1</sup> <em>Industry ARC; Soybean Oil Market – Forecast (2021 - 2026)</em><br/><sup>2</sup> <a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</p>
+      <p><sup>1</sup> <em>Industry ARC; Soybean Oil Market – Forecast (2021 - 2026)</em><br/><sup>2</sup> <a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank" rel="noopener">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</p>
       <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['why-high-oleic', 'market-analysis'],
@@ -140,7 +140,7 @@ const articleMap = [
       </p>
       <p>As an example, Perdue requires 65% oleic acid content with their loads, which should be achievable with normal grain-handling procedures. Harvest equipment and storage facilities should be cleaned before storing HO Soybeans for the premium contracts, but the perception that equipment needs to be pristine is not accurate. The test is for minimal oil content based on the production of the approved varieties. If small amounts of unapproved varieties are in the load, it is acceptable if the delivered load contains the minimum required oil content.</p>
       <p>Testing typically takes less than 1 minute to complete, and a small number of loads are tested for sampling purposes. Tactically, this typically means farmers delivering HO soybeans to an elevator indicate their cargo via a placard and are directed to bins where the identity‐preserved (IP) grain is stored.</p>
-      <p><a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</p>
+      <p><a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank" rel="noopener">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</p>
     `,
     sections: ['knowledge-center'],
   },
