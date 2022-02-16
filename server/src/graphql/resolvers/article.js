@@ -173,20 +173,21 @@ const articleMap = [
     sections: ['knowledge-center'],
   },
   {
-    title: 'Seed Selection',
+    title: 'Competitive Yields',
     image: 'https://img.highoilsoy.com/knowledge-4.jpg',
-    teaser: 'Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers.',
+    teaser: 'Competitive yields are a reality and HO soybean varieties consistently perform as good or better than conventional numbers.',
     body: `
       <p>Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers. With seven years of commercial trait development and a mature seed pipeline in place, growers have access to the varieties they need to raise trend yields with the added financial incentive of premiums up to 75 cents/bushel.</p>
       <p>In field trials from 2018 to 2020, Pioneer® Plenish HO soybeans showed in‐field performance on par with conventional varieties. High oil soybean varieties in Maryland trials showed a yield range between 76.2 and 103.2 bushels/acre, with trials in Pennsylvania yielding between 81.4 and 91.3 bushels/acre. Double‐crop yield trials in Delaware showed a yield of 68.3 bushels/acre. Average soybean yields for those three states ranged between 46 and 57 bushels/acre in 2020, according to USDA‐NASS data (<a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=DELAWARE" target="_blank" rel="noopener">Delaware</a>, <a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=MARYLAND" target="_blank" rel="noopener">Maryland</a>, <a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=PENNSYLVANIA" target="_blank" rel="noopener">Pennsylvania</a>).</p>
       <p>High oleic soybean varieties have the same germplasm as conventional soybean varieties, which means they offer the same agronomic attributes. At the field level, that means the same input traits are in the seed, they are just applied to different output traits. That genetic foundation— combined with a relatively small number of available varieties—means HO soybeans take less time to integrate into traited platforms.</p>
-      <p>In fact, Corteva has advanced 5 new varieties for the 2022 growing season. As the market evolves and grows, HO soybeans will contain common herbicide resistance and other key input traits available in today’s conventional soybean varieties.</p>
+      <p>In fact, Corteva has advanced 2 new varieties for the 2022 growing season. As the market evolves and grows, HO soybeans will contain common herbicide resistance and other key input traits available in today’s conventional soybean varieties.</p>
       <p>
       <img src="https://img.highoilsoy.com/seed-selection-map.png" alt="Outstanding Local Yields Crop Map">
       <small><em>Source: Pioneer Corteva AgriScience</em></small>
       </p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
-    sections: ['find-your-seed'],
+    sections: ['knowledge-center'],
   },
   {
     title: 'Weed Control',
