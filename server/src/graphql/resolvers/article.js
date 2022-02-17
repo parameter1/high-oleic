@@ -14,26 +14,28 @@ const articleMap = [
       <p>There are challenges for producers, however. Some are real. Some are merely perception, but they all must be overcome to keep this developed market a reality. Previously, as the market developed, myriad challenges persisted that limited growers’ ability and desire to accept this opportunity. Through the efforts of farmers, grain handlers, and other participants in the HO Soybean value chain, these challenges have been addressed.</p>
       <p>This paper explores the rising value of the quality‐based market for growers, including:</p>
       <ul>
-      <li>An existing and growing demand that means this is a long‐term premium opportunity worthy of farmer consideration.</li>
+      <li>Existing and growing demand that means this is a long‐term premium opportunity worthy of farmer consideration.</li>
       <li>The reality that these seed varieties hold as much or greater yield potential than conventional soybeans.</li>
-      <li>That HO soybean growers have access to a range of widely available weed-control options.</li>
-      <li>Requirements for these U.S. based contracts have more lenient protocols than traditional identity preservation handling procedures. These premium contracts require meeting only a minimum oleic content when delivered to the elevator.</li>
-      <li>An understanding that food processors and distributers are committed to this market, see the long‐term market potential, and just need U.S. farmers to provide the products.</li>
+      <li>There are widely available weed control options available for growers.</li>
+      <li>On-farm logistics, allow for more lenient protocols than traditional identity preservation grain handling procedures that require meeting only a minimum oleic content when delivered to the elevator.</li>
+      <li>Food processors and distributers are committed to this market, see the long-term market potential, and just need U.S. farmers to provide the products.</li>
       </ul>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['why-high-oleic'],
   },
   {
     title: 'Market Outlook',
     image: 'https://img.highoilsoy.com/knowledge-5.jpg',
-    teaser: 'Soybean oil has long been a major component of the consumer, industrial and commercial vegetable oil complex, but as end‐user preferences have shifted, a market for healthy oil has developed.',
+    teaser: 'Soybean oil has long been a major component of the consumer, industrial and commercial vegetable oil complex, but as end‐user preferences have shifted, a market for an oil with a desirable fatty acid composition has developed.',
     body: `
       <p>High Oleic Soy Market Outook</p>
-      <p>Soybean oil has long been a major component of the consumer, industrial and commercial vegetable oil complex, but as end‐user preferences have shifted, a market for healthy oil has developed. Previously, that market relied mostly on canola or cottonseed oil, but preferences are changing. After years of research and field testing funded by the U.S. Soybean Checkoff, food companies are poised to increase demand with high oleic soybeans.</p>
+      <p>Soybean oil has long been a major component of the consumer, industrial and commercial vegetable oil complex, but as end‐user preferences have shifted, a market for an oil with a desirable fatty acid composition has developed. Previously, that market relied mostly on canola or cottonseed oil, but preferences are changing. After years of research and field testing funded by the U.S. Soybean Checkoff, food companies are poised to increase demand with high oleic soybeans.</p>
       <p>The global cooking oil market, of which soybean oil is a major component, is expected to continue the demand surge that’s been underway for years. According to <a href="https://www.globenewswire.com/news-release/2018/07/17/1538399/0/en/Global-Cooking-Oil-Market-Will-Reach-USD-130-30-Billion-by-2024-Zion-Market-Research.html" target="_blank" rel="noopener">Zion Market Research</a> the worldwide cooking oil market was valued at more than $85 billion in 2017. That demand is expected to exceed $130 billion by 2024, with annual growth of more than 6%.</p>
-      <p>The <a href="https://apps.fas.usda.gov/psdonline/circulars/oilseeds.pdf" target="_blank" rel="noopener">USDA Foreign Ag Service</a> says worldwide vegetable oil production from various oilseeds has grown from 188.36 million metric tons in 2016‐17 to a projected 215.9 million metric tons in the 2021‐22 marketing year. Soybean oil currently accounts for nearly 29% of total worldwide vegetable oil production, with U.S. soybean oil holding a 6% share of the world market. When whole soybean exports destined for overseas crush facilities are factored in, however, that total jumps to nearly 11% of the worldwide total vegetable oil market from United States‐produced soybeans.</p>
-      <p>That share can continue escalating and it is poised for growth here at home with contracts for delivery to U.S. elevators. There is a market in the United States for homegrown soybeans that provides a great opportunity for U.S. soybean farmers to build and maintain a premium market. There is domestic demand, it’s growing, and it promises to grow in the future.</p>
+      <p>The <a href="https://apps.fas.usda.gov/psdonline/circulars/oilseeds.pdf" target="_blank" rel="noopener">USDA Foreign Ag Service</a> says worldwide vegetable oil production from various oilseeds has grown from 188.41 million metric tons in 2016‐17 to a projected 213.9 million MT in the 2021‐22 marketing year. Soybean oil currently accounts for nearly 29% of total worldwide vegetable oil production, with U.S. soybean oil holding a 6% share of the world market. When whole soybean exports destined for overseas crush facilities are factored in, however, that total jumps to nearly 11% of the worldwide total vegetable oil market from United States‐produced soybeans.</p>
+      <p>That share can continue escalating and it is poised for growth here at home.  There is a market in the United States for homegrown soybeans that provides a great opportunity for U.S. soybean farmers to build and maintain a premium market. There is domestic demand, it’s growing, and it promises to grow in the future.</p>
       <blockquote>
+      <p>Asia Pacific dominated the Soybean Oil market in 2019 with a share of more than 44.12%, followed by North America owing to the increasing demand for Soybean oil for cooking purposes in a household. Increasing urbanization and the rise in the number of health-conscious consumers is increasing the growth of the soybean oil market in this region.</p>
       <p>North America is estimated to grow at a higher CAGR during the forecast period 2020‐2025 owing to the rising disposable income and an increase in the fermentation and drilling process. Increasing demand for soybean oil in the preparation of sauces, dressing, non‐dairy creamers, whipped toppings and increasing usage of soybean oil in fighting against conditions such as obesity, high cholesterol and cardiovascular disease is increasing the growth of the soybean oil market in this region.</p>
       <small><em>Source: Industry ARC; Soybean Oil Market – Forecast (2021 ‐ 2026)</em></small>
       </blockquote>
@@ -42,8 +44,10 @@ const articleMap = [
       <p>At the same time, cooking oil made from HO soybeans with low linolenic acid levels perform on par with conventional cooking oils from a shelf‐stability standpoint, while low linolenic acid contents contribute to improve shelf stability and long‐term viability of the finished oil product.</p>
       <p>Once food companies discovered the value of HO soybeans, the fundamental changes necessary for them to begin manufacturing products with HO soybean oil didn’t happen immediately. That transition — one that’s taken five to seven years for many food manufacturers to adjust procedures, equipment and other components of the entire process — is nearing its end.</p>
       <p>Companies that eliminate TFAs in products are ready to begin using HO soybean oil. The marketplace is poised to connect growers and processors to these end‐users and their consumers. And now, the production side of the supply chain is almost a decade into developing the infrastructure and systems to deliver.</p>
-      <p>With a growing market base in the United States, there is added benefit to American soybean farmers: U.S. producers have an opportunity to supply a stable and growing domestic market at U.S.‐based crush facilities. This means this localized market is less susceptible to foreign competition and potential international trade disputes because the market is U.S.-based and relies on U.S.-produced crops. The soybeans are grown, processed, and sold to consumers right here at home.</p>
+      <p>With a growing market base in the United States, there is added benefit to American soybean farmers: U.S. producers have an opportunity to supply a stable and growing domestic market at U.S.‐based crush facilities. This means this localized market is less susceptible to foreign competition and potential international trade disputes because the market is U.S.-based and relies on U.S. produced crops. The soybeans are grown, processed, and sold to consumers right here at home.</p>
       <p>High oleic soybeans now represent the impetus for vegetable oil that’s the best of both worlds for the consumer. With limited seed supply in 2021, acreage increases are required to meet demand in 2022 and beyond.<sup>2</sup></p>
+      <p><sup>1</sup> <em>Industry ARC; Soybean Oil Market – Forecast (2021 - 2026)</em><br/><sup>2</sup> <a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank" rel="noopener">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['why-high-oleic', 'market-analysis'],
   },
@@ -73,12 +77,7 @@ const articleMap = [
     teaser: 'Marketing and logistics options exist throughout the trade area for 2021.',
     body: `
       <p>Marketing and logistics options exist throughout the trade area for 2021. Currently, three processors purchase HO soybeans from growers at a range of premiums based on how growers produce, market and store the crop throughout Indiana and Ohio, and the Delmarva/Pennsylvania region.</p>
-      <p>With a processing facility in Salisbury, Maryland, and partnering with 17 grain elevators in Pennsylvania, Virginia, Delaware, New Jersey, New York and Maryland, Perdue is the HO soybean processor and grower partner for farmers in the Delmarva Peninsula. The HO soybeans are accepted at up to 14% crop moisture, with a discount schedule beyond that level for delivery to four of its locations.</p>
-      <p>Perdue offers premiums starting at 50 cents/bushel. If farmers store their HO soybeans on‐farm and make them available for delivery at high‐demand times, that premium increases to 65 cents/bushel. If HO soybeans are planted on 100% of a grower’s acres devoted to the crop, the premium rises to 75 cents/bushel.</p>
-      <p>Currently with 16 grain elevator partners in Indiana and Ohio, ADM is the grower partner and processor for farmers in the eastern Corn Belt, with its processor in Frankfort, Indiana. Four of the locations are ADM facilities where growers can sign up for harvest delivery contracts, with one location accepting on‐farm storage contracts. Premiums from ADM are similar to Perdue; for HO soybeans stored on‐farm and under 15% moisture (14.5% at some locations), the premium is 75 cents/bushel, while the premium is 55 cents/bushel when the crop is delivered at harvest.</p>
-      <p>Bunge takes delivery at 24 locations in 2021. Premium options for 75 cents/bushel exist if a farmer is willing to store the crop and participate in a preferred buyer call between December 2021 and August 2022. Farmers who prefer to deliver at harvest will receive a 65 cent/bushel premium. The Bunge contract calls for a 14% maximum moisture.</p>
-      <p>Though the HO soybean market was limited to these areas for 2021, it’s expected to expand for 2022 and beyond. Plans are underway for new HO soybean contracts, with acreage expected to grow to almost twice 2021 levels in 2022 and beyond in future years.</p>
-      <h4>2021 PARTICIPATING COMPANIES AND PREMIUM OPTIONS*</h4>
+      <h4>2021-22 PARTICIPATING COMPANIES AND PREMIUM OPTIONS*</h4>
       <table>
       <thead>
       <tr>
@@ -93,27 +92,32 @@ const articleMap = [
       <tr>
       <th>ADM</th>
       <td>Indiana & Ohio</td>
-      <td>$0.75/bu.</td>
-      <td>$0.55/bu.</td>
+      <td colspan="2">Premium is set by the producer between August 13, 2021 and August 31, 2022 and is 10% of Nov. 2022 futures price. It is set only once and must be set before contracting bushels. </td>
       <td>15% max moisture</td>
       </tr>
       <tr>
       <th>Bunge</th>
       <td>Indiana, Ohio and Michigan</td>
-      <td>$0.75/bu.</td>
-      <td>$0.65/bu.</td>
-      <td>14% max moisture</td>
+      <td>$1.25/bu.</td>
+      <td>$1.15/bu.</td>
+      <td>14.5% max moisture</td>
       </tr>
       <tr>
       <th>Perdue</th>
       <td>Delaware, Maryland, New Jersey, New York, Pennsylvania, and Virginia</td>
-      <td>$0.65/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
-      <td>$0.50/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
+      <td>$0.80/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
+      <td>$0.55/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
       <td>14% max moisture</td>
       </tr>
       </tbody>
       </table>
       <p><small>*Consult your nearest participating elevator for specific premium, delivery locations, delivery timeframe, and contract specifications. Source: Pioneer.com 2021 Plenish Contracting Options</small></p>
+      <p>With a processing facility in Salisbury, Maryland, and partnering with 17 grain elevators in Pennsylvania, Virginia, Delaware, Maryland and New York, Perdue is the HO soybean processor and grower partner for farmers in the Delmarva Peninsula. The HO soybeans are accepted at up to 14% crop moisture, with a discount schedule beyond that level for delivery to four of its locations.</p>
+      <p>Perdue offers premiums starting at 55 cents/bushel. If farmers store their HO soybeans on‐farm and make them available for delivery at high‐demand times, that premium increases to 80 cents/bushel. If Plenish soybeans are planted on 100% of a grower’s acres devoted to the crop, the premium rises to 90 cents/bushel.</p>
+      <p>Currently with 16 grain elevator partners in Indiana and Ohio, ADM is the grower partner and processor for farmers in the eastern Corn Belt. Contracts for 2022 include harvest delivery and on-farm storage options, but these are dependent on the delivery location. Farmers should check with the individual elevator to determine their contracting choice. The farmer chooses when the premium price is determined and it will be set at 10% of the November 2022 soybean futures price. The price will only be set one time and it will remain for the entirety of the Plenish production. It must be established before contracting bushels. Requirements are for 15% maximum moisture (14.5% at some locations).</p>
+      <p>Bunge takes delivery at 26 locations in 2022. Premium options for $1.25/bushel exist if a farmer is willing to store the crop and participate in a preferred buyer call between December 2022 and August 2023. Farmers who prefer to deliver at harvest will receive a $1.15/bushel premium. The Bunge contract calls for a 14.5% maximum moisture.</p>
+      <p>Though the HO soybean market was limited to these areas for 2021, it’s expected to expand for 2023 and beyond. Plans are underway for new HO soybean contracts, with acreage expected to grow to almost twice 2021 levels in 2022 and beyond in future years.</p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['knowledge-center', 'market-analysis'],
   },
@@ -123,7 +127,7 @@ const articleMap = [
     teaser: 'A soft IP program allows some room for error at the farm level.',
     body: `
       <p>A soft IP program allows some room for error at the farm level. The contracts are based on the commitment from the grower to plant a specific Plenish variety for 2021, so the requirements at delivery are somewhat lenient compared to traditional IP programs. High oleic oil content in soybeans is a genetic trait, meaning there’s not the variety of oil output compared to other crop output traits, so meeting the oil requirements is less restrictive.</p>
-      <p>Conventional soybean oil is composed of approximately 60% polyunsaturated fatty acids, 25% monounsaturated fatty acids and 15% saturated fatty acids, whereas, HO soybean oil is made of around 75% oleic acid, with 20% less saturated fat and 2% to 3% linolenic acid. Eight percent of conventional soybean oil comprises linolenic acid, contributing to relative shelf instability compared to HO soybeans, which is why the low‐linolenic content is desirable. That is all in the genetics.<sup>4</sup></p>
+      <p>Conventional soybean oil is composed of approximately 60% polyunsaturated fatty acids, 25% monounsaturated fatty acids and 15% saturated fatty acids, whereas, HO soybean oil is made of around 75% oleic acid, with 20% less saturated fat and 2% to 3% linolenic acid. Eight percent of conventional soybean oil comprises linolenic acid, contributing to relative shelf instability compared to HO soybeans, which is why the low‐linolenic content is desirable. That is all in the genetics.<sup>1</sup></p>
       <p>As a “soft IP” program, farmers can account for what minimal oil content variance individual loads may show in testing by blending. As long as the grain meets minimum thresholds for oil contents on an aggregate level, it meets the requirements for processing as high oleic soybean oil. Strict farm‐level grain segregation is not necessary; as long as the soybeans meet the processor’s oil requirements at the right crop moisture levels, they’re accepted.</p>
       <p>A Simple On‐Farm Process:</p>
       <p>
@@ -136,6 +140,7 @@ const articleMap = [
       </p>
       <p>As an example, Perdue requires 65% oleic acid content with their loads, which should be achievable with normal grain-handling procedures. Harvest equipment and storage facilities should be cleaned before storing HO Soybeans for the premium contracts, but the perception that equipment needs to be pristine is not accurate. The test is for minimal oil content based on the production of the approved varieties. If small amounts of unapproved varieties are in the load, it is acceptable if the delivered load contains the minimum required oil content.</p>
       <p>Testing typically takes less than 1 minute to complete, and a small number of loads are tested for sampling purposes. Tactically, this typically means farmers delivering HO soybeans to an elevator indicate their cargo via a placard and are directed to bins where the identity‐preserved (IP) grain is stored.</p>
+      <p><a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank" rel="noopener">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</p>
     `,
     sections: ['knowledge-center'],
   },
@@ -158,28 +163,31 @@ const articleMap = [
       </p>
       <p>What we need to be careful of is not over‐inflating the cost on an annual basis.</p>
       <p>Example:<br>
-      <em>100,000 bushels of storage</em><br>
-      <em>$50,000 of debt 20‐year life expectancy</em><br>
-      <em>$50,000/100,000/20 = $.025 or $.03/bushel in storage.</em></p>
+      100,000 bushels of storage<br>
+      $50,000 of debt<br>
+      20‐year life expectancy<br>
+      $50,000/100,000/20 = $.025 or $.03/bushel in storage.</p>
       <p>If there is significant grain‐handling equipment such as grain legs, dryer, etc. a general rule of thumb for handling is $.03 in and $.03 out. Every grain handling facility is different in cost, size, and complexity, as well as the frequency of turning the system if the farm doesn’t offer 100% storage capacity of the crop.</p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['knowledge-center'],
   },
   {
-    title: 'Seed Selection',
-    image: 'https://img.highoilsoy.com/knowledge-4.jpg',
-    teaser: 'Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers.',
+    title: 'Competitive Yields',
+    image: 'https://img.highoilsoy.com/competitive-yields.jpeg',
+    teaser: 'Competitive yields are a reality and HO soybean varieties consistently perform as good or better than conventional numbers.',
     body: `
       <p>Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers. With seven years of commercial trait development and a mature seed pipeline in place, growers have access to the varieties they need to raise trend yields with the added financial incentive of premiums up to 75 cents/bushel.</p>
       <p>In field trials from 2018 to 2020, Pioneer® Plenish HO soybeans showed in‐field performance on par with conventional varieties. High oil soybean varieties in Maryland trials showed a yield range between 76.2 and 103.2 bushels/acre, with trials in Pennsylvania yielding between 81.4 and 91.3 bushels/acre. Double‐crop yield trials in Delaware showed a yield of 68.3 bushels/acre. Average soybean yields for those three states ranged between 46 and 57 bushels/acre in 2020, according to USDA‐NASS data (<a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=DELAWARE" target="_blank" rel="noopener">Delaware</a>, <a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=MARYLAND" target="_blank" rel="noopener">Maryland</a>, <a href="https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=PENNSYLVANIA" target="_blank" rel="noopener">Pennsylvania</a>).</p>
       <p>High oleic soybean varieties have the same germplasm as conventional soybean varieties, which means they offer the same agronomic attributes. At the field level, that means the same input traits are in the seed, they are just applied to different output traits. That genetic foundation— combined with a relatively small number of available varieties—means HO soybeans take less time to integrate into traited platforms.</p>
-      <p>In fact, Corteva has advanced 5 new varieties for the 2022 growing season. As the market evolves and grows, HO soybeans will contain common herbicide resistance and other key input traits available in today’s conventional soybean varieties.</p>
+      <p>In fact, Corteva has advanced 2 new varieties for the 2022 growing season. As the market evolves and grows, HO soybeans will contain common herbicide resistance and other key input traits available in today’s conventional soybean varieties.</p>
       <p>
       <img src="https://img.highoilsoy.com/seed-selection-map.png" alt="Outstanding Local Yields Crop Map">
       <small><em>Source: Pioneer Corteva AgriScience</em></small>
       </p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
-    sections: ['find-your-seed'],
+    sections: ['knowledge-center'],
   },
   {
     title: 'Weed Control',
@@ -196,6 +204,40 @@ const articleMap = [
     target: '_blank',
     teaser: 'High oleic soybeans provide opportunity in a double-crop system.',
     sections: ['why-high-oleic'],
+  },
+  {
+    title: 'Meeting Market Demand',
+    image: 'https://img.highoilsoy.com/market-demand.jpeg',
+    teaser: 'High Oleic Soybean demand is strong and ever strengthening, which puts an added emphasis on the seed input channel.',
+    body: `
+      <p>High Oleic Soybean demand is strong and ever strengthening, which puts an added emphasis on the seed input channel. Through a renewed focus on genetic development, seed breeding and production, it is poised to catch up with the food supply chain demand from food processors, retailers, restauranteurs and consumers in the near future.</p>
+      <p>With this growth, the industry is rapidly laying the groundwork to meet that demand, ultimately forging necessary coordination from the farm to the consumer that will help growers increase farm revenues. That starts with adequate supplies of the right HO soybean seed at the farm level. The 2021 season marked the seventh year of general availability of high oleic soybeans under the Pioneer® brand Plenish® labeled to growers in two main regions with considerable soybean processing capabilities, the Delmarva Peninsula and eastern Corn Belt (Indiana and Ohio). </p>
+      <p>After adding new varieties every year since the genesis of the product line, farmers had access to eight varieties of HO soybeans in 2021, with available maturity groups ranging from 2.1 to 4.8 in the two regions with the existing market. </p>
+      <p>To meet expected demand for the heart-healthy oil in 2022, farmers will have the seed and resources to plant 1 million acres as large domestic and multinational food manufacturers advance their HO soybean processing capabilities and continue to purchase the oil from processors. By 2024, the market is expected to sustain production from more than 1 million acres throughout the United States.</p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
+    `,
+    sections: ['market-analysis'],
+  },
+  {
+    title: 'On-Farm Profit Potential',
+    image: 'https://img.highoilsoy.com/on-farm-profit-potential.jpeg',
+    teaser: 'The High Oleic Profit Calculator Tool is available to help farmers make informed economic decisions on how High Oleic soybeans fit into their farming operation using their own farm and field data.',
+    body: `
+      <p>The <a href="/crop-comparison" target="_blank" rel="noopener">High Oleic Profit Calculator Tool</a> is available to help farmers make informed economic decisions on how High Oleic soybeans fit into their farming operation using their own farm and field data. Farmers can project HO Soybean production on individual fields to conventional soybeans, corn, wheat, or other crops. Examining scenarios based on management, costs, and variables that are important to each farm and puts the initial decision step decision in the hands of the farmer.</p>
+      <p>While this tool does address the initial step to show the true opportunity, the concerns over years of farmers seeing premium programs for identity-preserved grain falling short of promises is still real. Challenges for many farmers that have been addressed are:
+        <ol>
+          <li>Competitive Yields</li>
+          <li>Weed Control Options</li>
+          <li>Transportation and Storage Costs</li>
+          <li>A Soft IP Program</li>
+          <li>Longevity of Market Potential</li>
+        </ol>
+      </p>
+      <p>
+      To learn more about how each of these challenges are met, click here for High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper. <a href="/High_Oleic_Soybean_Oil_White_Paper_-_Jan._2022.pdf" target="_blank" rel="noopener">View it here</a></p>
+      <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
+    `,
+    sections: ['market-analysis'],
   },
 ].reduce((map, article) => {
   const slug = sluggify(article.title);
