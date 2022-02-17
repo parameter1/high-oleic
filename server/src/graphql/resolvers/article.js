@@ -174,7 +174,7 @@ const articleMap = [
   },
   {
     title: 'Competitive Yields',
-    image: 'https://img.highoilsoy.com/knowledge-4.jpg',
+    image: 'https://img.highoilsoy.com/competitive-yields.jpeg',
     teaser: 'Competitive yields are a reality and HO soybean varieties consistently perform as good or better than conventional numbers.',
     body: `
       <p>Competitive yields area reality and HO soybean varieties consistently perform as good or better than conventional numbers. With seven years of commercial trait development and a mature seed pipeline in place, growers have access to the varieties they need to raise trend yields with the added financial incentive of premiums up to 75 cents/bushel.</p>
@@ -207,7 +207,7 @@ const articleMap = [
   },
   {
     title: 'Meeting Market Demand',
-    image: '',
+    image: 'https://img.highoilsoy.com/market-demand.jpeg',
     teaser: 'High Oleic Soybean demand is strong and ever strengthening, which puts an added emphasis on the seed input channel.',
     body: `
       <p>High Oleic Soybean demand is strong and ever strengthening, which puts an added emphasis on the seed input channel. Through a renewed focus on genetic development, seed breeding and production, it is poised to catch up with the food supply chain demand from food processors, retailers, restauranteurs and consumers in the near future.</p>
@@ -220,7 +220,7 @@ const articleMap = [
   },
   {
     title: 'On-Farm Profit Potential',
-    image: '',
+    image: 'https://img.highoilsoy.com/on-farm-profit-potential.jpeg',
     teaser: 'The High Oleic Profit Calculator Tool is available to help farmers make informed economic decisions on how High Oleic soybeans fit into their farming operation using their own farm and field data.',
     body: `
       <p>The <a href="/crop-comparison" target="_blank" rel="noopener">High Oleic Profit Calculator Tool</a> is available to help farmers make informed economic decisions on how High Oleic soybeans fit into their farming operation using their own farm and field data. Farmers can project HO Soybean production on individual fields to conventional soybeans, corn, wheat, or other crops. Examining scenarios based on management, costs, and variables that are important to each farm and puts the initial decision step decision in the hands of the farmer.</p>
