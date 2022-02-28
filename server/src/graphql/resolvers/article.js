@@ -140,7 +140,7 @@ const articleMap = [
       </p>
       <p>As an example, Perdue requires 65% oleic acid content with their loads, which should be achievable with normal grain-handling procedures. Harvest equipment and storage facilities should be cleaned before storing HO Soybeans for the premium contracts, but the perception that equipment needs to be pristine is not accurate. The test is for minimal oil content based on the production of the approved varieties. If small amounts of unapproved varieties are in the load, it is acceptable if the delivered load contains the minimum required oil content.</p>
       <p>Testing typically takes less than 1 minute to complete, and a small number of loads are tested for sampling purposes. Tactically, this typically means farmers delivering HO soybeans to an elevator indicate their cargo via a placard and are directed to bins where the identity‐preserved (IP) grain is stored.</p>
-      <p><a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank" rel="noopener">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</p>
+      <p><small><sup>1</sup><a href="https://www.feedandgrain.com/webinar/staying-ahead-of-the-high-oleic-soybean-curve" target="_blank" rel="noopener">Staying Ahead of the High Oleic Soybean Curve</a> Feed&Grain Webinar, March 17, 2021</small></p>
       <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['knowledge-center'],
