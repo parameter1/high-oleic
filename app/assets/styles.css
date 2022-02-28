@@ -6,6 +6,7 @@
 
 .prose a {
   color: #253746 !important;
+  font-weight: 400 !important;
 }
 
 .prose a:hover {
