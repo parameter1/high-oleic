@@ -36,6 +36,7 @@
         >
           <nuxt />
         </transition>
+        <image-citation />
       </main>
     </div>
   </div>
@@ -45,9 +46,15 @@
 import LeftMenu from '../components/left-menu.vue';
 import Logo from '../components/logo.vue';
 import OpenMenuButton from '../components/open-menu-button.vue';
+import ImageCitation from '../components/common/image-citation.vue';
 
 export default {
-  components: { LeftMenu, Logo, OpenMenuButton },
+  components: {
+    LeftMenu,
+    Logo,
+    OpenMenuButton,
+    ImageCitation
+  },
 
   data: () => ({
     classes: [
