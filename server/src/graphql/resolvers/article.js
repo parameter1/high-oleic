@@ -149,10 +149,10 @@ const articleMap = [
     image: 'https://img.highoilsoy.com/knowledge-4.jpg',
     teaser: 'Transportation and storage exist regardless of the crop, so HO Soybeans cost no more than any other production.',
     body: `
-      <p>Transportation and storage costs exist regardless of the crop and HO Soybeans cost no more than any other production. Storage capacity in HO soybean production regions is a key piece of the puzzle to sustaining the premium program.</p>
+      <p>Transportation and storage costs exist regardless of the crop, so HO Soybeans cost no more than any other production. Storage capacity in HO soybean production regions is a key piece of the puzzle to sustaining the premium program.</p>
       <p>For transportation, estimate what it costs to have someone locally haul grain. There needs to be a charge from the field to on‐farm storage if it’s available, as well as from the farm to the processing facility. Typically, within 15 miles $.06‐$.10/bushel will cover the cost from field to storage. From there, it just depends on how far the distance is to the processing facility, who is trucking it, or if it is being picked up will‐call on the farm.</p>
       <p>The other way to calculate the cost is knowing exactly how much trucking costs in fuel, maintenance, labor, overhead, depreciation, inflation, appreciation, and repairs annually. Take that number divided by the total bushels hauled on average to arrive at a per bushel cost.</p>
-      <p>For storage and drying it is the same as any other crop. For commercial storage, simply input the flat fee or the cost to store per month times the number of months stored. If the soybeans are stored on‐farm, this number can be a bit trickier. There are four things to consider:</p>
+      <p>For storage and drying it is the same as any other crop. If you are storing commercially, simply input the flat fee or the cost to store per month times the number of months stored. If the soybeans are stored on‐farm, this number can be a bit trickier. There are four things to consider:</p>
       <p>
       <ol>
       <li>Amount of Storage</li>
