@@ -53,7 +53,7 @@ export default {
     LeftMenu,
     Logo,
     OpenMenuButton,
-    ImageCitation
+    ImageCitation,
   },
 
   data: () => ({
