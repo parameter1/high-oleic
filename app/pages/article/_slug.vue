@@ -12,7 +12,7 @@
           {{ article.title }}
         </h1>
         <div class="p-4">
-          <div class="prose prose-lg text-primary-1" v-html="article.body" />
+          <div class="prose text-primary-1" v-html="article.body" />
         </div>
       </div>
     </div>
