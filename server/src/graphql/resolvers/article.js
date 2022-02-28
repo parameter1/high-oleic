@@ -105,8 +105,8 @@ const articleMap = [
       <tr>
       <th>Perdue</th>
       <td>Delaware, Maryland, New Jersey, New York, Pennsylvania, and Virginia</td>
-      <td>$0.80/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
-      <td>$0.55/bu.<br><small>$0.10 additional for 100% planted to Plenish™ soybeans</small></td>
+      <td>$0.80/bu.<br><small>$0.10 additional for 100% planted to Plenish® soybeans</small></td>
+      <td>$0.55/bu.<br><small>$0.10 additional for 100% planted to Plenish soybeans</small></td>
       <td>14% max moisture</td>
       </tr>
       </tbody>
@@ -116,7 +116,7 @@ const articleMap = [
       <p>Perdue offers premiums starting at 55 cents/bushel. If farmers store their HO soybeans on‐farm and make them available for delivery at high‐demand times, that premium increases to 80 cents/bushel. If Plenish soybeans are planted on 100% of a grower’s acres devoted to the crop, the premium rises to 90 cents/bushel.</p>
       <p>Currently with 16 grain elevator partners in Indiana and Ohio, ADM is the grower partner and processor for farmers in the eastern Corn Belt. Contracts for 2022 include harvest delivery and on-farm storage options, but these are dependent on the delivery location. Farmers should check with the individual elevator to determine their contracting choice. The farmer chooses when the premium price is determined and it will be set at 10% of the November 2022 soybean futures price. The price will only be set one time and it will remain for the entirety of the Plenish production. It must be established before contracting bushels. Requirements are for 15% maximum moisture (14.5% at some locations).</p>
       <p>Bunge takes delivery at 26 locations in 2022. Premium options for $1.25/bushel exist if a farmer is willing to store the crop and participate in a preferred buyer call between December 2022 and August 2023. Farmers who prefer to deliver at harvest will receive a $1.15/bushel premium. The Bunge contract calls for a 14.5% maximum moisture.</p>
-      <p>Though the HO soybean market was limited to these areas for 2021, it’s expected to expand for 2023 and beyond. Plans are underway for new HO soybean contracts, with acreage expected to grow to almost twice 2021 levels in 2022 and beyond in future years.</p>
+      <p>Though the HO soybean market was limited in 2021, it’s expected to expand for 2023 and beyond. Plans are underway for new HO soybean contracts, with acreage expected to double in future years.</p>
       <p><small><em>This content is an excerpt of the High Oleic Soybean Oil: The Business and Agronomic Case to Meet Growing Demand white paper, Jan. 2022.</em></small></p>
     `,
     sections: ['knowledge-center', 'market-analysis'],
