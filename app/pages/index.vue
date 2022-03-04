@@ -60,7 +60,7 @@ export default {
         id: 'knowledge',
         image: 'https://img.highoilsoy.com/knowledge-home.jpg?fit=crop&w=300&h=200',
         title: 'Knowledge Center',
-        teaser: 'Knowledge is power. Put the power of the latest research, seed information and breaking news, to help you make more informed management decisions.',
+        teaser: 'Put the power of the latest research, seed information and breaking news to work, helping you make more informed management decisions.',
         buttonLabel: 'Read the Latest',
         slug: '/knowledge-center',
       },
