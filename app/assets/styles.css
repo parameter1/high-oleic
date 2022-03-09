@@ -6,6 +6,7 @@
 
 .prose a {
   color: #253746 !important;
+  font-weight: 400 !important;
 }
 
 .prose a:hover {
@@ -44,5 +45,4 @@
   transform: translate(-50%, 0%);
   max-width: initial;
   height: 288px;
-
 }
