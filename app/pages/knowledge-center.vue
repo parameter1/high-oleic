@@ -3,7 +3,7 @@
     <page-intro-block
       :section-label="title"
       background-image-class="bg-knowledge-banner"
-      section-tagline="Knowledge is power"
+      section-tagline="Knowledge is Power."
       :section-text="sectionText"
     />
     <article-list-page :path="$route.path" />
