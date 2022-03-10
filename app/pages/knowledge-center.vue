@@ -28,7 +28,7 @@ export default {
   },
 
   data: () => ({
-    sectionText: '<p>Put the power of the latest research, seed information and breaking news to work, helping you make more informed management decisions</p>',
+    sectionText: '<p>Put the power of the latest research, seed information and breaking news to work, helping you make more informed management decisions.</p>',
   }),
 
   head() {
