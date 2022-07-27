@@ -4,7 +4,7 @@
       <div :class="sidebarClasses">
         <div class="flex items-center flex-shrink-0 px-8 my-4">
           <nuxt-link
-            to="/"
+            to="/crop-comparison"
             title="Homepage"
           >
             <logo class="w-auto h-auto" />

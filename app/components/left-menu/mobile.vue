@@ -45,7 +45,7 @@
           </div>
           <div class="flex-shrink-0 flex items-center px-8">
             <nuxt-link
-              to="/"
+              to="/crop-comparison"
               title="Homepage"
             >
               <logo class="w-auto h-auto" />
