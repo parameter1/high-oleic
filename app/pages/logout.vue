@@ -49,14 +49,14 @@ export default {
         this.error = null;
         this.isLoading = true;
         const token = this.$apolloHelpers.getToken();
-        if (!token) window.location.href = '/';
+        if (!token) window.location.href = '/crop-comparison';
 
         await this.$apollo.mutate({
           mutation: LOGOUT,
           variables: { token },
         });
         await this.$apolloHelpers.onLogout();
-        window.location.href = '/';
+        window.location.href = '/crop-comparison';
       } catch (e) {
         this.error = new GraphQLError(e);
       } finally {

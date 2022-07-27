@@ -49,7 +49,7 @@ export default {
         this.error = null;
         this.isLoading = true;
 
-        const { token, redirectTo = '/' } = this.$route.query;
+        const { token, redirectTo = '/crop-comparison' } = this.$route.query;
         if (!token) throw new Error('No authentication token was provided.');
         const { data } = await this.$apollo.mutate({
           mutation: AUTHENTICATE,
