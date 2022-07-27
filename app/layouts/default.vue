@@ -9,7 +9,7 @@
         <div class="flex-1 px-4 flex justify-between">
           <div class="flex-1 flex items-center">
             <nuxt-link
-              to="/"
+              to="/crop-comparison"
               title="Homepage"
             >
               <logo class="h-12" />
