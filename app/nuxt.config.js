@@ -57,4 +57,7 @@ export default {
       identityX: '@/plugins/apollo/identity-x.js',
     },
   },
+  router: {
+    middleware: ['home'],
+  },
 };
