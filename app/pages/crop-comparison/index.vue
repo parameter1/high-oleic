@@ -15,7 +15,12 @@
           <div class="flex flex-wrap self-start mb-1 pt-8 md:pt-0 ">
             <a href="/profit-calculator-tool-tutorial.pdf" target="_blank">
               <btn class="shadow mr-3 mb-3" color="logo-white-rd">
-                Tutorial
+                Instruction Guide
+              </btn>
+            </a>
+            <a href="https://drive.google.com/file/d/1j-ATyJjJw56-QSNaLaech2u8uu-KmGzY/view" target="_blank">
+              <btn class="shadow mr-3 mb-3" color="logo-white-rd">
+                Video Tutorial
               </btn>
             </a>
             <a href="/profit-calculator-faq-03-12-20.pdf" target="_blank">
