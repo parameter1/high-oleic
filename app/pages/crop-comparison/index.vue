@@ -18,7 +18,7 @@
                 Instruction Guide
               </btn>
             </a>
-            <a href="https://drive.google.com/file/d/1j-ATyJjJw56-QSNaLaech2u8uu-KmGzY/view" target="_blank">
+            <a href="https://img.highoilsoy.com/Training_HO_Profit_Calculator_Training_Module.mp4" target="_blank">
               <btn class="shadow mr-3 mb-3" color="logo-white-rd">
                 Video Tutorial
               </btn>
